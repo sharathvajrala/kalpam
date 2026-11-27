@@ -29,7 +29,51 @@ Warm ivory background (#FAF5EC family), deep temple maroon (#5E1224 family), tem
 3. **Performance non-negotiable:** the 3D sanctum must run smoothly on a low-end Android phone (~₹10,000 class, 3–4 GB RAM). Stylized low-poly idols, baked lighting, texture atlases, quality auto-scaling. No heavy realism.
 4. **Panchangam:** compute tithi, nakshatram, sunrise/sunset, Rahu Kalam etc. for the user's city locally from an astronomy library — do not depend on a paid API.
 5. **Audio:** all stotra/bhajan audio is delivered as licensed/commissioned recordings via content packs. NEVER scrape or embed YouTube or any third-party copyrighted audio. Build the full player/chant-along pipeline with licensed-audio slots flagged in ASSETS_TODO.md.
-...[truncated 9553 chars]
+6. **Localization:** every user-visible string goes through the localization system from day one — no hard-coded strings anywhere. Telugu + English ship at launch; the string tables must be structured so Tamil, Malayalam, Kannada and Hindi drop in as new tables with zero code changes.
+7. **Notifications:** user-set morning/evening pooja reminders, flagship season prompts (join at T-30, peak-day aarti), and vratam-day surfaces. A NotificationGate suppresses ALL notifications while a pooja session is active. No marketing notifications, ever.
+8. **Privacy by architecture:** practice data lives on-device by default (see USER DATA MODEL below). Cloud sync exists only after the user creates an account and opts in (Phase B, for Groups). No analytics SDK that profiles religious practice; no ad SDKs anywhere in the app.
+
+## ONBOARDING (frozen order — 5 steps, no account, under 2 minutes)
+
+1. **Language** — Telugu / English at launch (more added as packs land).
+2. **Choose your god** — the 8 launch deities; this becomes "My God", pinned on Today forever.
+3. **City** — one-time GPS detection of the nearest listed city, or search and pick. Only the city id is stored, never coordinates. Hyderabad is ONLY a fallback when the city is unset, and Today shows a "Set your city" prompt until it is set. Panchangam and the Sankalpam use this city.
+4. **Name + Gotram** — creates the first family profile; janma nakshatram (birth star) is optional here, never blocking.
+5. **Reminder times** — morning + evening, prefilled 5:30 AM / 6:30 PM, editable.
+
+No phone, no email, no password at onboarding. A user can finish onboarding and do a full pooja without ever creating an account.
+
+## USER DATA MODEL (approved 27 Nov 2026 — do not expand)
+
+| Field | When | Required | Where it lives |
+|---|---|---|---|
+| Language | Onboarding step 1 | yes | device |
+| Chosen god | Onboarding step 2 | yes | device |
+| City (name/id only) | Onboarding step 3 — GPS one-time or search | yes (Hyderabad only as unset fallback) | device |
+| Name | Onboarding step 4 / family profile | yes | device |
+| Gotram | Onboarding step 4 / family profile | yes | device |
+| Janma nakshatram | Onboarding step 4 / family profile | optional, never blocking | device |
+| Morning + evening reminder times | Onboarding step 5 | yes (prefilled 5:30 AM / 6:30 PM) | device |
+| Phone / email | Only when joining a Group or opting in to sync (Phase B) | optional | Firebase Auth, after opt-in |
+
+**Family profiles:** several name/gotram(/nakshatram) profiles per device. The active profile is the one spoken in every Sankalpam; switch with one tap from the Today header chips or Settings. One profile always remains (the last profile cannot be deleted).
+
+**Never collected:** contacts, mandatory DOB, ID numbers, payment details (v1), location history or coordinates. GPS is used once to pick the nearest city; only that city id is stored.
+
+**Practice data** (trackers, checklists, joined vratams) is on-device only. Cloud sync starts only after account opt-in (Phase B).
+
+**Settings → Your data:** one-tap Export (JSON of everything stored, via the share sheet) and Delete all (wipes every key on the device and returns to onboarding). Tests must prove: export contains no coordinates/phone/email/DOB; delete-all leaves zero keys.
+
+## SANKALPAM GENERATOR
+
+Every pooja and vratam begins with a generated Sankalpam, spoken aloud (TTS or recorded voice slot) and shown as text, in the user's language:
+- The **active family profile's** name + gotram (+ janma nakshatram if provided)
+- The user's **city**
+- **Today's** samvatsaram, ayanam, ritu, masam, paksham, tithi, nakshatram, weekday — computed by the on-device Panchangam for that city (Amanta month reckoning, Lahiri ayanamsa — the Telugu tradition)
+- The **purpose**: the pooja/vratam being performed and its stated phalam in one line
+
+The same generator powers: Sannidhanam pooja opening, VratamPack sankalpam step, and Family Circle joint sankalpams (each member's own profile spoken on their own device). If gotram was skipped it is simply omitted — never block a pooja on missing optional data.
+
 ## HOME (Today tab) — FROZEN LAYOUT
 
 1. **Flagship Hero (takes over the top of home for everyone):** current flagship season — god, season art, user's day count (e.g. Day 23 of 41 ring), countdown to peak day, today's katha chapter / bhajan / pooja for the season, "Join the Sankalpam" if not joined, "Continue" if joined.
