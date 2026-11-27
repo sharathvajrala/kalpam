@@ -819,4 +819,190 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get offlineLyrics => 'సాహిత్యం ఆఫ్‌లైన్‌లోనూ';
+
+  @override
+  String nSubhodayamTitle(String god) {
+    return 'శుభోదయం · $god';
+  }
+
+  @override
+  String nSunLine(String dusk, String rise) {
+    return 'సూర్యోదయం $rise · సూర్యాస్తమయం $dusk';
+  }
+
+  @override
+  String nTodayIs(String name) {
+    return 'నేడు: $name';
+  }
+
+  @override
+  String nMorningBody(String god) {
+    return '$god ఉదయపు అర్చన సిద్ధంగా ఉంది, మీకు వీలైనప్పుడు.';
+  }
+
+  @override
+  String get nEveningTitle => 'సంధ్యా సమయం';
+
+  @override
+  String nEveningBody(String god, String time) {
+    return 'సాయంత్రం దీపం వెలిగించి $godకు హారతి ఇవ్వండి. సూర్యాస్తమయం $time.';
+  }
+
+  @override
+  String nTomorrowTitle(String name) {
+    return 'రేపు: $name';
+  }
+
+  @override
+  String get nTomorrowBody =>
+      'ఈ రాత్రే పూజా సామగ్రి సిద్ధం చేసుకోండి. జాబితా కోసం తాకండి.';
+
+  @override
+  String nFestivalBody(String god) {
+    return 'నేటి $god ప్రత్యేక పూజ, అర్చన సిద్ధంగా ఉన్నాయి.';
+  }
+
+  @override
+  String nPeakBody(String time) {
+    return 'నేడు ప్రత్యేక పూజ, $timeకు ప్రత్యక్ష హారతి.';
+  }
+
+  @override
+  String nInviteTitle(int days, String name) {
+    return '$days రోజుల్లో $name ప్రారంభం';
+  }
+
+  @override
+  String get nInviteBody => 'సంకల్పం చేసి, భక్తులందరితో కలిసి ఆచరించండి.';
+
+  @override
+  String nClosingTitle(String name) {
+    return 'ఉద్యాపనం · $name';
+  }
+
+  @override
+  String get nClosingBody => 'ఉద్యాపన పూజతో, కృతజ్ఞతతో ఉత్సవాన్ని ముగించండి.';
+
+  @override
+  String nChecklistSummary(String items) {
+    return 'నేడు: $items';
+  }
+
+  @override
+  String nHalfwayTitle(int day, int total) {
+    return 'సగం పూర్తి · $totalలో $dayవ రోజు';
+  }
+
+  @override
+  String nFinalTitle(int day, int total) {
+    return 'చివరి రోజు · $totalలో $dayవ రోజు';
+  }
+
+  @override
+  String nFinalBody(String vratam) {
+    return 'నేడు ఉద్యాపనం. కృతజ్ఞతతో మీ $vratam పూర్తి చేయండి.';
+  }
+
+  @override
+  String nResumeTitle(int day, int total) {
+    return 'స్వాగతం · $totalలో $dayవ రోజు';
+  }
+
+  @override
+  String get nResumeBody =>
+      'ప్రతి రోజూ ఒక కొత్త సమర్పణ. మీకు వీలైనప్పుడు కొనసాగించండి.';
+
+  @override
+  String get nNudgeTitle => 'సాయంత్ర నియమాలు';
+
+  @override
+  String nNudgeBody(int count) {
+    return 'నేటి జాబితాలో $count మిగిలి ఉన్నాయి, మీకు వీలైనప్పుడు.';
+  }
+
+  @override
+  String get notifications => 'నోటిఫికేషన్లు';
+
+  @override
+  String get notificationsDesc =>
+      'ఈ ఫోన్‌లోనే షెడ్యూల్ అయ్యే సున్నితమైన గుర్తింపులు. పూజ జరుగుతున్నప్పుడు ఏదీ రాదు.';
+
+  @override
+  String get nTypeSubhodayam => 'సూర్యోదయాన శుభోదయం పంచాంగం';
+
+  @override
+  String get nTypeMorning => 'ఉదయపు పూజ గుర్తింపు';
+
+  @override
+  String get nTypeEvening => 'సాయంత్ర సంధ్యా గుర్తింపు';
+
+  @override
+  String get nTypeFestivals => 'పండుగలు, ప్రత్యేక దినాలు';
+
+  @override
+  String get nTypeVratam => 'మాల, వ్రత దినచర్య';
+
+  @override
+  String get quietHours => 'నిశ్శబ్ద సమయం';
+
+  @override
+  String get fromTime => 'నుండి';
+
+  @override
+  String get toTime => 'వరకు';
+
+  @override
+  String get subhodayamTime => 'శుభోదయం సమయం';
+
+  @override
+  String get atSunriseShort => 'సూర్యోదయానికి';
+
+  @override
+  String minAfterSunrise(int n) {
+    return '+$n నిమి';
+  }
+
+  @override
+  String get comingUp => 'రాబోయేవి';
+
+  @override
+  String get nothingScheduled => 'రాబోయే వారంలో ఏదీ లేదు.';
+
+  @override
+  String get exactTitle => 'సమయానికి గుర్తింపులు';
+
+  @override
+  String get exactDesc =>
+      'బ్యాటరీ ఆదా కోసం Android గుర్తింపులను ఆలస్యం చేయవచ్చు. శుభోదయం సూర్యోదయానికే రావాలంటే ఖచ్చిత సమయం అనుమతించండి. ఇంకా ఆలస్యమైతే Android అమరికల్లో కల్పం బ్యాటరీ వినియోగాన్ని Unrestricted గా మార్చండి. ఏ విధంగానైనా కల్పం పూర్తిగా పనిచేస్తుంది.';
+
+  @override
+  String get allowExact => 'ఖచ్చిత సమయం అనుమతించండి';
+
+  @override
+  String get allowNotifications => 'నోటిఫికేషన్లు అనుమతించండి';
+
+  @override
+  String get gotIt => 'సరే';
+
+  @override
+  String get joinDaysTitle => 'ఎన్ని రోజులు ఆచరిస్తారు?';
+
+  @override
+  String joinDaysStandard(int n) {
+    return 'సంప్రదాయ సంఖ్య $n రోజులు.';
+  }
+
+  @override
+  String nDays(int n) {
+    return '$n రోజులు';
+  }
+
+  @override
+  String get startsOn => 'ప్రారంభం';
+
+  @override
+  String get checkInTime => 'రోజువారీ గుర్తింపు సమయం';
+
+  @override
+  String get beginSankalpam => 'సంకల్పం ప్రారంభించండి';
 }

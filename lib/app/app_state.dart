@@ -48,6 +48,7 @@ class AppState extends ChangeNotifier {
   static const dayGodId = 'day';
   EveningAnchor eveningAnchor = EveningAnchor.time;
   bool groupsNotify = false;
+  NotificationPrefs notificationPrefs = NotificationPrefs();
   final Map<String, DeekshaRecord> deekshas = {};
 
   /// ISO date -> recurring vratam ids joined that day.
@@ -76,6 +77,7 @@ class AppState extends ChangeNotifier {
     if (deityId != dayGodId && !repo.deities.containsKey(deityId)) deityId = repo.deities.keys.first;
     eveningAnchor = _prefs.getString('eveningAnchor') == 'sunset' ? EveningAnchor.sunset : EveningAnchor.time;
     groupsNotify = _prefs.getBool('groupsNotify') ?? false;
+    notificationPrefs = NotificationPrefs.decode(_prefs.getString('notifPrefs'));
     for (final key in _prefs.getKeys().where((k) => k.startsWith('deeksha:'))) {
       try {
         final r = DeekshaRecord.decode(_prefs.getString(key)!);
@@ -124,13 +126,31 @@ class AppState extends ChangeNotifier {
   List<FlagshipSeason> get secondary => flagship.secondaryFor(today);
 
   /// Weekday god for today (the first listed that has a pack).
-  DeityPack? get weekdayGod {
-    for (final id in repo.weeklyGods[today.weekday] ?? const <String>[]) {
+  DeityPack? get weekdayGod => weekdayGodOn(today);
+
+  DeityPack? weekdayGodOn(DateTime day) {
+    for (final id in repo.weeklyGods[day.weekday] ?? const <String>[]) {
       final d = repo.deities[id];
       if (d != null) return d;
     }
     return null;
   }
+
+  /// The god who leads on [day] (Day God mode follows that day's weekday).
+  DeityPack deityOn(DateTime day) =>
+      dayGodMode ? (weekdayGodOn(day) ?? repo.deities['ayyappa']!) : repo.deities[deityId]!;
+
+  /// Checklist ids that make a mala day "kept" (morning "m:", evening "e:").
+  List<String> requiredChecks(VratamPack v) => [
+        for (final c in v.morningChecklist.where((c) => !c.optional)) 'm:${c.id}',
+        for (final c in v.eveningChecklist.where((c) => !c.optional)) 'e:${c.id}',
+      ];
+
+  /// Active (not finished) mala / vratam records on [day].
+  List<DeekshaRecord> activeDeekshasOn(DateTime day) => [
+        for (final r in deekshas.values)
+          if (repo.vratams.containsKey(r.vratamId) && r.completedAt == null && r.dayNumber(day) >= 1 && r.dayNumber(day) <= r.totalDays) r,
+      ];
 
   List<RecurringVratam> get recurringToday => repo.recurringOn(panchang.tithisInDay);
   bool isRecurringJoined(String id) => joinedRecurring[DeekshaRecord.iso(today)]?.contains(id) ?? false;
@@ -244,6 +264,7 @@ class AppState extends ChangeNotifier {
       'city': cityId == null ? null : city.name.en,
       'god': deityId,
       'eveningAnchor': eveningAnchor.name,
+      'notifications': notificationPrefs.toJson(),
       'japa': {
         for (final k in _prefs.getKeys().where((k) => k.startsWith('japa:'))) k.substring(5): _prefs.getInt(k),
       },
@@ -277,6 +298,7 @@ class AppState extends ChangeNotifier {
     deityId = repo.deities.containsKey('ayyappa') ? 'ayyappa' : repo.deities.keys.first;
     eveningAnchor = EveningAnchor.time;
     groupsNotify = false;
+    notificationPrefs = NotificationPrefs();
     deekshas.clear();
     joinedRecurring.clear();
     _panchangCache.clear();
@@ -289,8 +311,17 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> startDeeksha(String vratamId, DateTime start, int days) async {
-    final r = DeekshaRecord(vratamId: vratamId, startDate: DeekshaRecord.civil(start), totalDays: days);
+  Future<void> setNotificationPrefs(NotificationPrefs p) async {
+    notificationPrefs = p;
+    await _prefs.setString('notifPrefs', p.encode());
+    notifyListeners();
+  }
+
+  /// Joins a mala / vratam for [days] days (1-90, the pack's standard count
+  /// prefilled) with an optional daily check-in time.
+  Future<void> startDeeksha(String vratamId, DateTime start, int days, {ReminderTime? reminder}) async {
+    final r = DeekshaRecord(
+        vratamId: vratamId, startDate: DeekshaRecord.civil(start), totalDays: days.clamp(1, 90), reminder: reminder?.hhmm);
     deekshas[vratamId] = r;
     await _saveDeeksha(r);
   }
@@ -410,6 +441,81 @@ class AppState extends ChangeNotifier {
 }
 
 enum EveningAnchor { time, sunset }
+
+/// Notification types the user can switch off one by one (Settings).
+enum NotifType { subhodayam, morningRitual, eveningRitual, festivals, vratam }
+
+/// Per-type toggles, quiet hours and the Subhodayam offset. Stored locally.
+class NotificationPrefs {
+  NotificationPrefs({
+    Set<NotifType>? off,
+    this.quietFrom = const ReminderTime(22, 0),
+    this.quietTo = const ReminderTime(5, 0),
+    this.sunriseOffsetMin = 0,
+    this.exactExplained = false,
+    this.permissionAsked = false,
+  }) : off = off ?? {};
+
+  final Set<NotifType> off;
+  final ReminderTime quietFrom, quietTo;
+
+  /// Minutes after sunrise for the Subhodayam digest (0 = at sunrise).
+  final int sunriseOffsetMin;
+
+  /// The one-time Android exact-alarm / battery explanation was dismissed.
+  final bool exactExplained;
+
+  /// The system notification permission was requested once already.
+  final bool permissionAsked;
+
+  static const offsetChoices = [0, 15, 30, 60];
+
+  bool enabled(NotifType t) => !off.contains(t);
+
+  NotificationPrefs copyWith({Set<NotifType>? off, ReminderTime? quietFrom, ReminderTime? quietTo, int? sunriseOffsetMin, bool? exactExplained, bool? permissionAsked}) =>
+      NotificationPrefs(
+        off: off ?? this.off,
+        quietFrom: quietFrom ?? this.quietFrom,
+        quietTo: quietTo ?? this.quietTo,
+        sunriseOffsetMin: sunriseOffsetMin ?? this.sunriseOffsetMin,
+        exactExplained: exactExplained ?? this.exactExplained,
+        permissionAsked: permissionAsked ?? this.permissionAsked,
+      );
+
+  NotificationPrefs toggled(NotifType t, bool on) => copyWith(off: on ? ({...off}..remove(t)) : {...off, t});
+
+  Map<String, Object?> toJson() => {
+        'off': [for (final t in off) t.name],
+        'quietFrom': quietFrom.hhmm,
+        'quietTo': quietTo.hhmm,
+        'sunriseOffsetMin': sunriseOffsetMin,
+        'exactExplained': exactExplained,
+        'permissionAsked': permissionAsked,
+      };
+
+  String encode() => jsonEncode(toJson());
+
+  static NotificationPrefs decode(String? s) {
+    if (s == null) return NotificationPrefs();
+    try {
+      final j = jsonDecode(s) as Map<String, dynamic>;
+      return NotificationPrefs(
+        off: {
+          for (final n in (j['off'] as List? ?? const []))
+            for (final t in NotifType.values)
+              if (t.name == n) t,
+        },
+        quietFrom: ReminderTime.parse(j['quietFrom'] as String?) ?? const ReminderTime(22, 0),
+        quietTo: ReminderTime.parse(j['quietTo'] as String?) ?? const ReminderTime(5, 0),
+        sunriseOffsetMin: (j['sunriseOffsetMin'] as num?)?.toInt() ?? 0,
+        exactExplained: j['exactExplained'] as bool? ?? false,
+        permissionAsked: j['permissionAsked'] as bool? ?? false,
+      );
+    } catch (_) {
+      return NotificationPrefs();
+    }
+  }
+}
 
 /// Default Sankalpam purpose for daily poojas.
 const dailyPurpose = LocalizedText.bi(

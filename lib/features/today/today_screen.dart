@@ -16,6 +16,7 @@ import '../rituals/rituals_card.dart';
 import '../grantham/chant_player_screen.dart';
 import '../sannidhanam/pooja_setup_screen.dart';
 import '../settings/settings_screen.dart';
+import '../vratam/join_sheet.dart';
 import '../vratam/vratam_screen.dart';
 import 'city_picker_screen.dart';
 import 'panchangam_screen.dart';
@@ -168,8 +169,11 @@ class FlagshipHero extends StatelessWidget {
       FlagshipPhase.closing => l.seasonClosing,
     };
 
-    void openJoin() {
+    Future<void> openJoin() async {
       if (vratam != null) {
+        // Joining asks the number of days and the check-in time first.
+        if (!joined && !await showJoinVratamSheet(context, vratam)) return;
+        if (!context.mounted) return;
         Navigator.of(context).push(MaterialPageRoute(builder: (_) => VratamScreen(vratamId: vratam.id, initialTab: VratamTab.tracker)));
       } else {
         Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: deity.id)));

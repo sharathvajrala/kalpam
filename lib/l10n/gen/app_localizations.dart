@@ -1555,6 +1555,294 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lyrics work offline'**
   String get offlineLyrics;
+
+  /// No description provided for @nSubhodayamTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Subhodayam · {god}'**
+  String nSubhodayamTitle(String god);
+
+  /// No description provided for @nSunLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise {rise} · Sunset {dusk}'**
+  String nSunLine(String dusk, String rise);
+
+  /// No description provided for @nTodayIs.
+  ///
+  /// In en, this message translates to:
+  /// **'Today: {name}'**
+  String nTodayIs(String name);
+
+  /// No description provided for @nMorningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your morning archana for {god} is ready whenever you are.'**
+  String nMorningBody(String god);
+
+  /// No description provided for @nEveningTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sandhya time'**
+  String get nEveningTitle;
+
+  /// No description provided for @nEveningBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Light the evening deepam and offer aarti to {god}. Sunset {time}.'**
+  String nEveningBody(String god, String time);
+
+  /// No description provided for @nTomorrowTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tomorrow: {name}'**
+  String nTomorrowTitle(String name);
+
+  /// No description provided for @nTomorrowBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the samagri ready tonight. Tap for the checklist.'**
+  String get nTomorrowBody;
+
+  /// No description provided for @nFestivalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s special pooja and archana for {god} are ready.'**
+  String nFestivalBody(String god);
+
+  /// No description provided for @nPeakBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Special pooja today, and the live aarti at {time}.'**
+  String nPeakBody(String time);
+
+  /// No description provided for @nInviteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} begins in {days} days'**
+  String nInviteTitle(int days, String name);
+
+  /// No description provided for @nInviteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Join the Sankalpam and observe it together with devotees everywhere.'**
+  String get nInviteBody;
+
+  /// No description provided for @nClosingTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Udyapanam · {name}'**
+  String nClosingTitle(String name);
+
+  /// No description provided for @nClosingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Close the season with the Udyapanam pooja and your thanks.'**
+  String get nClosingBody;
+
+  /// No description provided for @nChecklistSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Today: {items}'**
+  String nChecklistSummary(String items);
+
+  /// No description provided for @nHalfwayTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Halfway · Day {day} of {total}'**
+  String nHalfwayTitle(int day, int total);
+
+  /// No description provided for @nFinalTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Final day · Day {day} of {total}'**
+  String nFinalTitle(int day, int total);
+
+  /// No description provided for @nFinalBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is the Udyapanam. Complete your {vratam} with gratitude.'**
+  String nFinalBody(String vratam);
+
+  /// No description provided for @nResumeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back · Day {day} of {total}'**
+  String nResumeTitle(int day, int total);
+
+  /// No description provided for @nResumeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day is a fresh offering. Continue whenever you are ready.'**
+  String get nResumeBody;
+
+  /// No description provided for @nNudgeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening observances'**
+  String get nNudgeTitle;
+
+  /// No description provided for @nNudgeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} left on today\'s checklist, whenever you are ready.'**
+  String nNudgeBody(int count);
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @notificationsDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Gentle reminders, scheduled on this phone. Nothing arrives during a pooja.'**
+  String get notificationsDesc;
+
+  /// No description provided for @nTypeSubhodayam.
+  ///
+  /// In en, this message translates to:
+  /// **'Subhodayam Panchangam at sunrise'**
+  String get nTypeSubhodayam;
+
+  /// No description provided for @nTypeMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning ritual reminder'**
+  String get nTypeMorning;
+
+  /// No description provided for @nTypeEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening Sandhya reminder'**
+  String get nTypeEvening;
+
+  /// No description provided for @nTypeFestivals.
+  ///
+  /// In en, this message translates to:
+  /// **'Festivals and special days'**
+  String get nTypeFestivals;
+
+  /// No description provided for @nTypeVratam.
+  ///
+  /// In en, this message translates to:
+  /// **'Mala and vratam check-ins'**
+  String get nTypeVratam;
+
+  /// No description provided for @quietHours.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet hours'**
+  String get quietHours;
+
+  /// No description provided for @fromTime.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get fromTime;
+
+  /// No description provided for @toTime.
+  ///
+  /// In en, this message translates to:
+  /// **'To'**
+  String get toTime;
+
+  /// No description provided for @subhodayamTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Subhodayam time'**
+  String get subhodayamTime;
+
+  /// No description provided for @atSunriseShort.
+  ///
+  /// In en, this message translates to:
+  /// **'At sunrise'**
+  String get atSunriseShort;
+
+  /// No description provided for @minAfterSunrise.
+  ///
+  /// In en, this message translates to:
+  /// **'+{n} min'**
+  String minAfterSunrise(int n);
+
+  /// No description provided for @comingUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming up'**
+  String get comingUp;
+
+  /// No description provided for @nothingScheduled.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing scheduled in the coming week.'**
+  String get nothingScheduled;
+
+  /// No description provided for @exactTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'On-time reminders'**
+  String get exactTitle;
+
+  /// No description provided for @exactDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Android may delay reminders to save battery. For Subhodayam to arrive right at sunrise, allow exact timing. If reminders still come late, set Kalpam\'s battery use to Unrestricted in Android settings. Kalpam works fully either way.'**
+  String get exactDesc;
+
+  /// No description provided for @allowExact.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow exact timing'**
+  String get allowExact;
+
+  /// No description provided for @allowNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow notifications'**
+  String get allowNotifications;
+
+  /// No description provided for @gotIt.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get gotIt;
+
+  /// No description provided for @joinDaysTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How many days will you keep it?'**
+  String get joinDaysTitle;
+
+  /// No description provided for @joinDaysStandard.
+  ///
+  /// In en, this message translates to:
+  /// **'The standard count is {n} days.'**
+  String joinDaysStandard(int n);
+
+  /// No description provided for @nDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} days'**
+  String nDays(int n);
+
+  /// No description provided for @startsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Starts'**
+  String get startsOn;
+
+  /// No description provided for @checkInTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily check-in time'**
+  String get checkInTime;
+
+  /// No description provided for @beginSankalpam.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin the Sankalpam'**
+  String get beginSankalpam;
 }
 
 class _AppLocalizationsDelegate

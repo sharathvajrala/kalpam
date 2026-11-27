@@ -11,6 +11,7 @@ class DeekshaRecord {
     required this.totalDays,
     Map<String, Set<String>>? checks,
     this.completedAt,
+    this.reminder,
   }) : checks = checks ?? {};
 
   final String vratamId;
@@ -21,6 +22,10 @@ class DeekshaRecord {
   /// "s:" samagri, "i:" irumudi).
   final Map<String, Set<String>> checks;
   DateTime? completedAt;
+
+  /// Daily check-in time chosen at join ("HH:MM", city-local); null uses
+  /// the morning reminder.
+  String? reminder;
 
   static DateTime civil(DateTime d) => DateTime.utc(d.year, d.month, d.day);
   static String iso(DateTime d) =>
@@ -67,6 +72,7 @@ class DeekshaRecord {
         'days': totalDays,
         'checks': checks.map((k, v) => MapEntry(k, v.toList())),
         'completedAt': completedAt?.toIso8601String(),
+        if (reminder != null) 'reminder': reminder,
       };
 
   factory DeekshaRecord.fromJson(Map<String, dynamic> j) => DeekshaRecord(
@@ -76,6 +82,7 @@ class DeekshaRecord {
         checks: (j['checks'] as Map? ?? {}).map((k, v) =>
             MapEntry(k as String, (v as List).map((e) => e.toString()).toSet())),
         completedAt: j['completedAt'] == null ? null : DateTime.parse(j['completedAt'] as String),
+        reminder: j['reminder'] as String?,
       );
 
   String encode() => jsonEncode(toJson());

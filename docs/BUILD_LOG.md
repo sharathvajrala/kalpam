@@ -66,3 +66,12 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Bhajans tab: season playlist on top with Play all (Ayyappa Mandala set this season), then your god, then every god with bhajans. Today's Bhajan on the hero opens the player with the season queue.
 - Player: big karaoke lyrics, tap a line to jump, Up next queue, loop, voice guide reads lines until recordings land (stated on screen).
 - 67 tests pass, analyzer clean. Screenshot: docs/screenshots/bhajans-core.png.
+
+## 2026-11-27 — Notifications ready for review
+- Spec eea9f63 (NOTIFICATIONS). All daily notifications are local and planned on-device.
+- `lib/app/notifications/notification_planner.dart`: pure planner over 7 days. Subhodayam digest at sunrise (+0/15/30/60 min) with tithi, nakshatram, sunrise/sunset, today's festival and the day's god; morning ritual reminder and evening Sandhya push, both dropped once that ritual is done; festival T-1 evening, festival morning, flagship peak (with live aarti time), T-30 invitation and closing Udyapanam, capped at one extra per day; mala check-in "Day N of M" at the chosen time with halfway, final-day (opens Udyapanam) and gentle resume wording; evening nudge only while the checklist is incomplete; quiet hours.
+- `notification_scheduler.dart`: flutter_local_notifications (UTC instants, no tz database), re-plans on open/resume (covers timezone change), any state change (city, ritual done, checklist, Settings) and when a pooja ends; cancels everything while NotificationGate is active. Taps route to Today, the ritual or the vratam.
+- Join flow: "Join the Sankalpam" now asks the number of days (pack standard prefilled, 41 for Ayyappa, 1–90), start date and daily check-in time.
+- Settings → Notifications: per-type switches, Subhodayam time, quiet hours, one-time Android exact-timing/battery note, "Coming up" preview, Allow notifications.
+- Android manifest/gradle (desugaring, receivers, permissions) and iOS delegate configured.
+- 81 tests pass, analyzer clean. Screenshots: docs/screenshots/notifications-*.png.

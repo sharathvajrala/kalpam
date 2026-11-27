@@ -1,9 +1,14 @@
+import 'dart:async';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app/app.dart';
 import 'app/app_state.dart';
+import 'app/notifications/notification_routes.dart';
+import 'app/notifications/notification_scheduler.dart';
 import 'core/content/pack_repository.dart';
 import 'features/sannidhanam/pooja_screen.dart';
 
@@ -21,5 +26,10 @@ Future<void> main() async {
   final prefs = await SharedPreferences.getInstance();
   final fixed = _fixedNow.isEmpty ? null : DateTime.parse(_fixedNow);
   final state = AppState(repo: repo, prefs: prefs, clock: fixed == null ? null : () => fixed);
+  // Local notifications: real scheduling on phones; web previews keep the
+  // plan in memory (Settings shows it under "Coming up").
+  final scheduler = NotificationScheduler(state, kIsWeb ? MemoryNotificationPort() : LocalNotificationPort())
+    ..onTap = (payload) => openNotificationPayload(state, payload);
   runApp(KalpamApp(state: state));
+  unawaited(scheduler.start());
 }

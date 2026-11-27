@@ -8,6 +8,7 @@ import '../../core/panchangam/names.dart';
 import '../../core/profile/family_profile.dart';
 import '../common/profile_form.dart';
 import '../today/city_picker_screen.dart';
+import 'notifications_card.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -86,6 +87,8 @@ class SettingsScreen extends StatelessWidget {
             ),
           ]),
         ),
+        const SizedBox(height: 12),
+        const NotificationsCard(),
         const SizedBox(height: 12),
         const _DataCard(),
         const SizedBox(height: 20),

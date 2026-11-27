@@ -822,4 +822,192 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get offlineLyrics => 'Lyrics work offline';
+
+  @override
+  String nSubhodayamTitle(String god) {
+    return 'Subhodayam · $god';
+  }
+
+  @override
+  String nSunLine(String dusk, String rise) {
+    return 'Sunrise $rise · Sunset $dusk';
+  }
+
+  @override
+  String nTodayIs(String name) {
+    return 'Today: $name';
+  }
+
+  @override
+  String nMorningBody(String god) {
+    return 'Your morning archana for $god is ready whenever you are.';
+  }
+
+  @override
+  String get nEveningTitle => 'Sandhya time';
+
+  @override
+  String nEveningBody(String god, String time) {
+    return 'Light the evening deepam and offer aarti to $god. Sunset $time.';
+  }
+
+  @override
+  String nTomorrowTitle(String name) {
+    return 'Tomorrow: $name';
+  }
+
+  @override
+  String get nTomorrowBody =>
+      'Keep the samagri ready tonight. Tap for the checklist.';
+
+  @override
+  String nFestivalBody(String god) {
+    return 'Today\'s special pooja and archana for $god are ready.';
+  }
+
+  @override
+  String nPeakBody(String time) {
+    return 'Special pooja today, and the live aarti at $time.';
+  }
+
+  @override
+  String nInviteTitle(int days, String name) {
+    return '$name begins in $days days';
+  }
+
+  @override
+  String get nInviteBody =>
+      'Join the Sankalpam and observe it together with devotees everywhere.';
+
+  @override
+  String nClosingTitle(String name) {
+    return 'Udyapanam · $name';
+  }
+
+  @override
+  String get nClosingBody =>
+      'Close the season with the Udyapanam pooja and your thanks.';
+
+  @override
+  String nChecklistSummary(String items) {
+    return 'Today: $items';
+  }
+
+  @override
+  String nHalfwayTitle(int day, int total) {
+    return 'Halfway · Day $day of $total';
+  }
+
+  @override
+  String nFinalTitle(int day, int total) {
+    return 'Final day · Day $day of $total';
+  }
+
+  @override
+  String nFinalBody(String vratam) {
+    return 'Today is the Udyapanam. Complete your $vratam with gratitude.';
+  }
+
+  @override
+  String nResumeTitle(int day, int total) {
+    return 'Welcome back · Day $day of $total';
+  }
+
+  @override
+  String get nResumeBody =>
+      'Every day is a fresh offering. Continue whenever you are ready.';
+
+  @override
+  String get nNudgeTitle => 'Evening observances';
+
+  @override
+  String nNudgeBody(int count) {
+    return '$count left on today\'s checklist, whenever you are ready.';
+  }
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get notificationsDesc =>
+      'Gentle reminders, scheduled on this phone. Nothing arrives during a pooja.';
+
+  @override
+  String get nTypeSubhodayam => 'Subhodayam Panchangam at sunrise';
+
+  @override
+  String get nTypeMorning => 'Morning ritual reminder';
+
+  @override
+  String get nTypeEvening => 'Evening Sandhya reminder';
+
+  @override
+  String get nTypeFestivals => 'Festivals and special days';
+
+  @override
+  String get nTypeVratam => 'Mala and vratam check-ins';
+
+  @override
+  String get quietHours => 'Quiet hours';
+
+  @override
+  String get fromTime => 'From';
+
+  @override
+  String get toTime => 'To';
+
+  @override
+  String get subhodayamTime => 'Subhodayam time';
+
+  @override
+  String get atSunriseShort => 'At sunrise';
+
+  @override
+  String minAfterSunrise(int n) {
+    return '+$n min';
+  }
+
+  @override
+  String get comingUp => 'Coming up';
+
+  @override
+  String get nothingScheduled => 'Nothing scheduled in the coming week.';
+
+  @override
+  String get exactTitle => 'On-time reminders';
+
+  @override
+  String get exactDesc =>
+      'Android may delay reminders to save battery. For Subhodayam to arrive right at sunrise, allow exact timing. If reminders still come late, set Kalpam\'s battery use to Unrestricted in Android settings. Kalpam works fully either way.';
+
+  @override
+  String get allowExact => 'Allow exact timing';
+
+  @override
+  String get allowNotifications => 'Allow notifications';
+
+  @override
+  String get gotIt => 'Got it';
+
+  @override
+  String get joinDaysTitle => 'How many days will you keep it?';
+
+  @override
+  String joinDaysStandard(int n) {
+    return 'The standard count is $n days.';
+  }
+
+  @override
+  String nDays(int n) {
+    return '$n days';
+  }
+
+  @override
+  String get startsOn => 'Starts';
+
+  @override
+  String get checkInTime => 'Daily check-in time';
+
+  @override
+  String get beginSankalpam => 'Begin the Sankalpam';
 }

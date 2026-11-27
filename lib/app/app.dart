@@ -15,6 +15,9 @@ class KalpamApp extends StatelessWidget {
   const KalpamApp({super.key, required this.state});
   final AppState state;
 
+  /// Lets notification taps navigate from outside the widget tree.
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
   @override
   Widget build(BuildContext context) {
     return AppScope(
@@ -23,6 +26,7 @@ class KalpamApp extends StatelessWidget {
         listenable: state,
         builder: (context, _) => MaterialApp(
           title: 'Kalpam',
+          navigatorKey: navigatorKey,
           debugShowCheckedModeBanner: false,
           theme: kalpamTheme(elder: state.elderMode),
           locale: Locale(state.lang),
