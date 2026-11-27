@@ -65,3 +65,13 @@ Every item below shows a "Sample" flag in the library and a "Sample text" chip i
 | audio.stotra.*.sung / learn | none (placeholder) | commissioned recordings with per-line cue points (tSung / tLearn); the player already reads cue points |
 | player.background_playback | — | wire audio_service / lock-screen controls when the first licensed recording lands |
 | player.offline_downloads | text packs are bundled (offline today) | audio pack download manager with the recordings |
+
+## Bhajans core (added 27 Nov 2026)
+| Slot | Bundled now | Needed |
+|---|---|---|
+| audio.bhajan.* (all 10) | none (placeholder) | commissioned recordings + license block per pack (the loader rejects real audio without one) and per-line cue points |
+| lyrics: ayyappa_saranaghosham, ayyappa_padi_ghosham, ayyappa_swamy_namavali, govinda_namalu, shiva_panchakshari, sri_rama_jaya_rama, om_gam_ganapataye, haro_hara | short traditional chant lines, flagged "Sample" | verified full lyrics |
+| lyrics: sai_namo_namah | 2 lines, flagged | verification + licence check |
+| lyrics: hare_rama_maha_mantra | complete (Kali-Santarana Upanishad) | recording only |
+| bhajans for Lakshmi, Durga, Surya | none | Phase B packs |
+| background / lock-screen playback, offline audio downloads | lyrics already offline | Phase A exit item: wire with the first licensed recording, before the closed test build |

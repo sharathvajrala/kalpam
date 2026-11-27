@@ -1,0 +1,30 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "hare_rama_maha_mantra",
+ "version": 1,
+ "title": {
+  "en": "Hare Rama Hare Krishna",
+  "te": "హరే రామ హరే కృష్ణ"
+ },
+ "deityIds": [
+  "venkateswara"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/hare_rama_maha_mantra",
+ "license": null,
+ "durationSec": 300,
+ "seasons": [],
+ "source": "Kali-Santarana Upanishad maha mantra (public domain). Recording to be commissioned.",
+ "lyricsVerified": true,
+ "lyrics": [
+  {
+   "te": "హరే రామ హరే రామ రామ రామ హరే హరే",
+   "translit": "Hare Rama Hare Rama Rama Rama Hare Hare"
+  },
+  {
+   "te": "హరే కృష్ణ హరే కృష్ణ కృష్ణ కృష్ణ హరే హరే",
+   "translit": "Hare Krishna Hare Krishna Krishna Krishna Hare Hare"
+  }
+ ]
+}

@@ -46,7 +46,9 @@
   "sai_baba_ashtottaram",
   "sai_baba_namajapam"
  ],
- "bhajans": [],
+ "bhajans": [
+  "sai_namo_namah"
+ ],
  "rituals": {
   "purpose": {
    "en": "for faith and patience (shraddha and saburi)",

@@ -495,12 +495,18 @@ class BhajanItem {
     required this.lyrics,
     required this.seasons,
     required this.licenseHolder,
+    this.source = '',
+    this.lyricsVerified = false,
   });
   final String id;
   final int version;
   final LocalizedText title;
   final List<String> deityIds;
   final String language;
+  final String source;
+
+  /// false until the lyrics are verified (the UI shows a "Sample" flag).
+  final bool lyricsVerified;
   final MediaRef audio;
   final int durationSec;
   final List<TextLine> lyrics;
@@ -525,6 +531,8 @@ class BhajanItem {
       lyrics: _list(j['lyrics'], TextLine.fromJson),
       seasons: _strings(j['seasons']),
       licenseHolder: lic?['holder'] as String?,
+      source: j['source'] as String? ?? '',
+      lyricsVerified: j['lyricsVerified'] as bool? ?? false,
     );
   }
 }

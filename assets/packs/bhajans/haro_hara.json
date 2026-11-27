@@ -1,0 +1,30 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "haro_hara",
+ "version": 1,
+ "title": {
+  "en": "Haro Hara",
+  "te": "హరోం హర"
+ },
+ "deityIds": [
+  "subrahmanya"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/haro_hara",
+ "license": null,
+ "durationSec": 240,
+ "seasons": [],
+ "source": "Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "హరోం హర హర హరోం హర",
+   "translit": "Harom Hara Hara Harom Hara"
+  },
+  {
+   "te": "వేల్ మురుగా వేల్ వేల్ మురుగా",
+   "translit": "Vel Muruga Vel Vel Muruga"
+  }
+ ]
+}

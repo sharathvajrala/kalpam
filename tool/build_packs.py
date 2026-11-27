@@ -169,6 +169,9 @@ RITUALS = {
            "archana": "surya_dwadasa_namavali", "shortCount": 12, "eveningChant": "surya_dwadasa_namavali"},
 }
 
+EXTRA_BHAJANS = {"venkateswara": ["govinda_namalu", "hare_rama_maha_mantra"], "shiva": ["shiva_panchakshari"],
+                 "hanuman": ["sri_rama_jaya_rama"], "ganapathy": ["om_gam_ganapataye"], "subrahmanya": ["haro_hara"]}
+
 for d in DEITIES:
     write(f"deities/{d['id']}.json", {
         "schema": "kalpam.deity/1", "id": d["id"], "version": 1, "updatedAt": DATE, "minAppVersion": "1.0.0",
@@ -180,7 +183,7 @@ for d in DEITIES:
         "poojas": [pooja(d, p) for p in LENGTHS],
         "chantings": d["chantings"],
         "stotras": list(dict.fromkeys(d["stotras"] + [x for x in (RITUALS[d["id"]].get(k) for k in ("archana", "suprabhatam", "eveningChant")) if x])),
-        "bhajans": d["bhajans"],
+        "bhajans": d["bhajans"] + EXTRA_BHAJANS.get(d["id"], []),
         "rituals": RITUALS[d["id"]],
         "status": "complete" if d["id"] == "ayyappa" else "phase_a_minimum",
     })
@@ -255,10 +258,10 @@ stotra("hanuman_chalisa", L("Hanuman Chalisa", "హనుమాన్ చాల�
 ])
 
 # --------------------------------------------------------------- bhajans (traditional chants; audio to be commissioned)
-def bhajan(bid, title, deities, lines, seasons, dur):
+def bhajan(bid, title, deities, lines, seasons, dur, source="Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.", verified=False):
     write(f"bhajans/{bid}.json", {"schema": "kalpam.bhajan/1", "id": bid, "version": 1, "title": title, "deityIds": deities,
         "language": "te", "artist": "commissioned", "audio": f"placeholder://audio/bhajan/{bid}", "license": None,
-        "durationSec": dur, "seasons": seasons,
+        "durationSec": dur, "seasons": seasons, "source": source, "lyricsVerified": verified,
         "lyrics": [{"te": te, "translit": tr} for te, tr in lines]})
 
 bhajan("ayyappa_saranaghosham", L("Saranaghosham (call and response)", "శరణఘోష"), ["ayyappa"], [
@@ -282,6 +285,38 @@ bhajan("ayyappa_swamy_namavali", L("Swamy Namavali", "స్వామి నా�
  ("ఓం భూతనాథాయ నమః", "Om Bhutanathaya Namaha"),
  ("ఓం శబరిగిరీశాయ నమః", "Om Sabarigirishaya Namaha"),
 ], ["ayyappa_mandala_2026"], 240)
+
+bhajan("govinda_namalu", L("Govinda Namalu", "గోవింద నామాలు"), ["venkateswara"], [
+ ("శ్రీనివాసా గోవిందా శ్రీ వేంకటేశా గోవిందా", "Srinivasa Govinda Sri Venkatesa Govinda"),
+ ("భక్తవత్సల గోవిందా భాగవతప్రియ గోవిందా", "Bhaktavatsala Govinda Bhagavatapriya Govinda"),
+ ("నిత్యనిర్మల గోవిందా నీలమేఘశ్యామ గోవిందా", "Nityanirmala Govinda Nilameghashyama Govinda"),
+ ("గోవిందా హరి గోవిందా గోకులనందన గోవిందా", "Govinda Hari Govinda Gokulanandana Govinda"),
+], [], 420)
+bhajan("hare_rama_maha_mantra", L("Hare Rama Hare Krishna", "హరే రామ హరే కృష్ణ"), ["venkateswara"], [
+ ("హరే రామ హరే రామ రామ రామ హరే హరే", "Hare Rama Hare Rama Rama Rama Hare Hare"),
+ ("హరే కృష్ణ హరే కృష్ణ కృష్ణ కృష్ణ హరే హరే", "Hare Krishna Hare Krishna Krishna Krishna Hare Hare"),
+], [], 300, source="Kali-Santarana Upanishad maha mantra (public domain). Recording to be commissioned.", verified=True)
+bhajan("shiva_panchakshari", L("Om Namah Shivaya", "ఓం నమః శివాయ"), ["shiva"], [
+ ("ఓం నమః శివాయ ఓం నమః శివాయ", "Om Namah Shivaya Om Namah Shivaya"),
+ ("హర హర మహాదేవ శంభో శంకర", "Hara Hara Mahadeva Shambho Shankara"),
+ ("శివాయ నమః ఓం శివాయ నమః", "Shivaya Namah Om Shivaya Namah"),
+], ["shiva_shivratri_2027"], 300)
+bhajan("sri_rama_jaya_rama", L("Sri Rama Jaya Rama", "శ్రీ రామ జయ రామ"), ["hanuman"], [
+ ("శ్రీ రామ జయ రామ జయ జయ రామ", "Sri Rama Jaya Rama Jaya Jaya Rama"),
+ ("సీతా రామ జయ సీతా రామ", "Sita Rama Jaya Sita Rama"),
+], [], 300)
+bhajan("om_gam_ganapataye", L("Om Gam Ganapataye Namaha", "ఓం గం గణపతయే నమః"), ["ganapathy"], [
+ ("ఓం గం గణపతయే నమః", "Om Gam Ganapataye Namaha"),
+ ("గణపతి బప్పా మోరియా", "Ganapati Bappa Moriya"),
+], [], 240)
+bhajan("haro_hara", L("Haro Hara", "హరోం హర"), ["subrahmanya"], [
+ ("హరోం హర హర హరోం హర", "Harom Hara Hara Harom Hara"),
+ ("వేల్ మురుగా వేల్ వేల్ మురుగా", "Vel Muruga Vel Vel Muruga"),
+], [], 240)
+bhajan("sai_namo_namah", L("Om Sai Namo Namah", "ఓం సాయి నమో నమః"), ["sai_baba"], [
+ ("ఓం సాయి నమో నమః శ్రీ సాయి నమో నమః", "Om Sai Namo Namah Sri Sai Namo Namah"),
+ ("జయ జయ సాయి నమో నమః సద్గురు సాయి నమో నమః", "Jaya Jaya Sai Namo Namah Sadguru Sai Namo Namah"),
+], [], 300, source="Devotional chant in common use. Lyrics and licence pending verification; recording to be commissioned.")
 
 # --------------------------------------------------------------- vratam: Ayyappa Mandala Deeksha
 CK = lambda i, en, te: {"id": i, "text": L(en, te)}
@@ -545,7 +580,7 @@ for d in [
         "colors": d["colors"], "idolGlyph": d["glyph"],
         "art": {"icon": f"placeholder://art/{d['id']}/icon", "hero": f"placeholder://art/{d['id']}/hero"},
         "sanctum": {"closing": d["closing"]},
-        "poojas": [], "chantings": d["chantings"], "stotras": d["stotras"], "bhajans": [],
+        "poojas": [], "chantings": d["chantings"], "stotras": d["stotras"], "bhajans": ["sai_namo_namah"] if d["id"] == "sai_baba" else [],
         "rituals": RITUALS[d["id"]], "status": "light",
     })
 

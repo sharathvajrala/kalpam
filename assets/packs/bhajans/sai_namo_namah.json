@@ -1,0 +1,30 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "sai_namo_namah",
+ "version": 1,
+ "title": {
+  "en": "Om Sai Namo Namah",
+  "te": "ఓం సాయి నమో నమః"
+ },
+ "deityIds": [
+  "sai_baba"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/sai_namo_namah",
+ "license": null,
+ "durationSec": 300,
+ "seasons": [],
+ "source": "Devotional chant in common use. Lyrics and licence pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "ఓం సాయి నమో నమః శ్రీ సాయి నమో నమః",
+   "translit": "Om Sai Namo Namah Sri Sai Namo Namah"
+  },
+  {
+   "te": "జయ జయ సాయి నమో నమః సద్గురు సాయి నమో నమః",
+   "translit": "Jaya Jaya Sai Namo Namah Sadguru Sai Namo Namah"
+  }
+ ]
+}

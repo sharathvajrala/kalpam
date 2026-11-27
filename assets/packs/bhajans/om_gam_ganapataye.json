@@ -1,0 +1,30 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "om_gam_ganapataye",
+ "version": 1,
+ "title": {
+  "en": "Om Gam Ganapataye Namaha",
+  "te": "ఓం గం గణపతయే నమః"
+ },
+ "deityIds": [
+  "ganapathy"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/om_gam_ganapataye",
+ "license": null,
+ "durationSec": 240,
+ "seasons": [],
+ "source": "Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "ఓం గం గణపతయే నమః",
+   "translit": "Om Gam Ganapataye Namaha"
+  },
+  {
+   "te": "గణపతి బప్పా మోరియా",
+   "translit": "Ganapati Bappa Moriya"
+  }
+ ]
+}

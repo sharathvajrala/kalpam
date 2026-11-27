@@ -1,0 +1,38 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "govinda_namalu",
+ "version": 1,
+ "title": {
+  "en": "Govinda Namalu",
+  "te": "గోవింద నామాలు"
+ },
+ "deityIds": [
+  "venkateswara"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/govinda_namalu",
+ "license": null,
+ "durationSec": 420,
+ "seasons": [],
+ "source": "Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "శ్రీనివాసా గోవిందా శ్రీ వేంకటేశా గోవిందా",
+   "translit": "Srinivasa Govinda Sri Venkatesa Govinda"
+  },
+  {
+   "te": "భక్తవత్సల గోవిందా భాగవతప్రియ గోవిందా",
+   "translit": "Bhaktavatsala Govinda Bhagavatapriya Govinda"
+  },
+  {
+   "te": "నిత్యనిర్మల గోవిందా నీలమేఘశ్యామ గోవిందా",
+   "translit": "Nityanirmala Govinda Nilameghashyama Govinda"
+  },
+  {
+   "te": "గోవిందా హరి గోవిందా గోకులనందన గోవిందా",
+   "translit": "Govinda Hari Govinda Gokulanandana Govinda"
+  }
+ ]
+}

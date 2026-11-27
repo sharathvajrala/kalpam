@@ -482,5 +482,29 @@
  "voiceReads": "Recording coming soon. The voice guide reads each line meanwhile.",
  "japaTarget": "Target",
  "sourceLabel": "Source",
- "chantComplete": "Parayanam complete"
+ "chantComplete": "Parayanam complete",
+ "playAll": "Play all",
+ "loopPlaylist": "Repeat playlist",
+ "upNext": "Up next",
+ "aboutMin": "~{n} min",
+ "@aboutMin": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "bhajanOf": "Bhajan {n} of {total}",
+ "@bhajanOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "lyricsSample": "Lyrics pending verification",
+ "offlineLyrics": "Lyrics work offline"
 }

@@ -797,4 +797,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chantComplete => 'Parayanam complete';
+
+  @override
+  String get playAll => 'Play all';
+
+  @override
+  String get loopPlaylist => 'Repeat playlist';
+
+  @override
+  String get upNext => 'Up next';
+
+  @override
+  String aboutMin(int n) {
+    return '~$n min';
+  }
+
+  @override
+  String bhajanOf(int n, int total) {
+    return 'Bhajan $n of $total';
+  }
+
+  @override
+  String get lyricsSample => 'Lyrics pending verification';
+
+  @override
+  String get offlineLyrics => 'Lyrics work offline';
 }

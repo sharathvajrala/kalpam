@@ -22,6 +22,48 @@
    "schema": "kalpam.bhajan/1"
   },
   {
+   "path": "bhajans/govinda_namalu.json",
+   "id": "govinda_namalu",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/hare_rama_maha_mantra.json",
+   "id": "hare_rama_maha_mantra",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/haro_hara.json",
+   "id": "haro_hara",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/om_gam_ganapataye.json",
+   "id": "om_gam_ganapataye",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/sai_namo_namah.json",
+   "id": "sai_namo_namah",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/shiva_panchakshari.json",
+   "id": "shiva_panchakshari",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/sri_rama_jaya_rama.json",
+   "id": "sri_rama_jaya_rama",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
    "path": "deities/ayyappa.json",
    "id": "ayyappa",
    "version": 1,

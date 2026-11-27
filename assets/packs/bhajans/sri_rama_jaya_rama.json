@@ -1,0 +1,30 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "sri_rama_jaya_rama",
+ "version": 1,
+ "title": {
+  "en": "Sri Rama Jaya Rama",
+  "te": "శ్రీ రామ జయ రామ"
+ },
+ "deityIds": [
+  "hanuman"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/sri_rama_jaya_rama",
+ "license": null,
+ "durationSec": 300,
+ "seasons": [],
+ "source": "Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "శ్రీ రామ జయ రామ జయ జయ రామ",
+   "translit": "Sri Rama Jaya Rama Jaya Jaya Rama"
+  },
+  {
+   "te": "సీతా రామ జయ సీతా రామ",
+   "translit": "Sita Rama Jaya Sita Rama"
+  }
+ ]
+}

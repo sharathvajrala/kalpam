@@ -998,7 +998,9 @@
   "shiva_ashtottaram",
   "lingashtakam"
  ],
- "bhajans": [],
+ "bhajans": [
+  "shiva_panchakshari"
+ ],
  "rituals": {
   "purpose": {
    "en": "for peace of mind and freedom from sorrow",

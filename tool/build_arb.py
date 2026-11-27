@@ -151,6 +151,11 @@ S = {
  "voiceReads": ("Recording coming soon. The voice guide reads each line meanwhile.", "రికార్డింగ్ త్వరలో. అప్పటి వరకు వాయిస్ గైడ్ ప్రతి పంక్తి చదువుతుంది."),
  "japaTarget": ("Target", "లక్ష్యం"), "sourceLabel": ("Source", "మూలం"),
  "chantComplete": ("Parayanam complete", "పారాయణం సంపూర్ణం"),
+ "playAll": ("Play all", "అన్నీ వినండి"), "loopPlaylist": ("Repeat playlist", "ప్లేలిస్ట్ మళ్ళీ మళ్ళీ"),
+ "upNext": ("Up next", "తదుపరి"), "aboutMin": ("~{n} min", "~{n} నిమి"),
+ "bhajanOf": ("Bhajan {n} of {total}", "{total}లో {n}వ భజన"),
+ "lyricsSample": ("Lyrics pending verification", "సాహిత్యం ధృవీకరణ కావాలి"),
+ "offlineLyrics": ("Lyrics work offline", "సాహిత్యం ఆఫ్‌లైన్‌లోనూ"),
 }
 PL = {"day","total","days","peak","name","time","n","god","count","vratam"}
 out = pathlib.Path(__file__).resolve().parent.parent / "lib" / "l10n"; out.mkdir(parents=True, exist_ok=True)

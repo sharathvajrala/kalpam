@@ -794,4 +794,29 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get chantComplete => 'పారాయణం సంపూర్ణం';
+
+  @override
+  String get playAll => 'అన్నీ వినండి';
+
+  @override
+  String get loopPlaylist => 'ప్లేలిస్ట్ మళ్ళీ మళ్ళీ';
+
+  @override
+  String get upNext => 'తదుపరి';
+
+  @override
+  String aboutMin(int n) {
+    return '~$n నిమి';
+  }
+
+  @override
+  String bhajanOf(int n, int total) {
+    return '$totalలో $nవ భజన';
+  }
+
+  @override
+  String get lyricsSample => 'సాహిత్యం ధృవీకరణ కావాలి';
+
+  @override
+  String get offlineLyrics => 'సాహిత్యం ఆఫ్‌లైన్‌లోనూ';
 }

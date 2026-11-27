@@ -58,3 +58,11 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Ayyappa 108 Saranams parayanam day moved to Wednesday (founder map).
 - ASSETS_TODO: Grantham text + audio slots listed; background/lock-screen playback and audio downloads wait for the first licensed recording.
 - 63 tests pass, analyzer clean. Screenshot: docs/screenshots/grantham-core.png.
+
+## 2026-11-27 — Bhajans core ready for review
+- Grantham core approved (6c2d20b). Standing note recorded: lock-screen/background playback + downloads are a Phase A exit item, wired as soon as the first licensed recording lands.
+- Content: 7 new traditional chants (Govinda Namalu, Hare Rama maha mantra, Om Namah Shivaya, Sri Rama Jaya Rama, Om Gam Ganapataye, Haro Hara, Om Sai Namo Namah) attached to their gods. Bhajan packs now carry `source` and `lyricsVerified`; unverified lyrics show a "Sample" flag.
+- `lib/core/chant/playlist.dart`: BhajanPlaylist on top of the chant engine: karaoke lyrics, auto-advance, loop, next/previous wrap (advance is deferred outside the engine's notification so the finished engine can be disposed safely).
+- Bhajans tab: season playlist on top with Play all (Ayyappa Mandala set this season), then your god, then every god with bhajans. Today's Bhajan on the hero opens the player with the season queue.
+- Player: big karaoke lyrics, tap a line to jump, Up next queue, loop, voice guide reads lines until recordings land (stated on screen).
+- 67 tests pass, analyzer clean. Screenshot: docs/screenshots/bhajans-core.png.

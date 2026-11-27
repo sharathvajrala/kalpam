@@ -1513,6 +1513,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Parayanam complete'**
   String get chantComplete;
+
+  /// No description provided for @playAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Play all'**
+  String get playAll;
+
+  /// No description provided for @loopPlaylist.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat playlist'**
+  String get loopPlaylist;
+
+  /// No description provided for @upNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Up next'**
+  String get upNext;
+
+  /// No description provided for @aboutMin.
+  ///
+  /// In en, this message translates to:
+  /// **'~{n} min'**
+  String aboutMin(int n);
+
+  /// No description provided for @bhajanOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Bhajan {n} of {total}'**
+  String bhajanOf(int n, int total);
+
+  /// No description provided for @lyricsSample.
+  ///
+  /// In en, this message translates to:
+  /// **'Lyrics pending verification'**
+  String get lyricsSample;
+
+  /// No description provided for @offlineLyrics.
+  ///
+  /// In en, this message translates to:
+  /// **'Lyrics work offline'**
+  String get offlineLyrics;
 }
 
 class _AppLocalizationsDelegate

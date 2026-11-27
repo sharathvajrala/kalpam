@@ -241,7 +241,7 @@ class FlagshipHero extends StatelessWidget {
                   label: l.todayBhajan,
                   label2: context.l2.todayBhajan,
                   value: context.t(bhajan.title),
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => BhajanPlayerScreen(bhajanId: bhajan.id))),
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => BhajanPlayerScreen(bhajanId: bhajan.id, playlistIds: s.bhajanSet))),
                 ),
               ),
             ],

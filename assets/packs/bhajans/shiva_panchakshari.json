@@ -1,0 +1,36 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "shiva_panchakshari",
+ "version": 1,
+ "title": {
+  "en": "Om Namah Shivaya",
+  "te": "ఓం నమః శివాయ"
+ },
+ "deityIds": [
+  "shiva"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/shiva_panchakshari",
+ "license": null,
+ "durationSec": 300,
+ "seasons": [
+  "shiva_shivratri_2027"
+ ],
+ "source": "Traditional chant (public domain). Lyrics pending verification; recording to be commissioned.",
+ "lyricsVerified": false,
+ "lyrics": [
+  {
+   "te": "ఓం నమః శివాయ ఓం నమః శివాయ",
+   "translit": "Om Namah Shivaya Om Namah Shivaya"
+  },
+  {
+   "te": "హర హర మహాదేవ శంభో శంకర",
+   "translit": "Hara Hara Mahadeva Shambho Shankara"
+  },
+  {
+   "te": "శివాయ నమః ఓం శివాయ నమః",
+   "translit": "Shivaya Namah Om Shivaya Namah"
+  }
+ ]
+}
