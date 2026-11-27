@@ -62,7 +62,6 @@ class KalpamShell extends StatefulWidget {
 class _KalpamShellState extends State<KalpamShell> {
   @override
   Widget build(BuildContext context) {
-    final l = context.l;
     return ValueListenableBuilder<int>(
       valueListenable: KalpamShell.tabIndex,
       builder: (context, index, _) => Scaffold(
@@ -73,16 +72,81 @@ class _KalpamShellState extends State<KalpamShell> {
           BhajansScreen(),
           GroupsScreen(),
         ]),
-        bottomNavigationBar: NavigationBar(
-          selectedIndex: index,
-          onDestinationSelected: KalpamShell.go,
-          destinations: [
-            NavigationDestination(icon: const Icon(Icons.wb_sunny_outlined), selectedIcon: const Icon(Icons.wb_sunny), label: l.tabToday),
-            NavigationDestination(icon: const Icon(Icons.temple_hindu_outlined), selectedIcon: const Icon(Icons.temple_hindu), label: l.tabSannidhanam),
-            NavigationDestination(icon: const Icon(Icons.menu_book_outlined), selectedIcon: const Icon(Icons.menu_book), label: l.tabGrantham),
-            NavigationDestination(icon: const Icon(Icons.library_music_outlined), selectedIcon: const Icon(Icons.library_music), label: l.tabBhajans),
-            NavigationDestination(icon: const Icon(Icons.groups_outlined), selectedIcon: const Icon(Icons.groups), label: l.tabGroups),
-          ],
+        bottomNavigationBar: _BiTabBar(index: index),
+      ),
+    );
+  }
+}
+
+/// Bottom tab bar with bilingual labels (primary language + secondary script),
+/// per the design rule that every label is bilingual.
+class _BiTabBar extends StatelessWidget {
+  const _BiTabBar({required this.index});
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l, l2 = context.l2;
+    final elder = context.app.elderMode;
+    final tabs = [
+      (Icons.wb_sunny_outlined, Icons.wb_sunny, l.tabToday, l2.tabToday),
+      (Icons.temple_hindu_outlined, Icons.temple_hindu, l.tabSannidhanam, l2.tabSannidhanam),
+      (Icons.menu_book_outlined, Icons.menu_book, l.tabGrantham, l2.tabGrantham),
+      (Icons.library_music_outlined, Icons.library_music, l.tabBhajans, l2.tabBhajans),
+      (Icons.groups_outlined, Icons.groups, l.tabGroups, l2.tabGroups),
+    ];
+    return Material(
+      color: K.card,
+      child: Container(
+        decoration: BoxDecoration(border: Border(top: BorderSide(color: K.gold.withValues(alpha: 0.5)))),
+        child: SafeArea(
+          top: false,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: Row(children: [
+              for (var i = 0; i < tabs.length; i++)
+                Expanded(
+                  child: Semantics(
+                    selected: i == index,
+                    button: true,
+                    label: '${tabs[i].$3}, ${tabs[i].$4}',
+                    child: InkWell(
+                      key: ValueKey('tab-$i'),
+                      borderRadius: BorderRadius.circular(14),
+                      onTap: () => KalpamShell.go(i),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: Column(mainAxisSize: MainAxisSize.min, children: [
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: i == index ? K.goldSoft : Colors.transparent,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Icon(i == index ? tabs[i].$2 : tabs[i].$1, color: K.maroon, size: elder ? 28 : 24),
+                          ),
+                          const SizedBox(height: 3),
+                          Text(tabs[i].$3,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textScaler: TextScaler.noScaling,
+                              style: TextStyle(
+                                  fontSize: elder ? 13 : 11,
+                                  fontWeight: i == index ? FontWeight.w700 : FontWeight.w600,
+                                  color: K.maroon)),
+                          Text(tabs[i].$4,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              textScaler: TextScaler.noScaling,
+                              style: TextStyle(fontSize: elder ? 11 : 9, color: K.inkSoft)),
+                        ]),
+                      ),
+                    ),
+                  ),
+                ),
+            ]),
+          ),
         ),
       ),
     );

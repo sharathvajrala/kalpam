@@ -72,23 +72,39 @@ class _GreetingHeader extends StatelessWidget {
             '${context.t2(p.tithi.name)} · ${context.t2(p.nakshatra.name)}',
             style: tt.bodySmall,
           ),
+          const SizedBox(height: 6),
+          InkWell(
+            key: const ValueKey('city-chip'),
+            borderRadius: BorderRadius.circular(20),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CityPickerScreen())),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(color: app.hasCity ? K.goldSoft : K.saffron),
+                color: K.card,
+              ),
+              child: Row(mainAxisSize: MainAxisSize.min, children: [
+                Icon(app.hasCity ? Icons.place_outlined : Icons.add_location_alt_outlined,
+                    size: 16, color: app.hasCity ? K.maroon : K.saffron),
+                const SizedBox(width: 6),
+                Flexible(
+                  child: Text(
+                    app.hasCity ? '${context.t(app.city.name)} · ${context.t2(app.city.name)}' : context.l.cityNotSet,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: app.hasCity ? K.maroon : K.saffron),
+                  ),
+                ),
+              ]),
+            ),
+          ),
         ]),
       ),
-      Column(children: [
-        IconButton(
-          tooltip: context.l.settings,
-          icon: const Icon(Icons.settings_outlined, color: K.maroon),
-          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
-        ),
-        ActionChip(
-          key: const ValueKey('city-chip'),
-          avatar: Icon(app.hasCity ? Icons.place_outlined : Icons.add_location_alt_outlined, size: 16,
-              color: app.hasCity ? K.maroon : K.saffron),
-          label: Text(app.hasCity ? context.t(app.city.name) : context.l.cityNotSet,
-              style: TextStyle(fontSize: 12, color: app.hasCity ? null : K.saffron)),
-          onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CityPickerScreen())),
-        ),
-      ]),
+      IconButton(
+        tooltip: context.l.settings,
+        icon: const Icon(Icons.settings_outlined, color: K.maroon),
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
+      ),
     ]);
   }
 }
