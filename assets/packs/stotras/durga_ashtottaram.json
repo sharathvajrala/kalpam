@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "durga_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Durga Ashtottaram",
+  "te": "దుర్గా అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "durga"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/durga_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/durga_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం దుర్గాయై నమః",
+   "translit": "Om Durgayai Namaha",
+   "meaning": {
+    "en": "To Durga, the unassailable"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం శివాయై నమః",
+   "translit": "Om Shivayai Namaha",
+   "meaning": {
+    "en": "To the auspicious one"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం మహాలక్ష్మ్యై నమః",
+   "translit": "Om Mahalakshmyai Namaha",
+   "meaning": {
+    "en": "To the great Lakshmi"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం మహాగౌర్యై నమః",
+   "translit": "Om Mahagauryai Namaha",
+   "meaning": {
+    "en": "To the great radiant one"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం చండికాయై నమః",
+   "translit": "Om Chandikayai Namaha",
+   "meaning": {
+    "en": "To the fierce one"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం సర్వజ్ఞాయై నమః",
+   "translit": "Om Sarvajnayai Namaha",
+   "meaning": {
+    "en": "To the all-knowing"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం సర్వాలోకేశాయై నమః",
+   "translit": "Om Sarvalokeshayai Namaha",
+   "meaning": {
+    "en": "To the ruler of all worlds"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం సర్వకర్మఫలప్రదాయై నమః",
+   "translit": "Om Sarvakarmaphalapradayai Namaha",
+   "meaning": {
+    "en": "To the giver of the fruit of all deeds"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం సర్వతీర్థమయ్యై నమః",
+   "translit": "Om Sarvatirthamayyai Namaha",
+   "meaning": {
+    "en": "To the one who is every holy place"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం పుణ్యాయై నమః",
+   "translit": "Om Punyayai Namaha",
+   "meaning": {
+    "en": "To the holy one"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం దేవయోనయే నమః",
+   "translit": "Om Devayonaye Namaha",
+   "meaning": {
+    "en": "To the source of the gods"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం అయోనిజాయై నమః",
+   "translit": "Om Ayonijayai Namaha",
+   "meaning": {
+    "en": "To the unborn one"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం భూమిజాయై నమః",
+   "translit": "Om Bhumijayai Namaha",
+   "meaning": {
+    "en": "To the one born of the earth"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం నిర్గుణాయై నమః",
+   "translit": "Om Nirgunayai Namaha",
+   "meaning": {
+    "en": "To the one beyond qualities"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం ఆధారశక్త్యై నమః",
+   "translit": "Om Adharashaktyai Namaha",
+   "meaning": {
+    "en": "To the supporting power"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం అనీశ్వర్యై నమః",
+   "translit": "Om Anishvaryai Namaha",
+   "meaning": {
+    "en": "To the one with no ruler above her"
+   }
+  }
+ ]
+}

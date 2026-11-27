@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "subrahmanya_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Subrahmanya Ashtottaram",
+  "te": "సుబ్రహ్మణ్య అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "subrahmanya"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/subrahmanya_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/subrahmanya_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం స్కందాయ నమః",
+   "translit": "Om Skandaya Namaha",
+   "meaning": {
+    "en": "To Skanda"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం గుహాయ నమః",
+   "translit": "Om Guhaya Namaha",
+   "meaning": {
+    "en": "To the one hidden in the heart"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం షణ్ముఖాయ నమః",
+   "translit": "Om Shanmukhaya Namaha",
+   "meaning": {
+    "en": "To the six-faced one"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం ఫాలనేత్రసుతాయ నమః",
+   "translit": "Om Phalanetrasutaya Namaha",
+   "meaning": {
+    "en": "To the son of the three-eyed Lord"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం ప్రభవే నమః",
+   "translit": "Om Prabhave Namaha",
+   "meaning": {
+    "en": "To the Master"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం పింగళాయ నమః",
+   "translit": "Om Pingalaya Namaha",
+   "meaning": {
+    "en": "To the golden one"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం కృత్తికాసూనవే నమః",
+   "translit": "Om Krittikasunave Namaha",
+   "meaning": {
+    "en": "To the son of the Krittikas"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం శిఖివాహనాయ నమః",
+   "translit": "Om Shikhivahanaya Namaha",
+   "meaning": {
+    "en": "To the rider of the peacock"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం ద్విషడ్భుజాయ నమః",
+   "translit": "Om Dvishadbhujaya Namaha",
+   "meaning": {
+    "en": "To the twelve-armed one"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం ద్విషణ్ణేత్రాయ నమః",
+   "translit": "Om Dvishannetraya Namaha",
+   "meaning": {
+    "en": "To the twelve-eyed one"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం శక్తిధరాయ నమః",
+   "translit": "Om Shaktidharaya Namaha",
+   "meaning": {
+    "en": "To the bearer of the spear"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం పిశితాశప్రభంజనాయ నమః",
+   "translit": "Om Pishitashaprabhanjanaya Namaha",
+   "meaning": {
+    "en": "To the destroyer of demons"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం తారకాసురసంహారిణే నమః",
+   "translit": "Om Tarakasurasamharine Namaha",
+   "meaning": {
+    "en": "To the slayer of Tarakasura"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం రక్షోబలవిమర్దనాయ నమః",
+   "translit": "Om Rakshobalavimardanaya Namaha",
+   "meaning": {
+    "en": "To the crusher of demon armies"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం మత్తాయ నమః",
+   "translit": "Om Mattaya Namaha",
+   "meaning": {
+    "en": "To the one rapt in bliss"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం ప్రమత్తాయ నమః",
+   "translit": "Om Pramattaya Namaha",
+   "meaning": {
+    "en": "To the one rapt in great bliss"
+   }
+  }
+ ]
+}

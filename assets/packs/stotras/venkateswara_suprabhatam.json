@@ -1,0 +1,59 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "venkateswara_suprabhatam",
+ "version": 1,
+ "title": {
+  "en": "Sri Venkatesa Suprabhatam",
+  "te": "శ్రీ వేంకటేశ సుప్రభాతం"
+ },
+ "deityIds": [
+  "venkateswara"
+ ],
+ "category": "suprabhatam",
+ "parayanamDays": [],
+ "source": "Prativadi Bhayankara Annan (15th c., public domain). Opening verses; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/venkateswara_suprabhatam/sung",
+  "learn": "placeholder://audio/stotra/venkateswara_suprabhatam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "కౌసల్యా సుప్రజా రామ పూర్వా సంధ్యా ప్రవర్తతే",
+   "translit": "Kausalya supraja rama purva sandhya pravartate",
+   "meaning": {
+    "en": "Rama, dear son of Kausalya, the eastern dawn is breaking",
+    "te": "కౌసల్యా పుత్రా రామా, తూర్పు సంధ్య ఉదయిస్తోంది"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఉత్తిష్ఠ నరశార్దూల కర్తవ్యం దైవమాహ్నికమ్",
+   "translit": "Uttishtha narashardula kartavyam daivamahnikam",
+   "meaning": {
+    "en": "Arise, best of men; the day's sacred duties await",
+    "te": "లేవయ్యా పురుషోత్తమా, నేటి దైవ కర్తవ్యాలు ఉన్నాయి"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఉత్తిష్ఠోత్తిష్ఠ గోవింద ఉత్తిష్ఠ గరుడధ్వజ",
+   "translit": "Uttishthottishtha govinda uttishtha garudadhvaja",
+   "meaning": {
+    "en": "Arise, Govinda; arise, Lord whose banner bears Garuda",
+    "te": "లే గోవిందా, లే గరుడధ్వజా"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఉత్తిష్ఠ కమలాకాంత త్రైలోక్యం మంగళం కురు",
+   "translit": "Uttishtha kamalakanta trailokyam mangalam kuru",
+   "meaning": {
+    "en": "Arise, beloved of Lakshmi, and bless the three worlds",
+    "te": "లే కమలాకాంతా, ముల్లోకాలకు మంగళం చేయి"
+   }
+  }
+ ]
+}

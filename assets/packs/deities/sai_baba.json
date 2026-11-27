@@ -1,0 +1,61 @@
+{
+ "schema": "kalpam.deity/1",
+ "id": "sai_baba",
+ "version": 1,
+ "updatedAt": "2026-11-27",
+ "minAppVersion": "1.0.0",
+ "name": {
+  "en": "Sri Shirdi Sai Baba",
+  "te": "శ్రీ షిర్డీ సాయిబాబా"
+ },
+ "epithet": {
+  "en": "Sainath, Sadguru",
+  "te": "సాయినాథుడు, సద్గురువు"
+ },
+ "greeting": {
+  "en": "Om Sai Ram",
+  "te": "ఓం సాయి రామ్"
+ },
+ "weekdays": [
+  4
+ ],
+ "colors": {
+  "primary": "#7A3E12",
+  "accent": "#E0A526"
+ },
+ "idolGlyph": "సా",
+ "art": {
+  "icon": "placeholder://art/sai_baba/icon",
+  "hero": "placeholder://art/sai_baba/hero"
+ },
+ "sanctum": {
+  "closing": {
+   "type": "aarti",
+   "audio": "placeholder://audio/sai_baba/aarti",
+   "name": {
+    "en": "Sai Aarti",
+    "te": "సాయి హారతి"
+   }
+  }
+ },
+ "poojas": [],
+ "chantings": [
+  "sai_baba_namajapam"
+ ],
+ "stotras": [
+  "sai_baba_ashtottaram",
+  "sai_baba_namajapam"
+ ],
+ "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for faith and patience (shraddha and saburi)",
+   "te": "శ్రద్ధా సబూరీ సిద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "archana": "sai_baba_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "sai_baba_namajapam"
+ },
+ "status": "light"
+}

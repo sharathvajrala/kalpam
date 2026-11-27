@@ -994,7 +994,20 @@
   }
  ],
  "chantings": [],
- "stotras": [],
+ "stotras": [
+  "shiva_ashtottaram",
+  "lingashtakam"
+ ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for peace of mind and freedom from sorrow",
+   "te": "మనశ్శాంతి సిద్ధ్యర్థం, సర్వ దుఃఖ నివారణార్థం"
+  },
+  "suprabhatam": null,
+  "archana": "shiva_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "lingashtakam"
+ },
  "status": "phase_a_minimum"
 }

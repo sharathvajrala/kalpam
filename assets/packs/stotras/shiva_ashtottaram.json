@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "shiva_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Shiva Ashtottaram",
+  "te": "శివ అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "shiva"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/shiva_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/shiva_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం శివాయ నమః",
+   "translit": "Om Shivaya Namaha",
+   "meaning": {
+    "en": "To the auspicious one"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం మహేశ్వరాయ నమః",
+   "translit": "Om Maheshvaraya Namaha",
+   "meaning": {
+    "en": "To the great Lord"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం శంభవే నమః",
+   "translit": "Om Shambhave Namaha",
+   "meaning": {
+    "en": "To the source of joy"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం పినాకినే నమః",
+   "translit": "Om Pinakine Namaha",
+   "meaning": {
+    "en": "To the bearer of the Pinaka bow"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం శశిశేఖరాయ నమః",
+   "translit": "Om Shashishekharaya Namaha",
+   "meaning": {
+    "en": "To the one crowned with the moon"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం వామదేవాయ నమః",
+   "translit": "Om Vamadevaya Namaha",
+   "meaning": {
+    "en": "To the gracious god"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం విరూపాక్షాయ నమః",
+   "translit": "Om Virupakshaya Namaha",
+   "meaning": {
+    "en": "To the one with the uncommon eye"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం కపర్దినే నమః",
+   "translit": "Om Kapardine Namaha",
+   "meaning": {
+    "en": "To the one with matted locks"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం నీలలోహితాయ నమః",
+   "translit": "Om Nilalohitaya Namaha",
+   "meaning": {
+    "en": "To the blue-red one"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం శంకరాయ నమః",
+   "translit": "Om Shankaraya Namaha",
+   "meaning": {
+    "en": "To the giver of peace"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం శూలపాణయే నమః",
+   "translit": "Om Shulapanaye Namaha",
+   "meaning": {
+    "en": "To the bearer of the trident"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం ఖట్వాంగినే నమః",
+   "translit": "Om Khatvangine Namaha",
+   "meaning": {
+    "en": "To the bearer of the khatvanga"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం విష్ణువల్లభాయ నమః",
+   "translit": "Om Vishnuvallabhaya Namaha",
+   "meaning": {
+    "en": "To the beloved of Vishnu"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం శిపివిష్టాయ నమః",
+   "translit": "Om Shipivishtaya Namaha",
+   "meaning": {
+    "en": "To the one pervaded by light"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం అంబికానాథాయ నమః",
+   "translit": "Om Ambikanathaya Namaha",
+   "meaning": {
+    "en": "To the Lord of Ambika"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం శ్రీకంఠాయ నమః",
+   "translit": "Om Shrikanthaya Namaha",
+   "meaning": {
+    "en": "To the one with the glorious throat"
+   }
+  }
+ ]
+}

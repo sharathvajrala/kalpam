@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "sai_baba_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Sai Baba Ashtottaram",
+  "te": "సాయిబాబా అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "sai_baba"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Devotional namavali in common temple use. First 16 of 108; source and licence pending verification before launch.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/sai_baba_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/sai_baba_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం సాయినాథాయ నమః",
+   "translit": "Om Sainathaya Namaha",
+   "meaning": {
+    "en": "To Sainath"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం లక్ష్మీనారాయణాయ నమః",
+   "translit": "Om Lakshminarayanaya Namaha",
+   "meaning": {
+    "en": "To the one who is Lakshmi Narayana"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం కృష్ణరామశివమారుత్యాదిరూపాయ నమః",
+   "translit": "Om Krishnarama shiva marutyadi rupaya Namaha",
+   "meaning": {
+    "en": "To the one seen as Krishna, Rama, Shiva and Hanuman"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం శేషశాయినే నమః",
+   "translit": "Om Sheshashayine Namaha",
+   "meaning": {
+    "en": "To the one who rests on Shesha"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం గోదావరీతటశిరడీవాసినే నమః",
+   "translit": "Om Godavaritata shiradivasine Namaha",
+   "meaning": {
+    "en": "To the dweller of Shirdi near the Godavari"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం భక్తహృదాలయాయ నమః",
+   "translit": "Om Bhaktahrudalayaya Namaha",
+   "meaning": {
+    "en": "To the one who lives in devotees' hearts"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం సర్వహృన్నిలయాయ నమః",
+   "translit": "Om Sarvahrunnilayaya Namaha",
+   "meaning": {
+    "en": "To the one who dwells in every heart"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం భూతావాసాయ నమః",
+   "translit": "Om Bhutavasaya Namaha",
+   "meaning": {
+    "en": "To the abode of all beings"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం భూతభవిష్యద్భావవర్జితాయ నమః",
+   "translit": "Om Bhutabhavishyadbhavavarjitaya Namaha",
+   "meaning": {
+    "en": "To the one beyond past and future"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం కాలాతీతాయ నమః",
+   "translit": "Om Kalatitaya Namaha",
+   "meaning": {
+    "en": "To the one beyond time"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం కాలాయ నమః",
+   "translit": "Om Kalaya Namaha",
+   "meaning": {
+    "en": "To Time itself"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం కాలకాలాయ నమః",
+   "translit": "Om Kalakalaya Namaha",
+   "meaning": {
+    "en": "To the Lord of time"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం కాలదర్పదమనాయ నమః",
+   "translit": "Om Kaladarpadamanaya Namaha",
+   "meaning": {
+    "en": "To the one who humbles death"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం మృత్యుంజయాయ నమః",
+   "translit": "Om Mrutyunjayaya Namaha",
+   "meaning": {
+    "en": "To the conqueror of death"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం అమర్త్యాయ నమః",
+   "translit": "Om Amartyaya Namaha",
+   "meaning": {
+    "en": "To the immortal one"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం మర్త్యాభయప్రదాయ నమః",
+   "translit": "Om Martyabhayapradaya Namaha",
+   "meaning": {
+    "en": "To the one who frees mortals from fear"
+   }
+  }
+ ]
+}

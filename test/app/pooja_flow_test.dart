@@ -36,6 +36,8 @@ void main() {
     await t.pump();
     expect(find.textContaining('Sharath'), findsWidgets, reason: 'Sankalpam preview names the devotee');
     await t.scrollUntilVisible(find.byKey(const Key('begin-pooja')), 200, scrollable: list);
+    await t.drag(list, const Offset(0, -300));
+    await t.pump(const Duration(milliseconds: 300));
     await t.tap(find.byKey(const Key('begin-pooja')));
     for (var i = 0; i < 400 && find.byKey(const Key('pooja-done')).evaluate().isEmpty; i++) {
       await t.pump(const Duration(milliseconds: 50));

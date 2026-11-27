@@ -991,7 +991,19 @@
   }
  ],
  "chantings": [],
- "stotras": [],
+ "stotras": [
+  "subrahmanya_ashtottaram"
+ ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for good health and victory over difficulties",
+   "te": "ఆరోగ్య సిద్ధ్యర్థం, సర్వ కష్ట నివారణార్థం"
+  },
+  "suprabhatam": null,
+  "archana": "subrahmanya_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": null
+ },
  "status": "phase_a_minimum"
 }

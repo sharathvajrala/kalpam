@@ -17,7 +17,6 @@
   "te": "ఓం నమో వేంకటేశాయ"
  },
  "weekdays": [
-  3,
   6
  ],
  "colors": {
@@ -1016,8 +1015,20 @@
   "vishnu_sahasranamam"
  ],
  "stotras": [
-  "vishnu_sahasranamam"
+  "vishnu_sahasranamam",
+  "venkateswara_ashtottaram",
+  "venkateswara_suprabhatam"
  ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for prosperity and the protection of my family",
+   "te": "సకుటుంబస్య ఐశ్వర్యాభివృద్ధ్యర్థం, రక్షణ సిద్ధ్యర్థం"
+  },
+  "suprabhatam": "venkateswara_suprabhatam",
+  "archana": "venkateswara_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "vishnu_sahasranamam"
+ },
  "status": "phase_a_minimum"
 }

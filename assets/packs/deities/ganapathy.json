@@ -993,7 +993,19 @@
  "chantings": [
   "vishnu_sahasranamam"
  ],
- "stotras": [],
+ "stotras": [
+  "ganapathy_ashtottaram"
+ ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for the removal of all obstacles and success in every good undertaking",
+   "te": "సర్వ విఘ్న నివారణార్థం, సర్వ కార్య సిద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "archana": "ganapathy_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": null
+ },
  "status": "phase_a_minimum"
 }

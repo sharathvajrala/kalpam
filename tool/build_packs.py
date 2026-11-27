@@ -83,7 +83,7 @@ DEITIES = [
  dict(id="ayyappa", name=L("Swamy Ayyappa", "స్వామి అయ్యప్ప", ta="சுவாமி ஐயப்பன்", ml="സ്വാമി അയ്യപ്പൻ"),
       epithet=L("Hariharasutha, Dharma Sastha", "హరిహరసుతుడు, ధర్మశాస్త"),
       greeting=L("Swamiye Saranam Ayyappa", "స్వామియే శరణం అయ్యప్ప", ta="சுவாமியே சரணம் ஐயப்பா", ml="സ്വാമിയേ ശരണം അയ്യപ്പാ"),
-      weekdays=[6], colors={"primary": "#1B1A3A", "accent": "#D4AF37"}, glyph="అ",
+      weekdays=[3], colors={"primary": "#1B1A3A", "accent": "#D4AF37"}, glyph="అ",
       mantra=L("Om Sri Dharma Sasthre Namaha", "ఓం శ్రీ ధర్మశాస్త్రే నమః"),
       dhyana=L("Bhutanatha sadananda sarvabhuta dayapara, raksha raksha mahabaho shastre tubhyam namo namah",
                "భూతనాథ సదానంద సర్వభూత దయాపర । రక్ష రక్ష మహాబాహో శాస్త్రే తుభ్యం నమో నమః ॥"),
@@ -110,7 +110,7 @@ DEITIES = [
       liquids=["water", "milk", "panchamrutam", "bilva_water"], closing={"type": "aarti", "audio": "placeholder://audio/shiva/aarti", "name": L("Mangala Aarti", "మంగళ హారతి")},
       alankarams=[{"id": "daily", "name": L("Daily", "నిత్య")}], peaks=[], chantings=[], stotras=[], bhajans=[]),
  dict(id="venkateswara", name=L("Sri Venkateswara", "శ్రీ వేంకటేశ్వరుడు"), epithet=L("Srinivasa, Govinda", "శ్రీనివాసుడు, గోవిందుడు"),
-      greeting=L("Om Namo Venkatesaya", "ఓం నమో వేంకటేశాయ"), weekdays=[3, 6], colors={"primary": "#3B1E54", "accent": "#D4AF37"}, glyph="వేం",
+      greeting=L("Om Namo Venkatesaya", "ఓం నమో వేంకటేశాయ"), weekdays=[6], colors={"primary": "#3B1E54", "accent": "#D4AF37"}, glyph="వేం",
       mantra=L("Om Namo Venkatesaya", "ఓం నమో వేంకటేశాయ"),
       dhyana=L("Shantakaram bhujagashayanam padmanabham suresham", "శాంతాకారం భుజగశయనం పద్మనాభం సురేశం"),
       liquids=["water", "milk", "panchamrutam"], closing={"type": "aarti", "audio": "placeholder://audio/venkateswara/aarti", "name": L("Mangala Aarti", "మంగళ హారతి")},
@@ -142,6 +142,33 @@ DEITIES = [
       alankarams=[{"id": "daily", "name": L("Daily", "నిత్య")}], peaks=[], chantings=[], stotras=[], bhajans=[]),
 ]
 
+
+# Daily ritual data per god (DAILY RITUALS): purpose line for the Sankalpam,
+# Suprabhatam, archana names (full + short count), evening chant.
+RITUALS = {
+ "ayyappa": {"purpose": L("for the strength to keep my vows and the well-being of my family", "మమ వ్రత నియమ పాలన శక్తి సిద్ధ్యర్థం, సకుటుంబస్య క్షేమ స్థైర్య సిద్ధ్యర్థం"),
+             "suprabhatam": None, "archana": "ayyappa_saranam_108", "shortCount": 16, "eveningChant": "harivarasanam"},
+ "ganapathy": {"purpose": L("for the removal of all obstacles and success in every good undertaking", "సర్వ విఘ్న నివారణార్థం, సర్వ కార్య సిద్ధ్యర్థం"),
+               "suprabhatam": None, "archana": "ganapathy_ashtottaram", "shortCount": 16, "eveningChant": None},
+ "shiva": {"purpose": L("for peace of mind and freedom from sorrow", "మనశ్శాంతి సిద్ధ్యర్థం, సర్వ దుఃఖ నివారణార్థం"),
+           "suprabhatam": None, "archana": "shiva_ashtottaram", "shortCount": 16, "eveningChant": "lingashtakam"},
+ "venkateswara": {"purpose": L("for prosperity and the protection of my family", "సకుటుంబస్య ఐశ్వర్యాభివృద్ధ్యర్థం, రక్షణ సిద్ధ్యర్థం"),
+                  "suprabhatam": "venkateswara_suprabhatam", "archana": "venkateswara_ashtottaram", "shortCount": 16, "eveningChant": "vishnu_sahasranamam"},
+ "lakshmi": {"purpose": L("for prosperity and auspiciousness in my home", "గృహే ఐశ్వర్య మంగళాభివృద్ధ్యర్థం"),
+             "suprabhatam": None, "archana": "lakshmi_ashtottaram", "shortCount": 16, "eveningChant": "lalitha_sahasranamam"},
+ "durga": {"purpose": L("for protection from all dangers and courage in every difficulty", "సర్వాపన్నివారణార్థం, ధైర్య సిద్ధ్యర్థం"),
+           "suprabhatam": None, "archana": "durga_ashtottaram", "shortCount": 16, "eveningChant": "lalitha_sahasranamam"},
+ "hanuman": {"purpose": L("for strength, courage and freedom from fear", "బల ధైర్య సిద్ధ్యర్థం, సర్వ భయ నివారణార్థం"),
+             "suprabhatam": None, "archana": "hanuman_ashtottaram", "shortCount": 16, "eveningChant": "hanuman_chalisa"},
+ "subrahmanya": {"purpose": L("for good health and victory over difficulties", "ఆరోగ్య సిద్ధ్యర్థం, సర్వ కష్ట నివారణార్థం"),
+                 "suprabhatam": None, "archana": "subrahmanya_ashtottaram", "shortCount": 16, "eveningChant": None},
+ "sai_baba": {"purpose": L("for faith and patience (shraddha and saburi)", "శ్రద్ధా సబూరీ సిద్ధ్యర్థం"),
+              "suprabhatam": None, "archana": "sai_baba_ashtottaram", "shortCount": 16, "eveningChant": "sai_baba_namajapam"},
+ "surya": {"purpose": L("for long life, good health and a bright mind", "ఆయురారోగ్య తేజస్సిద్ధ్యర్థం"),
+           "suprabhatam": None, "morningChant": "aditya_hridayam", "morningOffering": "arghyam",
+           "archana": "surya_dwadasa_namavali", "shortCount": 12, "eveningChant": "surya_dwadasa_namavali"},
+}
+
 for d in DEITIES:
     write(f"deities/{d['id']}.json", {
         "schema": "kalpam.deity/1", "id": d["id"], "version": 1, "updatedAt": DATE, "minAppVersion": "1.0.0",
@@ -151,7 +178,10 @@ for d in DEITIES:
         "sanctum": {"sceneId": f"sanctum_{d['id']}", "defaultAlankaram": "daily", "alankarams": d["alankarams"],
                     "closing": d["closing"], "abhishekamLiquids": d["liquids"], "peakEvents": d["peaks"]},
         "poojas": [pooja(d, p) for p in LENGTHS],
-        "chantings": d["chantings"], "stotras": d["stotras"], "bhajans": d["bhajans"],
+        "chantings": d["chantings"],
+        "stotras": list(dict.fromkeys(d["stotras"] + [x for x in (RITUALS[d["id"]].get(k) for k in ("archana", "suprabhatam", "eveningChant")) if x])),
+        "bhajans": d["bhajans"],
+        "rituals": RITUALS[d["id"]],
         "status": "complete" if d["id"] == "ayyappa" else "phase_a_minimum",
     })
 
@@ -363,7 +393,8 @@ CAL = [
    chanting="ayyappa_saranam_108", bhajans=["ayyappa_saranaghosham"]),
 ]
 write("flagship/calendar.json", {"schema": "kalpam.flagship/1", "id": "calendar", "version": 1, "updatedAt": DATE, "seasons": CAL,
-  "weeklyGods": {"1": ["shiva"], "2": ["hanuman", "subrahmanya"], "3": ["venkateswara"], "4": ["venkateswara"], "5": ["lakshmi", "durga"], "6": ["venkateswara", "hanuman"], "7": ["venkateswara"]},
+  # Founder-frozen weekday map (Day God mode uses the first god of each day).
+  "weeklyGods": {"1": ["shiva"], "2": ["hanuman"], "3": ["ayyappa"], "4": ["sai_baba"], "5": ["lakshmi", "durga"], "6": ["venkateswara"], "7": ["surya"]},
   "parayanam": {"vishnu_sahasranamam": [4, 6], "lalitha_sahasranamam": [5], "hanuman_chalisa": [2, 6]},
   "recurring": [
     {"id": "ekadashi", "name": L("Ekadashi", "ఏకాదశి"), "tithis": [11, 26], "deityId": "venkateswara"},
@@ -371,6 +402,152 @@ write("flagship/calendar.json", {"schema": "kalpam.flagship/1", "id": "calendar"
     {"id": "pradosham", "name": L("Pradosham", "ప్రదోషం"), "tithis": [13, 28], "deityId": "shiva"},
     {"id": "masa_shivratri", "name": L("Masa Shivaratri", "మాస శివరాత్రి"), "tithis": [29], "deityId": "shiva"},
     {"id": "pournami_satyanarayana", "name": L("Pournami Satyanarayana Vratam", "పౌర్ణమి సత్యనారాయణ వ్రతం"), "tithis": [15], "deityId": "venkateswara"}]})
+
+# --------------------------------------------------------------- DAILY RITUALS (Nitya Archana)
+# Ashtottaram archana names: Telugu script, transliteration, simple English meaning.
+# Sample portions (first 16, or the 12 Dwadasa names for Surya) flagged
+# complete=false until the verified 108 lands; the app reads the count from
+# the pack, so the full list fills in with no code change.
+def namavali(sid, title, deities, rows, source, cat="ashtottaram", complete=False):
+    stotra(sid, title, deities, cat, [], source,
+           [(f"ఓం {te} నమః", f"Om {tr} Namaha", {"en": m}) for te, tr, m in rows], complete=complete)
+
+namavali("ganapathy_ashtottaram", L("Ganapathy Ashtottaram", "గణపతి అష్టోత్తర శతనామావళి"), ["ganapathy"], [
+ ("గజాననాయ", "Gajananaya", "To the elephant-faced Lord"), ("గణాధ్యక్షాయ", "Ganadhyakshaya", "To the leader of the ganas"),
+ ("విఘ్నరాజాయ", "Vighnarajaya", "To the king over obstacles"), ("వినాయకాయ", "Vinayakaya", "To the Lord without a superior"),
+ ("ద్వైమాతురాయ", "Dvaimaturaya", "To the one with two mothers"), ("ద్విముఖాయ", "Dvimukhaya", "To the two-faced one"),
+ ("ప్రముఖాయ", "Pramukhaya", "To the foremost"), ("సుముఖాయ", "Sumukhaya", "To the one with a gracious face"),
+ ("కృతినే", "Krutine", "To the accomplished one"), ("సుప్రదీపాయ", "Supradipaya", "To the brilliant one"),
+ ("సుఖనిధయే", "Sukhanidhaye", "To the treasure of happiness"), ("సురాధ్యక్షాయ", "Suradhyakshaya", "To the lord of the gods"),
+ ("సురారిఘ్నాయ", "Surarighnaya", "To the destroyer of the gods' foes"), ("మహాగణపతయే", "Mahaganapataye", "To the great Ganapathy"),
+ ("మాన్యాయ", "Manyaya", "To the honoured one"), ("మహాకాలాయ", "Mahakalaya", "To the great lord of time"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("shiva_ashtottaram", L("Shiva Ashtottaram", "శివ అష్టోత్తర శతనామావళి"), ["shiva"], [
+ ("శివాయ", "Shivaya", "To the auspicious one"), ("మహేశ్వరాయ", "Maheshvaraya", "To the great Lord"),
+ ("శంభవే", "Shambhave", "To the source of joy"), ("పినాకినే", "Pinakine", "To the bearer of the Pinaka bow"),
+ ("శశిశేఖరాయ", "Shashishekharaya", "To the one crowned with the moon"), ("వామదేవాయ", "Vamadevaya", "To the gracious god"),
+ ("విరూపాక్షాయ", "Virupakshaya", "To the one with the uncommon eye"), ("కపర్దినే", "Kapardine", "To the one with matted locks"),
+ ("నీలలోహితాయ", "Nilalohitaya", "To the blue-red one"), ("శంకరాయ", "Shankaraya", "To the giver of peace"),
+ ("శూలపాణయే", "Shulapanaye", "To the bearer of the trident"), ("ఖట్వాంగినే", "Khatvangine", "To the bearer of the khatvanga"),
+ ("విష్ణువల్లభాయ", "Vishnuvallabhaya", "To the beloved of Vishnu"), ("శిపివిష్టాయ", "Shipivishtaya", "To the one pervaded by light"),
+ ("అంబికానాథాయ", "Ambikanathaya", "To the Lord of Ambika"), ("శ్రీకంఠాయ", "Shrikanthaya", "To the one with the glorious throat"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("venkateswara_ashtottaram", L("Venkateswara Ashtottaram", "వేంకటేశ్వర అష్టోత్తర శతనామావళి"), ["venkateswara"], [
+ ("శ్రీ వేంకటేశాయ", "Sri Venkateshaya", "To the Lord of Venkatam"), ("శ్రీనివాసాయ", "Srinivasaya", "To the abode of Sri"),
+ ("లక్ష్మీపతయే", "Lakshmipataye", "To the consort of Lakshmi"), ("అనామయాయ", "Anamayaya", "To the one beyond all ills"),
+ ("అమృతాంశాయ", "Amrutamshaya", "To the source of nectar"), ("జగద్వంద్యాయ", "Jagadvandyaya", "To the one the world worships"),
+ ("గోవిందాయ", "Govindaya", "To Govinda"), ("శాశ్వతాయ", "Shashvataya", "To the eternal one"),
+ ("ప్రభవే", "Prabhave", "To the Master"), ("శేషాద్రినిలయాయ", "Sheshadrinilayaya", "To the dweller on Seshadri"),
+ ("దేవాయ", "Devaya", "To the shining god"), ("కేశవాయ", "Keshavaya", "To Keshava"),
+ ("మధుసూదనాయ", "Madhusudanaya", "To the slayer of Madhu"), ("అమృతాయ", "Amrutaya", "To the immortal one"),
+ ("మాధవాయ", "Madhavaya", "To Madhava"), ("కృష్ణాయ", "Krishnaya", "To Krishna"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("lakshmi_ashtottaram", L("Lakshmi Ashtottaram", "లక్ష్మీ అష్టోత్తర శతనామావళి"), ["lakshmi"], [
+ ("ప్రకృత్యై", "Prakrutyai", "To Nature herself"), ("వికృత్యై", "Vikrutyai", "To the many-formed one"),
+ ("విద్యాయై", "Vidyayai", "To wisdom"), ("సర్వభూతహితప్రదాయై", "Sarvabhutahitapradayai", "To the giver of good to all beings"),
+ ("శ్రద్ధాయై", "Shraddhayai", "To faith"), ("విభూత్యై", "Vibhutyai", "To splendour"),
+ ("సురభ్యై", "Surabhyai", "To the fragrant one"), ("పరమాత్మికాయై", "Paramatmikayai", "To the Supreme Self"),
+ ("వాచే", "Vache", "To speech"), ("పద్మాలయాయై", "Padmalayayai", "To the one who dwells in the lotus"),
+ ("పద్మాయై", "Padmayai", "To the lotus"), ("శుచయే", "Shuchaye", "To the pure one"),
+ ("స్వాహాయై", "Svahayai", "To Svaha"), ("స్వధాయై", "Svadhayai", "To Svadha"),
+ ("సుధాయై", "Sudhayai", "To nectar"), ("ధన్యాయై", "Dhanyayai", "To the blessed one"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("durga_ashtottaram", L("Durga Ashtottaram", "దుర్గా అష్టోత్తర శతనామావళి"), ["durga"], [
+ ("దుర్గాయై", "Durgayai", "To Durga, the unassailable"), ("శివాయై", "Shivayai", "To the auspicious one"),
+ ("మహాలక్ష్మ్యై", "Mahalakshmyai", "To the great Lakshmi"), ("మహాగౌర్యై", "Mahagauryai", "To the great radiant one"),
+ ("చండికాయై", "Chandikayai", "To the fierce one"), ("సర్వజ్ఞాయై", "Sarvajnayai", "To the all-knowing"),
+ ("సర్వాలోకేశాయై", "Sarvalokeshayai", "To the ruler of all worlds"), ("సర్వకర్మఫలప్రదాయై", "Sarvakarmaphalapradayai", "To the giver of the fruit of all deeds"),
+ ("సర్వతీర్థమయ్యై", "Sarvatirthamayyai", "To the one who is every holy place"), ("పుణ్యాయై", "Punyayai", "To the holy one"),
+ ("దేవయోనయే", "Devayonaye", "To the source of the gods"), ("అయోనిజాయై", "Ayonijayai", "To the unborn one"),
+ ("భూమిజాయై", "Bhumijayai", "To the one born of the earth"), ("నిర్గుణాయై", "Nirgunayai", "To the one beyond qualities"),
+ ("ఆధారశక్త్యై", "Adharashaktyai", "To the supporting power"), ("అనీశ్వర్యై", "Anishvaryai", "To the one with no ruler above her"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("hanuman_ashtottaram", L("Hanuman Ashtottaram", "ఆంజనేయ అష్టోత్తర శతనామావళి"), ["hanuman"], [
+ ("ఆంజనేయాయ", "Anjaneyaya", "To the son of Anjana"), ("మహావీరాయ", "Mahaviraya", "To the great hero"),
+ ("హనుమతే", "Hanumate", "To Hanuman"), ("మారుతాత్మజాయ", "Marutatmajaya", "To the son of the Wind"),
+ ("తత్త్వజ్ఞానప్రదాయ", "Tattvajnanapradaya", "To the giver of true knowledge"), ("సీతాదేవిముద్రాప్రదాయకాయ", "Sitadevimudrapradayakaya", "To the one who gave Rama's ring to Sita"),
+ ("అశోకవనికాచ్ఛేత్రే", "Ashokavanikachchhetre", "To the one who uprooted the Ashoka grove"), ("సర్వమాయావిభంజనాయ", "Sarvamayavibhanjanaya", "To the breaker of every illusion"),
+ ("సర్వబంధవిమోక్త్రే", "Sarvabandhavimoktre", "To the one who frees from all bonds"), ("రక్షోవిధ్వంసకారకాయ", "Rakshovidhvamsakarakaya", "To the destroyer of demons"),
+ ("పరవిద్యాపరీహారాయ", "Paravidyapariharaya", "To the remover of hostile spells"), ("పరశౌర్యవినాశనాయ", "Parashauryavinashanaya", "To the one who ends the enemy's might"),
+ ("పరమంత్రనిరాకర్త్రే", "Paramantranirakartre", "To the one who repels hostile mantras"), ("పరయంత్రప్రభేదకాయ", "Parayantraprabhedakaya", "To the one who breaks hostile yantras"),
+ ("సర్వగ్రహవినాశినే", "Sarvagrahavinashine", "To the one who removes all planetary afflictions"), ("భీమసేనసహాయకృతే", "Bhimasenasahayakrute", "To the helper of Bhima"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("subrahmanya_ashtottaram", L("Subrahmanya Ashtottaram", "సుబ్రహ్మణ్య అష్టోత్తర శతనామావళి"), ["subrahmanya"], [
+ ("స్కందాయ", "Skandaya", "To Skanda"), ("గుహాయ", "Guhaya", "To the one hidden in the heart"),
+ ("షణ్ముఖాయ", "Shanmukhaya", "To the six-faced one"), ("ఫాలనేత్రసుతాయ", "Phalanetrasutaya", "To the son of the three-eyed Lord"),
+ ("ప్రభవే", "Prabhave", "To the Master"), ("పింగళాయ", "Pingalaya", "To the golden one"),
+ ("కృత్తికాసూనవే", "Krittikasunave", "To the son of the Krittikas"), ("శిఖివాహనాయ", "Shikhivahanaya", "To the rider of the peacock"),
+ ("ద్విషడ్భుజాయ", "Dvishadbhujaya", "To the twelve-armed one"), ("ద్విషణ్ణేత్రాయ", "Dvishannetraya", "To the twelve-eyed one"),
+ ("శక్తిధరాయ", "Shaktidharaya", "To the bearer of the spear"), ("పిశితాశప్రభంజనాయ", "Pishitashaprabhanjanaya", "To the destroyer of demons"),
+ ("తారకాసురసంహారిణే", "Tarakasurasamharine", "To the slayer of Tarakasura"), ("రక్షోబలవిమర్దనాయ", "Rakshobalavimardanaya", "To the crusher of demon armies"),
+ ("మత్తాయ", "Mattaya", "To the one rapt in bliss"), ("ప్రమత్తాయ", "Pramattaya", "To the one rapt in great bliss"),
+], "Traditional namavali (public domain). First 16 of 108; full text pending verification.")
+namavali("sai_baba_ashtottaram", L("Sai Baba Ashtottaram", "సాయిబాబా అష్టోత్తర శతనామావళి"), ["sai_baba"], [
+ ("సాయినాథాయ", "Sainathaya", "To Sainath"), ("లక్ష్మీనారాయణాయ", "Lakshminarayanaya", "To the one who is Lakshmi Narayana"),
+ ("కృష్ణరామశివమారుత్యాదిరూపాయ", "Krishnarama shiva marutyadi rupaya", "To the one seen as Krishna, Rama, Shiva and Hanuman"), ("శేషశాయినే", "Sheshashayine", "To the one who rests on Shesha"),
+ ("గోదావరీతటశిరడీవాసినే", "Godavaritata shiradivasine", "To the dweller of Shirdi near the Godavari"), ("భక్తహృదాలయాయ", "Bhaktahrudalayaya", "To the one who lives in devotees' hearts"),
+ ("సర్వహృన్నిలయాయ", "Sarvahrunnilayaya", "To the one who dwells in every heart"), ("భూతావాసాయ", "Bhutavasaya", "To the abode of all beings"),
+ ("భూతభవిష్యద్భావవర్జితాయ", "Bhutabhavishyadbhavavarjitaya", "To the one beyond past and future"), ("కాలాతీతాయ", "Kalatitaya", "To the one beyond time"),
+ ("కాలాయ", "Kalaya", "To Time itself"), ("కాలకాలాయ", "Kalakalaya", "To the Lord of time"),
+ ("కాలదర్పదమనాయ", "Kaladarpadamanaya", "To the one who humbles death"), ("మృత్యుంజయాయ", "Mrutyunjayaya", "To the conqueror of death"),
+ ("అమర్త్యాయ", "Amartyaya", "To the immortal one"), ("మర్త్యాభయప్రదాయ", "Martyabhayapradaya", "To the one who frees mortals from fear"),
+], "Devotional namavali in common temple use. First 16 of 108; source and licence pending verification before launch.")
+namavali("surya_dwadasa_namavali", L("Surya Dwadasa Namavali", "సూర్య ద్వాదశ నామావళి"), ["surya"], [
+ ("మిత్రాయ", "Mitraya", "To the friend of all"), ("రవయే", "Ravaye", "To the shining one"),
+ ("సూర్యాయ", "Suryaya", "To the one who moves all"), ("భానవే", "Bhanave", "To the radiant one"),
+ ("ఖగాయ", "Khagaya", "To the one who moves through the sky"), ("పూష్ణే", "Pushne", "To the nourisher"),
+ ("హిరణ్యగర్భాయ", "Hiranyagarbhaya", "To the golden womb of creation"), ("మరీచయే", "Marichaye", "To the Lord of rays"),
+ ("ఆదిత్యాయ", "Adityaya", "To the son of Aditi"), ("సవిత్రే", "Savitre", "To the life-giver"),
+ ("అర్కాయ", "Arkaya", "To the one worthy of praise"), ("భాస్కరాయ", "Bhaskaraya", "To the maker of light"),
+], "The twelve names of Surya Namaskaram (public domain). Complete.", cat="namavali", complete=True)
+
+stotra("venkateswara_suprabhatam", L("Sri Venkatesa Suprabhatam", "శ్రీ వేంకటేశ సుప్రభాతం"), ["venkateswara"], "suprabhatam", [],
+       "Prativadi Bhayankara Annan (15th c., public domain). Opening verses; full text pending verification.", [
+ ("కౌసల్యా సుప్రజా రామ పూర్వా సంధ్యా ప్రవర్తతే", "Kausalya supraja rama purva sandhya pravartate", L("Rama, dear son of Kausalya, the eastern dawn is breaking", "కౌసల్యా పుత్రా రామా, తూర్పు సంధ్య ఉదయిస్తోంది")),
+ ("ఉత్తిష్ఠ నరశార్దూల కర్తవ్యం దైవమాహ్నికమ్", "Uttishtha narashardula kartavyam daivamahnikam", L("Arise, best of men; the day's sacred duties await", "లేవయ్యా పురుషోత్తమా, నేటి దైవ కర్తవ్యాలు ఉన్నాయి")),
+ ("ఉత్తిష్ఠోత్తిష్ఠ గోవింద ఉత్తిష్ఠ గరుడధ్వజ", "Uttishthottishtha govinda uttishtha garudadhvaja", L("Arise, Govinda; arise, Lord whose banner bears Garuda", "లే గోవిందా, లే గరుడధ్వజా")),
+ ("ఉత్తిష్ఠ కమలాకాంత త్రైలోక్యం మంగళం కురు", "Uttishtha kamalakanta trailokyam mangalam kuru", L("Arise, beloved of Lakshmi, and bless the three worlds", "లే కమలాకాంతా, ముల్లోకాలకు మంగళం చేయి")),
+])
+stotra("aditya_hridayam", L("Aditya Hridayam", "ఆదిత్య హృదయం"), ["surya"], "stotram", [7],
+       "Valmiki Ramayana, Yuddha Kanda (public domain). Opening verses; full 31 verses pending verification.", [
+ ("తతో యుద్ధపరిశ్రాంతం సమరే చింతయా స్థితమ్", "Tato yuddhaparishrantam samare chintaya sthitam", L("Rama stood on the battlefield, weary from war and lost in thought", "యుద్ధంతో అలసి రణభూమిలో ఆలోచనలో ఉన్న రాముని")),
+ ("రావణం చాగ్రతో దృష్ట్వా యుద్ధాయ సముపస్థితమ్", "Ravanam chagrato drushtva yuddhaya samupasthitam", L("seeing Ravana before him, ready for battle", "ఎదుట యుద్ధానికి సిద్ధమైన రావణుని చూసి")),
+ ("దైవతైశ్చ సమాగమ్య ద్రష్టుమభ్యాగతో రణమ్", "Daivataishcha samagamya drashtumabhyagato ranam", L("Having come with the gods to witness the battle", "దేవతలతో కలిసి యుద్ధం చూడ వచ్చిన")),
+ ("ఉపాగమ్యాబ్రవీద్రామమగస్త్యో భగవాన్ ఋషిః", "Upagamyabravid ramam agastyo bhagavan rishih", L("the holy sage Agastya approached Rama and spoke", "భగవాన్ అగస్త్య మహర్షి రాముని సమీపించి చెప్పాడు")),
+])
+stotra("lingashtakam", L("Lingashtakam", "లింగాష్టకం"), ["shiva"], "stotram", [1],
+       "Traditional, attributed to Adi Shankara (public domain). Opening verse; full text pending verification.", [
+ ("బ్రహ్మమురారి సురార్చిత లింగం", "Brahma murari surarchita lingam", L("The Linga worshipped by Brahma, Vishnu and the gods", "బ్రహ్మ విష్ణు దేవతలు పూజించే లింగం")),
+ ("నిర్మలభాసిత శోభిత లింగం", "Nirmala bhasita shobhita lingam", L("Pure, radiant and beautiful", "నిర్మలంగా ప్రకాశించే శోభాయమాన లింగం")),
+ ("జన్మజ దుఃఖ వినాశక లింగం", "Janmaja duhkha vinashaka lingam", L("That ends the sorrow of birth", "జన్మ దుఃఖాన్ని నాశనం చేసే లింగం")),
+ ("తత్ప్రణమామి సదాశివ లింగం", "Tat pranamami sadashiva lingam", L("To that Sadashiva Linga I bow", "ఆ సదాశివ లింగానికి నమస్కరిస్తున్నాను")),
+])
+stotra("sai_baba_namajapam", L("Om Sai Ram Namajapam", "ఓం సాయి రామ్ నామజపం"), ["sai_baba"], "namajapam", [4],
+       "Traditional name chant (public domain).", [
+ ("ఓం సాయి శ్రీ సాయి జయ జయ సాయి", "Om Sai Sri Sai Jaya Jaya Sai", L("Om Sai, glorious Sai, victory to Sai", "ఓం సాయి, శ్రీ సాయి, జయ జయ సాయి")),
+ ("సద్గురు సాయినాథ మహారాజ్ కీ జై", "Sadguru Sainath Maharaj ki jai", L("Glory to the true Guru, Sainath Maharaj", "సద్గురు సాయినాథ మహారాజుకు జయం")),
+], complete=True)
+
+# Light packs: Day God mode only (aarti, signature chant, archana names).
+for d in [
+ dict(id="sai_baba", name=L("Sri Shirdi Sai Baba", "శ్రీ షిర్డీ సాయిబాబా"), epithet=L("Sainath, Sadguru", "సాయినాథుడు, సద్గురువు"),
+      greeting=L("Om Sai Ram", "ఓం సాయి రామ్"), weekdays=[4], colors={"primary": "#7A3E12", "accent": "#E0A526"}, glyph="సా",
+      closing={"type": "aarti", "audio": "placeholder://audio/sai_baba/aarti", "name": L("Sai Aarti", "సాయి హారతి")},
+      chantings=["sai_baba_namajapam"], stotras=["sai_baba_ashtottaram", "sai_baba_namajapam"]),
+ dict(id="surya", name=L("Sri Surya Narayana", "శ్రీ సూర్యనారాయణుడు"), epithet=L("Aditya, Bhaskara", "ఆదిత్యుడు, భాస్కరుడు"),
+      greeting=L("Om Suryaya Namaha", "ఓం సూర్యాయ నమః"), weekdays=[7], colors={"primary": "#8A3A05", "accent": "#F2A33A"}, glyph="సూ",
+      closing={"type": "aarti", "audio": "placeholder://audio/surya/aarti", "name": L("Surya Aarti", "సూర్య హారతి")},
+      chantings=["aditya_hridayam"], stotras=["aditya_hridayam", "surya_dwadasa_namavali"]),
+]:
+    write(f"deities/{d['id']}.json", {
+        "schema": "kalpam.deity/1", "id": d["id"], "version": 1, "updatedAt": DATE, "minAppVersion": "1.0.0",
+        "name": d["name"], "epithet": d["epithet"], "greeting": d["greeting"], "weekdays": d["weekdays"],
+        "colors": d["colors"], "idolGlyph": d["glyph"],
+        "art": {"icon": f"placeholder://art/{d['id']}/icon", "hero": f"placeholder://art/{d['id']}/hero"},
+        "sanctum": {"closing": d["closing"]},
+        "poojas": [], "chantings": d["chantings"], "stotras": d["stotras"], "bhajans": [],
+        "rituals": RITUALS[d["id"]], "status": "light",
+    })
 
 # index
 idx = []

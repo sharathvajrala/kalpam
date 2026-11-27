@@ -993,7 +993,20 @@
  "chantings": [
   "lalitha_sahasranamam"
  ],
- "stotras": [],
+ "stotras": [
+  "lakshmi_ashtottaram",
+  "lalitha_sahasranamam"
+ ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for prosperity and auspiciousness in my home",
+   "te": "గృహే ఐశ్వర్య మంగళాభివృద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "archana": "lakshmi_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "lalitha_sahasranamam"
+ },
  "status": "phase_a_minimum"
 }

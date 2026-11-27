@@ -1,0 +1,61 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "aditya_hridayam",
+ "version": 1,
+ "title": {
+  "en": "Aditya Hridayam",
+  "te": "ఆదిత్య హృదయం"
+ },
+ "deityIds": [
+  "surya"
+ ],
+ "category": "stotram",
+ "parayanamDays": [
+  7
+ ],
+ "source": "Valmiki Ramayana, Yuddha Kanda (public domain). Opening verses; full 31 verses pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/aditya_hridayam/sung",
+  "learn": "placeholder://audio/stotra/aditya_hridayam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "తతో యుద్ధపరిశ్రాంతం సమరే చింతయా స్థితమ్",
+   "translit": "Tato yuddhaparishrantam samare chintaya sthitam",
+   "meaning": {
+    "en": "Rama stood on the battlefield, weary from war and lost in thought",
+    "te": "యుద్ధంతో అలసి రణభూమిలో ఆలోచనలో ఉన్న రాముని"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "రావణం చాగ్రతో దృష్ట్వా యుద్ధాయ సముపస్థితమ్",
+   "translit": "Ravanam chagrato drushtva yuddhaya samupasthitam",
+   "meaning": {
+    "en": "seeing Ravana before him, ready for battle",
+    "te": "ఎదుట యుద్ధానికి సిద్ధమైన రావణుని చూసి"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "దైవతైశ్చ సమాగమ్య ద్రష్టుమభ్యాగతో రణమ్",
+   "translit": "Daivataishcha samagamya drashtumabhyagato ranam",
+   "meaning": {
+    "en": "Having come with the gods to witness the battle",
+    "te": "దేవతలతో కలిసి యుద్ధం చూడ వచ్చిన"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఉపాగమ్యాబ్రవీద్రామమగస్త్యో భగవాన్ ఋషిః",
+   "translit": "Upagamyabravid ramam agastyo bhagavan rishih",
+   "meaning": {
+    "en": "the holy sage Agastya approached Rama and spoke",
+    "te": "భగవాన్ అగస్త్య మహర్షి రాముని సమీపించి చెప్పాడు"
+   }
+  }
+ ]
+}

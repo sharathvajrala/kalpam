@@ -1,0 +1,119 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "surya_dwadasa_namavali",
+ "version": 1,
+ "title": {
+  "en": "Surya Dwadasa Namavali",
+  "te": "సూర్య ద్వాదశ నామావళి"
+ },
+ "deityIds": [
+  "surya"
+ ],
+ "category": "namavali",
+ "parayanamDays": [],
+ "source": "The twelve names of Surya Namaskaram (public domain). Complete.",
+ "verifiedBy": null,
+ "complete": true,
+ "audio": {
+  "sung": "placeholder://audio/stotra/surya_dwadasa_namavali/sung",
+  "learn": "placeholder://audio/stotra/surya_dwadasa_namavali/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం మిత్రాయ నమః",
+   "translit": "Om Mitraya Namaha",
+   "meaning": {
+    "en": "To the friend of all"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం రవయే నమః",
+   "translit": "Om Ravaye Namaha",
+   "meaning": {
+    "en": "To the shining one"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం సూర్యాయ నమః",
+   "translit": "Om Suryaya Namaha",
+   "meaning": {
+    "en": "To the one who moves all"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం భానవే నమః",
+   "translit": "Om Bhanave Namaha",
+   "meaning": {
+    "en": "To the radiant one"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం ఖగాయ నమః",
+   "translit": "Om Khagaya Namaha",
+   "meaning": {
+    "en": "To the one who moves through the sky"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం పూష్ణే నమః",
+   "translit": "Om Pushne Namaha",
+   "meaning": {
+    "en": "To the nourisher"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం హిరణ్యగర్భాయ నమః",
+   "translit": "Om Hiranyagarbhaya Namaha",
+   "meaning": {
+    "en": "To the golden womb of creation"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం మరీచయే నమః",
+   "translit": "Om Marichaye Namaha",
+   "meaning": {
+    "en": "To the Lord of rays"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం ఆదిత్యాయ నమః",
+   "translit": "Om Adityaya Namaha",
+   "meaning": {
+    "en": "To the son of Aditi"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం సవిత్రే నమః",
+   "translit": "Om Savitre Namaha",
+   "meaning": {
+    "en": "To the life-giver"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం అర్కాయ నమః",
+   "translit": "Om Arkaya Namaha",
+   "meaning": {
+    "en": "To the one worthy of praise"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం భాస్కరాయ నమః",
+   "translit": "Om Bhaskaraya Namaha",
+   "meaning": {
+    "en": "To the maker of light"
+   }
+  }
+ ]
+}

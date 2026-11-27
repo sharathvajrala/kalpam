@@ -1,0 +1,61 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "lingashtakam",
+ "version": 1,
+ "title": {
+  "en": "Lingashtakam",
+  "te": "లింగాష్టకం"
+ },
+ "deityIds": [
+  "shiva"
+ ],
+ "category": "stotram",
+ "parayanamDays": [
+  1
+ ],
+ "source": "Traditional, attributed to Adi Shankara (public domain). Opening verse; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/lingashtakam/sung",
+  "learn": "placeholder://audio/stotra/lingashtakam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "బ్రహ్మమురారి సురార్చిత లింగం",
+   "translit": "Brahma murari surarchita lingam",
+   "meaning": {
+    "en": "The Linga worshipped by Brahma, Vishnu and the gods",
+    "te": "బ్రహ్మ విష్ణు దేవతలు పూజించే లింగం"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "నిర్మలభాసిత శోభిత లింగం",
+   "translit": "Nirmala bhasita shobhita lingam",
+   "meaning": {
+    "en": "Pure, radiant and beautiful",
+    "te": "నిర్మలంగా ప్రకాశించే శోభాయమాన లింగం"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "జన్మజ దుఃఖ వినాశక లింగం",
+   "translit": "Janmaja duhkha vinashaka lingam",
+   "meaning": {
+    "en": "That ends the sorrow of birth",
+    "te": "జన్మ దుఃఖాన్ని నాశనం చేసే లింగం"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "తత్ప్రణమామి సదాశివ లింగం",
+   "translit": "Tat pranamami sadashiva lingam",
+   "meaning": {
+    "en": "To that Sadashiva Linga I bow",
+    "te": "ఆ సదాశివ లింగానికి నమస్కరిస్తున్నాను"
+   }
+  }
+ ]
+}

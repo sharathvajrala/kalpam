@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "venkateswara_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Venkateswara Ashtottaram",
+  "te": "వేంకటేశ్వర అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "venkateswara"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/venkateswara_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/venkateswara_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం శ్రీ వేంకటేశాయ నమః",
+   "translit": "Om Sri Venkateshaya Namaha",
+   "meaning": {
+    "en": "To the Lord of Venkatam"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం శ్రీనివాసాయ నమః",
+   "translit": "Om Srinivasaya Namaha",
+   "meaning": {
+    "en": "To the abode of Sri"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం లక్ష్మీపతయే నమః",
+   "translit": "Om Lakshmipataye Namaha",
+   "meaning": {
+    "en": "To the consort of Lakshmi"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం అనామయాయ నమః",
+   "translit": "Om Anamayaya Namaha",
+   "meaning": {
+    "en": "To the one beyond all ills"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం అమృతాంశాయ నమః",
+   "translit": "Om Amrutamshaya Namaha",
+   "meaning": {
+    "en": "To the source of nectar"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం జగద్వంద్యాయ నమః",
+   "translit": "Om Jagadvandyaya Namaha",
+   "meaning": {
+    "en": "To the one the world worships"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం గోవిందాయ నమః",
+   "translit": "Om Govindaya Namaha",
+   "meaning": {
+    "en": "To Govinda"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం శాశ్వతాయ నమః",
+   "translit": "Om Shashvataya Namaha",
+   "meaning": {
+    "en": "To the eternal one"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం ప్రభవే నమః",
+   "translit": "Om Prabhave Namaha",
+   "meaning": {
+    "en": "To the Master"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం శేషాద్రినిలయాయ నమః",
+   "translit": "Om Sheshadrinilayaya Namaha",
+   "meaning": {
+    "en": "To the dweller on Seshadri"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం దేవాయ నమః",
+   "translit": "Om Devaya Namaha",
+   "meaning": {
+    "en": "To the shining god"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం కేశవాయ నమః",
+   "translit": "Om Keshavaya Namaha",
+   "meaning": {
+    "en": "To Keshava"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం మధుసూదనాయ నమః",
+   "translit": "Om Madhusudanaya Namaha",
+   "meaning": {
+    "en": "To the slayer of Madhu"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం అమృతాయ నమః",
+   "translit": "Om Amrutaya Namaha",
+   "meaning": {
+    "en": "To the immortal one"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం మాధవాయ నమః",
+   "translit": "Om Madhavaya Namaha",
+   "meaning": {
+    "en": "To Madhava"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం కృష్ణాయ నమః",
+   "translit": "Om Krishnaya Namaha",
+   "meaning": {
+    "en": "To Krishna"
+   }
+  }
+ ]
+}

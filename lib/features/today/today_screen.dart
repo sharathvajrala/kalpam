@@ -8,7 +8,11 @@ import '../../app/theme.dart';
 import '../../core/content/models.dart';
 import '../../core/flagship/flagship_engine.dart';
 import '../bhajans/bhajan_player_screen.dart';
+import '../../app/app_state.dart';
+import '../../core/rituals/daily_rituals.dart';
 import '../common/deity_avatar.dart';
+import '../rituals/ritual_screen.dart';
+import '../rituals/rituals_card.dart';
 import '../grantham/chant_player_screen.dart';
 import '../sannidhanam/pooja_setup_screen.dart';
 import '../settings/settings_screen.dart';
@@ -32,6 +36,8 @@ class TodayScreen extends StatelessWidget {
           if (hero != null) FlagshipHero(state: hero),
           const SizedBox(height: 14),
           const MyGodCard(),
+          const SizedBox(height: 14),
+          const RitualsCard(),
           const SizedBox(height: 14),
           const _TodayStrip(),
           for (final s in app.secondary) ...[
@@ -389,7 +395,7 @@ class MyGodCard extends StatelessWidget {
           const SizedBox(width: 14),
           Expanded(
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Bi((l) => l.myGod, style: tt.labelLarge?.copyWith(color: K.gold)),
+              Bi((l) => app.dayGodMode ? l.godByDay : l.myGod, style: tt.labelLarge?.copyWith(color: K.gold)),
               const SizedBox(height: 2),
               BiL(d.name, style: tt.titleLarge),
             ]),
@@ -405,10 +411,7 @@ class MyGodCard extends StatelessWidget {
           Expanded(
             child: FilledButton.icon(
               key: const ValueKey('my-god-pooja'),
-              onPressed: () {
-                KalpamShell.go(1);
-                Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: d.id)));
-              },
+              onPressed: () => openDailyPooja(context, d),
               icon: const Icon(Icons.local_fire_department_outlined),
               label: BiPair(context.l.dailyPooja, context.l2.dailyPooja,
                   style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: K.ivory), secondaryColor: K.goldSoft),
@@ -443,7 +446,18 @@ class MyGodCard extends StatelessWidget {
       showDragHandle: true,
       builder: (ctx) => SafeArea(
         child: ListView(shrinkWrap: true, children: [
-          for (final d in app.repo.deities.values)
+          ListTile(
+            key: const ValueKey('pick-day-god'),
+            leading: const CircleAvatar(radius: 20, backgroundColor: K.goldSoft, child: Icon(Icons.calendar_view_week, color: K.maroon)),
+            title: Text(ctx.l.chooseByDay),
+            subtitle: Text(ctx.l.chooseByDayDesc, maxLines: 2),
+            trailing: app.dayGodMode ? const Icon(Icons.check, color: K.maroon) : null,
+            onTap: () {
+              app.setProfile(deity: AppState.dayGodId);
+              Navigator.pop(ctx);
+            },
+          ),
+          for (final d in app.repo.deities.values.where((d) => !d.isLight))
             ListTile(
               leading: DeityAvatar(deity: d, size: 40),
               title: Text(d.name.of(app.lang)),
@@ -531,7 +545,7 @@ class _TodayStrip extends StatelessWidget {
       if (wg != null) ...[
         const SizedBox(height: 12),
         GoldCard(
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: wg.id))),
+          onTap: () => openDailyPooja(context, wg),
           child: Row(children: [
             DeityAvatar(deity: wg, size: 44),
             const SizedBox(width: 12),
@@ -593,4 +607,15 @@ class _SecondarySeasonCard extends StatelessWidget {
       ]),
     );
   }
+}
+
+/// Daily Pooja for a god: the sanctum where one is open, otherwise (light
+/// packs such as Sai Baba and Surya) the guided morning ritual.
+void openDailyPooja(BuildContext context, DeityPack d) {
+  if (d.isLight) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const RitualScreen(slot: RitualSlot.morning)));
+    return;
+  }
+  KalpamShell.go(1);
+  Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: d.id)));
 }

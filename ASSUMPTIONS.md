@@ -22,3 +22,7 @@ Each item is a decision Sharath may want to overrule.
 18. **Profile removal:** the last remaining family profile cannot be removed (Delete all is the way to wipe it).
 19. **Archana names:** the archana uses the Ayyappa Saranam pack, which has 12 verified sample names today. "Full" becomes 108 and "Short" 16 once the full text is verified; nothing else changes.
 20. **Shankh by mic:** the recognizer already accepts mic levels; wiring the microphone plugin (with its permission prompt) is deferred to the device build. Press-and-hold works now, per the spec's fallback.
+21. **Archana sample size:** every god's Ashtottaram ships its first 16 names until the verified 108 lands, so Full and Short both show 16 today. The counts come from the pack only.
+22. **Suprabhatam:** only Venkatesa Suprabhatam (15th c., public domain) is bundled. Other gods' Suprabhatams are pending verification and licence checks; the morning ritual skips the step until a pack provides one.
+23. **Sai Baba Ashtottaram:** in common temple use but of uncertain authorship; flagged for a licence check before launch.
+24. **Fri Lakshmi/Durga:** Day God mode uses Lakshmi on Fridays; Durga stays listed as the alternate.

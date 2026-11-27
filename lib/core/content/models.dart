@@ -171,11 +171,19 @@ class DeityPack {
     required this.stotras,
     required this.bhajans,
     required this.idolGlyph,
+    this.rituals = const DeityRituals(),
+    this.isLight = false,
   });
 
   final String id;
   final int version;
   final LocalizedText name, epithet, greeting, closingName;
+
+  /// Nitya Archana data (DAILY RITUALS).
+  final DeityRituals rituals;
+
+  /// Light packs (Sai Baba, Surya) serve Day God mode only: no sanctum yet.
+  final bool isLight;
   final List<int> weekdays;
   final int primaryColor, accentColor;
   final MediaRef icon;
@@ -233,8 +241,41 @@ class DeityPack {
       stotras: _strings(j['stotras']),
       bhajans: _strings(j['bhajans']),
       idolGlyph: j['idolGlyph'] as String? ?? 'ॐ',
+      rituals: DeityRituals.fromJson((j['rituals'] as Map?)?.cast<String, dynamic>() ?? const {}),
+      isLight: j['status'] == 'light',
     );
   }
+}
+
+/// Per-god daily ritual data. Everything is optional; missing pieces are
+/// simply skipped by the ritual planner.
+class DeityRituals {
+  const DeityRituals({
+    this.purpose,
+    this.suprabhatam,
+    this.morningChant,
+    this.morningOffering,
+    this.archana,
+    this.shortCount = 16,
+    this.eveningChant,
+  });
+
+  /// Spoken in the Sankalpam ("...for the grace of ...").
+  final LocalizedText? purpose;
+  final String? suprabhatam, morningChant, morningOffering, archana, eveningChant;
+
+  /// Names in the short (Shodasha) archana; the full form uses every name.
+  final int shortCount;
+
+  factory DeityRituals.fromJson(Json j) => DeityRituals(
+        purpose: j['purpose'] == null ? null : LocalizedText.fromJson(j['purpose']),
+        suprabhatam: j['suprabhatam'] as String?,
+        morningChant: j['morningChant'] as String?,
+        morningOffering: j['morningOffering'] as String?,
+        archana: j['archana'] as String?,
+        shortCount: (j['shortCount'] as num?)?.toInt() ?? 16,
+        eveningChant: j['eveningChant'] as String?,
+      );
 }
 
 // ---------------------------------------------------------------- Vratam

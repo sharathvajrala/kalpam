@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "hanuman_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Hanuman Ashtottaram",
+  "te": "ఆంజనేయ అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "hanuman"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/hanuman_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/hanuman_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం ఆంజనేయాయ నమః",
+   "translit": "Om Anjaneyaya Namaha",
+   "meaning": {
+    "en": "To the son of Anjana"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం మహావీరాయ నమః",
+   "translit": "Om Mahaviraya Namaha",
+   "meaning": {
+    "en": "To the great hero"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం హనుమతే నమః",
+   "translit": "Om Hanumate Namaha",
+   "meaning": {
+    "en": "To Hanuman"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం మారుతాత్మజాయ నమః",
+   "translit": "Om Marutatmajaya Namaha",
+   "meaning": {
+    "en": "To the son of the Wind"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం తత్త్వజ్ఞానప్రదాయ నమః",
+   "translit": "Om Tattvajnanapradaya Namaha",
+   "meaning": {
+    "en": "To the giver of true knowledge"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం సీతాదేవిముద్రాప్రదాయకాయ నమః",
+   "translit": "Om Sitadevimudrapradayakaya Namaha",
+   "meaning": {
+    "en": "To the one who gave Rama's ring to Sita"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం అశోకవనికాచ్ఛేత్రే నమః",
+   "translit": "Om Ashokavanikachchhetre Namaha",
+   "meaning": {
+    "en": "To the one who uprooted the Ashoka grove"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం సర్వమాయావిభంజనాయ నమః",
+   "translit": "Om Sarvamayavibhanjanaya Namaha",
+   "meaning": {
+    "en": "To the breaker of every illusion"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం సర్వబంధవిమోక్త్రే నమః",
+   "translit": "Om Sarvabandhavimoktre Namaha",
+   "meaning": {
+    "en": "To the one who frees from all bonds"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం రక్షోవిధ్వంసకారకాయ నమః",
+   "translit": "Om Rakshovidhvamsakarakaya Namaha",
+   "meaning": {
+    "en": "To the destroyer of demons"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం పరవిద్యాపరీహారాయ నమః",
+   "translit": "Om Paravidyapariharaya Namaha",
+   "meaning": {
+    "en": "To the remover of hostile spells"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం పరశౌర్యవినాశనాయ నమః",
+   "translit": "Om Parashauryavinashanaya Namaha",
+   "meaning": {
+    "en": "To the one who ends the enemy's might"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం పరమంత్రనిరాకర్త్రే నమః",
+   "translit": "Om Paramantranirakartre Namaha",
+   "meaning": {
+    "en": "To the one who repels hostile mantras"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం పరయంత్రప్రభేదకాయ నమః",
+   "translit": "Om Parayantraprabhedakaya Namaha",
+   "meaning": {
+    "en": "To the one who breaks hostile yantras"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం సర్వగ్రహవినాశినే నమః",
+   "translit": "Om Sarvagrahavinashine Namaha",
+   "meaning": {
+    "en": "To the one who removes all planetary afflictions"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం భీమసేనసహాయకృతే నమః",
+   "translit": "Om Bhimasenasahayakrute Namaha",
+   "meaning": {
+    "en": "To the helper of Bhima"
+   }
+  }
+ ]
+}

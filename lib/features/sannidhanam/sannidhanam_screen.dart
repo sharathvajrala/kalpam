@@ -14,13 +14,13 @@ class SannidhanamScreen extends StatelessWidget {
     final tt = Theme.of(context).textTheme;
     return SafeArea(
       child: PoojaSetupBody(
-        deityId: app.deityId,
+        deityId: app.deity.id,
         header: Padding(
           padding: const EdgeInsets.fromLTRB(4, 8, 4, 12),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Bi((l) => l.tabSannidhanam, style: tt.headlineMedium?.copyWith(color: K.maroon)),
             const SizedBox(height: 4),
-            BiL(app.repo.deities[PoojaSetupBodyGate.openFor(app.deityId)]!.greeting, style: tt.bodyMedium?.copyWith(color: K.inkSoft)),
+            BiL(app.repo.deities[PoojaSetupBodyGate.openFor(app.deity.id)]!.greeting, style: tt.bodyMedium?.copyWith(color: K.inkSoft)),
           ]),
         ),
       ),

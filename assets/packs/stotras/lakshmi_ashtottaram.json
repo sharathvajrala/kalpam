@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "lakshmi_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Lakshmi Ashtottaram",
+  "te": "లక్ష్మీ అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "lakshmi"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/lakshmi_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/lakshmi_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం ప్రకృత్యై నమః",
+   "translit": "Om Prakrutyai Namaha",
+   "meaning": {
+    "en": "To Nature herself"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం వికృత్యై నమః",
+   "translit": "Om Vikrutyai Namaha",
+   "meaning": {
+    "en": "To the many-formed one"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం విద్యాయై నమః",
+   "translit": "Om Vidyayai Namaha",
+   "meaning": {
+    "en": "To wisdom"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం సర్వభూతహితప్రదాయై నమః",
+   "translit": "Om Sarvabhutahitapradayai Namaha",
+   "meaning": {
+    "en": "To the giver of good to all beings"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం శ్రద్ధాయై నమః",
+   "translit": "Om Shraddhayai Namaha",
+   "meaning": {
+    "en": "To faith"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం విభూత్యై నమః",
+   "translit": "Om Vibhutyai Namaha",
+   "meaning": {
+    "en": "To splendour"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం సురభ్యై నమః",
+   "translit": "Om Surabhyai Namaha",
+   "meaning": {
+    "en": "To the fragrant one"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం పరమాత్మికాయై నమః",
+   "translit": "Om Paramatmikayai Namaha",
+   "meaning": {
+    "en": "To the Supreme Self"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం వాచే నమః",
+   "translit": "Om Vache Namaha",
+   "meaning": {
+    "en": "To speech"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం పద్మాలయాయై నమః",
+   "translit": "Om Padmalayayai Namaha",
+   "meaning": {
+    "en": "To the one who dwells in the lotus"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం పద్మాయై నమః",
+   "translit": "Om Padmayai Namaha",
+   "meaning": {
+    "en": "To the lotus"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం శుచయే నమః",
+   "translit": "Om Shuchaye Namaha",
+   "meaning": {
+    "en": "To the pure one"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం స్వాహాయై నమః",
+   "translit": "Om Svahayai Namaha",
+   "meaning": {
+    "en": "To Svaha"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం స్వధాయై నమః",
+   "translit": "Om Svadhayai Namaha",
+   "meaning": {
+    "en": "To Svadha"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం సుధాయై నమః",
+   "translit": "Om Sudhayai Namaha",
+   "meaning": {
+    "en": "To nectar"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం ధన్యాయై నమః",
+   "translit": "Om Dhanyayai Namaha",
+   "meaning": {
+    "en": "To the blessed one"
+   }
+  }
+ ]
+}

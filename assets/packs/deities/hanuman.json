@@ -995,8 +995,19 @@
   "hanuman_chalisa"
  ],
  "stotras": [
-  "hanuman_chalisa"
+  "hanuman_chalisa",
+  "hanuman_ashtottaram"
  ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for strength, courage and freedom from fear",
+   "te": "బల ధైర్య సిద్ధ్యర్థం, సర్వ భయ నివారణార్థం"
+  },
+  "suprabhatam": null,
+  "archana": "hanuman_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "hanuman_chalisa"
+ },
  "status": "phase_a_minimum"
 }

@@ -2,6 +2,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
 import '../../app/theme.dart';
 import '../../core/panchangam/names.dart';
 import '../../core/profile/family_profile.dart';
@@ -67,6 +68,21 @@ class SettingsScreen extends StatelessWidget {
               evening: app.eveningReminder ?? const ReminderTime(18, 30),
               onMorning: (v) => app.setReminders(morning: v),
               onEvening: (v) => app.setReminders(evening: v),
+            ),
+            const SizedBox(height: 12),
+            Bi((l) => l.eveningAnchor, style: tt.titleSmall),
+            const SizedBox(height: 8),
+            SegmentedButton<EveningAnchor>(
+              key: const ValueKey('evening-anchor'),
+              segments: [
+                ButtonSegment(value: EveningAnchor.time, label: Text(l.anchorTime)),
+                ButtonSegment(
+                  value: EveningAnchor.sunset,
+                  label: Text('${l.anchorSunset} · ${fmtTime(context, app.panchang.sunset)}'),
+                ),
+              ],
+              selected: {app.eveningAnchor},
+              onSelectionChanged: (v) => app.setEveningAnchor(v.first),
             ),
           ]),
         ),

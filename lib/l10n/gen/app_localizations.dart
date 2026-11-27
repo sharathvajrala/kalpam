@@ -1207,6 +1207,174 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap or flick up to offer a flower'**
   String get hintArchana;
+
+  /// No description provided for @chooseByDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose for me by day'**
+  String get chooseByDay;
+
+  /// No description provided for @chooseByDayDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Mon Shiva · Tue Hanuman · Wed Ayyappa · Thu Sai Baba · Fri Lakshmi · Sat Venkateswara · Sun Surya'**
+  String get chooseByDayDesc;
+
+  /// No description provided for @godByDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s God · by the day'**
+  String get godByDay;
+
+  /// No description provided for @morningRitual.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Nitya Archana'**
+  String get morningRitual;
+
+  /// No description provided for @eveningRitual.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening Deeparadhana'**
+  String get eveningRitual;
+
+  /// No description provided for @dailyRituals.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily rituals'**
+  String get dailyRituals;
+
+  /// No description provided for @atSunrise.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise {time}'**
+  String atSunrise(String time);
+
+  /// No description provided for @atSunset.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunset {time}'**
+  String atSunset(String time);
+
+  /// No description provided for @doneToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Done today'**
+  String get doneToday;
+
+  /// No description provided for @archanaFullN.
+  ///
+  /// In en, this message translates to:
+  /// **'Full · {n} names'**
+  String archanaFullN(int n);
+
+  /// No description provided for @archanaShortN.
+  ///
+  /// In en, this message translates to:
+  /// **'Short · {n} names'**
+  String archanaShortN(int n);
+
+  /// No description provided for @suprabhatam.
+  ///
+  /// In en, this message translates to:
+  /// **'Suprabhatam'**
+  String get suprabhatam;
+
+  /// No description provided for @deepam.
+  ///
+  /// In en, this message translates to:
+  /// **'Deepam'**
+  String get deepam;
+
+  /// No description provided for @aarti.
+  ///
+  /// In en, this message translates to:
+  /// **'Aarti'**
+  String get aarti;
+
+  /// No description provided for @closingPrayer.
+  ///
+  /// In en, this message translates to:
+  /// **'Closing prayer'**
+  String get closingPrayer;
+
+  /// No description provided for @arghyam.
+  ///
+  /// In en, this message translates to:
+  /// **'Surya Arghyam'**
+  String get arghyam;
+
+  /// No description provided for @arghyamDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Face the sun and offer water from cupped hands three times, then bow.'**
+  String get arghyamDesc;
+
+  /// No description provided for @deepamDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Light the lamp before the god.'**
+  String get deepamDesc;
+
+  /// No description provided for @aartiDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Wave the aarti in three clockwise circles.'**
+  String get aartiDesc;
+
+  /// No description provided for @closingDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Bow down and close the day\'s worship.'**
+  String get closingDesc;
+
+  /// No description provided for @sankalpamDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold akshatas in your right palm and take the day\'s Sankalpam.'**
+  String get sankalpamDesc;
+
+  /// No description provided for @offerFlower.
+  ///
+  /// In en, this message translates to:
+  /// **'Offer a flower'**
+  String get offerFlower;
+
+  /// No description provided for @markDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get markDone;
+
+  /// No description provided for @performInSannidhanam.
+  ///
+  /// In en, this message translates to:
+  /// **'Perform in Sannidhanam'**
+  String get performInSannidhanam;
+
+  /// No description provided for @ritualComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Ritual complete'**
+  String get ritualComplete;
+
+  /// No description provided for @eveningAnchor.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening reminder at'**
+  String get eveningAnchor;
+
+  /// No description provided for @anchorTime.
+  ///
+  /// In en, this message translates to:
+  /// **'My time'**
+  String get anchorTime;
+
+  /// No description provided for @anchorSunset.
+  ///
+  /// In en, this message translates to:
+  /// **'Local sunset'**
+  String get anchorSunset;
 }
 
 class _AppLocalizationsDelegate

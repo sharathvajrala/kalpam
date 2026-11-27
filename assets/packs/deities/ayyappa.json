@@ -21,7 +21,7 @@
   "ml": "സ്വാമിയേ ശരണം അയ്യപ്പാ"
  },
  "weekdays": [
-  6
+  3
  ],
  "colors": {
   "primary": "#1B1A3A",
@@ -1037,5 +1037,15 @@
   "ayyappa_padi_ghosham",
   "ayyappa_swamy_namavali"
  ],
+ "rituals": {
+  "purpose": {
+   "en": "for the strength to keep my vows and the well-being of my family",
+   "te": "మమ వ్రత నియమ పాలన శక్తి సిద్ధ్యర్థం, సకుటుంబస్య క్షేమ స్థైర్య సిద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "archana": "ayyappa_saranam_108",
+  "shortCount": 16,
+  "eveningChant": "harivarasanam"
+ },
  "status": "complete"
 }

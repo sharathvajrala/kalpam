@@ -621,4 +621,99 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get hintArchana => 'పుష్పం సమర్పించడానికి తాకండి లేదా పైకి విసరండి';
+
+  @override
+  String get chooseByDay => 'రోజును బట్టి ఎంచుకోండి';
+
+  @override
+  String get chooseByDayDesc =>
+      'సోమ శివుడు · మంగళ హనుమాన్ · బుధ అయ్యప్ప · గురు సాయిబాబా · శుక్ర లక్ష్మి · శని వేంకటేశ్వరుడు · ఆది సూర్యుడు';
+
+  @override
+  String get godByDay => 'నేటి దైవం · వారం ప్రకారం';
+
+  @override
+  String get morningRitual => 'ఉదయ నిత్య అర్చన';
+
+  @override
+  String get eveningRitual => 'సాయంత్ర దీపారాధన';
+
+  @override
+  String get dailyRituals => 'నిత్య ఆరాధన';
+
+  @override
+  String atSunrise(String time) {
+    return 'సూర్యోదయం $time';
+  }
+
+  @override
+  String atSunset(String time) {
+    return 'సూర్యాస్తమయం $time';
+  }
+
+  @override
+  String get doneToday => 'నేడు పూర్తయింది';
+
+  @override
+  String archanaFullN(int n) {
+    return 'పూర్తి · $n నామాలు';
+  }
+
+  @override
+  String archanaShortN(int n) {
+    return 'సంక్షిప్తం · $n నామాలు';
+  }
+
+  @override
+  String get suprabhatam => 'సుప్రభాతం';
+
+  @override
+  String get deepam => 'దీపం';
+
+  @override
+  String get aarti => 'హారతి';
+
+  @override
+  String get closingPrayer => 'ముగింపు ప్రార్థన';
+
+  @override
+  String get arghyam => 'సూర్య అర్ఘ్యం';
+
+  @override
+  String get arghyamDesc =>
+      'సూర్యునికి అభిముఖంగా దోసిలితో మూడుసార్లు జలం సమర్పించి నమస్కరించండి.';
+
+  @override
+  String get deepamDesc => 'దేవుని ముందు దీపం వెలిగించండి.';
+
+  @override
+  String get aartiDesc => 'హారతిని మూడుసార్లు సవ్యదిశలో తిప్పండి.';
+
+  @override
+  String get closingDesc => 'నమస్కరించి నేటి పూజను ముగించండి.';
+
+  @override
+  String get sankalpamDesc =>
+      'కుడి అరచేతిలో అక్షతలు పట్టుకుని నేటి సంకల్పం చెప్పండి.';
+
+  @override
+  String get offerFlower => 'పుష్పం సమర్పించండి';
+
+  @override
+  String get markDone => 'అయింది';
+
+  @override
+  String get performInSannidhanam => 'సన్నిధానంలో చేయండి';
+
+  @override
+  String get ritualComplete => 'ఆరాధన సంపూర్ణం';
+
+  @override
+  String get eveningAnchor => 'సాయంత్ర గుర్తుచేత';
+
+  @override
+  String get anchorTime => 'నా సమయం';
+
+  @override
+  String get anchorSunset => 'స్థానిక సూర్యాస్తమయం';
 }

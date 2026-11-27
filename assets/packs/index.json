@@ -52,6 +52,12 @@
    "schema": "kalpam.deity/1"
   },
   {
+   "path": "deities/sai_baba.json",
+   "id": "sai_baba",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
    "path": "deities/shiva.json",
    "id": "shiva",
    "version": 1,
@@ -60,6 +66,12 @@
   {
    "path": "deities/subrahmanya.json",
    "id": "subrahmanya",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/surya.json",
+   "id": "surya",
    "version": 1,
    "schema": "kalpam.deity/1"
   },
@@ -76,8 +88,32 @@
    "schema": "kalpam.flagship/1"
   },
   {
+   "path": "stotras/aditya_hridayam.json",
+   "id": "aditya_hridayam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
    "path": "stotras/ayyappa_saranam_108.json",
    "id": "ayyappa_saranam_108",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/durga_ashtottaram.json",
+   "id": "durga_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/ganapathy_ashtottaram.json",
+   "id": "ganapathy_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/hanuman_ashtottaram.json",
+   "id": "hanuman_ashtottaram",
    "version": 1,
    "schema": "kalpam.stotra/1"
   },
@@ -94,14 +130,68 @@
    "schema": "kalpam.stotra/1"
   },
   {
+   "path": "stotras/lakshmi_ashtottaram.json",
+   "id": "lakshmi_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
    "path": "stotras/lalitha_sahasranamam.json",
    "id": "lalitha_sahasranamam",
    "version": 1,
    "schema": "kalpam.stotra/1"
   },
   {
+   "path": "stotras/lingashtakam.json",
+   "id": "lingashtakam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
    "path": "stotras/maladharana_mantram.json",
    "id": "maladharana_mantram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/sai_baba_ashtottaram.json",
+   "id": "sai_baba_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/sai_baba_namajapam.json",
+   "id": "sai_baba_namajapam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/shiva_ashtottaram.json",
+   "id": "shiva_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/subrahmanya_ashtottaram.json",
+   "id": "subrahmanya_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/surya_dwadasa_namavali.json",
+   "id": "surya_dwadasa_namavali",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/venkateswara_ashtottaram.json",
+   "id": "venkateswara_ashtottaram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/venkateswara_suprabhatam.json",
+   "id": "venkateswara_suprabhatam",
    "version": 1,
    "schema": "kalpam.stotra/1"
   },

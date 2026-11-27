@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../../app/app_scope.dart';
+import '../../app/app_state.dart';
 import '../../app/theme.dart';
 import '../../core/profile/family_profile.dart';
 import '../common/deity_avatar.dart';
@@ -183,7 +184,7 @@ class _GodPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = context.app;
-    final gods = app.repo.deities.values.toList();
+    final gods = app.repo.deities.values.where((d) => !d.isLight).toList();
     return ListView(padding: const EdgeInsets.all(20), children: [
       const SizedBox(height: 12),
       Bi((l) => l.chooseGod, style: Theme.of(context).textTheme.headlineMedium),
@@ -209,6 +210,24 @@ class _GodPage extends StatelessWidget {
               ]),
             ),
         ],
+      ),
+      const SizedBox(height: 12),
+      // Day God mode: the weekday god leads each day (founder map).
+      GoldCard(
+        key: const ValueKey('god-day'),
+        onTap: () => onPick(AppState.dayGodId),
+        color: app.dayGodMode ? K.goldSoft.withValues(alpha: 0.5) : null,
+        child: Row(children: [
+          const Icon(Icons.calendar_view_week, color: K.maroon, size: 36),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Bi((l) => l.chooseByDay, style: Theme.of(context).textTheme.titleMedium?.copyWith(color: K.maroon)),
+              const SizedBox(height: 6),
+              Text(context.l.chooseByDayDesc, style: Theme.of(context).textTheme.bodySmall?.copyWith(color: K.inkSoft)),
+            ]),
+          ),
+        ]),
       ),
     ]);
   }

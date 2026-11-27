@@ -624,4 +624,99 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hintArchana => 'Tap or flick up to offer a flower';
+
+  @override
+  String get chooseByDay => 'Choose for me by day';
+
+  @override
+  String get chooseByDayDesc =>
+      'Mon Shiva · Tue Hanuman · Wed Ayyappa · Thu Sai Baba · Fri Lakshmi · Sat Venkateswara · Sun Surya';
+
+  @override
+  String get godByDay => 'Today\'s God · by the day';
+
+  @override
+  String get morningRitual => 'Morning Nitya Archana';
+
+  @override
+  String get eveningRitual => 'Evening Deeparadhana';
+
+  @override
+  String get dailyRituals => 'Daily rituals';
+
+  @override
+  String atSunrise(String time) {
+    return 'Sunrise $time';
+  }
+
+  @override
+  String atSunset(String time) {
+    return 'Sunset $time';
+  }
+
+  @override
+  String get doneToday => 'Done today';
+
+  @override
+  String archanaFullN(int n) {
+    return 'Full · $n names';
+  }
+
+  @override
+  String archanaShortN(int n) {
+    return 'Short · $n names';
+  }
+
+  @override
+  String get suprabhatam => 'Suprabhatam';
+
+  @override
+  String get deepam => 'Deepam';
+
+  @override
+  String get aarti => 'Aarti';
+
+  @override
+  String get closingPrayer => 'Closing prayer';
+
+  @override
+  String get arghyam => 'Surya Arghyam';
+
+  @override
+  String get arghyamDesc =>
+      'Face the sun and offer water from cupped hands three times, then bow.';
+
+  @override
+  String get deepamDesc => 'Light the lamp before the god.';
+
+  @override
+  String get aartiDesc => 'Wave the aarti in three clockwise circles.';
+
+  @override
+  String get closingDesc => 'Bow down and close the day\'s worship.';
+
+  @override
+  String get sankalpamDesc =>
+      'Hold akshatas in your right palm and take the day\'s Sankalpam.';
+
+  @override
+  String get offerFlower => 'Offer a flower';
+
+  @override
+  String get markDone => 'Done';
+
+  @override
+  String get performInSannidhanam => 'Perform in Sannidhanam';
+
+  @override
+  String get ritualComplete => 'Ritual complete';
+
+  @override
+  String get eveningAnchor => 'Evening reminder at';
+
+  @override
+  String get anchorTime => 'My time';
+
+  @override
+  String get anchorSunset => 'Local sunset';
 }

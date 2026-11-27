@@ -1,0 +1,151 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "ganapathy_ashtottaram",
+ "version": 1,
+ "title": {
+  "en": "Ganapathy Ashtottaram",
+  "te": "గణపతి అష్టోత్తర శతనామావళి"
+ },
+ "deityIds": [
+  "ganapathy"
+ ],
+ "category": "ashtottaram",
+ "parayanamDays": [],
+ "source": "Traditional namavali (public domain). First 16 of 108; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/ganapathy_ashtottaram/sung",
+  "learn": "placeholder://audio/stotra/ganapathy_ashtottaram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం గజాననాయ నమః",
+   "translit": "Om Gajananaya Namaha",
+   "meaning": {
+    "en": "To the elephant-faced Lord"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ఓం గణాధ్యక్షాయ నమః",
+   "translit": "Om Ganadhyakshaya Namaha",
+   "meaning": {
+    "en": "To the leader of the ganas"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం విఘ్నరాజాయ నమః",
+   "translit": "Om Vighnarajaya Namaha",
+   "meaning": {
+    "en": "To the king over obstacles"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఓం వినాయకాయ నమః",
+   "translit": "Om Vinayakaya Namaha",
+   "meaning": {
+    "en": "To the Lord without a superior"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "ఓం ద్వైమాతురాయ నమః",
+   "translit": "Om Dvaimaturaya Namaha",
+   "meaning": {
+    "en": "To the one with two mothers"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "ఓం ద్విముఖాయ నమః",
+   "translit": "Om Dvimukhaya Namaha",
+   "meaning": {
+    "en": "To the two-faced one"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఓం ప్రముఖాయ నమః",
+   "translit": "Om Pramukhaya Namaha",
+   "meaning": {
+    "en": "To the foremost"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "ఓం సుముఖాయ నమః",
+   "translit": "Om Sumukhaya Namaha",
+   "meaning": {
+    "en": "To the one with a gracious face"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "ఓం కృతినే నమః",
+   "translit": "Om Krutine Namaha",
+   "meaning": {
+    "en": "To the accomplished one"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "ఓం సుప్రదీపాయ నమః",
+   "translit": "Om Supradipaya Namaha",
+   "meaning": {
+    "en": "To the brilliant one"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "ఓం సుఖనిధయే నమః",
+   "translit": "Om Sukhanidhaye Namaha",
+   "meaning": {
+    "en": "To the treasure of happiness"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "ఓం సురాధ్యక్షాయ నమః",
+   "translit": "Om Suradhyakshaya Namaha",
+   "meaning": {
+    "en": "To the lord of the gods"
+   }
+  },
+  {
+   "id": "l13",
+   "te": "ఓం సురారిఘ్నాయ నమః",
+   "translit": "Om Surarighnaya Namaha",
+   "meaning": {
+    "en": "To the destroyer of the gods' foes"
+   }
+  },
+  {
+   "id": "l14",
+   "te": "ఓం మహాగణపతయే నమః",
+   "translit": "Om Mahaganapataye Namaha",
+   "meaning": {
+    "en": "To the great Ganapathy"
+   }
+  },
+  {
+   "id": "l15",
+   "te": "ఓం మాన్యాయ నమః",
+   "translit": "Om Manyaya Namaha",
+   "meaning": {
+    "en": "To the honoured one"
+   }
+  },
+  {
+   "id": "l16",
+   "te": "ఓం మహాకాలాయ నమః",
+   "translit": "Om Mahakalaya Namaha",
+   "meaning": {
+    "en": "To the great lord of time"
+   }
+  }
+ ]
+}

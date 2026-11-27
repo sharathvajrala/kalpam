@@ -9,6 +9,7 @@ import '../core/content/pack_repository.dart';
 import '../core/flagship/flagship_engine.dart';
 import '../core/panchangam/panchangam.dart';
 import '../core/profile/family_profile.dart';
+import '../core/rituals/daily_rituals.dart';
 import '../core/sankalpam/sankalpam.dart';
 import '../core/tracker/deeksha_tracker.dart';
 import '../data/cities.dart';
@@ -42,7 +43,10 @@ class AppState extends ChangeNotifier {
   ReminderTime? eveningReminder;
   /// null until the user picks a city; Hyderabad is only the fallback.
   String? cityId;
+  /// A god id, or [dayGodId] for Day God mode (the weekday god leads).
   String deityId = 'ayyappa';
+  static const dayGodId = 'day';
+  EveningAnchor eveningAnchor = EveningAnchor.time;
   bool groupsNotify = false;
   final Map<String, DeekshaRecord> deekshas = {};
 
@@ -69,7 +73,8 @@ class AppState extends ChangeNotifier {
     }
     if (cityId != null && !cities.any((c) => c.id == cityId)) cityId = null;
     deityId = _prefs.getString('deity') ?? 'ayyappa';
-    if (!repo.deities.containsKey(deityId)) deityId = repo.deities.keys.first;
+    if (deityId != dayGodId && !repo.deities.containsKey(deityId)) deityId = repo.deities.keys.first;
+    eveningAnchor = _prefs.getString('eveningAnchor') == 'sunset' ? EveningAnchor.sunset : EveningAnchor.time;
     groupsNotify = _prefs.getBool('groupsNotify') ?? false;
     for (final key in _prefs.getKeys().where((k) => k.startsWith('deeksha:'))) {
       try {
@@ -97,7 +102,11 @@ class AppState extends ChangeNotifier {
 
   String get devoteeName => activeProfile?.name ?? '';
   String get gotra => activeProfile?.gotra ?? '';
-  DeityPack get deity => repo.deities[deityId]!;
+  bool get dayGodMode => deityId == dayGodId;
+
+  /// The god who leads today: the chosen god, or in Day God mode the
+  /// weekday god (founder map), falling back to Ayyappa.
+  DeityPack get deity => dayGodMode ? (weekdayGod ?? repo.deities['ayyappa']!) : repo.deities[deityId]!;
 
   /// Today's civil date in the user's city.
   DateTime get today {
@@ -133,7 +142,7 @@ class AppState extends ChangeNotifier {
           devoteeName: devoteeName,
           gotra: gotra,
           deityName: deity.name,
-          purpose: vratam?.sankalpaPurpose ?? dailyPurpose,
+          purpose: vratam?.sankalpaPurpose ?? deity.rituals.purpose ?? dailyPurpose,
         ),
         lang,
       );
@@ -234,6 +243,10 @@ class AppState extends ChangeNotifier {
       'language': lang,
       'city': cityId == null ? null : city.name.en,
       'god': deityId,
+      'eveningAnchor': eveningAnchor.name,
+      'rituals': {
+        for (final k in _prefs.getKeys().where((k) => k.startsWith('ritual:'))) k.substring(7): _prefs.getStringList(k),
+      },
       'elderMode': elderMode,
       'reminders': {'morning': morningReminder?.hhmm, 'evening': eveningReminder?.hhmm},
       'profiles': [for (final p in profiles) p.toJson()],
@@ -259,6 +272,7 @@ class AppState extends ChangeNotifier {
     eveningReminder = null;
     cityId = null;
     deityId = repo.deities.containsKey('ayyappa') ? 'ayyappa' : repo.deities.keys.first;
+    eveningAnchor = EveningAnchor.time;
     groupsNotify = false;
     deekshas.clear();
     joinedRecurring.clear();
@@ -322,7 +336,68 @@ class AppState extends ChangeNotifier {
         [for (final e in joinedRecurring.entries) for (final v in e.value) '${e.key}|$v']);
     notifyListeners();
   }
+
+  // ------------------------------------------------------------ daily rituals
+  DailyRitualPlanner get ritualPlanner => DailyRitualPlanner(repo);
+
+  RitualPlan ritualPlan(RitualSlot slot, {DateTime? day}) =>
+      ritualPlanner.plan(deity, slot, form: archanaFormFor(day ?? today));
+
+  bool ritualDone(RitualSlot slot, [DateTime? day]) =>
+      (_prefs.getStringList('ritual:${DeekshaRecord.iso(day ?? today)}') ?? const []).contains(slot.name);
+
+  Future<void> setRitualDone(RitualSlot slot, bool done) async {
+    final k = 'ritual:${DeekshaRecord.iso(today)}';
+    final s = (_prefs.getStringList(k) ?? const <String>[]).toSet();
+    done ? s.add(slot.name) : s.remove(slot.name);
+    await _prefs.setStringList(k, s.toList());
+    notifyListeners();
+  }
+
+  /// Consecutive days the ritual was kept, ending today (or yesterday when
+  /// today's is still ahead). Lives on Today only, never in the sanctum.
+  int ritualStreak(RitualSlot slot) {
+    var d = today;
+    if (!ritualDone(slot, d)) d = d.subtract(const Duration(days: 1));
+    var n = 0;
+    while (ritualDone(slot, d)) {
+      n++;
+      d = d.subtract(const Duration(days: 1));
+    }
+    return n;
+  }
+
+  /// Full (108) or short (16) archana: chosen per day, the last choice is
+  /// remembered as the next day's default.
+  ArchanaForm archanaFormFor(DateTime day) {
+    final v = _prefs.getString('archanaForm:${DeekshaRecord.iso(day)}') ?? _prefs.getString('archanaFormLast');
+    return v == 'short' ? ArchanaForm.short : ArchanaForm.full;
+  }
+
+  Future<void> setArchanaForm(ArchanaForm f) async {
+    await _prefs.setString('archanaForm:${DeekshaRecord.iso(today)}', f.name);
+    await _prefs.setString('archanaFormLast', f.name);
+    notifyListeners();
+  }
+
+  Future<void> setEveningAnchor(EveningAnchor a) async {
+    eveningAnchor = a;
+    await _prefs.setString('eveningAnchor', a.name);
+    notifyListeners();
+  }
+
+  /// When the ritual's reminder fires today (UTC): the morning time, and the
+  /// evening time or local sunset (Settings choice).
+  DateTime? ritualReminderAt(RitualSlot slot, [DateTime? day]) {
+    final d = day ?? today;
+    if (slot == RitualSlot.evening && eveningAnchor == EveningAnchor.sunset) return panchangFor(d).sunset;
+    final t = slot == RitualSlot.morning ? morningReminder : eveningReminder;
+    if (t == null) return null;
+    return DateTime.utc(d.year, d.month, d.day, t.hour, t.minute).subtract(Duration(minutes: city.utcOffsetMin));
+  }
 }
+
+enum EveningAnchor { time, sunset }
 
 /// Default Sankalpam purpose for daily poojas.
 const dailyPurpose = LocalizedText.bi(

@@ -27,7 +27,7 @@ void main() {
     });
 
     test('every deity has the three guided lengths ending in closing', () {
-      for (final d in repo.deities.values) {
+      for (final d in repo.deities.values.where((d) => !d.isLight)) {
         for (final id in ['nitya5', 'nitya15', 'shodasha']) {
           final p = d.pooja(id)!;
           expect(p.steps.first.upachara, 'sankalpam', reason: '${d.id}/$id');

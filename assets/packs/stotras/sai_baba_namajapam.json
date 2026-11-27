@@ -1,0 +1,43 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "sai_baba_namajapam",
+ "version": 1,
+ "title": {
+  "en": "Om Sai Ram Namajapam",
+  "te": "ఓం సాయి రామ్ నామజపం"
+ },
+ "deityIds": [
+  "sai_baba"
+ ],
+ "category": "namajapam",
+ "parayanamDays": [
+  4
+ ],
+ "source": "Traditional name chant (public domain).",
+ "verifiedBy": null,
+ "complete": true,
+ "audio": {
+  "sung": "placeholder://audio/stotra/sai_baba_namajapam/sung",
+  "learn": "placeholder://audio/stotra/sai_baba_namajapam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం సాయి శ్రీ సాయి జయ జయ సాయి",
+   "translit": "Om Sai Sri Sai Jaya Jaya Sai",
+   "meaning": {
+    "en": "Om Sai, glorious Sai, victory to Sai",
+    "te": "ఓం సాయి, శ్రీ సాయి, జయ జయ సాయి"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "సద్గురు సాయినాథ మహారాజ్ కీ జై",
+   "translit": "Sadguru Sainath Maharaj ki jai",
+   "meaning": {
+    "en": "Glory to the true Guru, Sainath Maharaj",
+    "te": "సద్గురు సాయినాథ మహారాజుకు జయం"
+   }
+  }
+ ]
+}

@@ -369,5 +369,61 @@
  "hintShake": "Shake the phone, or tap, to ring the bell",
  "hintBlow": "Press and hold to blow the shankh",
  "hintWalk": "Sweep left and right to walk around Swamy",
- "hintArchana": "Tap or flick up to offer a flower"
+ "hintArchana": "Tap or flick up to offer a flower",
+ "chooseByDay": "Choose for me by day",
+ "chooseByDayDesc": "Mon Shiva · Tue Hanuman · Wed Ayyappa · Thu Sai Baba · Fri Lakshmi · Sat Venkateswara · Sun Surya",
+ "godByDay": "Today's God · by the day",
+ "morningRitual": "Morning Nitya Archana",
+ "eveningRitual": "Evening Deeparadhana",
+ "dailyRituals": "Daily rituals",
+ "atSunrise": "Sunrise {time}",
+ "@atSunrise": {
+  "placeholders": {
+   "time": {
+    "type": "String"
+   }
+  }
+ },
+ "atSunset": "Sunset {time}",
+ "@atSunset": {
+  "placeholders": {
+   "time": {
+    "type": "String"
+   }
+  }
+ },
+ "doneToday": "Done today",
+ "archanaFullN": "Full · {n} names",
+ "@archanaFullN": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "archanaShortN": "Short · {n} names",
+ "@archanaShortN": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "suprabhatam": "Suprabhatam",
+ "deepam": "Deepam",
+ "aarti": "Aarti",
+ "closingPrayer": "Closing prayer",
+ "arghyam": "Surya Arghyam",
+ "arghyamDesc": "Face the sun and offer water from cupped hands three times, then bow.",
+ "deepamDesc": "Light the lamp before the god.",
+ "aartiDesc": "Wave the aarti in three clockwise circles.",
+ "closingDesc": "Bow down and close the day's worship.",
+ "sankalpamDesc": "Hold akshatas in your right palm and take the day's Sankalpam.",
+ "offerFlower": "Offer a flower",
+ "markDone": "Done",
+ "performInSannidhanam": "Perform in Sannidhanam",
+ "ritualComplete": "Ritual complete",
+ "eveningAnchor": "Evening reminder at",
+ "anchorTime": "My time",
+ "anchorSunset": "Local sunset"
 }

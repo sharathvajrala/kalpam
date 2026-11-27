@@ -997,8 +997,19 @@
   "lalitha_sahasranamam"
  ],
  "stotras": [
-  "lalitha_sahasranamam"
+  "lalitha_sahasranamam",
+  "durga_ashtottaram"
  ],
  "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for protection from all dangers and courage in every difficulty",
+   "te": "సర్వాపన్నివారణార్థం, ధైర్య సిద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "archana": "durga_ashtottaram",
+  "shortCount": 16,
+  "eveningChant": "lalitha_sahasranamam"
+ },
  "status": "phase_a_minimum"
 }

@@ -1,0 +1,63 @@
+{
+ "schema": "kalpam.deity/1",
+ "id": "surya",
+ "version": 1,
+ "updatedAt": "2026-11-27",
+ "minAppVersion": "1.0.0",
+ "name": {
+  "en": "Sri Surya Narayana",
+  "te": "శ్రీ సూర్యనారాయణుడు"
+ },
+ "epithet": {
+  "en": "Aditya, Bhaskara",
+  "te": "ఆదిత్యుడు, భాస్కరుడు"
+ },
+ "greeting": {
+  "en": "Om Suryaya Namaha",
+  "te": "ఓం సూర్యాయ నమః"
+ },
+ "weekdays": [
+  7
+ ],
+ "colors": {
+  "primary": "#8A3A05",
+  "accent": "#F2A33A"
+ },
+ "idolGlyph": "సూ",
+ "art": {
+  "icon": "placeholder://art/surya/icon",
+  "hero": "placeholder://art/surya/hero"
+ },
+ "sanctum": {
+  "closing": {
+   "type": "aarti",
+   "audio": "placeholder://audio/surya/aarti",
+   "name": {
+    "en": "Surya Aarti",
+    "te": "సూర్య హారతి"
+   }
+  }
+ },
+ "poojas": [],
+ "chantings": [
+  "aditya_hridayam"
+ ],
+ "stotras": [
+  "aditya_hridayam",
+  "surya_dwadasa_namavali"
+ ],
+ "bhajans": [],
+ "rituals": {
+  "purpose": {
+   "en": "for long life, good health and a bright mind",
+   "te": "ఆయురారోగ్య తేజస్సిద్ధ్యర్థం"
+  },
+  "suprabhatam": null,
+  "morningChant": "aditya_hridayam",
+  "morningOffering": "arghyam",
+  "archana": "surya_dwadasa_namavali",
+  "shortCount": 12,
+  "eveningChant": "surya_dwadasa_namavali"
+ },
+ "status": "light"
+}

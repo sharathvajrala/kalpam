@@ -25,7 +25,11 @@ class PoojaScreen extends StatefulWidget {
     this.voice,
     this.timeScale,
     this.useSensors,
+    this.onCompleted,
   });
+
+  /// Called once when the pooja reaches its closing (e.g. mark today's ritual done).
+  final VoidCallback? onCompleted;
 
   /// Test hooks: fast Watch Mode, no platform sensors.
   static double debugTimeScale = 1;
@@ -48,6 +52,7 @@ class _PoojaScreenState extends State<PoojaScreen> {
   late final PoojaSession _session;
   StreamSubscription<AccelerometerEvent>? _accel;
   final _clock = Stopwatch()..start();
+  bool _reported = false;
 
   @override
   void initState() {
@@ -72,6 +77,12 @@ class _PoojaScreenState extends State<PoojaScreen> {
         );
       } catch (_) {}
     }
+    _session.addListener(() {
+      if (_session.status == PoojaStatus.completed && !_reported) {
+        _reported = true;
+        widget.onCompleted?.call();
+      }
+    });
     // let the sanctum subscribe first, then begin
     WidgetsBinding.instance.addPostFrameCallback((_) => _session.start());
   }
@@ -79,6 +90,7 @@ class _PoojaScreenState extends State<PoojaScreen> {
   @override
   void dispose() {
     _accel?.cancel();
+    _reported = true; // leaving early is not completing
     _session.end();
     _session.dispose();
     super.dispose();
