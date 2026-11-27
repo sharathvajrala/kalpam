@@ -1,0 +1,701 @@
+{
+ "schema": "kalpam.flagship/1",
+ "id": "calendar",
+ "version": 1,
+ "updatedAt": "2026-11-27",
+ "seasons": [
+  {
+   "id": "ayyappa_mandala_2026",
+   "deityId": "ayyappa",
+   "vratamId": "ayyappa_mandala",
+   "title": {
+    "en": "Ayyappa Mandala Deeksha",
+    "te": "అయ్యప్ప మండల దీక్ష",
+    "ta": "ஐயப்ப மண்டல விரதம்",
+    "ml": "അയ്യപ്പ മണ്ഡല വ്രതം"
+   },
+   "subtitle": {
+    "en": "41-day mala · Makaravilakku 14 Jan",
+    "te": "41 రోజుల మాల · మకరవిళక్కు జనవరి 14"
+   },
+   "format": "mala",
+   "malaDays": 41,
+   "start": "2026-11-16",
+   "end": "2027-01-20",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "makara_jyothi_2027",
+    "at": "2027-01-14T18:30:00+05:30",
+    "title": {
+     "en": "Makara Jyothi",
+     "te": "మకర జ్యోతి"
+    },
+    "liveAarti": true
+   },
+   "daily": {
+    "kathaFromVratam": true,
+    "bhajanSet": [
+     "ayyappa_saranaghosham",
+     "ayyappa_padi_ghosham",
+     "ayyappa_swamy_namavali"
+    ],
+    "chanting": "ayyappa_saranam_108"
+   },
+   "milestones": [
+    {
+     "date": "2026-12-27",
+     "name": {
+      "en": "Mandala Pooja",
+      "te": "మండల పూజ"
+     }
+    },
+    {
+     "date": "2027-01-14",
+     "name": {
+      "en": "Makaravilakku",
+      "te": "మకరవిళక్కు"
+     }
+    },
+    {
+     "date": "2027-01-15",
+     "name": {
+      "en": "Makara Sankranti",
+      "te": "మకర సంక్రాంతి"
+     }
+    }
+   ],
+   "next": "shiva_shivratri_2027"
+  },
+  {
+   "id": "dhanurmasam_2026",
+   "deityId": "venkateswara",
+   "vratamId": null,
+   "title": {
+    "en": "Dhanurmasam",
+    "te": "ధనుర్మాసం"
+   },
+   "subtitle": {
+    "en": "Early-morning Vishnu pooja",
+    "te": "బ్రాహ్మీ ముహూర్త విష్ణు పూజ"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2026-12-16",
+   "end": "2027-01-14",
+   "teaserDays": 30,
+   "priority": "secondary",
+   "quiet": false,
+   "peak": {
+    "id": "vaikuntha_ekadashi_2026",
+    "at": "2026-12-20T05:00:00+05:30",
+    "title": {
+     "en": "Vaikuntha Ekadashi",
+     "te": "వైకుంఠ ఏకాదశి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": "vishnu_sahasranamam"
+   },
+   "milestones": [
+    {
+     "date": "2026-12-20",
+     "name": {
+      "en": "Vaikuntha Ekadashi",
+      "te": "వైకుంఠ ఏకాదశి"
+     }
+    },
+    {
+     "date": "2026-12-22",
+     "name": {
+      "en": "Hanumad Vratam",
+      "te": "హనుమద్వ్రతం"
+     }
+    }
+   ],
+   "next": null
+  },
+  {
+   "id": "shiva_shivratri_2027",
+   "deityId": "shiva",
+   "vratamId": null,
+   "title": {
+    "en": "Om Namah Shivaya Mala",
+    "te": "ఓం నమః శివాయ మాల"
+   },
+   "subtitle": {
+    "en": "21-day mala · Maha Shivratri 6 Mar",
+    "te": "21 రోజుల మాల · మహాశివరాత్రి మార్చి 6"
+   },
+   "format": "mala",
+   "malaDays": 21,
+   "start": "2027-02-14",
+   "end": "2027-03-07",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "maha_shivratri_2027",
+    "at": "2027-03-06T18:30:00+05:30",
+    "title": {
+     "en": "Maha Shivratri — 4-jaama pooja",
+     "te": "మహాశివరాత్రి — చతుర్యామ పూజ"
+    },
+    "liveAarti": true
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [],
+   "next": "rama_hanuman_2027"
+  },
+  {
+   "id": "rama_hanuman_2027",
+   "deityId": "venkateswara",
+   "vratamId": null,
+   "title": {
+    "en": "Sri Rama Navami Season",
+    "te": "శ్రీరామ నవమి ఉత్సవాలు"
+   },
+   "subtitle": {
+    "en": "Ugadi · Chaitra Navratri · Ramayana parayanam",
+    "te": "ఉగాది · చైత్ర నవరాత్రి · రామాయణ పారాయణం"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-04-07",
+   "end": "2027-04-21",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "rama_navami_2027",
+    "at": "2027-04-15T12:00:00+05:30",
+    "title": {
+     "en": "Sri Rama Navami",
+     "te": "శ్రీరామ నవమి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [
+    {
+     "date": "2027-04-07",
+     "name": {
+      "en": "Ugadi",
+      "te": "ఉగాది"
+     }
+    },
+    {
+     "date": "2027-04-15",
+     "name": {
+      "en": "Sri Rama Navami",
+      "te": "శ్రీరామ నవమి"
+     }
+    },
+    {
+     "date": "2027-04-20",
+     "name": {
+      "en": "Hanuman Jayanti",
+      "te": "హనుమాన్ జయంతి"
+     }
+    }
+   ],
+   "next": "hanuman_telugu_2027"
+  },
+  {
+   "id": "hanuman_telugu_2027",
+   "deityId": "hanuman",
+   "vratamId": null,
+   "title": {
+    "en": "Hanuman Chalisa Mala",
+    "te": "హనుమాన్ చాలీసా మాల"
+   },
+   "subtitle": {
+    "en": "11-day mala · Hanuman Jayanti 31 May",
+    "te": "11 రోజుల మాల · హనుమాన్ జయంతి మే 31"
+   },
+   "format": "mala",
+   "malaDays": 11,
+   "start": "2027-05-21",
+   "end": "2027-06-01",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "hanuman_jayanti_te_2027",
+    "at": "2027-05-31T07:00:00+05:30",
+    "title": {
+     "en": "Hanuman Jayanti",
+     "te": "హనుమాన్ జయంతి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": "hanuman_chalisa"
+   },
+   "milestones": [],
+   "next": "ekadashi_japa_2027"
+  },
+  {
+   "id": "ekadashi_japa_2027",
+   "deityId": "venkateswara",
+   "vratamId": null,
+   "title": {
+    "en": "Ekadashi & Japa Season",
+    "te": "ఏకాదశి — జప మాసం"
+   },
+   "subtitle": {
+    "en": "108-japa sankalpam · Nirjala Ekadashi",
+    "te": "108 జప సంకల్పం · నిర్జల ఏకాదశి"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-06-02",
+   "end": "2027-07-13",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "nirjala_ekadashi_2027",
+    "at": "2027-06-14T06:00:00+05:30",
+    "title": {
+     "en": "Nirjala Ekadashi",
+     "te": "నిర్జల ఏకాదశి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [],
+   "next": "guru_shravanam_2027"
+  },
+  {
+   "id": "guru_shravanam_2027",
+   "deityId": "venkateswara",
+   "vratamId": null,
+   "title": {
+    "en": "Guru Purnima",
+    "te": "గురు పౌర్ణమి"
+   },
+   "subtitle": {
+    "en": "Devshayani Ekadashi · Guru Purnima",
+    "te": "తొలి ఏకాదశి · గురు పౌర్ణమి"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-07-14",
+   "end": "2027-08-02",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "guru_purnima_2027",
+    "at": "2027-07-18T07:00:00+05:30",
+    "title": {
+     "en": "Guru Purnima",
+     "te": "గురు పౌర్ణమి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [
+    {
+     "date": "2027-07-14",
+     "name": {
+      "en": "Tholi Ekadashi",
+      "te": "తొలి ఏకాదశి"
+     }
+    }
+   ],
+   "next": "lakshmi_shravana_2027"
+  },
+  {
+   "id": "lakshmi_shravana_2027",
+   "deityId": "lakshmi",
+   "vratamId": null,
+   "title": {
+    "en": "Shravana Masam",
+    "te": "శ్రావణ మాసం"
+   },
+   "subtitle": {
+    "en": "Varalakshmi Vratam · Mangala Gauri",
+    "te": "వరలక్ష్మీ వ్రతం · మంగళగౌరీ"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-08-03",
+   "end": "2027-08-31",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "varalakshmi_2027",
+    "at": "2027-08-13T09:00:00+05:30",
+    "title": {
+     "en": "Varalakshmi Vratam",
+     "te": "వరలక్ష్మీ వ్రతం"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [
+    {
+     "date": "2027-08-25",
+     "name": {
+      "en": "Krishna Janmashtami",
+      "te": "శ్రీకృష్ణ జన్మాష్టమి"
+     }
+    }
+   ],
+   "next": "ganapathy_2027"
+  },
+  {
+   "id": "ganapathy_2027",
+   "deityId": "ganapathy",
+   "vratamId": null,
+   "title": {
+    "en": "Ganesh Mala",
+    "te": "గణేశ మాల"
+   },
+   "subtitle": {
+    "en": "Vinayaka Chavithi · 11 days to Nimajjanam",
+    "te": "వినాయక చవితి · 11 రోజుల నిమజ్జనం వరకు"
+   },
+   "format": "mala",
+   "malaDays": 11,
+   "start": "2027-09-04",
+   "end": "2027-09-14",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "ganesh_chaturthi_2027",
+    "at": "2027-09-04T10:00:00+05:30",
+    "title": {
+     "en": "Vinayaka Chavithi",
+     "te": "వినాయక చవితి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [
+    {
+     "date": "2027-09-14",
+     "name": {
+      "en": "Nimajjanam",
+      "te": "నిమజ్జనం"
+     }
+    }
+   ],
+   "next": "devi_navratri_2027"
+  },
+  {
+   "id": "pitru_paksham_2027",
+   "deityId": "venkateswara",
+   "vratamId": null,
+   "title": {
+    "en": "Pitru Paksham — Tarpanam",
+    "te": "పితృ పక్షం — తర్పణం"
+   },
+   "subtitle": {
+    "en": "A quiet seva for our ancestors",
+    "te": "పితృదేవతలకు నిశ్శబ్ద సేవ"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-09-16",
+   "end": "2027-09-29",
+   "teaserDays": 30,
+   "priority": "secondary",
+   "quiet": true,
+   "peak": {
+    "id": "mahalaya_2027",
+    "at": "2027-09-29T12:00:00+05:30",
+    "title": {
+     "en": "Mahalaya Amavasya",
+     "te": "మహాలయ అమావాస్య"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [],
+   "next": null
+  },
+  {
+   "id": "devi_navratri_2027",
+   "deityId": "durga",
+   "vratamId": null,
+   "title": {
+    "en": "Devi Navaratrulu",
+    "te": "దేవీ నవరాత్రులు"
+   },
+   "subtitle": {
+    "en": "9-day mala · 9 alankarams · Dasara",
+    "te": "9 రోజుల మాల · 9 అలంకారాలు · దసరా"
+   },
+   "format": "mala",
+   "malaDays": 9,
+   "start": "2027-09-30",
+   "end": "2027-10-09",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "vijayadashami_2027",
+    "at": "2027-10-09T10:00:00+05:30",
+    "title": {
+     "en": "Vijayadashami",
+     "te": "విజయదశమి"
+    },
+    "liveAarti": false
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": "lalitha_sahasranamam"
+   },
+   "milestones": [],
+   "next": "lakshmi_diwali_2027"
+  },
+  {
+   "id": "lakshmi_diwali_2027",
+   "deityId": "lakshmi",
+   "vratamId": null,
+   "title": {
+    "en": "Deepavali Lakshmi Pooja",
+    "te": "దీపావళి లక్ష్మీ పూజ"
+   },
+   "subtitle": {
+    "en": "Lakshmi Pooja 29 Oct",
+    "te": "లక్ష్మీ పూజ అక్టోబర్ 29"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-10-10",
+   "end": "2027-10-29",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "diwali_2027",
+    "at": "2027-10-29T18:30:00+05:30",
+    "title": {
+     "en": "Deepavali",
+     "te": "దీపావళి"
+    },
+    "liveAarti": true
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [],
+   "next": "karthika_2027"
+  },
+  {
+   "id": "karthika_2027",
+   "deityId": "shiva",
+   "vratamId": null,
+   "title": {
+    "en": "Karthika Masam",
+    "te": "కార్తీక మాసం"
+   },
+   "subtitle": {
+    "en": "Somavarams · 365 wicks · Karthika Pournami",
+    "te": "సోమవారాలు · 365 వత్తులు · కార్తీక పౌర్ణమి"
+   },
+   "format": "season",
+   "malaDays": 0,
+   "start": "2027-10-30",
+   "end": "2027-11-16",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "karthika_pournami_2027",
+    "at": "2027-11-13T18:00:00+05:30",
+    "title": {
+     "en": "Karthika Pournami",
+     "te": "కార్తీక పౌర్ణమి"
+    },
+    "liveAarti": true
+   },
+   "daily": {
+    "kathaFromVratam": false,
+    "bhajanSet": [],
+    "chanting": null
+   },
+   "milestones": [],
+   "next": "ayyappa_mandala_2027"
+  },
+  {
+   "id": "ayyappa_mandala_2027",
+   "deityId": "ayyappa",
+   "vratamId": "ayyappa_mandala",
+   "title": {
+    "en": "Ayyappa Mandala Deeksha",
+    "te": "అయ్యప్ప మండల దీక్ష"
+   },
+   "subtitle": {
+    "en": "41-day mala · Makaravilakku",
+    "te": "41 రోజుల మాల · మకరవిళక్కు"
+   },
+   "format": "mala",
+   "malaDays": 41,
+   "start": "2027-11-17",
+   "end": "2028-01-20",
+   "teaserDays": 30,
+   "priority": "hero",
+   "quiet": false,
+   "peak": {
+    "id": "makara_jyothi_2028",
+    "at": "2028-01-15T18:30:00+05:30",
+    "title": {
+     "en": "Makara Jyothi",
+     "te": "మకర జ్యోతి"
+    },
+    "liveAarti": true
+   },
+   "daily": {
+    "kathaFromVratam": true,
+    "bhajanSet": [
+     "ayyappa_saranaghosham"
+    ],
+    "chanting": "ayyappa_saranam_108"
+   },
+   "milestones": [],
+   "next": null
+  }
+ ],
+ "weeklyGods": {
+  "1": [
+   "shiva"
+  ],
+  "2": [
+   "hanuman",
+   "subrahmanya"
+  ],
+  "3": [
+   "venkateswara"
+  ],
+  "4": [
+   "venkateswara"
+  ],
+  "5": [
+   "lakshmi",
+   "durga"
+  ],
+  "6": [
+   "venkateswara",
+   "hanuman"
+  ],
+  "7": [
+   "venkateswara"
+  ]
+ },
+ "parayanam": {
+  "vishnu_sahasranamam": [
+   4,
+   6
+  ],
+  "lalitha_sahasranamam": [
+   5
+  ],
+  "hanuman_chalisa": [
+   2,
+   6
+  ]
+ },
+ "recurring": [
+  {
+   "id": "ekadashi",
+   "name": {
+    "en": "Ekadashi",
+    "te": "ఏకాదశి"
+   },
+   "tithis": [
+    11,
+    26
+   ],
+   "deityId": "venkateswara"
+  },
+  {
+   "id": "sankashti",
+   "name": {
+    "en": "Sankashti Chaturthi",
+    "te": "సంకష్టహర చతుర్థి"
+   },
+   "tithis": [
+    19
+   ],
+   "deityId": "ganapathy"
+  },
+  {
+   "id": "pradosham",
+   "name": {
+    "en": "Pradosham",
+    "te": "ప్రదోషం"
+   },
+   "tithis": [
+    13,
+    28
+   ],
+   "deityId": "shiva"
+  },
+  {
+   "id": "masa_shivratri",
+   "name": {
+    "en": "Masa Shivaratri",
+    "te": "మాస శివరాత్రి"
+   },
+   "tithis": [
+    29
+   ],
+   "deityId": "shiva"
+  },
+  {
+   "id": "pournami_satyanarayana",
+   "name": {
+    "en": "Pournami Satyanarayana Vratam",
+    "te": "పౌర్ణమి సత్యనారాయణ వ్రతం"
+   },
+   "tithis": [
+    15
+   ],
+   "deityId": "venkateswara"
+  }
+ ]
+}

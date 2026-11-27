@@ -1,0 +1,80 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "vishnu_sahasranamam",
+ "version": 1,
+ "title": {
+  "en": "Vishnu Sahasranamam",
+  "te": "విష్ణు సహస్రనామం"
+ },
+ "deityIds": [
+  "venkateswara"
+ ],
+ "category": "sahasranamam",
+ "parayanamDays": [
+  4,
+  6
+ ],
+ "source": "Mahabharata, Anushasana Parva (public domain). Opening portion; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/vishnu_sahasranamam/sung",
+  "learn": "placeholder://audio/stotra/vishnu_sahasranamam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "శుక్లాంబరధరం విష్ణుం శశివర్ణం చతుర్భుజమ్",
+   "translit": "Shuklambaradharam vishnum shashivarnam chaturbhujam",
+   "meaning": {
+    "en": "Clad in white, all-pervading, moon-hued, four-armed",
+    "te": "శ్వేత వస్త్రధారి, సర్వవ్యాపి, చంద్రవర్ణుడు, చతుర్భుజుడు"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "ప్రసన్నవదనం ధ్యాయేత్ సర్వవిఘ్నోపశాంతయే",
+   "translit": "Prasannavadanam dhyayet sarvavighnopashantaye",
+   "meaning": {
+    "en": "Meditate on that serene face to remove all obstacles",
+    "te": "ప్రసన్న వదనుని ధ్యానిస్తే విఘ్నాలు తొలగుతాయి"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఓం విశ్వం విష్ణుర్వషట్కారో భూతభవ్యభవత్ప్రభుః",
+   "translit": "Om vishvam vishnur vashatkaro bhuta bhavya bhavat prabhuh",
+   "meaning": {
+    "en": "He is the universe, all-pervading, lord of past, future and present",
+    "te": "విశ్వమే ఆయన, సర్వవ్యాపి, త్రికాల ప్రభువు"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "భూతకృద్భూతభృద్భావో భూతాత్మా భూతభావనః",
+   "translit": "Bhutakrid bhutabhrid bhavo bhutatma bhutabhavanah",
+   "meaning": {
+    "en": "Creator and sustainer of beings, their very Self",
+    "te": "జీవుల సృష్టికర్త, పోషకుడు, ఆత్మ"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "పూతాత్మా పరమాత్మా చ ముక్తానాం పరమా గతిః",
+   "translit": "Putatma paramatma cha muktanam parama gatih",
+   "meaning": {
+    "en": "The pure Self, the Supreme Self, final goal of the liberated",
+    "te": "పవిత్రాత్మ, పరమాత్మ, ముక్తుల పరమగతి"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "అవ్యయః పురుషః సాక్షీ క్షేత్రజ్ఞోఽక్షర ఏవ చ",
+   "translit": "Avyayah purushah sakshi kshetrajno akshara eva cha",
+   "meaning": {
+    "en": "Imperishable, the Person, the witness, knower of the field, eternal",
+    "te": "అవ్యయుడు, పురుషుడు, సాక్షి, క్షేత్రజ్ఞుడు, అక్షరుడు"
+   }
+  }
+ ]
+}

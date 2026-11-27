@@ -1,0 +1,1000 @@
+{
+ "schema": "kalpam.deity/1",
+ "id": "shiva",
+ "version": 1,
+ "updatedAt": "2026-11-27",
+ "minAppVersion": "1.0.0",
+ "name": {
+  "en": "Lord Shiva",
+  "te": "శ్రీ శివుడు"
+ },
+ "epithet": {
+  "en": "Parameswara",
+  "te": "పరమేశ్వరుడు"
+ },
+ "greeting": {
+  "en": "Om Namah Shivaya",
+  "te": "ఓం నమః శివాయ"
+ },
+ "weekdays": [
+  1
+ ],
+ "colors": {
+  "primary": "#22313F",
+  "accent": "#C9A227"
+ },
+ "idolGlyph": "శి",
+ "art": {
+  "icon": "placeholder://art/shiva/icon",
+  "hero": "placeholder://art/shiva/hero"
+ },
+ "sanctum": {
+  "sceneId": "sanctum_shiva",
+  "defaultAlankaram": "daily",
+  "alankarams": [
+   {
+    "id": "daily",
+    "name": {
+     "en": "Daily",
+     "te": "నిత్య"
+    }
+   }
+  ],
+  "closing": {
+   "type": "aarti",
+   "audio": "placeholder://audio/shiva/aarti",
+   "name": {
+    "en": "Mangala Aarti",
+    "te": "మంగళ హారతి"
+   }
+  },
+  "abhishekamLiquids": [
+   "water",
+   "milk",
+   "panchamrutam",
+   "bilva_water"
+  ],
+  "peakEvents": []
+ },
+ "poojas": [
+  {
+   "id": "nitya5",
+   "name": {
+    "en": "5-min Nitya Pooja",
+    "te": "5 నిమిషాల నిత్య పూజ"
+   },
+   "lengthMin": 5,
+   "steps": [
+    {
+     "upachara": "sankalpam",
+     "title": {
+      "en": "Sankalpam",
+      "te": "సంకల్పం"
+     },
+     "instruction": {
+      "en": "Hold akshatas in your right palm and listen to your Sankalpam.",
+      "te": "కుడి అరచేతిలో అక్షతలు పట్టుకుని మీ సంకల్పం వినండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/sankalpam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 25
+    },
+    {
+     "upachara": "bell",
+     "title": {
+      "en": "Ghanta",
+      "te": "ఘంటానాదం"
+     },
+     "instruction": {
+      "en": "Ring the bell: shake your phone (or tap the bell).",
+      "te": "గంట మోగించండి: ఫోన్ ఊపండి (లేదా గంటను తాకండి)."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/bell",
+     "action": "shake",
+     "target": 3,
+     "autoDurationSec": 5
+    },
+    {
+     "upachara": "deepam",
+     "title": {
+      "en": "Deepam",
+      "te": "దీపం"
+     },
+     "instruction": {
+      "en": "Light the deepam. Tap the wick.",
+      "te": "దీపం వెలిగించండి. వత్తిని తాకండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — deepam darshayami",
+      "te": "ఓం నమః శివాయ దీపం దర్శయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/deepam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 8
+    },
+    {
+     "upachara": "pushpam",
+     "title": {
+      "en": "Pushpam",
+      "te": "పుష్పం"
+     },
+     "instruction": {
+      "en": "Shower flowers: swipe up three times.",
+      "te": "పుష్పాలు సమర్పించండి: మూడుసార్లు పైకి స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — pushpaih pujayami",
+      "te": "ఓం నమః శివాయ పుష్పైః పూజయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/pushpam",
+     "action": "shower",
+     "target": 3,
+     "autoDurationSec": 12
+    },
+    {
+     "upachara": "naivedyam",
+     "title": {
+      "en": "Naivedyam",
+      "te": "నైవేద్యం"
+     },
+     "instruction": {
+      "en": "Place the naivedyam before the Lord.",
+      "te": "నైవేద్యం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — naivedyam samarpayami",
+      "te": "ఓం నమః శివాయ నైవేద్యం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/naivedyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "aarti",
+     "title": {
+      "en": "Nirajanam",
+      "te": "నీరాజనం"
+     },
+     "instruction": {
+      "en": "Wave the aarti plate in three clockwise circles.",
+      "te": "హారతి పళ్ళెంతో మూడు సవ్య వలయాలు తిప్పండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — nirajanam samarpayami",
+      "te": "ఓం నమః శివాయ నీరాజనం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/aarti",
+     "action": "drag_circle",
+     "target": 3,
+     "autoDurationSec": 20
+    },
+    {
+     "upachara": "namaskaram",
+     "title": {
+      "en": "Namaskaram",
+      "te": "నమస్కారం"
+     },
+     "instruction": {
+      "en": "Bow down and offer your prayer.",
+      "te": "సాష్టాంగ నమస్కారం చేసి ప్రార్థించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — namaskaromi",
+      "te": "ఓం నమః శివాయ నమస్కరోమి"
+     },
+     "voice": "placeholder://audio/voiceguide/namaskaram",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "closing",
+     "title": {
+      "en": "Closing",
+      "te": "ముగింపు"
+     },
+     "instruction": {
+      "en": "Receive the Lord's blessings.",
+      "te": "స్వామి ఆశీస్సులు స్వీకరించండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/closing",
+     "action": "none",
+     "target": 1,
+     "autoDurationSec": 30
+    }
+   ]
+  },
+  {
+   "id": "nitya15",
+   "name": {
+    "en": "15-min Pooja",
+    "te": "15 నిమిషాల పూజ"
+   },
+   "lengthMin": 15,
+   "steps": [
+    {
+     "upachara": "sankalpam",
+     "title": {
+      "en": "Sankalpam",
+      "te": "సంకల్పం"
+     },
+     "instruction": {
+      "en": "Hold akshatas in your right palm and listen to your Sankalpam.",
+      "te": "కుడి అరచేతిలో అక్షతలు పట్టుకుని మీ సంకల్పం వినండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/sankalpam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 25
+    },
+    {
+     "upachara": "dhyanam",
+     "title": {
+      "en": "Dhyanam",
+      "te": "ధ్యానం"
+     },
+     "instruction": {
+      "en": "Fold your hands and meditate on the form of the Lord.",
+      "te": "చేతులు జోడించి స్వామి రూపాన్ని ధ్యానించండి."
+     },
+     "mantra": {
+      "en": "Dhyayen nityam mahesham rajatagiri nibham charu chandravatamsam",
+      "te": "ధ్యాయేన్నిత్యం మహేశం రజతగిరినిభం చారుచంద్రావతంసం"
+     },
+     "voice": "placeholder://audio/voiceguide/dhyanam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 15
+    },
+    {
+     "upachara": "bell",
+     "title": {
+      "en": "Ghanta",
+      "te": "ఘంటానాదం"
+     },
+     "instruction": {
+      "en": "Ring the bell: shake your phone (or tap the bell).",
+      "te": "గంట మోగించండి: ఫోన్ ఊపండి (లేదా గంటను తాకండి)."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/bell",
+     "action": "shake",
+     "target": 3,
+     "autoDurationSec": 5
+    },
+    {
+     "upachara": "abhishekam",
+     "title": {
+      "en": "Abhishekam",
+      "te": "అభిషేకం"
+     },
+     "instruction": {
+      "en": "Choose the offering and tilt the vessel to pour it over the Lord.",
+      "te": "ద్రవ్యాన్ని ఎంచుకుని పాత్రను వంచి అభిషేకం చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — snapayami",
+      "te": "ఓం నమః శివాయ స్నపయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/abhishekam",
+     "action": "pour",
+     "target": 1,
+     "autoDurationSec": 20,
+     "options": [
+      "water",
+      "milk",
+      "panchamrutam",
+      "bilva_water"
+     ]
+    },
+    {
+     "upachara": "gandham",
+     "title": {
+      "en": "Gandham",
+      "te": "గంధం"
+     },
+     "instruction": {
+      "en": "Apply sandal paste and kumkum. Tap the forehead of the idol.",
+      "te": "గంధం, కుంకుమ అలంకరించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — gandham samarpayami",
+      "te": "ఓం నమః శివాయ గంధం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/gandham",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "pushpam",
+     "title": {
+      "en": "Pushpam",
+      "te": "పుష్పం"
+     },
+     "instruction": {
+      "en": "Shower flowers: swipe up three times.",
+      "te": "పుష్పాలు సమర్పించండి: మూడుసార్లు పైకి స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — pushpaih pujayami",
+      "te": "ఓం నమః శివాయ పుష్పైః పూజయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/pushpam",
+     "action": "shower",
+     "target": 3,
+     "autoDurationSec": 12
+    },
+    {
+     "upachara": "dhoopam",
+     "title": {
+      "en": "Dhoopam",
+      "te": "ధూపం"
+     },
+     "instruction": {
+      "en": "Wave the incense: draw three circles.",
+      "te": "ధూపం: మూడు వలయాలు గీయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — dhoopam aaghrapayami",
+      "te": "ఓం నమః శివాయ ధూపం ఆఘ్రాపయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/dhoopam",
+     "action": "drag_circle",
+     "target": 3,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "deepam",
+     "title": {
+      "en": "Deepam",
+      "te": "దీపం"
+     },
+     "instruction": {
+      "en": "Light the deepam. Tap the wick.",
+      "te": "దీపం వెలిగించండి. వత్తిని తాకండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — deepam darshayami",
+      "te": "ఓం నమః శివాయ దీపం దర్శయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/deepam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 8
+    },
+    {
+     "upachara": "naivedyam",
+     "title": {
+      "en": "Naivedyam",
+      "te": "నైవేద్యం"
+     },
+     "instruction": {
+      "en": "Place the naivedyam before the Lord.",
+      "te": "నైవేద్యం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — naivedyam samarpayami",
+      "te": "ఓం నమః శివాయ నైవేద్యం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/naivedyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "coconut",
+     "title": {
+      "en": "Coconut",
+      "te": "కొబ్బరికాయ"
+     },
+     "instruction": {
+      "en": "Break the coconut: swipe down firmly.",
+      "te": "కొబ్బరికాయ కొట్టండి: గట్టిగా కిందికి స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — narikelam samarpayami",
+      "te": "ఓం నమః శివాయ నారికేళం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/coconut",
+     "action": "swipe_down",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "aarti",
+     "title": {
+      "en": "Nirajanam",
+      "te": "నీరాజనం"
+     },
+     "instruction": {
+      "en": "Wave the aarti plate in three clockwise circles.",
+      "te": "హారతి పళ్ళెంతో మూడు సవ్య వలయాలు తిప్పండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — nirajanam samarpayami",
+      "te": "ఓం నమః శివాయ నీరాజనం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/aarti",
+     "action": "drag_circle",
+     "target": 3,
+     "autoDurationSec": 20
+    },
+    {
+     "upachara": "shankh",
+     "title": {
+      "en": "Shankha Nadam",
+      "te": "శంఖనాదం"
+     },
+     "instruction": {
+      "en": "Blow into the microphone, or press and hold the shankh.",
+      "te": "మైక్‌లోకి ఊదండి లేదా శంఖాన్ని నొక్కి పట్టుకోండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/shankh",
+     "action": "blow",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "pradakshina",
+     "title": {
+      "en": "Pradakshina",
+      "te": "ప్రదక్షిణ"
+     },
+     "instruction": {
+      "en": "Walk around the Lord three times: swipe around the sanctum.",
+      "te": "మూడు ప్రదక్షిణలు: గర్భగుడి చుట్టూ స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — pradakshina namaskaran samarpayami",
+      "te": "ఓం నమః శివాయ ప్రదక్షిణ నమస్కారాన్ సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/pradakshina",
+     "action": "walk_around",
+     "target": 3,
+     "autoDurationSec": 15
+    },
+    {
+     "upachara": "namaskaram",
+     "title": {
+      "en": "Namaskaram",
+      "te": "నమస్కారం"
+     },
+     "instruction": {
+      "en": "Bow down and offer your prayer.",
+      "te": "సాష్టాంగ నమస్కారం చేసి ప్రార్థించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — namaskaromi",
+      "te": "ఓం నమః శివాయ నమస్కరోమి"
+     },
+     "voice": "placeholder://audio/voiceguide/namaskaram",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "closing",
+     "title": {
+      "en": "Closing",
+      "te": "ముగింపు"
+     },
+     "instruction": {
+      "en": "Receive the Lord's blessings.",
+      "te": "స్వామి ఆశీస్సులు స్వీకరించండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/closing",
+     "action": "none",
+     "target": 1,
+     "autoDurationSec": 30
+    }
+   ]
+  },
+  {
+   "id": "shodasha",
+   "name": {
+    "en": "Shodashopachara Pooja",
+    "te": "షోడశోపచార పూజ"
+   },
+   "lengthMin": 35,
+   "steps": [
+    {
+     "upachara": "sankalpam",
+     "title": {
+      "en": "Sankalpam",
+      "te": "సంకల్పం"
+     },
+     "instruction": {
+      "en": "Hold akshatas in your right palm and listen to your Sankalpam.",
+      "te": "కుడి అరచేతిలో అక్షతలు పట్టుకుని మీ సంకల్పం వినండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/sankalpam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 25
+    },
+    {
+     "upachara": "dhyanam",
+     "title": {
+      "en": "Dhyanam",
+      "te": "ధ్యానం"
+     },
+     "instruction": {
+      "en": "Fold your hands and meditate on the form of the Lord.",
+      "te": "చేతులు జోడించి స్వామి రూపాన్ని ధ్యానించండి."
+     },
+     "mantra": {
+      "en": "Dhyayen nityam mahesham rajatagiri nibham charu chandravatamsam",
+      "te": "ధ్యాయేన్నిత్యం మహేశం రజతగిరినిభం చారుచంద్రావతంసం"
+     },
+     "voice": "placeholder://audio/voiceguide/dhyanam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 15
+    },
+    {
+     "upachara": "bell",
+     "title": {
+      "en": "Ghanta",
+      "te": "ఘంటానాదం"
+     },
+     "instruction": {
+      "en": "Ring the bell: shake your phone (or tap the bell).",
+      "te": "గంట మోగించండి: ఫోన్ ఊపండి (లేదా గంటను తాకండి)."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/bell",
+     "action": "shake",
+     "target": 3,
+     "autoDurationSec": 5
+    },
+    {
+     "upachara": "avahanam",
+     "title": {
+      "en": "Avahanam",
+      "te": "ఆవాహనం"
+     },
+     "instruction": {
+      "en": "Invite the Lord into the sanctum. Tap the idol.",
+      "te": "స్వామిని ఆహ్వానించండి. విగ్రహాన్ని తాకండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — avahayami",
+      "te": "ఓం నమః శివాయ ఆవాహయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/avahanam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 8
+    },
+    {
+     "upachara": "asanam",
+     "title": {
+      "en": "Asanam",
+      "te": "ఆసనం"
+     },
+     "instruction": {
+      "en": "Offer a seat. Tap the peetham.",
+      "te": "ఆసనం సమర్పించండి. పీఠాన్ని తాకండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — asanam samarpayami",
+      "te": "ఓం నమః శివాయ ఆసనం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/asanam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "padyam",
+     "title": {
+      "en": "Padyam",
+      "te": "పాద్యం"
+     },
+     "instruction": {
+      "en": "Offer water to wash the Lord's feet.",
+      "te": "పాదాలకు జలం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — padyam samarpayami",
+      "te": "ఓం నమః శివాయ పాద్యం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/padyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "arghyam",
+     "title": {
+      "en": "Arghyam",
+      "te": "అర్ఘ్యం"
+     },
+     "instruction": {
+      "en": "Offer water to the hands.",
+      "te": "హస్తాలకు జలం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — arghyam samarpayami",
+      "te": "ఓం నమః శివాయ అర్ఘ్యం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/arghyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "achamaniyam",
+     "title": {
+      "en": "Achamaniyam",
+      "te": "ఆచమనీయం"
+     },
+     "instruction": {
+      "en": "Offer water for achamanam.",
+      "te": "ఆచమనానికి జలం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — achamaniyam samarpayami",
+      "te": "ఓం నమః శివాయ ఆచమనీయం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/achamaniyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "abhishekam",
+     "title": {
+      "en": "Abhishekam",
+      "te": "అభిషేకం"
+     },
+     "instruction": {
+      "en": "Choose the offering and tilt the vessel to pour it over the Lord.",
+      "te": "ద్రవ్యాన్ని ఎంచుకుని పాత్రను వంచి అభిషేకం చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — snapayami",
+      "te": "ఓం నమః శివాయ స్నపయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/abhishekam",
+     "action": "pour",
+     "target": 1,
+     "autoDurationSec": 20,
+     "options": [
+      "water",
+      "milk",
+      "panchamrutam",
+      "bilva_water"
+     ]
+    },
+    {
+     "upachara": "vastram",
+     "title": {
+      "en": "Vastram",
+      "te": "వస్త్రం"
+     },
+     "instruction": {
+      "en": "Offer the new cloth. Tap to drape it.",
+      "te": "నూతన వస్త్రం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — vastram samarpayami",
+      "te": "ఓం నమః శివాయ వస్త్రం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/vastram",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "yagnopavitam",
+     "title": {
+      "en": "Yagnopavitam",
+      "te": "యజ్ఞోపవీతం"
+     },
+     "instruction": {
+      "en": "Offer the sacred thread.",
+      "te": "యజ్ఞోపవీతం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — yagnopavitam samarpayami",
+      "te": "ఓం నమః శివాయ యజ్ఞోపవీతం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/yagnopavitam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "gandham",
+     "title": {
+      "en": "Gandham",
+      "te": "గంధం"
+     },
+     "instruction": {
+      "en": "Apply sandal paste and kumkum. Tap the forehead of the idol.",
+      "te": "గంధం, కుంకుమ అలంకరించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — gandham samarpayami",
+      "te": "ఓం నమః శివాయ గంధం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/gandham",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "pushpam",
+     "title": {
+      "en": "Pushpam",
+      "te": "పుష్పం"
+     },
+     "instruction": {
+      "en": "Shower flowers: swipe up three times.",
+      "te": "పుష్పాలు సమర్పించండి: మూడుసార్లు పైకి స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — pushpaih pujayami",
+      "te": "ఓం నమః శివాయ పుష్పైః పూజయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/pushpam",
+     "action": "shower",
+     "target": 3,
+     "autoDurationSec": 12
+    },
+    {
+     "upachara": "dhoopam",
+     "title": {
+      "en": "Dhoopam",
+      "te": "ధూపం"
+     },
+     "instruction": {
+      "en": "Wave the incense: draw three circles.",
+      "te": "ధూపం: మూడు వలయాలు గీయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — dhoopam aaghrapayami",
+      "te": "ఓం నమః శివాయ ధూపం ఆఘ్రాపయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/dhoopam",
+     "action": "drag_circle",
+     "target": 3,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "deepam",
+     "title": {
+      "en": "Deepam",
+      "te": "దీపం"
+     },
+     "instruction": {
+      "en": "Light the deepam. Tap the wick.",
+      "te": "దీపం వెలిగించండి. వత్తిని తాకండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — deepam darshayami",
+      "te": "ఓం నమః శివాయ దీపం దర్శయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/deepam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 8
+    },
+    {
+     "upachara": "naivedyam",
+     "title": {
+      "en": "Naivedyam",
+      "te": "నైవేద్యం"
+     },
+     "instruction": {
+      "en": "Place the naivedyam before the Lord.",
+      "te": "నైవేద్యం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — naivedyam samarpayami",
+      "te": "ఓం నమః శివాయ నైవేద్యం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/naivedyam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "tambulam",
+     "title": {
+      "en": "Tambulam",
+      "te": "తాంబూలం"
+     },
+     "instruction": {
+      "en": "Offer betel leaves and nuts.",
+      "te": "తాంబూలం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — tambulam samarpayami",
+      "te": "ఓం నమః శివాయ తాంబూలం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/tambulam",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "coconut",
+     "title": {
+      "en": "Coconut",
+      "te": "కొబ్బరికాయ"
+     },
+     "instruction": {
+      "en": "Break the coconut: swipe down firmly.",
+      "te": "కొబ్బరికాయ కొట్టండి: గట్టిగా కిందికి స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — narikelam samarpayami",
+      "te": "ఓం నమః శివాయ నారికేళం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/coconut",
+     "action": "swipe_down",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "aarti",
+     "title": {
+      "en": "Nirajanam",
+      "te": "నీరాజనం"
+     },
+     "instruction": {
+      "en": "Wave the aarti plate in three clockwise circles.",
+      "te": "హారతి పళ్ళెంతో మూడు సవ్య వలయాలు తిప్పండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — nirajanam samarpayami",
+      "te": "ఓం నమః శివాయ నీరాజనం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/aarti",
+     "action": "drag_circle",
+     "target": 3,
+     "autoDurationSec": 20
+    },
+    {
+     "upachara": "shankh",
+     "title": {
+      "en": "Shankha Nadam",
+      "te": "శంఖనాదం"
+     },
+     "instruction": {
+      "en": "Blow into the microphone, or press and hold the shankh.",
+      "te": "మైక్‌లోకి ఊదండి లేదా శంఖాన్ని నొక్కి పట్టుకోండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/shankh",
+     "action": "blow",
+     "target": 1,
+     "autoDurationSec": 6
+    },
+    {
+     "upachara": "mantrapushpam",
+     "title": {
+      "en": "Mantrapushpam",
+      "te": "మంత్రపుష్పం"
+     },
+     "instruction": {
+      "en": "Offer flowers with folded hands.",
+      "te": "చేతులు జోడించి మంత్రపుష్పం సమర్పించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — mantrapushpam samarpayami",
+      "te": "ఓం నమః శివాయ మంత్రపుష్పం సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/mantrapushpam",
+     "action": "shower",
+     "target": 1,
+     "autoDurationSec": 15
+    },
+    {
+     "upachara": "pradakshina",
+     "title": {
+      "en": "Pradakshina",
+      "te": "ప్రదక్షిణ"
+     },
+     "instruction": {
+      "en": "Walk around the Lord three times: swipe around the sanctum.",
+      "te": "మూడు ప్రదక్షిణలు: గర్భగుడి చుట్టూ స్వైప్ చేయండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — pradakshina namaskaran samarpayami",
+      "te": "ఓం నమః శివాయ ప్రదక్షిణ నమస్కారాన్ సమర్పయామి"
+     },
+     "voice": "placeholder://audio/voiceguide/pradakshina",
+     "action": "walk_around",
+     "target": 3,
+     "autoDurationSec": 15
+    },
+    {
+     "upachara": "namaskaram",
+     "title": {
+      "en": "Namaskaram",
+      "te": "నమస్కారం"
+     },
+     "instruction": {
+      "en": "Bow down and offer your prayer.",
+      "te": "సాష్టాంగ నమస్కారం చేసి ప్రార్థించండి."
+     },
+     "mantra": {
+      "en": "Om Namah Shivaya — namaskaromi",
+      "te": "ఓం నమః శివాయ నమస్కరోమి"
+     },
+     "voice": "placeholder://audio/voiceguide/namaskaram",
+     "action": "tap",
+     "target": 1,
+     "autoDurationSec": 10
+    },
+    {
+     "upachara": "closing",
+     "title": {
+      "en": "Closing",
+      "te": "ముగింపు"
+     },
+     "instruction": {
+      "en": "Receive the Lord's blessings.",
+      "te": "స్వామి ఆశీస్సులు స్వీకరించండి."
+     },
+     "mantra": {
+      "en": "",
+      "te": ""
+     },
+     "voice": "placeholder://audio/voiceguide/closing",
+     "action": "none",
+     "target": 1,
+     "autoDurationSec": 30
+    }
+   ]
+  }
+ ],
+ "chantings": [],
+ "stotras": [],
+ "bhajans": [],
+ "status": "phase_a_minimum"
+}

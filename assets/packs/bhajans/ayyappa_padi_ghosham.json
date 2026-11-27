@@ -1,0 +1,42 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "ayyappa_padi_ghosham",
+ "version": 1,
+ "title": {
+  "en": "Padi Ghosham — the 18 steps",
+  "te": "పడి ఘోష — పదునెట్టాంపడి"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/ayyappa_padi_ghosham",
+ "license": null,
+ "durationSec": 360,
+ "seasons": [
+  "ayyappa_mandala_2026"
+ ],
+ "lyrics": [
+  {
+   "te": "ఒన్నాం తిరుప్పడి శరణం పొన్నయ్యప్పా",
+   "translit": "Onnam thiruppadi saranam ponnayyappa"
+  },
+  {
+   "te": "రండాం తిరుప్పడి శరణం పొన్నయ్యప్పా",
+   "translit": "Randam thiruppadi saranam ponnayyappa"
+  },
+  {
+   "te": "మూన్నాం తిరుప్పడి శరణం పొన్నయ్యప్పా",
+   "translit": "Moonnam thiruppadi saranam ponnayyappa"
+  },
+  {
+   "te": "నాలాం తిరుప్పడి శరణం పొన్నయ్యప్పా",
+   "translit": "Nalam thiruppadi saranam ponnayyappa"
+  },
+  {
+   "te": "అంజాం తిరుప్పడి శరణం పొన్నయ్యప్పా",
+   "translit": "Anjam thiruppadi saranam ponnayyappa"
+  }
+ ]
+}

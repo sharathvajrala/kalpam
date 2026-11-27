@@ -1,0 +1,68 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "harivarasanam",
+ "version": 1,
+ "title": {
+  "en": "Harivarasanam",
+  "te": "హరివరాసనం"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "category": "keertana",
+ "parayanamDays": [],
+ "source": "Kumbakudi Kulathur Iyer (1920s, public domain lyric). Recording must be commissioned.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/harivarasanam/sung",
+  "learn": "placeholder://audio/stotra/harivarasanam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "హరివరాసనం విశ్వమోహనం",
+   "translit": "Harivarasanam vishwamohanam",
+   "meaning": {
+    "en": "Seated on the lion throne, enchanter of the universe",
+    "te": "సింహాసనాసీనుడు, విశ్వమోహనుడు"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "హరిదధీశ్వరం ఆరాధ్యపాదుకం",
+   "translit": "Haridadhiswaram aaradhyapadhukam",
+   "meaning": {
+    "en": "Lord of all directions, whose sandals are worshipped",
+    "te": "దిక్కులకు అధిపతి, పూజనీయ పాదుకలవాడు"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "అరివిమర్దనం నిత్యనర్తనం",
+   "translit": "Arivimardhanam nithyanarthanam",
+   "meaning": {
+    "en": "Destroyer of enemies, ever dancing",
+    "te": "శత్రు సంహారకుడు, నిత్య నర్తకుడు"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "హరిహరాత్మజం దేవమాశ్రయే",
+   "translit": "Hariharathmajam devamashraye",
+   "meaning": {
+    "en": "I take refuge in the son of Hari and Hara",
+    "te": "హరిహరాత్మజుని ఆశ్రయిస్తున్నాను"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "శరణం అయ్యప్ప స్వామి శరణం అయ్యప్ప",
+   "translit": "Saranam Ayyappa swami saranam Ayyappa",
+   "meaning": {
+    "en": "Refuge, Ayyappa",
+    "te": "శరణం అయ్యప్ప"
+   }
+  }
+ ]
+}

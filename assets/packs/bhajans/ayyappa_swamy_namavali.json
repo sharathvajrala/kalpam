@@ -1,0 +1,42 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "ayyappa_swamy_namavali",
+ "version": 1,
+ "title": {
+  "en": "Swamy Namavali",
+  "te": "స్వామి నామావళి"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/ayyappa_swamy_namavali",
+ "license": null,
+ "durationSec": 240,
+ "seasons": [
+  "ayyappa_mandala_2026"
+ ],
+ "lyrics": [
+  {
+   "te": "ఓం శ్రీ ధర్మశాస్త్రే నమః",
+   "translit": "Om Sri Dharma Sasthre Namaha"
+  },
+  {
+   "te": "ఓం హరిహర పుత్రాయ నమః",
+   "translit": "Om Harihara Putraya Namaha"
+  },
+  {
+   "te": "ఓం మణికంఠాయ నమః",
+   "translit": "Om Manikanthaya Namaha"
+  },
+  {
+   "te": "ఓం భూతనాథాయ నమః",
+   "translit": "Om Bhutanathaya Namaha"
+  },
+  {
+   "te": "ఓం శబరిగిరీశాయ నమః",
+   "translit": "Om Sabarigirishaya Namaha"
+  }
+ ]
+}

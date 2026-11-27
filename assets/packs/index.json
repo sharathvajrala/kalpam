@@ -1,0 +1,121 @@
+{
+ "schema": "kalpam.index/1",
+ "id": "index",
+ "version": 1,
+ "packs": [
+  {
+   "path": "bhajans/ayyappa_padi_ghosham.json",
+   "id": "ayyappa_padi_ghosham",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/ayyappa_saranaghosham.json",
+   "id": "ayyappa_saranaghosham",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "bhajans/ayyappa_swamy_namavali.json",
+   "id": "ayyappa_swamy_namavali",
+   "version": 1,
+   "schema": "kalpam.bhajan/1"
+  },
+  {
+   "path": "deities/ayyappa.json",
+   "id": "ayyappa",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/durga.json",
+   "id": "durga",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/ganapathy.json",
+   "id": "ganapathy",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/hanuman.json",
+   "id": "hanuman",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/lakshmi.json",
+   "id": "lakshmi",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/shiva.json",
+   "id": "shiva",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/subrahmanya.json",
+   "id": "subrahmanya",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "deities/venkateswara.json",
+   "id": "venkateswara",
+   "version": 1,
+   "schema": "kalpam.deity/1"
+  },
+  {
+   "path": "flagship/calendar.json",
+   "id": "calendar",
+   "version": 1,
+   "schema": "kalpam.flagship/1"
+  },
+  {
+   "path": "stotras/ayyappa_saranam_108.json",
+   "id": "ayyappa_saranam_108",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/hanuman_chalisa.json",
+   "id": "hanuman_chalisa",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/harivarasanam.json",
+   "id": "harivarasanam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/lalitha_sahasranamam.json",
+   "id": "lalitha_sahasranamam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/maladharana_mantram.json",
+   "id": "maladharana_mantram",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "stotras/vishnu_sahasranamam.json",
+   "id": "vishnu_sahasranamam",
+   "version": 1,
+   "schema": "kalpam.stotra/1"
+  },
+  {
+   "path": "vratams/ayyappa_mandala.json",
+   "id": "ayyappa_mandala",
+   "version": 1,
+   "schema": "kalpam.vratam/1"
+  }
+ ]
+}

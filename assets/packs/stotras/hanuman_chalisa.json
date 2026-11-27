@@ -1,0 +1,98 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "hanuman_chalisa",
+ "version": 1,
+ "title": {
+  "en": "Hanuman Chalisa",
+  "te": "హనుమాన్ చాలీసా"
+ },
+ "deityIds": [
+  "hanuman"
+ ],
+ "category": "chalisa",
+ "parayanamDays": [
+  2,
+  6
+ ],
+ "source": "Goswami Tulsidas (16th c., public domain), Awadhi in Telugu script. Opening portion; full 40 chaupais pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/hanuman_chalisa/sung",
+  "learn": "placeholder://audio/stotra/hanuman_chalisa/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "శ్రీగురు చరన సరోజ రజ నిజ మను ముకుర సుధారి",
+   "translit": "Shri guru charana saroja raja nija manu mukura sudhari",
+   "meaning": {
+    "en": "With the dust of the Guru's lotus feet I cleanse the mirror of my mind",
+    "te": "గురు పాదధూళితో నా మనస్సు అద్దాన్ని శుభ్రం చేసుకుని"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "బరనఉఁ రఘుబర బిమల జసు జో దాయకు ఫల చారి",
+   "translit": "Baranau raghubara bimala jasu jo dayaku phala chari",
+   "meaning": {
+    "en": "I sing the pure glory of Rama, giver of the four fruits",
+    "te": "నాలుగు ఫలాలనిచ్చే శ్రీరాముని కీర్తిని గానం చేస్తాను"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "బుద్ధిహీన తను జానికే సుమిరౌఁ పవన కుమార",
+   "translit": "Buddhihina tanu janike sumirau pavana kumara",
+   "meaning": {
+    "en": "Knowing myself unwise, I remember the Son of the Wind",
+    "te": "బుద్ధిహీనుడనని తెలిసి పవనకుమారుని స్మరిస్తాను"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "బల బుధి బిద్యా దేహు మోహి హరహు కలేస బికార",
+   "translit": "Bala budhi bidya dehu mohi harahu kalesa bikara",
+   "meaning": {
+    "en": "Grant me strength, wisdom and learning; remove my sorrows and flaws",
+    "te": "బలం, బుద్ధి, విద్య ఇచ్చి నా కష్టాలు తొలగించు"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "జయ హనుమాన జ్ఞాన గుణ సాగర",
+   "translit": "Jaya hanumana jnana guna sagara",
+   "meaning": {
+    "en": "Victory to Hanuman, ocean of wisdom and virtue",
+    "te": "జ్ఞాన గుణ సాగరుడైన హనుమకు జయం"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "జయ కపీస తిహుఁ లోక ఉజాగర",
+   "translit": "Jaya kapisa tihun loka ujagara",
+   "meaning": {
+    "en": "Victory to the Lord of monkeys, who illumines the three worlds",
+    "te": "ముల్లోకాలను ప్రకాశింపజేసే కపీశునికి జయం"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "రామదూత అతులిత బల ధామా",
+   "translit": "Ramaduta atulita bala dhama",
+   "meaning": {
+    "en": "Messenger of Rama, abode of matchless strength",
+    "te": "రామదూత, అసమాన బలధాముడు"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "అంజనిపుత్ర పవనసుత నామా",
+   "translit": "Anjaniputra pavanasuta nama",
+   "meaning": {
+    "en": "Known as Anjani's son and the Son of the Wind",
+    "te": "అంజనీపుత్రుడు, పవనసుతుడు"
+   }
+  }
+ ]
+}

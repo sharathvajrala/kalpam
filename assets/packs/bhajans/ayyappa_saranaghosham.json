@@ -1,0 +1,42 @@
+{
+ "schema": "kalpam.bhajan/1",
+ "id": "ayyappa_saranaghosham",
+ "version": 1,
+ "title": {
+  "en": "Saranaghosham (call and response)",
+  "te": "శరణఘోష"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "language": "te",
+ "artist": "commissioned",
+ "audio": "placeholder://audio/bhajan/ayyappa_saranaghosham",
+ "license": null,
+ "durationSec": 300,
+ "seasons": [
+  "ayyappa_mandala_2026"
+ ],
+ "lyrics": [
+  {
+   "te": "స్వామియే — శరణం అయ్యప్ప",
+   "translit": "Swamiye — Saranam Ayyappa"
+  },
+  {
+   "te": "హరిహర సుతనే — శరణం అయ్యప్ప",
+   "translit": "Harihara sutane — Saranam Ayyappa"
+  },
+  {
+   "te": "కలియుగ వరదనే — శరణం అయ్యప్ప",
+   "translit": "Kaliyuga varadane — Saranam Ayyappa"
+  },
+  {
+   "te": "పంబా వాసనే — శరణం అయ్యప్ప",
+   "translit": "Pamba vasane — Saranam Ayyappa"
+  },
+  {
+   "te": "శబరిగిరీశనే — శరణం అయ్యప్ప",
+   "translit": "Sabarigirisane — Saranam Ayyappa"
+  }
+ ]
+}

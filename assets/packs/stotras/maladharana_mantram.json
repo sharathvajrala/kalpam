@@ -1,0 +1,77 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "maladharana_mantram",
+ "version": 1,
+ "title": {
+  "en": "Maladharana Mantram",
+  "te": "మాలధారణ మంత్రం"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "category": "mantram",
+ "parayanamDays": [],
+ "source": "Traditional (public domain). Pending pandit verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/maladharana_mantram/sung",
+  "learn": "placeholder://audio/stotra/maladharana_mantram/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "జ్ఞానముద్రాం శాస్త్రముద్రాం గురుముద్రాం నమామ్యహం",
+   "translit": "Jnanamudram shastramudram gurumudram namamyaham",
+   "meaning": {
+    "en": "I bow to the mala of wisdom, scripture and the Guru",
+    "te": "జ్ఞాన, శాస్త్ర, గురు ముద్రకు నమస్కారం"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "వనముద్రాం శుద్ధముద్రాం రుద్రముద్రాం నమామ్యహం",
+   "translit": "Vanamudram shuddhamudram rudramudram namamyaham",
+   "meaning": {
+    "en": "To the mala of the forest, of purity, of Rudra",
+    "te": "వన, శుద్ధ, రుద్ర ముద్రకు నమస్కారం"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "శాంతముద్రాం సత్యముద్రాం వ్రతముద్రాం నమామ్యహం",
+   "translit": "Shantamudram satyamudram vratamudram namamyaham",
+   "meaning": {
+    "en": "To the mala of peace, truth and the vow",
+    "te": "శాంతి, సత్య, వ్రత ముద్రకు నమస్కారం"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "శబర్యాశ్రమ సత్యేన ముద్రాం పాతు సదాపి మే",
+   "translit": "Shabaryashrama satyena mudram patu sadapi me",
+   "meaning": {
+    "en": "By the truth of Sabari's abode, may this mala protect me always",
+    "te": "శబరి ఆశ్రమ సత్యంతో ఈ ముద్ర నన్ను కాపాడుగాక"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "గురుదక్షిణయా పూర్వం తస్యానుగ్రహ కారిణే",
+   "translit": "Gurudakshinaya purvam tasyanugraha karine",
+   "meaning": {
+    "en": "Having first offered dakshina to the Guru, for his grace",
+    "te": "గురుదక్షిణ సమర్పించి, ఆయన అనుగ్రహం కొరకు"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "శరణాగత ముద్రాఖ్యం త్వన్ముద్రాం ధారయామ్యహం",
+   "translit": "Sharanagata mudrakhyam tvanmudram dharayamyaham",
+   "meaning": {
+    "en": "I wear your mala, the sign of surrender",
+    "te": "శరణాగత ముద్ర అయిన నీ మాలను ధరిస్తున్నాను"
+   }
+  }
+ ]
+}

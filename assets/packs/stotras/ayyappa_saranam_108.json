@@ -1,0 +1,135 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "ayyappa_saranam_108",
+ "version": 1,
+ "title": {
+  "en": "Ayyappa 108 Saranams",
+  "te": "అయ్యప్ప 108 శరణాలు",
+  "ta": "ஐயப்பன் 108 சரணம்",
+  "ml": "അയ്യപ്പ 108 ശരണം"
+ },
+ "deityIds": [
+  "ayyappa"
+ ],
+ "category": "saranam",
+ "parayanamDays": [
+  6
+ ],
+ "source": "Traditional Sabarimala saranaghosham (public domain). Sample of 12; full 108 pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/ayyappa_saranam_108/sung",
+  "learn": "placeholder://audio/stotra/ayyappa_saranam_108/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "స్వామియే శరణం అయ్యప్ప",
+   "translit": "Swamiye saranam Ayyappa",
+   "meaning": {
+    "en": "Lord, you are my refuge, Ayyappa",
+    "te": "స్వామీ, నీవే నాకు శరణు"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "హరిహర సుతనే శరణం అయ్యప్ప",
+   "translit": "Harihara sutane saranam Ayyappa",
+   "meaning": {
+    "en": "Son of Hari and Hara, my refuge",
+    "te": "హరిహరుల పుత్రుడా, శరణు"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "అన్నదాన ప్రభువే శరణం అయ్యప్ప",
+   "translit": "Annadana prabhuve saranam Ayyappa",
+   "meaning": {
+    "en": "Lord of food-giving, my refuge",
+    "te": "అన్నదాన ప్రభువా, శరణు"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "ఆరియంగావు అయ్యావే శరణం అయ్యప్ప",
+   "translit": "Ariyangavu ayyave saranam Ayyappa",
+   "meaning": {
+    "en": "Lord of Ariyankavu, my refuge",
+    "te": "ఆరియంగావు స్వామీ, శరణు"
+   }
+  },
+  {
+   "id": "l5",
+   "te": "అచ్చన్‌కోవిల్ అరసే శరణం అయ్యప్ప",
+   "translit": "Achankovil arase saranam Ayyappa",
+   "meaning": {
+    "en": "King of Achankovil, my refuge",
+    "te": "అచ్చన్‌కోవిల్ రాజా, శరణు"
+   }
+  },
+  {
+   "id": "l6",
+   "te": "కుళత్తుపుళ బాలకనే శరణం అయ్యప్ప",
+   "translit": "Kulathupuzha balakane saranam Ayyappa",
+   "meaning": {
+    "en": "Child-Lord of Kulathupuzha, my refuge",
+    "te": "కుళత్తుపుళ బాలకా, శరణు"
+   }
+  },
+  {
+   "id": "l7",
+   "te": "ఎరుమేలి శాస్తావే శరణం అయ్యప్ప",
+   "translit": "Erumeli sasthave saranam Ayyappa",
+   "meaning": {
+    "en": "Sastha of Erumeli, my refuge",
+    "te": "ఎరుమేలి శాస్తా, శరణు"
+   }
+  },
+  {
+   "id": "l8",
+   "te": "వావర్ స్వామియే శరణం అయ్యప్ప",
+   "translit": "Vavar swamiye saranam Ayyappa",
+   "meaning": {
+    "en": "Vavar Swamy, my refuge",
+    "te": "వావర్ స్వామీ, శరణు"
+   }
+  },
+  {
+   "id": "l9",
+   "te": "కన్నిమూల గణపతి భగవానే శరణం అయ్యప్ప",
+   "translit": "Kannimoola Ganapathi bhagavane saranam Ayyappa",
+   "meaning": {
+    "en": "Lord Ganapathi of Kannimoola, my refuge",
+    "te": "కన్నిమూల గణపతీ, శరణు"
+   }
+  },
+  {
+   "id": "l10",
+   "te": "మాళికప్పురత్తు మంజమ్మ దేవియే శరణం అయ్యప్ప",
+   "translit": "Malikappurathu Manjamma deviye saranam Ayyappa",
+   "meaning": {
+    "en": "Devi Manjamma of Malikappuram, my refuge",
+    "te": "మాళికప్పురం మంజమ్మ దేవీ, శరణు"
+   }
+  },
+  {
+   "id": "l11",
+   "te": "పదునెట్టాంపడియే శరణం అయ్యప్ప",
+   "translit": "Pathinettampadiye saranam Ayyappa",
+   "meaning": {
+    "en": "The holy eighteen steps, my refuge",
+    "te": "పవిత్ర పదునెట్టాంపడీ, శరణు"
+   }
+  },
+  {
+   "id": "l12",
+   "te": "మకరజ్యోతియే శరణం అయ్యప్ప",
+   "translit": "Makarajyothiye saranam Ayyappa",
+   "meaning": {
+    "en": "The Makara Jyothi, my refuge",
+    "te": "మకరజ్యోతీ, శరణు"
+   }
+  }
+ ]
+}

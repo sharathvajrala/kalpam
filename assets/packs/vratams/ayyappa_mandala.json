@@ -1,0 +1,409 @@
+{
+ "schema": "kalpam.vratam/1",
+ "id": "ayyappa_mandala",
+ "version": 1,
+ "updatedAt": "2026-11-27",
+ "deityId": "ayyappa",
+ "kind": "mala",
+ "name": {
+  "en": "Ayyappa Mandala Deeksha",
+  "te": "అయ్యప్ప మండల దీక్ష",
+  "ta": "ஐயப்ப மண்டல விரதம்",
+  "ml": "അയ്യപ്പ മണ്ഡല വ്രതം"
+ },
+ "summary": {
+  "en": "The 41-day mala vratam of discipline, devotion and surrender, culminating in the Sabarimala yatra.",
+  "te": "క్రమశిక్షణ, భక్తి, శరణాగతితో కూడిన 41 రోజుల మాల వ్రతం — శబరిమల యాత్రతో పూర్తి."
+ },
+ "mala": {
+  "defaultDays": 41,
+  "minDays": 1,
+  "maxDays": 90,
+  "morningChecklist": [
+   {
+    "id": "wake",
+    "text": {
+     "en": "Wake before sunrise",
+     "te": "సూర్యోదయానికి ముందే మేల్కొనడం"
+    }
+   },
+   {
+    "id": "bath",
+    "text": {
+     "en": "Cold-water bath",
+     "te": "చన్నీటి స్నానం"
+    }
+   },
+   {
+    "id": "vibhuti",
+    "text": {
+     "en": "Vibhuti / chandanam on forehead",
+     "te": "నుదుట విభూది / చందనం"
+    }
+   },
+   {
+    "id": "pooja",
+    "text": {
+     "en": "Morning pooja and Saranaghosham",
+     "te": "ఉదయ పూజ, శరణఘోష"
+    }
+   },
+   {
+    "id": "mala",
+    "text": {
+     "en": "Mala worn, black or blue clothes",
+     "te": "మాల ధారణ, నలుపు/నీలం వస్త్రాలు"
+    }
+   }
+  ],
+  "eveningChecklist": [
+   {
+    "id": "bath",
+    "text": {
+     "en": "Evening bath",
+     "te": "సాయంత్ర స్నానం"
+    }
+   },
+   {
+    "id": "deepam",
+    "text": {
+     "en": "Light the deepam",
+     "te": "దీపారాధన"
+    }
+   },
+   {
+    "id": "bhajan",
+    "text": {
+     "en": "Bhajan or 108 Saranams",
+     "te": "భజన లేదా 108 శరణాలు"
+    }
+   },
+   {
+    "id": "harivarasanam",
+    "text": {
+     "en": "Harivarasanam before sleep",
+     "te": "నిద్రకు ముందు హరివరాసనం"
+    }
+   },
+   {
+    "id": "food",
+    "text": {
+     "en": "Single sattvic meal kept today",
+     "te": "నేడు సాత్విక ఏకభుక్తం"
+    }
+   }
+  ],
+  "rules": [
+   {
+    "en": "Observe brahmacharya",
+    "te": "బ్రహ్మచర్యం పాటించాలి"
+   },
+   {
+    "en": "No meat, alcohol, tobacco",
+    "te": "మాంసం, మద్యం, పొగాకు నిషిద్ధం"
+   },
+   {
+    "en": "Address every devotee as Swamy",
+    "te": "ప్రతి భక్తుని స్వామీ అని పిలవాలి"
+   },
+   {
+    "en": "Sleep on the floor, walk barefoot where possible",
+    "te": "నేలపై నిద్ర, వీలైనంత చెప్పులు లేకుండా"
+   },
+   {
+    "en": "No haircut or shaving during deeksha",
+    "te": "దీక్షలో క్షౌరం చేయరాదు"
+   },
+   {
+    "en": "Avoid anger and harsh words",
+    "te": "కోపం, కఠిన మాటలు వదలాలి"
+   }
+  ]
+ },
+ "samagri": [
+  {
+   "id": "mala",
+   "name": {
+    "en": "Tulasi or rudraksha mala",
+    "te": "తులసి / రుద్రాక్ష మాల"
+   },
+   "qty": {
+    "en": "1 (108 beads)",
+    "te": "1 (108 పూసలు)"
+   }
+  },
+  {
+   "id": "clothes",
+   "name": {
+    "en": "Black / blue / saffron clothes",
+    "te": "నలుపు / నీలం / కాషాయ వస్త్రాలు"
+   },
+   "qty": {
+    "en": "2–3 sets",
+    "te": "2–3 జతలు"
+   }
+  },
+  {
+   "id": "vibhuti",
+   "name": {
+    "en": "Vibhuti, chandanam, kumkum",
+    "te": "విభూది, చందనం, కుంకుమ"
+   }
+  },
+  {
+   "id": "camphor",
+   "name": {
+    "en": "Camphor and agarbatti",
+    "te": "కర్పూరం, అగరుబత్తి"
+   }
+  },
+  {
+   "id": "ghee_lamp",
+   "name": {
+    "en": "Ghee lamp and wicks",
+    "te": "నెయ్యి దీపం, వత్తులు"
+   }
+  },
+  {
+   "id": "flowers",
+   "name": {
+    "en": "Flowers and tulasi",
+    "te": "పూలు, తులసి"
+   }
+  },
+  {
+   "id": "coconut",
+   "name": {
+    "en": "Coconuts",
+    "te": "కొబ్బరికాయలు"
+   },
+   "qty": {
+    "en": "2",
+    "te": "2"
+   }
+  },
+  {
+   "id": "fruits",
+   "name": {
+    "en": "Bananas and fruits",
+    "te": "అరటిపండ్లు, పండ్లు"
+   }
+  },
+  {
+   "id": "photo",
+   "name": {
+    "en": "Swamy photo or idol",
+    "te": "స్వామి పటం / విగ్రహం"
+   },
+   "optional": true
+  }
+ ],
+ "fasting": [
+  {
+   "en": "One sattvic meal a day (ekabhuktam); light fruit or milk in the evening.",
+   "te": "రోజుకు ఒకసారి సాత్విక భోజనం; సాయంత్రం పండ్లు లేదా పాలు."
+  },
+  {
+   "en": "Food without onion and garlic.",
+   "te": "ఉల్లి, వెల్లుల్లి లేని ఆహారం."
+  }
+ ],
+ "sankalpam": {
+  "purpose": {
+   "en": "to observe the Mandala Deeksha of Swamy Ayyappa with purity and devotion, and to receive his darshan at Sabarimala",
+   "te": "శ్రీ అయ్యప్ప స్వామి మండల దీక్షను నిష్ఠతో ఆచరించి శబరిమలలో స్వామి దర్శనం పొందుటకు"
+  }
+ },
+ "vidhanamPoojaId": "shodasha",
+ "katha": [
+  {
+   "chapter": 1,
+   "title": {
+    "en": "The child of Pampa",
+    "te": "పంబా తీర బాలుడు"
+   },
+   "audio": "placeholder://audio/ayyappa/katha/1",
+   "text": {
+    "en": "King Rajasekhara of Pandalam, childless and praying for an heir, was hunting by the river Pampa when he heard a baby crying. He found a radiant child with a golden bell around his neck. A sage told him to raise the boy as his own, and the King named him Manikandan, the one with the bell at his neck.",
+    "te": "సంతానం లేని పందళ రాజు రాజశేఖరుడు పంబా నది తీరాన వేటకు వెళ్ళినప్పుడు ఒక శిశువు ఏడుపు విన్నాడు. మెడలో బంగారు గంటతో వెలిగిపోతున్న బాలుని చూశాడు. ఒక ముని సూచనతో ఆ బాలుని తన కుమారునిగా పెంచి మణికంఠుడు అని పేరు పెట్టాడు."
+   }
+  },
+  {
+   "chapter": 2,
+   "title": {
+    "en": "The tigress milk",
+    "te": "పులిపాల కథ"
+   },
+   "audio": "placeholder://audio/ayyappa/katha/2",
+   "text": {
+    "en": "When the Queen feigned an illness that only tigress milk could cure, young Manikandan went alone into the forest. There he defeated the demoness Mahishi and returned riding a tigress, with the gods following as tigers. The King then understood that his son was divine.",
+    "te": "పులిపాలు మాత్రమే నయం చేస్తాయని రాణి అస్వస్థత నటించగా బాల మణికంఠుడు ఒంటరిగా అడవికి వెళ్ళాడు. అక్కడ మహిషిని సంహరించి, పులిపై స్వారీ చేస్తూ, దేవతలు పులులుగా వెంటరాగా తిరిగి వచ్చాడు. తన కుమారుడు దైవస్వరూపుడని రాజు గ్రహించాడు."
+   }
+  },
+  {
+   "chapter": 3,
+   "title": {
+    "en": "The temple on Sabarimala",
+    "te": "శబరిమల ఆలయం"
+   },
+   "audio": "placeholder://audio/ayyappa/katha/3",
+   "text": {
+    "en": "Manikandan told the King he would dwell on the hill of Sabari, and asked that a temple be built where his arrow fell. He promised to bless every devotee who came after the 41-day vratam, climbing the eighteen holy steps with the irumudi on their head.",
+    "te": "తాను శబరి కొండపై నివసిస్తానని, తన బాణం పడిన చోట ఆలయం నిర్మించమని మణికంఠుడు రాజుతో చెప్పాడు. 41 రోజుల వ్రతం చేసి, ఇరుముడి తలపై పెట్టుకుని పదునెట్టాంపడి ఎక్కి వచ్చే ప్రతి భక్తుని అనుగ్రహిస్తానని వాగ్దానం చేశాడు."
+   }
+  }
+ ],
+ "udyapanam": {
+  "steps": [
+   {
+    "upachara": "sankalpam",
+    "title": {
+     "en": "Udyapana Sankalpam",
+     "te": "ఉద్యాపన సంకల్పం"
+    },
+    "instruction": {
+     "en": "Listen to the closing Sankalpam of your deeksha.",
+     "te": "దీక్ష ముగింపు సంకల్పం వినండి."
+    },
+    "action": "tap",
+    "autoDurationSec": 20
+   },
+   {
+    "upachara": "aarti",
+    "title": {
+     "en": "Final Nirajanam",
+     "te": "చివరి నీరాజనం"
+    },
+    "instruction": {
+     "en": "Wave the aarti three times.",
+     "te": "మూడుసార్లు హారతి ఇవ్వండి."
+    },
+    "action": "drag_circle",
+    "target": 3,
+    "autoDurationSec": 20
+   },
+   {
+    "upachara": "namaskaram",
+    "title": {
+     "en": "Remove the mala",
+     "te": "మాల విసర్జన"
+    },
+    "instruction": {
+     "en": "With your Guruswamy's blessing, remove the mala and offer it to the Lord.",
+     "te": "గురుస్వామి ఆశీస్సులతో మాల తీసి స్వామికి సమర్పించండి."
+    },
+    "action": "tap",
+    "autoDurationSec": 15
+   }
+  ],
+  "certificateTemplate": "placeholder://art/certificate/ayyappa"
+ },
+ "extras": {
+  "irumudiFront": [
+   {
+    "id": "neyy_thenga",
+    "text": {
+     "en": "Ghee-filled coconut (Neyy Thenga)",
+     "te": "నెయ్యి కొబ్బరికాయ"
+    }
+   },
+   {
+    "id": "rice",
+    "text": {
+     "en": "Raw rice",
+     "te": "బియ్యం"
+    }
+   },
+   {
+    "id": "coconuts",
+    "text": {
+     "en": "Coconuts",
+     "te": "కొబ్బరికాయలు"
+    }
+   },
+   {
+    "id": "betel",
+    "text": {
+     "en": "Betel leaves and nuts",
+     "te": "తమలపాకులు, వక్కలు"
+    }
+   },
+   {
+    "id": "camphor",
+    "text": {
+     "en": "Camphor",
+     "te": "కర్పూరం"
+    }
+   },
+   {
+    "id": "turmeric",
+    "text": {
+     "en": "Turmeric, kumkum, vibhuti",
+     "te": "పసుపు, కుంకుమ, విభూది"
+    }
+   },
+   {
+    "id": "honey",
+    "text": {
+     "en": "Honey and jaggery",
+     "te": "తేనె, బెల్లం"
+    }
+   },
+   {
+    "id": "kalkandam",
+    "text": {
+     "en": "Kalkandam, dry grapes, dates",
+     "te": "కలకండ, కిస్మిస్, ఖర్జూరం"
+    }
+   },
+   {
+    "id": "rose_water",
+    "text": {
+     "en": "Rose water",
+     "te": "పన్నీరు"
+    }
+   },
+   {
+    "id": "agarbatti",
+    "text": {
+     "en": "Agarbatti",
+     "te": "అగరుబత్తి"
+    }
+   }
+  ],
+  "irumudiBack": [
+   {
+    "id": "food_rice",
+    "text": {
+     "en": "Rice for the journey",
+     "te": "ప్రయాణానికి బియ్యం"
+    }
+   },
+   {
+    "id": "padi_coconut",
+    "text": {
+     "en": "Coconut to break at the 18 steps",
+     "te": "పదునెట్టాంపడి వద్ద కొట్టే కొబ్బరికాయ"
+    }
+   },
+   {
+    "id": "erumeli",
+    "text": {
+     "en": "Items for Erumeli Petta Thullal",
+     "te": "ఎరుమేలి పేట తుళ్ళల్ సామగ్రి"
+    }
+   },
+   {
+    "id": "towel",
+    "text": {
+     "en": "Towel and spare clothes",
+     "te": "తువాలు, అదనపు బట్టలు"
+    }
+   }
+  ],
+  "maladharanaStotra": "maladharana_mantram",
+  "virtualQueueUrl": "https://sabarimalaonline.org",
+  "sabarimalaFeed": "firestore://sabarimala_live/current",
+  "annadanamFeed": "firestore://annadanam"
+ }
+}

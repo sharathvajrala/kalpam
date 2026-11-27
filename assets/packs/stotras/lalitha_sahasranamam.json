@@ -1,0 +1,62 @@
+{
+ "schema": "kalpam.stotra/1",
+ "id": "lalitha_sahasranamam",
+ "version": 1,
+ "title": {
+  "en": "Lalitha Sahasranamam",
+  "te": "లలితా సహస్రనామం"
+ },
+ "deityIds": [
+  "durga",
+  "lakshmi"
+ ],
+ "category": "sahasranamam",
+ "parayanamDays": [
+  5
+ ],
+ "source": "Brahmanda Purana (public domain). Opening portion; full text pending verification.",
+ "verifiedBy": null,
+ "complete": false,
+ "audio": {
+  "sung": "placeholder://audio/stotra/lalitha_sahasranamam/sung",
+  "learn": "placeholder://audio/stotra/lalitha_sahasranamam/learn"
+ },
+ "lines": [
+  {
+   "id": "l1",
+   "te": "ఓం శ్రీమాతా శ్రీమహారాజ్ఞీ శ్రీమత్సింహాసనేశ్వరీ",
+   "translit": "Om shrimata shrimaharajni shrimat simhasaneshvari",
+   "meaning": {
+    "en": "The Divine Mother, the great Empress, Queen of the lion throne",
+    "te": "శ్రీమాత, మహారాజ్ఞి, సింహాసనేశ్వరి"
+   }
+  },
+  {
+   "id": "l2",
+   "te": "చిదగ్నికుండసంభూతా దేవకార్యసముద్యతా",
+   "translit": "Chidagnikunda sambhuta devakarya samudyata",
+   "meaning": {
+    "en": "Born of the fire of consciousness, intent on the gods' purpose",
+    "te": "చిదగ్నికుండం నుండి ఉద్భవించి దేవకార్యానికి ఉద్యుక్తురాలు"
+   }
+  },
+  {
+   "id": "l3",
+   "te": "ఉద్యద్భానుసహస్రాభా చతుర్బాహుసమన్వితా",
+   "translit": "Udyadbhanu sahasrabha chaturbahu samanvita",
+   "meaning": {
+    "en": "Radiant as a thousand rising suns, four-armed",
+    "te": "వేయి ఉదయసూర్యుల కాంతి, చతుర్భుజి"
+   }
+  },
+  {
+   "id": "l4",
+   "te": "రాగస్వరూపపాశాఢ్యా క్రోధాకారాంకుశోజ్జ్వలా",
+   "translit": "Ragasvarupa pashadhya krodhakarankushojjvala",
+   "meaning": {
+    "en": "Holding the noose of love and the shining goad of wrath",
+    "te": "రాగ పాశం, క్రోధ అంకుశం ధరించినది"
+   }
+  }
+ ]
+}
