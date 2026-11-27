@@ -19,7 +19,8 @@ if (keystorePropertiesFile.exists()) {
 
 android {
     namespace = "com.kalpamapp.kalpam"
-    compileSdk = flutter.compileSdkVersion
+    // flutter_local_notifications and androidx.core need API 37 to compile against.
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
