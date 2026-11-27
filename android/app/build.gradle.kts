@@ -9,7 +9,7 @@ plugins {
 
 // Upload-key signing. android/key.properties and the keystore it points to
 // live only on the release machine (or in CI secrets) and are never
-// committed: see docs/SIGNING.md. Without them, release builds fall back to
+// committed: see project-docs/SIGNING.md. Without them, release builds fall back to
 // debug signing, which Play rejects, so nothing unsigned can ship by mistake.
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("key.properties")

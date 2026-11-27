@@ -18,16 +18,16 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 ## 2026-11-27 (later)
 - Pushed to GitHub `sharathvajrala/kalpam` (private).
 - Group 1 fixes: bilingual bottom tab bar (primary + secondary script on every tab); city chip moved to a full-width row so long Telugu names never clip.
-- Approved user data model implemented (docs/DATA_MODEL.md): onboarding is language → god → city → name/gotram (+ optional janma nakshatram) → reminder times, with no skipping of required steps; family profiles with one-tap Sankalpam switching; GPS stores city name only; Settings has Export + Delete all.
+- Approved user data model implemented (project-docs/DATA_MODEL.md): onboarding is language → god → city → name/gotram (+ optional janma nakshatram) → reminder times, with no skipping of required steps; family profiles with one-tap Sankalpam switching; GPS stores city name only; Settings has Export + Delete all.
 - Reminder times are stored; scheduling the actual notifications (with the no-notification-during-pooja gate) lands with the notifications work in Phase A week 3.
 - 27 tests pass, analyzer clean.
 
 ## 2026-11-27 — Screen group 1 (shell + Today home) ready for review
-- Spec of record: docs/Kalpam-Fable-Build-Prompt.md (d225e0c). Note: it still contains the "[truncated 9553 chars]" marker after rule 5.
+- Spec of record: project-docs/Kalpam-Fable-Build-Prompt.md (d225e0c). Note: it still contains the "[truncated 9553 chars]" marker after rule 5.
 - Checked against the spec's frozen Today layout (hero → My God pinned → Today strip; Subhodayam header with te + en tithi/nakshatram).
 - Bilingual pass: hero tiles, hero CTA, My God buttons, Panchangam strip labels, today's vratam + Join, weekday god label all now show both scripts.
 - Hero tiles equal height.
-- Screenshots (20 Dec 2026, Vijayawada, two family profiles): docs/screenshots/today-group1-{te,en}.png.
+- Screenshots (20 Dec 2026, Vijayawada, two family profiles): project-docs/screenshots/today-group1-{te,en}.png.
 
 ## 2026-11-27 — Screen group 2 (Ayyappa pooja interaction engine) ready for review
 - Engine is its own module, `lib/pooja_engine/` (pure Dart, renderer-agnostic):
@@ -39,7 +39,7 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Hidden tabs no longer animate (TickerMode), so the sanctum never runs off-screen.
 - Debug-only dart-defines for demos: `KALPAM_TAB`, `KALPAM_DEMO_SPEED`.
 - 49 tests pass (gestures 11, choreography 6, session 4, pooja flow widget test 1), analyzer clean.
-- Screenshots: docs/screenshots/pooja-group2-watch-en.png, pooja-group2-setup-handson-te.png.
+- Screenshots: project-docs/screenshots/pooja-group2-watch-en.png, pooja-group2-setup-handson-te.png.
 
 ## 2026-11-27 — Daily Rituals (Nitya Archana) ready for review
 - Group 2 approved by Sharath (6903786). Standing notes: archana count stays data-driven from the pack; the pooja engine stays god-agnostic.
@@ -48,7 +48,7 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Day God mode: "Choose for me by day" in onboarding step 2 and the My God switcher; the weekday god leads My God, Daily Pooja, rituals, chanting and the Sankalpam (god + purpose).
 - Today: Daily rituals card under My God (sunrise / sunset times, done-state, Full/Short archana remembered per day, streak). Guided ritual screen for any god with one flower per name; "Perform in Sannidhanam" for Ayyappa.
 - Settings: evening reminder anchored to my time or local sunset (`ritualReminderAt`). Actual notification scheduling lands with the notifications work.
-- 58 tests pass, analyzer clean. Screenshot: docs/screenshots/rituals-group-dayGod-thursday.png (Thursday, Day God mode = Sai Baba).
+- 58 tests pass, analyzer clean. Screenshot: project-docs/screenshots/rituals-group-dayGod-thursday.png (Thursday, Day God mode = Sai Baba).
 
 ## 2026-11-27 — Grantham core ready for review
 - Daily Rituals approved (fde097d). Phase A order: Grantham core → Bhajans core → Elder Mode polish.
@@ -57,7 +57,7 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Chant-along player: karaoke fill on the current line, auto-scroll, tap a line to jump, meaning toggle, Sung/Learn, repeat chips, japa card with 108-bead ring and meru, persisted per stotra (included in Export). With no licensed recording yet, the voice guide reads each line and the player says so.
 - Ayyappa 108 Saranams parayanam day moved to Wednesday (founder map).
 - ASSETS_TODO: Grantham text + audio slots listed; background/lock-screen playback and audio downloads wait for the first licensed recording.
-- 63 tests pass, analyzer clean. Screenshot: docs/screenshots/grantham-core.png.
+- 63 tests pass, analyzer clean. Screenshot: project-docs/screenshots/grantham-core.png.
 
 ## 2026-11-27 — Bhajans core ready for review
 - Grantham core approved (6c2d20b). Standing note recorded: lock-screen/background playback + downloads are a Phase A exit item, wired as soon as the first licensed recording lands.
@@ -65,7 +65,7 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - `lib/core/chant/playlist.dart`: BhajanPlaylist on top of the chant engine: karaoke lyrics, auto-advance, loop, next/previous wrap (advance is deferred outside the engine's notification so the finished engine can be disposed safely).
 - Bhajans tab: season playlist on top with Play all (Ayyappa Mandala set this season), then your god, then every god with bhajans. Today's Bhajan on the hero opens the player with the season queue.
 - Player: big karaoke lyrics, tap a line to jump, Up next queue, loop, voice guide reads lines until recordings land (stated on screen).
-- 67 tests pass, analyzer clean. Screenshot: docs/screenshots/bhajans-core.png.
+- 67 tests pass, analyzer clean. Screenshot: project-docs/screenshots/bhajans-core.png.
 
 ## 2026-11-27 — Notifications ready for review
 - Spec eea9f63 (NOTIFICATIONS). All daily notifications are local and planned on-device.
@@ -74,7 +74,7 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Join flow: "Join the Sankalpam" now asks the number of days (pack standard prefilled, 41 for Ayyappa, 1–90), start date and daily check-in time.
 - Settings → Notifications: per-type switches, Subhodayam time, quiet hours, one-time Android exact-timing/battery note, "Coming up" preview, Allow notifications.
 - Android manifest/gradle (desugaring, receivers, permissions) and iOS delegate configured.
-- 81 tests pass, analyzer clean. Screenshots: docs/screenshots/notifications-*.png.
+- 81 tests pass, analyzer clean. Screenshots: project-docs/screenshots/notifications-*.png.
 
 ## 2026-11-27 — Elder Mode polish ready for review
 - Bhajans (ba24f01) and Notifications (03bdf8e) approved; both notification assumptions confirmed. Next after review: Android AAB for Play internal testing (com.kalpamapp.kalpam).
@@ -84,11 +84,11 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Voice navigation: mic button on every tab (Elder Mode). Commands in English or Telugu: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Sannidhanam, Groups, Today, Settings, Help, Stop.
 - Guided rituals read each step aloud in Elder Mode. Elder Mode choice added to the first onboarding screen.
 - Android RECORD_AUDIO + RecognitionService query, iOS microphone/speech usage strings.
-- 92 tests pass, analyzer clean. Screenshots: docs/screenshots/elder-*.png.
+- 92 tests pass, analyzer clean. Screenshots: project-docs/screenshots/elder-*.png.
 
 ## 2026-11-27 — Phase A device build prep
 - Package renamed to com.kalpamapp.kalpam (Android applicationId/namespace, MainActivity, iOS bundle id). App label "Kalpam".
 - Release signing reads android/key.properties (ignored by git, as are *.jks/*.keystore); without it, release falls back to debug signing so nothing unsigned can reach Play.
 - .github/workflows/android.yml: on every push to main, analyze + tests, then a release AAB and APK as run artifacts, signed with the upload key from repository secrets.
-- docs/SIGNING.md: keytool command, key.properties, GitHub secrets, Play App Signing first upload, internal testers, first on-device checklist.
+- project-docs/SIGNING.md: keytool command, key.properties, GitHub secrets, Play App Signing first upload, internal testers, first on-device checklist.
 - The cloud workspace cannot reach dl.google.com (Android SDK download), so the AAB is built by GitHub Actions or on Sharath's machine.

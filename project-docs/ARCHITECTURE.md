@@ -42,7 +42,7 @@ unity/ (Phase A.2)          Unity project: one scene per sanctum, AssetBundles p
 
 ## Content-pack engine
 
-* Every god, vratam, stotra, bhajan set and the flagship calendar is a **versioned JSON pack** plus a media manifest. Schemas: `docs/SCHEMAS.md`.
+* Every god, vratam, stotra, bhajan set and the flagship calendar is a **versioned JSON pack** plus a media manifest. Schemas: `project-docs/SCHEMAS.md`.
 * `PackRepository` loads, in priority order: (1) downloaded packs in app storage (newer `version`) → (2) bundled packs in `assets/packs/`. Screens render whatever packs exist — adding a god or a vratam is adding a pack, no new code.
 * Remote updates: `packs/index.json` in Firebase Storage lists `{id, version, sha256, url, minAppVersion}`. The app diffs against local, downloads in background on Wi-Fi, verifies sha256, swaps atomically.
 * Media (`MediaRef`) is resolved lazily: `asset://` (bundled), `pack://` (downloaded), `placeholder://` (flagged in ASSETS_TODO.md — the UI shows a "recording coming soon" chip and the feature still works with silent/tone fallback and timed lyrics).

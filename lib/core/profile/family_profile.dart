@@ -3,7 +3,7 @@ import 'dart:convert';
 /// One person whose Sankalpam can be spoken. Several live on one device
 /// (family profiles); the active one is switched with one tap.
 ///
-/// Approved data model (docs/DATA_MODEL.md): name + gotram required,
+/// Approved data model (project-docs/DATA_MODEL.md): name + gotram required,
 /// janma nakshatram optional. Nothing else is stored about a person.
 class FamilyProfile {
   const FamilyProfile({required this.id, required this.name, required this.gotra, this.janmaNakshatra});

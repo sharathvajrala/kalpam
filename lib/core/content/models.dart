@@ -1,4 +1,4 @@
-/// Content-pack models. Schemas documented in docs/SCHEMAS.md.
+/// Content-pack models. Schemas documented in project-docs/SCHEMAS.md.
 library;
 
 import 'localized.dart';

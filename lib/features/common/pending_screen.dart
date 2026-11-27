@@ -5,7 +5,7 @@ import '../../app/theme.dart';
 import '../../l10n/gen/app_localizations.dart';
 
 /// Temporary, clearly-labelled screen for a feature whose screen group is
-/// not built yet. Tracked in docs/BUILD_LOG.md; none ships to users.
+/// not built yet. Tracked in project-docs/BUILD_LOG.md; none ships to users.
 class PendingScreen extends StatelessWidget {
   const PendingScreen({super.key, required this.title, required this.group, required this.asTab});
   final String Function(AppLocalizations l) title;

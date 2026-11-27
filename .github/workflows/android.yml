@@ -2,7 +2,7 @@ name: Android build
 
 # Builds the Play internal-testing bundle (AAB) and an installable APK.
 # Signed with the upload key when the repository secrets below are set
-# (see docs/SIGNING.md); otherwise debug-signed, which Play rejects, so
+# (see project-docs/SIGNING.md); otherwise debug-signed, which Play rejects, so
 # only a properly signed bundle can ever be uploaded.
 on:
   push:
