@@ -50,7 +50,7 @@ class KalpamApp extends StatelessWidget {
 /// Bottom tab shell: Today, Sannidhanam, Grantham, Bhajans, Groups.
 class KalpamShell extends StatefulWidget {
   const KalpamShell({super.key});
-  static final tabIndex = ValueNotifier<int>(0);
+  static final tabIndex = ValueNotifier<int>(const int.fromEnvironment('KALPAM_TAB'));
 
   /// Lets any screen switch tabs (e.g. My God -> Sannidhanam).
   static void go(int i) => tabIndex.value = i;
@@ -65,12 +65,11 @@ class _KalpamShellState extends State<KalpamShell> {
     return ValueListenableBuilder<int>(
       valueListenable: KalpamShell.tabIndex,
       builder: (context, index, _) => Scaffold(
-        body: IndexedStack(index: index, children: const [
-          TodayScreen(),
-          SannidhanamScreen(),
-          GranthamScreen(),
-          BhajansScreen(),
-          GroupsScreen(),
+        // Hidden tabs keep their state but stop animating (the sanctum
+        // ticker must not run off-screen).
+        body: IndexedStack(index: index, children: [
+          for (final (i, tab) in const [TodayScreen(), SannidhanamScreen(), GranthamScreen(), BhajansScreen(), GroupsScreen()].indexed)
+            TickerMode(enabled: i == index, child: tab),
         ]),
         bottomNavigationBar: _BiTabBar(index: index),
       ),

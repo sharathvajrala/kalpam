@@ -8,7 +8,7 @@ library;
 import 'dart:async';
 import 'dart:convert';
 
-import '../content/models.dart';
+import '../core/content/models.dart';
 
 class SanctumCommand {
   const SanctumCommand(this.type, this.payload);

@@ -6,8 +6,8 @@ import 'package:kalpam/core/content/models.dart';
 import 'package:kalpam/core/content/pack_repository.dart';
 import 'package:kalpam/core/flagship/flagship_engine.dart';
 import 'package:kalpam/core/panchangam/panchangam.dart';
-import 'package:kalpam/core/pooja/pooja_session.dart';
-import 'package:kalpam/core/pooja/sanctum_bridge.dart';
+import 'package:kalpam/pooja_engine/pooja_session.dart';
+import 'package:kalpam/pooja_engine/sanctum_bridge.dart';
 import 'package:kalpam/core/sankalpam/sankalpam.dart';
 import 'package:kalpam/core/tracker/deeksha_tracker.dart';
 
@@ -125,7 +125,7 @@ void main() {
     test('hands-on waits for every action, then closes', () async {
       final bridge = SanctumBridge();
       final d = repo.deities['ayyappa']!;
-      final s = PoojaSession(deity: d, vidhanam: d.pooja('nitya5')!, mode: PoojaMode.handsOn, bridge: bridge, timeScale: 0.001);
+      final s = PoojaSession(deity: d, vidhanam: d.pooja('nitya5')!, mode: PoojaMode.handsOn, bridge: bridge, lang: 'te', timeScale: 0.001);
       await s.start();
       expect(NotificationGate.allowNotifications, isFalse);
       expect(s.step.upachara, 'sankalpam');
@@ -159,7 +159,7 @@ void main() {
     test('watch mode auto-performs the full Shodashopachara', () async {
       final bridge = SanctumBridge();
       final d = repo.deities['ayyappa']!;
-      final s = PoojaSession(deity: d, vidhanam: d.pooja('shodasha')!, mode: PoojaMode.watch, bridge: bridge, timeScale: 0.0005);
+      final s = PoojaSession(deity: d, vidhanam: d.pooja('shodasha')!, mode: PoojaMode.watch, bridge: bridge, lang: 'te', timeScale: 0.0005);
       await s.start();
       final deadline = DateTime.now().add(const Duration(seconds: 5));
       while (s.status != PoojaStatus.completed && DateTime.now().isBefore(deadline)) {

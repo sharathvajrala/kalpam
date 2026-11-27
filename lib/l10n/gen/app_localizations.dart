@@ -1063,6 +1063,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This permanently deletes your profiles, trackers and settings from this phone.'**
   String get deleteAllConfirm;
+
+  /// No description provided for @poojaHow.
+  ///
+  /// In en, this message translates to:
+  /// **'How would you like to do the pooja?'**
+  String get poojaHow;
+
+  /// No description provided for @archana.
+  ///
+  /// In en, this message translates to:
+  /// **'Archana'**
+  String get archana;
+
+  /// No description provided for @archanaDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'One flower for each name of Swamy'**
+  String get archanaDesc;
+
+  /// No description provided for @archanaOff.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get archanaOff;
+
+  /// No description provided for @archanaShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Short · {n}'**
+  String archanaShort(int n);
+
+  /// No description provided for @archanaFull.
+  ///
+  /// In en, this message translates to:
+  /// **'Full · {n}'**
+  String archanaFull(int n);
+
+  /// No description provided for @nameOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Name {n} of {total}'**
+  String nameOf(int n, int total);
+
+  /// No description provided for @countOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} of {total}'**
+  String countOf(int n, int total);
+
+  /// No description provided for @beingPerformed.
+  ///
+  /// In en, this message translates to:
+  /// **'Being performed for you'**
+  String get beingPerformed;
+
+  /// No description provided for @backToToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Today'**
+  String get backToToday;
+
+  /// No description provided for @sanctumAfterReview.
+  ///
+  /// In en, this message translates to:
+  /// **'{god}\'s sanctum opens after the Ayyappa sanctum is reviewed. Ayyappa\'s sanctum is open now.'**
+  String sanctumAfterReview(String god);
+
+  /// No description provided for @liquidWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Water'**
+  String get liquidWater;
+
+  /// No description provided for @liquidMilk.
+  ///
+  /// In en, this message translates to:
+  /// **'Milk'**
+  String get liquidMilk;
+
+  /// No description provided for @liquidPanchamrutam.
+  ///
+  /// In en, this message translates to:
+  /// **'Panchamrutam'**
+  String get liquidPanchamrutam;
+
+  /// No description provided for @liquidGhee.
+  ///
+  /// In en, this message translates to:
+  /// **'Ghee'**
+  String get liquidGhee;
+
+  /// No description provided for @hintTap.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the sanctum'**
+  String get hintTap;
+
+  /// No description provided for @hintCircle.
+  ///
+  /// In en, this message translates to:
+  /// **'Circle the plate clockwise around Swamy'**
+  String get hintCircle;
+
+  /// No description provided for @hintShower.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe up to shower flowers'**
+  String get hintShower;
+
+  /// No description provided for @hintPour.
+  ///
+  /// In en, this message translates to:
+  /// **'Drag down, or tilt the phone, to pour'**
+  String get hintPour;
+
+  /// No description provided for @hintSwipeDown.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe down firmly to break the coconut'**
+  String get hintSwipeDown;
+
+  /// No description provided for @hintShake.
+  ///
+  /// In en, this message translates to:
+  /// **'Shake the phone, or tap, to ring the bell'**
+  String get hintShake;
+
+  /// No description provided for @hintBlow.
+  ///
+  /// In en, this message translates to:
+  /// **'Press and hold to blow the shankh'**
+  String get hintBlow;
+
+  /// No description provided for @hintWalk.
+  ///
+  /// In en, this message translates to:
+  /// **'Sweep left and right to walk around Swamy'**
+  String get hintWalk;
+
+  /// No description provided for @hintArchana.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap or flick up to offer a flower'**
+  String get hintArchana;
 }
 
 class _AppLocalizationsDelegate

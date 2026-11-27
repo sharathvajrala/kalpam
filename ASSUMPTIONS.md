@@ -20,3 +20,5 @@ Each item is a decision Sharath may want to overrule.
 16. **Material/Cupertino:** Flutter 3.50 moved Material to `package:material_ui`; the app uses it throughout.
 17. **Reminder defaults** prefilled at 5:30 AM and 6:30 PM; the user can change them before finishing onboarding.
 18. **Profile removal:** the last remaining family profile cannot be removed (Delete all is the way to wipe it).
+19. **Archana names:** the archana uses the Ayyappa Saranam pack, which has 12 verified sample names today. "Full" becomes 108 and "Short" 16 once the full text is verified; nothing else changes.
+20. **Shankh by mic:** the recognizer already accepts mic levels; wiring the microphone plugin (with its permission prompt) is deferred to the device build. Press-and-hold works now, per the spec's fallback.

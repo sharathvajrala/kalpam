@@ -542,4 +542,86 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get deleteAllConfirm =>
       'This permanently deletes your profiles, trackers and settings from this phone.';
+
+  @override
+  String get poojaHow => 'How would you like to do the pooja?';
+
+  @override
+  String get archana => 'Archana';
+
+  @override
+  String get archanaDesc => 'One flower for each name of Swamy';
+
+  @override
+  String get archanaOff => 'None';
+
+  @override
+  String archanaShort(int n) {
+    return 'Short · $n';
+  }
+
+  @override
+  String archanaFull(int n) {
+    return 'Full · $n';
+  }
+
+  @override
+  String nameOf(int n, int total) {
+    return 'Name $n of $total';
+  }
+
+  @override
+  String countOf(int n, int total) {
+    return '$n of $total';
+  }
+
+  @override
+  String get beingPerformed => 'Being performed for you';
+
+  @override
+  String get backToToday => 'Back to Today';
+
+  @override
+  String sanctumAfterReview(String god) {
+    return '$god\'s sanctum opens after the Ayyappa sanctum is reviewed. Ayyappa\'s sanctum is open now.';
+  }
+
+  @override
+  String get liquidWater => 'Water';
+
+  @override
+  String get liquidMilk => 'Milk';
+
+  @override
+  String get liquidPanchamrutam => 'Panchamrutam';
+
+  @override
+  String get liquidGhee => 'Ghee';
+
+  @override
+  String get hintTap => 'Tap the sanctum';
+
+  @override
+  String get hintCircle => 'Circle the plate clockwise around Swamy';
+
+  @override
+  String get hintShower => 'Swipe up to shower flowers';
+
+  @override
+  String get hintPour => 'Drag down, or tilt the phone, to pour';
+
+  @override
+  String get hintSwipeDown => 'Swipe down firmly to break the coconut';
+
+  @override
+  String get hintShake => 'Shake the phone, or tap, to ring the bell';
+
+  @override
+  String get hintBlow => 'Press and hold to blow the shankh';
+
+  @override
+  String get hintWalk => 'Sweep left and right to walk around Swamy';
+
+  @override
+  String get hintArchana => 'Tap or flick up to offer a flower';
 }

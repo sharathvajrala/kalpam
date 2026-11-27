@@ -538,4 +538,87 @@ class AppLocalizationsTe extends AppLocalizations {
   @override
   String get deleteAllConfirm =>
       'ఇది మీ ప్రొఫైళ్ళు, ట్రాకర్లు, అమరికలను ఈ ఫోన్ నుండి శాశ్వతంగా తొలగిస్తుంది.';
+
+  @override
+  String get poojaHow => 'పూజ ఎలా చేయాలనుకుంటున్నారు?';
+
+  @override
+  String get archana => 'అర్చన';
+
+  @override
+  String get archanaDesc => 'స్వామి ప్రతి నామానికి ఒక పుష్పం';
+
+  @override
+  String get archanaOff => 'వద్దు';
+
+  @override
+  String archanaShort(int n) {
+    return 'సంక్షిప్తం · $n';
+  }
+
+  @override
+  String archanaFull(int n) {
+    return 'పూర్తి · $n';
+  }
+
+  @override
+  String nameOf(int n, int total) {
+    return '$totalలో $nవ నామం';
+  }
+
+  @override
+  String countOf(int n, int total) {
+    return '$totalలో $n';
+  }
+
+  @override
+  String get beingPerformed => 'మీ కోసం జరుగుతోంది';
+
+  @override
+  String get backToToday => 'నేటికి తిరిగి';
+
+  @override
+  String sanctumAfterReview(String god) {
+    return 'అయ్యప్ప సన్నిధానం సమీక్ష తర్వాత $god సన్నిధానం తెరుచుకుంటుంది. అయ్యప్ప సన్నిధానం ఇప్పుడే తెరిచి ఉంది.';
+  }
+
+  @override
+  String get liquidWater => 'జలం';
+
+  @override
+  String get liquidMilk => 'పాలు';
+
+  @override
+  String get liquidPanchamrutam => 'పంచామృతం';
+
+  @override
+  String get liquidGhee => 'నెయ్యి';
+
+  @override
+  String get hintTap => 'సన్నిధానాన్ని తాకండి';
+
+  @override
+  String get hintCircle => 'హారతి పళ్ళెం స్వామి చుట్టూ సవ్యదిశలో తిప్పండి';
+
+  @override
+  String get hintShower => 'పుష్పాలు చల్లడానికి పైకి స్వైప్ చేయండి';
+
+  @override
+  String get hintPour => 'పోయడానికి కిందికి లాగండి, లేదా ఫోన్ వంచండి';
+
+  @override
+  String get hintSwipeDown =>
+      'కొబ్బరికాయ కొట్టడానికి గట్టిగా కిందికి స్వైప్ చేయండి';
+
+  @override
+  String get hintShake => 'గంట మోగించడానికి ఫోన్ ఊపండి, లేదా తాకండి';
+
+  @override
+  String get hintBlow => 'శంఖం ఊదడానికి నొక్కి పట్టుకోండి';
+
+  @override
+  String get hintWalk => 'ప్రదక్షిణకు ఎడమ కుడి స్వైప్ చేయండి';
+
+  @override
+  String get hintArchana => 'పుష్పం సమర్పించడానికి తాకండి లేదా పైకి విసరండి';
 }

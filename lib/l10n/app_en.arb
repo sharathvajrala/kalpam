@@ -304,5 +304,70 @@
  "yourDataDesc": "Everything stays on this phone. Nothing is synced unless you create an account.",
  "exportData": "Export my data",
  "deleteAll": "Delete all my data",
- "deleteAllConfirm": "This permanently deletes your profiles, trackers and settings from this phone."
+ "deleteAllConfirm": "This permanently deletes your profiles, trackers and settings from this phone.",
+ "poojaHow": "How would you like to do the pooja?",
+ "archana": "Archana",
+ "archanaDesc": "One flower for each name of Swamy",
+ "archanaOff": "None",
+ "archanaShort": "Short · {n}",
+ "@archanaShort": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "archanaFull": "Full · {n}",
+ "@archanaFull": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "nameOf": "Name {n} of {total}",
+ "@nameOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "countOf": "{n} of {total}",
+ "@countOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "beingPerformed": "Being performed for you",
+ "backToToday": "Back to Today",
+ "sanctumAfterReview": "{god}'s sanctum opens after the Ayyappa sanctum is reviewed. Ayyappa's sanctum is open now.",
+ "@sanctumAfterReview": {
+  "placeholders": {
+   "god": {
+    "type": "String"
+   }
+  }
+ },
+ "liquidWater": "Water",
+ "liquidMilk": "Milk",
+ "liquidPanchamrutam": "Panchamrutam",
+ "liquidGhee": "Ghee",
+ "hintTap": "Tap the sanctum",
+ "hintCircle": "Circle the plate clockwise around Swamy",
+ "hintShower": "Swipe up to shower flowers",
+ "hintPour": "Drag down, or tilt the phone, to pour",
+ "hintSwipeDown": "Swipe down firmly to break the coconut",
+ "hintShake": "Shake the phone, or tap, to ring the bell",
+ "hintBlow": "Press and hold to blow the shankh",
+ "hintWalk": "Sweep left and right to walk around Swamy",
+ "hintArchana": "Tap or flick up to offer a flower"
 }

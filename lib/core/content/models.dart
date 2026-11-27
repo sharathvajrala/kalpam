@@ -37,7 +37,7 @@ MediaRef _media(Object? v) => v == null ? MediaRef.none : MediaRef(v.toString())
 
 // ---------------------------------------------------------------- Pooja
 
-enum PoojaAction { tap, dragCircle, shake, blow, pour, shower, swipeDown, walkAround, none }
+enum PoojaAction { tap, dragCircle, shake, blow, pour, shower, swipeDown, walkAround, archana, none }
 
 PoojaAction _action(String? s) => switch (s) {
       'tap' => PoojaAction.tap,
@@ -48,6 +48,7 @@ PoojaAction _action(String? s) => switch (s) {
       'shower' => PoojaAction.shower,
       'swipe_down' => PoojaAction.swipeDown,
       'walk_around' => PoojaAction.walkAround,
+      'archana' => PoojaAction.archana,
       _ => PoojaAction.none,
     };
 
@@ -62,6 +63,7 @@ class PoojaStep {
     required this.target,
     required this.autoDurationSec,
     this.options = const [],
+    this.names = const [],
   });
   final String upachara;
   final LocalizedText title, instruction, mantra;
@@ -75,6 +77,9 @@ class PoojaStep {
   /// e.g. abhishekam liquids
   final List<String> options;
 
+  /// Archana: one name per flower (Ashtottaram 108 / Shodasha 16).
+  final List<TextLine> names;
+
   factory PoojaStep.fromJson(Json j) => PoojaStep(
         upachara: j['upachara'] as String,
         title: LocalizedText.fromJson(j['title']),
@@ -85,6 +90,21 @@ class PoojaStep {
         target: (j['target'] as num?)?.toInt() ?? 1,
         autoDurationSec: (j['autoDurationSec'] as num?)?.toInt() ?? 8,
         options: _strings(j['options']),
+        names: _list(j['names'], TextLine.fromJson),
+      );
+
+  /// Builds an archana step from a list of names (target = names.length).
+  factory PoojaStep.archana({required LocalizedText title, required LocalizedText instruction, required List<TextLine> names}) =>
+      PoojaStep(
+        upachara: 'archana',
+        title: title,
+        instruction: instruction,
+        mantra: const LocalizedText({'en': ''}),
+        voice: MediaRef.none,
+        action: PoojaAction.archana,
+        target: names.length,
+        autoDurationSec: (names.length * 2.5).round(),
+        names: names,
       );
 }
 
@@ -100,6 +120,15 @@ class PoojaVidhanam {
         lengthMin: (j['lengthMin'] as num).toInt(),
         steps: _list(j['steps'], PoojaStep.fromJson),
       );
+
+  /// Copy with an archana inserted before the aarti (or before the closing).
+  PoojaVidhanam withArchana(PoojaStep archana) {
+    var at = steps.indexWhere((s) => s.upachara == 'aarti');
+    if (at < 0) at = steps.indexWhere((s) => s.upachara == 'closing');
+    if (at < 0) at = steps.length;
+    return PoojaVidhanam(id: '$id+archana', name: name, lengthMin: lengthMin + (archana.autoDurationSec / 60).ceil(),
+        steps: [...steps.take(at), archana, ...steps.skip(at)]);
+  }
 }
 
 // ---------------------------------------------------------------- Deity

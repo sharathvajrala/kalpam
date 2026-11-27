@@ -28,3 +28,15 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Bilingual pass: hero tiles, hero CTA, My God buttons, Panchangam strip labels, today's vratam + Join, weekday god label all now show both scripts.
 - Hero tiles equal height.
 - Screenshots (20 Dec 2026, Vijayawada, two family profiles): docs/screenshots/today-group1-{te,en}.png.
+
+## 2026-11-27 — Screen group 2 (Ayyappa pooja interaction engine) ready for review
+- Engine is its own module, `lib/pooja_engine/` (pure Dart, renderer-agnostic):
+  - `gestures.dart`: one recognizer per upachara. Aarti/dhoopam clockwise circles (centre jitter and counter-clockwise ignored), flower shower (upward swipe), abhishekam (drag down or tilt the phone ~35° for 3 s), coconut (firm downward swipe), bell (phone shake via accelerometer, debounced, tap fallback), shankh (mic blow sustained 0.6 s, or press-and-hold 0.8 s), pradakshina (sweeps = rounds), archana (tap/flick = one flower per name).
+  - `choreography.dart`: Watch Mode timelines per upachara (cue vocabulary shared with the future Unity sanctum). Ayyappa closing plays Harivarasanam, then the curtains close.
+  - `pooja_session.dart`: one state machine for both modes; Sankalpam is spoken first; voice guide waits in Hands-on; "Do this for me" performs one step; switch mode mid-pooja; pause/resume; NotificationGate stays closed while a pooja (even paused) is open. No points or streaks.
+- Screens: Sannidhanam tab + pooja setup (mode, 5/15/Shodashopachara, archana none/short/full, Sankalpam preview for the active family profile) and the pooja screen (sanctum, bilingual step HUD, gesture hint, liquid choice for abhishekam, gentle completion).
+- Only the Ayyappa sanctum opens; other gods show a note until this group is reviewed (addendum).
+- Hidden tabs no longer animate (TickerMode), so the sanctum never runs off-screen.
+- Debug-only dart-defines for demos: `KALPAM_TAB`, `KALPAM_DEMO_SPEED`.
+- 49 tests pass (gestures 11, choreography 6, session 4, pooja flow widget test 1), analyzer clean.
+- Screenshots: docs/screenshots/pooja-group2-watch-en.png, pooja-group2-setup-handson-te.png.

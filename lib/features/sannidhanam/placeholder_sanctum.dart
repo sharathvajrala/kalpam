@@ -7,25 +7,34 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../app/theme.dart';
 import '../../core/content/models.dart';
-import '../../core/pooja/sanctum_bridge.dart';
+import '../../pooja_engine/gestures.dart';
+import '../../pooja_engine/sanctum_bridge.dart';
 
 /// Flutter-drawn stand-in for the Unity sanctum (ASSETS_TODO.md
 /// 3d.ayyappa.sanctum). Implements the full [SanctumBridge] protocol:
 /// every upachara is interactive in Hands-on mode and animates itself in
 /// Watch Mode, so the pooja flow is complete end-to-end today.
 class PlaceholderSanctum extends StatefulWidget {
-  const PlaceholderSanctum({super.key, required this.bridge, required this.deity});
+  const PlaceholderSanctum({super.key, required this.bridge, required this.deity, this.recognizer});
   final SanctumBridge bridge;
   final DeityPack deity;
+
+  /// The active step's recognizer (from the pooja engine). Raw touches go
+  /// here; when null the sanctum is a passive darshan view.
+  final UpacharaRecognizer? Function()? recognizer;
 
   @override
   State<PlaceholderSanctum> createState() => _PlaceholderSanctumState();
 }
 
 class _Flower {
-  _Flower(this.x, this.y, this.vy, this.spin, this.color);
+  _Flower(this.x, this.y, this.vy, this.spin, this.color, {this.settle = 0.78});
   double x, y, vy, spin;
   final Color color;
+
+  /// Height where the flower comes to rest (archana flowers pile at the feet).
+  final double settle;
+  bool resting = false;
 }
 
 class _PlaceholderSanctumState extends State<PlaceholderSanctum> with SingleTickerProviderStateMixin {
@@ -37,31 +46,31 @@ class _PlaceholderSanctumState extends State<PlaceholderSanctum> with SingleTick
 
   // scene state
   String? _upachara;
-  PoojaAction _action = PoojaAction.none;
   bool _auto = false;
   String? _option;
   bool _lampLit = false;
   final List<_Flower> _flowers = [];
   Offset? _plate; // aarti / dhoopam position (0..1 space)
-  double _circleAngle = 0;
-  double? _lastAngle;
+  double _plateOrbit = -1; // >=0 while a Watch Mode circle is running
   double _pour = 0; // 0..1 abhishekam stream
+  double _pourTarget = 0;
   double _coconut = 0; // 0 whole -> 1 broken
   double _bellSwing = 0;
   double _shankh = 0;
   double _curtain = 0; // 0 open -> 1 closed
+  bool _closingCurtains = false;
   double _glow = 0;
   double _walk = 0; // pradakshina progress within current round
-  double _holdStart = -1;
-  double _autoT = 0;
-  double _dragAccum = 0;
+  double _walkTarget = 0;
+  double _tray = 0; // naivedyam / tambulam tray rising to the idol
+  double _drape = 0; // vastram drape
+  double? _holdStart;
 
   @override
   void initState() {
     super.initState();
     _ticker = createTicker(_tick)..start();
     _sub = widget.bridge.commands.listen(_onCommand);
-    // the renderer is ready immediately
     scheduleMicrotask(() => widget.bridge.emit(const SanctumEvent(SanctumEventType.ready)));
   }
 
@@ -76,7 +85,6 @@ class _PlaceholderSanctumState extends State<PlaceholderSanctum> with SingleTick
     switch (c.type) {
       case 'beginStep':
         _upachara = c.payload['upachara'] as String?;
-        _action = PoojaAction.values.byName(c.payload['action'] as String);
         _option = c.payload['option'] as String?;
         _auto = false;
         _resetStepVisuals();
@@ -84,198 +92,158 @@ class _PlaceholderSanctumState extends State<PlaceholderSanctum> with SingleTick
         _upachara = c.payload['upachara'] as String?;
         _option = c.payload['option'] as String?;
         _auto = true;
-        _autoT = 0;
         _resetStepVisuals();
+      case 'cue':
+        _cue(c.payload['cue'] as String, c.payload['arg']);
+      case 'effect':
+        _effect(c.payload['effect'] as String);
       case 'closeSanctum':
         _upachara = 'closing';
-        _auto = true;
+        _closingCurtains = widget.deity.closingType == 'curtains';
     }
   }
 
   void _resetStepVisuals() {
-    _circleAngle = 0;
-    _lastAngle = null;
     _pour = 0;
+    _pourTarget = 0;
     _walk = 0;
-    _dragAccum = 0;
+    _walkTarget = 0;
+    _plateOrbit = -1;
+    _tray = 0;
     if (_upachara == 'aarti' || _upachara == 'dhoopam') _plate = const Offset(0.5, 0.62);
     if (_upachara == 'coconut') _coconut = 0;
   }
 
-  void _done() {
-    HapticFeedback.lightImpact();
-    widget.bridge.emit(SanctumEvent(SanctumEventType.actionDone, upachara: _upachara));
+  /// Watch Mode choreography cues (and hands-on action effects).
+  void _cue(String cue, Object? arg) {
+    switch (cue) {
+      case 'lightLamp':
+        _lampLit = true;
+      case 'flowers':
+        final n = (arg as int?) ?? 20;
+        _spawnFlowers(n, archana: _upachara == 'archana');
+      case 'aartiCircle' || 'dhoopCircle':
+        _plateOrbit = 0;
+      case 'pour':
+        _option = arg as String? ?? _option;
+        _pourTarget = 1;
+      case 'coconut':
+        _coconut = 0.01;
+        HapticFeedback.heavyImpact();
+      case 'bell':
+        _bellSwing = 1;
+      case 'shankh':
+        _shankh = 1;
+      case 'walkAround':
+        _walkTarget = _walk.floorToDouble() + 1;
+      case 'offerTray':
+        _tray = 0.01;
+      case 'drape':
+        _drape = 0.01;
+      case 'curtainsClose':
+        _closingCurtains = true;
+    }
   }
 
-  void _progress(double v) =>
-      widget.bridge.emit(SanctumEvent(SanctumEventType.progress, upachara: _upachara, value: v));
+  /// Live feedback from the recognizers while the devotee acts.
+  void _effect(String e) {
+    final parts = e.split(':');
+    final arg = parts.length > 1 ? parts[1] : '';
+    switch (parts.first) {
+      case 'plate':
+        final xy = arg.split(',').map(double.parse).toList();
+        _plate = Offset(xy[0], xy[1]);
+      case 'flowers':
+        _spawnFlowers(int.tryParse(arg) ?? 1, archana: _upachara == 'archana');
+      case 'pour':
+        _pour = double.tryParse(arg) ?? 0;
+      case 'walk':
+        _walk = double.tryParse(arg) ?? 0;
+      case 'coconut':
+        _cue('coconut', null);
+      case 'bell':
+        _bellSwing = 1;
+      case 'shankh':
+        _shankh = 1;
+    }
+  }
 
   void _tick(Duration elapsed) {
     final dt = ((elapsed - _last).inMicroseconds / 1e6).clamp(0.0, 0.05);
     _last = elapsed;
     _time += dt;
-    // physics: flowers fall with drag
     for (final f in _flowers) {
+      if (f.resting) continue;
       f.vy += 0.35 * dt;
       f.y += f.vy * dt;
       f.x += math.sin(_time * 2 + f.spin) * 0.02 * dt;
+      if (f.y >= f.settle && f.settle < 0.78) {
+        f.y = f.settle;
+        f.resting = true;
+      }
     }
-    _flowers.removeWhere((f) => f.y > 0.78);
+    _flowers.removeWhere((f) => !f.resting && f.y > 0.78);
+    if (_flowers.length > 300) _flowers.removeRange(0, _flowers.length - 300); // perf budget
     _bellSwing *= math.pow(0.04, dt).toDouble();
     _shankh = math.max(0, _shankh - dt * 0.6);
     _glow = 0.5 + 0.5 * math.sin(_time * 1.3);
-
-    if (_auto) _autoAnimate(dt);
-    if (_upachara == 'closing') _curtain = math.min(1, _curtain + dt * 0.12);
-    if (_upachara == 'deepam' && _auto && _autoT > 1.2) _lampLit = true;
+    if (_coconut > 0) _coconut = math.min(1, _coconut + dt * 3);
+    if (_tray > 0) _tray = math.min(1, _tray + dt * 0.8);
+    if (_drape > 0) _drape = math.min(1, _drape + dt * 0.7);
+    if (_auto && _pourTarget > _pour) _pour = math.min(_pourTarget, _pour + dt * 0.35);
+    if (_walkTarget > _walk) _walk = math.min(_walkTarget, _walk + dt * 0.25);
+    if (_plateOrbit >= 0) {
+      _plateOrbit += dt * 1.6;
+      final a = _plateOrbit;
+      _plate = Offset(0.5 + 0.18 * math.cos(a), 0.55 + 0.12 * math.sin(a));
+      if (_plateOrbit >= 2 * math.pi) _plateOrbit = -1;
+    }
+    if (_auto && (_upachara == 'pushpam' || _upachara == 'mantrapushpam') && _rand.nextDouble() < 0.3) _spawnFlowers(1);
+    if (_closingCurtains) _curtain = math.min(1, _curtain + dt * 0.12);
+    if (_holdStart != null) _shankh = math.min(1, (_time - _holdStart!) / 0.8);
     setState(() {});
   }
 
-  void _autoAnimate(double dt) {
-    _autoT += dt;
-    switch (_upachara) {
-      case 'pushpam' || 'mantrapushpam':
-        if (_rand.nextDouble() < 0.5) _spawnFlowers(1);
-      case 'aarti' || 'dhoopam':
-        final a = _autoT * 1.6;
-        _plate = Offset(0.5 + 0.18 * math.cos(a), 0.55 + 0.12 * math.sin(a));
-      case 'abhishekam':
-        _pour = (math.sin(_autoT * 0.8) * 0.5 + 0.5);
-      case 'coconut':
-        if (_autoT > 1) _coconut = math.min(1, _coconut + dt * 3);
-      case 'bell':
-        if ((_autoT * 2).floor() != ((_autoT - dt) * 2).floor()) _bellSwing = 1;
-      case 'shankh':
-        _shankh = 1;
-      case 'pradakshina':
-        _walk = (_autoT * 0.25) % 1;
-    }
-  }
-
-  void _spawnFlowers(int n) {
+  void _spawnFlowers(int n, {bool archana = false}) {
     const colors = [Color(0xFFF2A33A), Color(0xFFE85D2A), Color(0xFFF7E07A), Color(0xFFD94B6A)];
     for (var i = 0; i < n; i++) {
-      if (_flowers.length > 300) break; // perf budget (ARCHITECTURE.md)
-      _flowers.add(_Flower(0.3 + _rand.nextDouble() * 0.4, -0.05 - _rand.nextDouble() * 0.2,
-          0.05 + _rand.nextDouble() * 0.1, _rand.nextDouble() * 6, colors[_rand.nextInt(colors.length)]));
+      _flowers.add(archana
+          ? _Flower(0.42 + _rand.nextDouble() * 0.16, 0.2, 0.15, _rand.nextDouble() * 6, colors[_rand.nextInt(colors.length)],
+              settle: 0.585 + _rand.nextDouble() * 0.02)
+          : _Flower(0.3 + _rand.nextDouble() * 0.4, -0.05 - _rand.nextDouble() * 0.2, 0.05 + _rand.nextDouble() * 0.1,
+              _rand.nextDouble() * 6, colors[_rand.nextInt(colors.length)]));
     }
   }
 
-  // ---------------------------------------------------------------- gestures
-  void _onTap() {
-    if (_auto) return;
-    switch (_action) {
-      case PoojaAction.tap:
-        if (_upachara == 'deepam') _lampLit = true;
-        _done();
-      case PoojaAction.shake:
-        _bellSwing = 1; // tap fallback for shake
-        _done();
-      default:
-        break;
-    }
-  }
-
-  void _onPanStart(DragStartDetails d, Size size) {
-    _lastAngle = null;
-    _dragAccum = 0;
-  }
-
-  void _onPanUpdate(DragUpdateDetails d, Size size) {
-    if (_auto) return;
-    final p = Offset(d.localPosition.dx / size.width, d.localPosition.dy / size.height);
-    switch (_action) {
-      case PoojaAction.dragCircle:
-        _plate = p;
-        final c = const Offset(0.5, 0.5);
-        final a = math.atan2(p.dy - c.dy, p.dx - c.dx);
-        if (_lastAngle != null) {
-          var da = a - _lastAngle!;
-          if (da > math.pi) da -= 2 * math.pi;
-          if (da < -math.pi) da += 2 * math.pi;
-          if (da > 0) _circleAngle += da; // clockwise on screen (y down)
-          _progress((_circleAngle / (2 * math.pi)) % 1);
-          if (_circleAngle >= 2 * math.pi) {
-            _circleAngle -= 2 * math.pi;
-            _done();
-          }
-        }
-        _lastAngle = a;
-      case PoojaAction.shower:
-        if (d.delta.dy < 0) {
-          _dragAccum += -d.delta.dy;
-          if (_rand.nextDouble() < 0.6) _spawnFlowers(2);
-        }
-      case PoojaAction.pour:
-        if (d.delta.dy > 0) {
-          _pour = (_pour + d.delta.dy / (size.height * 0.6)).clamp(0, 1);
-          _progress(_pour);
-          if (_pour >= 1) {
-            _pour = 0;
-            _done();
-          }
-        }
-      case PoojaAction.swipeDown:
-        _dragAccum += d.delta.dy;
-      case PoojaAction.walkAround:
-        _walk = (_walk + d.delta.dx.abs() / (size.width * 1.5)).clamp(0, 1);
-        _progress(_walk);
-        if (_walk >= 1) {
-          _walk = 0;
-          _done();
-        }
-      default:
-        break;
-    }
-  }
-
-  void _onPanEnd(DragEndDetails d, Size size) {
-    if (_auto) return;
-    if (_action == PoojaAction.shower && _dragAccum > size.height * 0.15) {
-      _spawnFlowers(25);
-      _done();
-    }
-    if (_action == PoojaAction.swipeDown && (_dragAccum > size.height * 0.2 || d.velocity.pixelsPerSecond.dy > 900)) {
-      _coconut = 1;
-      HapticFeedback.heavyImpact();
-      _done();
-    }
-    _dragAccum = 0;
-  }
-
-  void _onLongPressStart() {
-    if (_auto || _action != PoojaAction.blow) return;
-    _holdStart = _time;
-  }
-
-  void _onLongPressEnd() {
-    if (_action != PoojaAction.blow || _holdStart < 0) return;
-    if (_time - _holdStart > 0.8) {
-      _shankh = 1;
-      _done();
-    }
-    _holdStart = -1;
-  }
+  // ------------------------------------------------- raw input -> recognizer
+  UpacharaRecognizer? get _rec => _auto ? null : widget.recognizer?.call();
+  Vec _n(Offset p, Size s) => Vec(p.dx / s.width, p.dy / s.height);
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, c) {
       final size = Size(c.maxWidth, c.maxHeight);
-      if (_holdStart >= 0) _shankh = math.min(1, (_time - _holdStart) / 0.8);
       return GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: _onTap,
-        onPanStart: (d) => _onPanStart(d, size),
-        onPanUpdate: (d) => _onPanUpdate(d, size),
-        onPanEnd: (d) => _onPanEnd(d, size),
-        onLongPressStart: (_) => _onLongPressStart(),
-        onLongPressEnd: (_) => _onLongPressEnd(),
+        onTapUp: (d) {
+          _rec?.tap(_n(d.localPosition, size));
+          HapticFeedback.selectionClick();
+        },
+        onPanStart: (d) => _rec?.down(_n(d.localPosition, size), _time),
+        onPanUpdate: (d) => _rec?.move(_n(d.localPosition, size), _time),
+        onPanEnd: (d) => _rec?.up(_n(d.localPosition, size), _time,
+            velocity: Vec(d.velocity.pixelsPerSecond.dx / size.width, d.velocity.pixelsPerSecond.dy / size.height)),
+        onLongPressStart: (_) {
+          _rec?.holdStart(_time);
+          if (_upachara == 'shankh' && !_auto) _holdStart = _time;
+        },
+        onLongPressEnd: (_) {
+          _rec?.holdEnd(_time);
+          _holdStart = null;
+        },
         child: Semantics(
           label: 'Sanctum of ${widget.deity.name.en}',
-          child: CustomPaint(
-            size: size,
-            painter: _SanctumPainter(this),
-          ),
+          child: CustomPaint(size: size, painter: _SanctumPainter(this)),
         ),
       );
     });
@@ -396,6 +364,28 @@ class _SanctumPainter extends CustomPainter {
       if (s._coconut > 0.5) {
         canvas.drawCircle(c, w * 0.035, Paint()..color = const Color(0xFFF7F3E8));
       }
+    }
+
+    // naivedyam / tambulam tray rising to the idol
+    if (s._tray > 0 && (s._upachara == 'naivedyam' || s._upachara == 'tambulam')) {
+      final y = h * (0.78 - 0.1 * Curves.easeOut.transform(s._tray));
+      final c = Offset(w / 2, y);
+      canvas.drawOval(Rect.fromCenter(center: c, width: w * 0.22, height: h * 0.035), Paint()..color = accent);
+      final food = s._upachara == 'naivedyam' ? const Color(0xFFF5E6C8) : const Color(0xFF3E8E41);
+      canvas.drawCircle(c.translate(-w * 0.04, -h * 0.012), w * 0.025, Paint()..color = food);
+      canvas.drawCircle(c.translate(w * 0.04, -h * 0.012), w * 0.025, Paint()..color = food);
+    }
+
+    // vastram drape over the shoulders
+    if (s._drape > 0) {
+      final a = Curves.easeOut.transform(s._drape);
+      final drape = Path()
+        ..moveTo(w * 0.4, h * 0.47)
+        ..quadraticBezierTo(w * 0.5, h * (0.47 + 0.08 * a), w * 0.6, h * 0.47)
+        ..lineTo(w * 0.6, h * (0.47 + 0.03 * a))
+        ..quadraticBezierTo(w * 0.5, h * (0.5 + 0.08 * a), w * 0.4, h * (0.47 + 0.03 * a))
+        ..close();
+      canvas.drawPath(drape, Paint()..color = const Color(0xFFE0A526).withValues(alpha: 0.9 * a));
     }
 
     // aarti plate / dhoopam following the finger
