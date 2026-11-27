@@ -216,12 +216,13 @@ class FlagshipHero extends StatelessWidget {
         ]),
         if (state.phase != FlagshipPhase.teaser && state.phase != FlagshipPhase.closing) ...[
           const SizedBox(height: 16),
-          Row(children: [
+          IntrinsicHeight(child: Row(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
             if (katha != null)
               Expanded(
                 child: _HeroTile(
                   icon: Icons.auto_stories_outlined,
                   label: l.todayKatha,
+                  label2: context.l2.todayKatha,
                   value: context.t(katha.title),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => VratamScreen(vratamId: vratam!.id, initialTab: VratamTab.katha))),
                 ),
@@ -232,6 +233,7 @@ class FlagshipHero extends StatelessWidget {
                 child: _HeroTile(
                   icon: Icons.music_note_outlined,
                   label: l.todayBhajan,
+                  label2: context.l2.todayBhajan,
                   value: context.t(bhajan.title),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => BhajanPlayerScreen(bhajanId: bhajan.id))),
                 ),
@@ -242,11 +244,12 @@ class FlagshipHero extends StatelessWidget {
               child: _HeroTile(
                 icon: Icons.temple_hindu_outlined,
                 label: l.seasonPooja,
+                  label2: context.l2.seasonPooja,
                 value: context.t(deity.name),
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: deity.id))),
               ),
             ),
-          ]),
+          ])),
         ],
         if (state.phase == FlagshipPhase.teaser && vratam != null) ...[
           const SizedBox(height: 12),
@@ -259,10 +262,11 @@ class FlagshipHero extends StatelessWidget {
         ],
         const SizedBox(height: 16),
         if (state.phase == FlagshipPhase.closing && vratam != null && record != null)
-          _heroButton(context, l.beginUdyapanam, () => Navigator.of(context).push(
+          _heroButton(context, l.beginUdyapanam, context.l2.beginUdyapanam, () => Navigator.of(context).push(
               MaterialPageRoute(builder: (_) => VratamScreen(vratamId: vratam.id, initialTab: VratamTab.udyapanam))))
         else
-          _heroButton(context, joined ? l.continueLabel : l.joinSankalpam, openJoin, key: const ValueKey('hero-join')),
+          _heroButton(context, joined ? l.continueLabel : l.joinSankalpam,
+              joined ? context.l2.continueLabel : context.l2.joinSankalpam, openJoin, key: const ValueKey('hero-join')),
         if (state.phase == FlagshipPhase.closing && state.next != null) ...[
           const SizedBox(height: 10),
           Text(l.nextFlagship(context.t(state.next!.title)), style: const TextStyle(color: K.goldSoft, fontWeight: FontWeight.w600)),
@@ -271,21 +275,27 @@ class FlagshipHero extends StatelessWidget {
     );
   }
 
-  Widget _heroButton(BuildContext context, String label, VoidCallback onTap, {Key? key}) => SizedBox(
+  Widget _heroButton(BuildContext context, String label, String label2, VoidCallback onTap, {Key? key}) => SizedBox(
         width: double.infinity,
         child: FilledButton(
           key: key,
           style: FilledButton.styleFrom(backgroundColor: K.goldBright, foregroundColor: K.maroonDeep),
           onPressed: onTap,
-          child: Text(label),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: BiPair(label, label2,
+                align: CrossAxisAlignment.center,
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: K.maroonDeep),
+                secondaryColor: K.maroon),
+          ),
         ),
       );
 }
 
 class _HeroTile extends StatelessWidget {
-  const _HeroTile({required this.icon, required this.label, required this.value, required this.onTap});
+  const _HeroTile({required this.icon, required this.label, required this.label2, required this.value, required this.onTap});
   final IconData icon;
-  final String label, value;
+  final String label, label2, value;
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) => Material(
@@ -302,6 +312,7 @@ class _HeroTile extends StatelessWidget {
               Icon(icon, color: K.goldBright, size: 20),
               const SizedBox(height: 6),
               Text(label, style: const TextStyle(color: K.goldSoft, fontSize: 11)),
+              Text(label2, style: TextStyle(color: K.goldSoft.withValues(alpha: 0.7), fontSize: 9)),
               Text(value, maxLines: 2, overflow: TextOverflow.ellipsis,
                   style: const TextStyle(color: K.ivory, fontSize: 13, fontWeight: FontWeight.w600)),
             ]),
@@ -399,7 +410,8 @@ class MyGodCard extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(builder: (_) => PoojaSetupScreen(deityId: d.id)));
               },
               icon: const Icon(Icons.local_fire_department_outlined),
-              label: Text(context.l.dailyPooja),
+              label: BiPair(context.l.dailyPooja, context.l2.dailyPooja,
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: K.ivory), secondaryColor: K.goldSoft),
             ),
           ),
           const SizedBox(width: 10),
@@ -414,7 +426,8 @@ class MyGodCard extends StatelessWidget {
                 }
               },
               icon: const Icon(Icons.graphic_eq),
-              label: Text(context.l.chanting),
+              label: BiPair(context.l.chanting, context.l2.chanting,
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: K.maroon)),
             ),
           ),
         ]),
@@ -460,9 +473,10 @@ class _TodayStrip extends StatelessWidget {
     final wg = app.weekdayGod;
     final parayanam = app.repo.parayanamFor(app.today.weekday);
 
-    Widget cell(String label, String value, {String? sub}) => Expanded(
+    final l2 = context.l2;
+    Widget cell(String label, String label2, String value, {String? sub}) => Expanded(
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(label, style: tt.bodySmall),
+            Text('$label · $label2', style: tt.bodySmall),
             Text(value, style: tt.titleSmall?.copyWith(color: K.maroon, fontWeight: FontWeight.w700)),
             if (sub != null) Text(sub, style: tt.bodySmall?.copyWith(fontSize: 11)),
           ]),
@@ -480,17 +494,17 @@ class _TodayStrip extends StatelessWidget {
           ]),
           const GoldRule(),
           Row(children: [
-            cell(l.tithi, context.t(p.tithi.name), sub: l.until(fmtTime(context, p.tithi.endsAt))),
-            cell(l.nakshatram, context.t(p.nakshatra.name), sub: l.until(fmtTime(context, p.nakshatra.endsAt))),
+            cell(l.tithi, l2.tithi, context.t(p.tithi.name), sub: l.until(fmtTime(context, p.tithi.endsAt))),
+            cell(l.nakshatram, l2.nakshatram, context.t(p.nakshatra.name), sub: l.until(fmtTime(context, p.nakshatra.endsAt))),
           ]),
           const SizedBox(height: 10),
           Row(children: [
-            cell(l.sunrise, fmtTime(context, p.sunrise)),
-            cell(l.sunset, fmtTime(context, p.sunset)),
+            cell(l.sunrise, l2.sunrise, fmtTime(context, p.sunrise)),
+            cell(l.sunset, l2.sunset, fmtTime(context, p.sunset)),
           ]),
           const SizedBox(height: 10),
           Row(children: [
-            cell(l.rahuKalam, '${fmtTime(context, p.rahuKalam.start)} – ${fmtTime(context, p.rahuKalam.end)}'),
+            cell(l.rahuKalam, l2.rahuKalam, '${fmtTime(context, p.rahuKalam.start)} – ${fmtTime(context, p.rahuKalam.end)}'),
           ]),
         ]),
       ),
@@ -502,13 +516,15 @@ class _TodayStrip extends StatelessWidget {
             const SizedBox(width: 12),
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(l.todayVratam, style: tt.bodySmall),
+                Text('${l.todayVratam} · ${l2.todayVratam}', style: tt.bodySmall),
                 BiL(r.name, style: tt.titleMedium?.copyWith(color: K.maroon)),
               ]),
             ),
             app.isRecurringJoined(r.id)
-                ? OutlinedButton.icon(onPressed: () => app.toggleRecurring(r.id), icon: const Icon(Icons.check), label: Text(l.joined))
-                : FilledButton(onPressed: () => app.toggleRecurring(r.id), child: Text(l.join)),
+                ? OutlinedButton.icon(onPressed: () => app.toggleRecurring(r.id), icon: const Icon(Icons.check),
+                    label: BiPair(l.joined, l2.joined, style: const TextStyle(fontWeight: FontWeight.w600, color: K.maroon)))
+                : FilledButton(onPressed: () => app.toggleRecurring(r.id),
+                    child: BiPair(l.join, l2.join, style: const TextStyle(fontWeight: FontWeight.w600, color: K.ivory), secondaryColor: K.goldSoft)),
           ]),
         ),
       ],
@@ -521,7 +537,7 @@ class _TodayStrip extends StatelessWidget {
             const SizedBox(width: 12),
             Expanded(
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text('${l.weekdayGod} · ${context.t(p.weekdayName)}', style: tt.bodySmall),
+                Text('${l.weekdayGod} · ${l2.weekdayGod} — ${context.t(p.weekdayName)}', style: tt.bodySmall),
                 BiL(wg.name, style: tt.titleMedium?.copyWith(color: K.maroon)),
               ]),
             ),
