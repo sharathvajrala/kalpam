@@ -1,0 +1,77 @@
+name: Android build
+
+# Builds the Play internal-testing bundle (AAB) and an installable APK.
+# Signed with the upload key when the repository secrets below are set
+# (see docs/SIGNING.md); otherwise debug-signed, which Play rejects, so
+# only a properly signed bundle can ever be uploaded.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.1'
+          channel: stable
+          cache: true
+
+      - name: Packages and content packs
+        run: |
+          flutter pub get
+          python3 tool/build_packs.py
+          python3 tool/build_arb.py
+          flutter gen-l10n
+
+      - name: Analyze and test
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Upload key (from secrets, never stored in the repo)
+        env:
+          UPLOAD_KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+          UPLOAD_KEYSTORE_PASSWORD: ${{ secrets.UPLOAD_KEYSTORE_PASSWORD }}
+          UPLOAD_KEY_ALIAS: ${{ secrets.UPLOAD_KEY_ALIAS }}
+          UPLOAD_KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
+        run: |
+          if [ -n "$UPLOAD_KEYSTORE_BASE64" ]; then
+            echo "$UPLOAD_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/upload-keystore.jks"
+            {
+              echo "storeFile=$RUNNER_TEMP/upload-keystore.jks"
+              echo "storePassword=$UPLOAD_KEYSTORE_PASSWORD"
+              echo "keyAlias=$UPLOAD_KEY_ALIAS"
+              echo "keyPassword=$UPLOAD_KEY_PASSWORD"
+            } > android/key.properties
+            echo "Signing with the upload key."
+          else
+            echo "::warning::No upload key secrets set: this build is debug-signed and cannot be uploaded to Play."
+          fi
+
+      - name: Build AAB and APK
+        run: |
+          flutter build appbundle --release --build-number=${{ github.run_number }}
+          flutter build apk --release --build-number=${{ github.run_number }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kalpam-android-${{ github.run_number }}
+          path: |
+            build/app/outputs/bundle/release/app-release.aab
+            build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+
+      - name: Remove the key from the runner
+        if: always()
+        run: rm -f android/key.properties "$RUNNER_TEMP/upload-keystore.jks"

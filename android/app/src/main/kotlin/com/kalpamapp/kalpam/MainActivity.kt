@@ -1,4 +1,4 @@
-package app.kalpam.kalpam
+package com.kalpamapp.kalpam
 
 import io.flutter.embedding.android.FlutterActivity
 

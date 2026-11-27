@@ -9,7 +9,7 @@
     <!-- Elder Mode voice navigation (asked only when the mic button is used) -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
-        android:label="kalpam"
+        android:label="Kalpam"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

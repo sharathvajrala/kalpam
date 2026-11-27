@@ -85,3 +85,10 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Guided rituals read each step aloud in Elder Mode. Elder Mode choice added to the first onboarding screen.
 - Android RECORD_AUDIO + RecognitionService query, iOS microphone/speech usage strings.
 - 92 tests pass, analyzer clean. Screenshots: docs/screenshots/elder-*.png.
+
+## 2026-11-27 — Phase A device build prep
+- Package renamed to com.kalpamapp.kalpam (Android applicationId/namespace, MainActivity, iOS bundle id). App label "Kalpam".
+- Release signing reads android/key.properties (ignored by git, as are *.jks/*.keystore); without it, release falls back to debug signing so nothing unsigned can reach Play.
+- .github/workflows/android.yml: on every push to main, analyze + tests, then a release AAB and APK as run artifacts, signed with the upload key from repository secrets.
+- docs/SIGNING.md: keytool command, key.properties, GitHub secrets, Play App Signing first upload, internal testers, first on-device checklist.
+- The cloud workspace cannot reach dl.google.com (Android SDK download), so the AAB is built by GitHub Actions or on Sharath's machine.
