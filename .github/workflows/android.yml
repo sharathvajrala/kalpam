@@ -7,7 +7,17 @@ name: Android build
 on:
   push:
     branches: [main]
+    # The website (docs/) and internal notes do not change the app.
+    paths-ignore:
+      - 'docs/**'
+      - 'project-docs/**'
+      - '**.md'
   workflow_dispatch:
+
+# A newer push to main replaces an older build that is still running.
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
