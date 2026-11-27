@@ -1,5 +1,5 @@
 name: kalpam
-description: "A new Flutter project."
+description: "Kalpam: Sankalpam, Vratam & Daily Pooja"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -39,6 +39,9 @@ dependencies:
   intl: ^0.20.3
   flutter_localizations:
     sdk: flutter
+  url_launcher: ^6.3.3
+  share_plus: ^13.3.1
+  flutter_tts: ^4.2.5
 
 dev_dependencies:
   flutter_test:
@@ -61,6 +64,24 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
+  assets:
+    - assets/packs/
+    - assets/packs/deities/
+    - assets/packs/vratams/
+    - assets/packs/stotras/
+    - assets/packs/bhajans/
+    - assets/packs/flagship/
+  fonts:
+    - family: KalpamSerif
+      fonts:
+        - asset: assets/fonts/CormorantGaramond.ttf
+    - family: KalpamTeluguSerif
+      fonts:
+        - asset: assets/fonts/NotoSerifTelugu.ttf
+    - family: KalpamSans
+      fonts:
+        - asset: assets/fonts/NotoSansTelugu.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

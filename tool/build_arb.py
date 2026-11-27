@@ -1,0 +1,91 @@
+#!/usr/bin/env python3
+"""Single source for UI strings -> lib/l10n/app_en.arb + app_te.arb.
+Add a column here when a language is added (ta, ml in Phase B)."""
+import json, pathlib, re
+S = {
+ "appTitle": ("Kalpam", "కల్పం"),
+ "tagline": ("Your sankalpam — every day, every vratam", "మీ సంకల్పం — ప్రతి రోజు, ప్రతి వ్రతం"),
+ "tabToday": ("Today", "నేడు"), "tabSannidhanam": ("Sannidhanam", "సన్నిధానం"), "tabGrantham": ("Grantham", "గ్రంథం"),
+ "tabBhajans": ("Bhajans", "భజనలు"), "tabGroups": ("Groups", "బృందాలు"),
+ "subhodayam": ("Subhodayam", "శుభోదయం"), "subhaSayantram": ("Subha Sayantram", "శుభ సాయంత్రం"),
+ "myGod": ("My God", "నా ఇష్టదైవం"), "dailyPooja": ("Daily Pooja", "నిత్య పూజ"), "chanting": ("Chanting", "జపం"),
+ "joinSankalpam": ("Join the Sankalpam", "సంకల్పం చేయండి"), "continueLabel": ("Continue", "కొనసాగించండి"),
+ "dayOf": ("Day {day} of {total}", "{total} రోజులలో {day}వ రోజు"),
+ "daysToPeak": ("{days} days to {peak}", "{peak}కు {days} రోజులు"),
+ "peakToday": ("{peak} is today", "నేడే {peak}"),
+ "startsIn": ("Begins in {days} days", "{days} రోజుల్లో ప్రారంభం"),
+ "seasonClosing": ("Season complete — Udyapanam", "ఉత్సవం సంపూర్ణం — ఉద్యాపనం"),
+ "nextFlagship": ("Next: {name}", "తదుపరి: {name}"),
+ "todayKatha": ("Today's Katha", "నేటి కథ"), "todayBhajan": ("Today's Bhajan", "నేటి భజన"), "seasonPooja": ("Season Pooja", "ఉత్సవ పూజ"),
+ "samagriChecklist": ("Samagri checklist", "పూజా సామగ్రి"),
+ "panchangam": ("Panchangam", "పంచాంగం"), "tithi": ("Tithi", "తిథి"), "nakshatram": ("Nakshatram", "నక్షత్రం"),
+ "yogam": ("Yogam", "యోగం"), "karanam": ("Karanam", "కరణం"), "masam": ("Masam", "మాసం"), "samvatsaram": ("Samvatsaram", "సంవత్సరం"),
+ "sunrise": ("Sunrise", "సూర్యోదయం"), "sunset": ("Sunset", "సూర్యాస్తమయం"), "rahuKalam": ("Rahu Kalam", "రాహు కాలం"),
+ "yamagandam": ("Yamagandam", "యమగండం"), "gulikaKalam": ("Gulika Kalam", "గుళిక కాలం"),
+ "until": ("until {time}", "{time} వరకు"),
+ "todayVratam": ("Today's Vratam", "నేటి వ్రతం"), "weekdayGod": ("Today's God", "నేటి దైవం"),
+ "join": ("Join", "చేరండి"), "joined": ("Joined", "చేరారు"),
+ "city": ("City", "నగరం"), "chooseCity": ("Choose your city", "మీ నగరం ఎంచుకోండి"), "search": ("Search", "వెతకండి"),
+ "settings": ("Settings", "అమరికలు"), "language": ("Language", "భాష"),
+ "elderMode": ("Elder Mode", "పెద్దల మోడ్"), "elderModeDesc": ("Bigger text, spoken guidance and Watch Mode by default", "పెద్ద అక్షరాలు, వాయిస్ మార్గదర్శనం, దర్శన మోడ్"),
+ "yourName": ("Your name", "మీ పేరు"), "gotra": ("Gotra", "గోత్రం"), "save": ("Save", "భద్రపరచు"),
+ "chooseGod": ("Choose your God", "మీ ఇష్టదైవాన్ని ఎంచుకోండి"), "welcome": ("Welcome to Kalpam", "కల్పానికి స్వాగతం"),
+ "begin": ("Begin", "ప్రారంభించండి"), "skip": ("Skip", "దాటవేయి"), "optional": ("optional", "ఐచ్ఛికం"), "next": ("Next", "తదుపరి"),
+ "aboutYou": ("For your Sankalpam", "మీ సంకల్పం కోసం"),
+ "aboutYouDesc": ("Your name, gotra and city are spoken in every Sankalpam. They stay on this phone.", "మీ పేరు, గోత్రం, నగరం ప్రతి సంకల్పంలో చెప్పబడతాయి. ఇవి ఈ ఫోన్‌లోనే ఉంటాయి."),
+ "modeHandsOn": ("Hands-on Pooja", "స్వయంగా పూజ"), "modeHandsOnDesc": ("Perform every upachara yourself", "ప్రతి ఉపచారం మీరే చేయండి"),
+ "modeWatch": ("Watch Mode", "దర్శన మోడ్"), "modeWatchDesc": ("The pooja is performed for you, like a temple deeparadhana", "ఆలయ దీపారాధనలా పూజ మీ కోసం జరుగుతుంది"),
+ "chooseLength": ("Pooja length", "పూజ నిడివి"), "minutes": ("{n} min", "{n} నిమి"),
+ "beginPooja": ("Begin Pooja", "పూజ ప్రారంభించండి"), "stepOf": ("Step {n} of {total}", "{total}లో {n}వ ఉపచారం"),
+ "doItForMe": ("Do this for me", "నా కోసం చేయండి"), "pause": ("Pause", "ఆపు"), "resume": ("Resume", "కొనసాగించు"),
+ "endPooja": ("End pooja", "పూజ ముగించు"), "poojaComplete": ("Pooja complete", "పూజ సంపూర్ణం"),
+ "poojaCompleteMsg": ("May {god} bless you and your family.", "{god} మీకు, మీ కుటుంబానికి ఆశీస్సులు అందించుగాక."),
+ "yourSankalpam": ("Your Sankalpam", "మీ సంకల్పం"), "listen": ("Listen", "వినండి"), "stop": ("Stop", "ఆపు"),
+ "placeholderSanctum": ("Preview sanctum — 3D idol coming soon", "నమూనా సన్నిధానం — 3D విగ్రహం త్వరలో"),
+ "recordingSoon": ("Recording coming soon", "రికార్డింగ్ త్వరలో"),
+ "parayanamToday": ("Parayanam today", "నేటి పారాయణం"), "allStotras": ("All stotras", "అన్ని స్తోత్రాలు"), "poojaVidhanams": ("Pooja Vidhanams", "పూజా విధానాలు"),
+ "sung": ("Sung", "గానం"), "learnMode": ("Learn", "నేర్చుకోండి"), "repeatLine": ("Repeat", "పునరావృతం"),
+ "japaCounter": ("Japa", "జపం"), "meaning": ("Meaning", "అర్థం"), "reset": ("Reset", "మళ్ళీ"),
+ "malaDone": ("Mala complete · {count}", "మాల పూర్తి · {count}"),
+ "sampleText": ("Sample text — full verified text coming soon", "నమూనా పాఠం — పూర్తి పాఠం త్వరలో"),
+ "seasonPlaylist": ("Season playlist", "ఉత్సవ భజనలు"), "lyrics": ("Lyrics", "సాహిత్యం"), "allBhajans": ("All bhajans", "అన్ని భజనలు"),
+ "familyCircles": ("Family Circles", "కుటుంబ బృందాలు"),
+ "familyCirclesDesc": ("Keep a vratam or mala together and see each other's day count.", "కలిసి వ్రతం / మాల చేయండి, ఒకరి రోజుల లెక్క ఒకరు చూడండి."),
+ "guruswamyGroups": ("Guruswamy Groups", "గురుస్వామి బృందాలు"),
+ "guruswamyDesc": ("Deeksha day counts, announcements, yatra poll, Virtual Queue list and expense split.", "దీక్ష రోజులు, ప్రకటనలు, యాత్ర తేదీ, వర్చువల్ క్యూ జాబితా, ఖర్చుల పంపకం."),
+ "groupsOpening": ("Groups open with Makaravilakku, 14 Jan. Pooja, chanting and trackers never need an account.", "బృందాలు మకరవిళక్కు (జనవరి 14) నుండి. పూజ, జపం, ట్రాకర్లకు ఖాతా అవసరం లేదు."),
+ "notifyMe": ("Tell me when Groups open", "బృందాలు ప్రారంభమైనప్పుడు తెలియజేయండి"),
+ "katha": ("Katha", "కథ"), "samagri": ("Samagri", "సామగ్రి"), "sankalpam": ("Sankalpam", "సంకల్పం"), "vidhanam": ("Vidhanam", "విధానం"),
+ "tracker": ("Tracker", "ట్రాకర్"), "udyapanam": ("Udyapanam", "ఉద్యాపనం"), "fasting": ("Fasting", "ఉపవాస నియమాలు"), "rules": ("Deeksha rules", "దీక్ష నియమాలు"),
+ "morning": ("Morning", "ఉదయం"), "evening": ("Evening", "సాయంత్రం"), "irumudi": ("Irumudi", "ఇరుముడి"),
+ "irumudiFront": ("Front pouch (Mun Kettu)", "ముందు ముడి"), "irumudiBack": ("Back pouch (Pin Kettu)", "వెనుక ముడి"),
+ "maladharana": ("Maladharana Mantram", "మాలధారణ మంత్రం"),
+ "startDeeksha": ("Start my deeksha", "నా దీక్ష ప్రారంభించండి"), "startDate": ("Start date", "ప్రారంభ తేదీ"), "deekshaDays": ("Days", "రోజులు"),
+ "deekshaDay": ("Day {n}", "{n}వ రోజు"), "streak": ("{n} days kept in a row", "వరుసగా {n} రోజులు"),
+ "daysLeft": ("{n} days left", "ఇంకా {n} రోజులు"),
+ "sabarimalaLive": ("Sabarimala Live", "శబరిమల లైవ్"), "nadaOpen": ("Nada open", "నడ తెరిచి ఉంది"), "nadaClosed": ("Nada closed", "నడ మూసి ఉంది"),
+ "nowPooja": ("Now: {name}", "ఇప్పుడు: {name}"), "nextPooja": ("Next: {name} at {time}", "తదుపరి: {time}కు {name}"),
+ "scheduleNote": ("Typical season schedule. Always check official TDB notices.", "సాధారణ ఉత్సవ సమయాలు. అధికారిక దేవస్వం ప్రకటనలు తప్పక చూడండి."),
+ "virtualQueue": ("Book Virtual Queue on the official site", "అధికారిక సైట్‌లో వర్చువల్ క్యూ బుక్ చేయండి"),
+ "noVip": ("Kalpam never sells darshan. Booking is free on the official site.", "కల్పం దర్శనం అమ్మదు. అధికారిక సైట్‌లో బుకింగ్ ఉచితం."),
+ "annadanam": ("Annadanam near you", "మీ దగ్గర అన్నదానం"), "templesNear": ("Ayyappa temples and Padi Poojas", "అయ్యప్ప ఆలయాలు, పడి పూజలు"),
+ "feedPending": ("Live listings appear here once verified organisers publish them for your city.", "ధృవీకరించిన నిర్వాహకులు ప్రచురించగానే మీ నగర వివరాలు ఇక్కడ కనిపిస్తాయి."),
+ "beginUdyapanam": ("Begin Udyapanam", "ఉద్యాపనం ప్రారంభించండి"), "certificate": ("Completion certificate", "సంపూర్ణ ధృవపత్రం"),
+ "share": ("Share", "పంచుకోండి"), "chapter": ("Chapter {n}", "{n}వ అధ్యాయం"),
+ "certificateText": ("{name} completed the {vratam} of {days} days.", "{name} గారు {days} రోజుల {vratam} సంపూర్ణం చేశారు."),
+ "notStarted": ("Not started", "ప్రారంభించలేదు"), "openVratam": ("Open vratam", "వ్రతం చూడండి"),
+ "voiceGuide": ("Voice guide", "వాయిస్ మార్గదర్శనం"),
+ "devotee": ("Devotee", "భక్తుడు"),
+ "allGods": ("All Gods", "అందరు దేవతలు"),
+}
+PL = {"day","total","days","peak","name","time","n","god","count","vratam"}
+out = pathlib.Path(__file__).resolve().parent.parent / "lib" / "l10n"; out.mkdir(parents=True, exist_ok=True)
+for i, lang in enumerate(["en", "te"]):
+    arb = {"@@locale": lang}
+    for k, v in S.items():
+        arb[k] = v[i]
+        ph = sorted(set(re.findall(r"\{(\w+)\}", v[0])))
+        if lang == "en" and ph:
+            arb["@" + k] = {"placeholders": {p: ({"type": "int"} if p in {"day","total","days","n","count"} else {"type": "String"}) for p in ph}}
+    (out / f"app_{lang}.arb").write_text(json.dumps(arb, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+print(len(S), "strings")

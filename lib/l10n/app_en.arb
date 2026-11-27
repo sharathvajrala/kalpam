@@ -1,0 +1,279 @@
+{
+ "@@locale": "en",
+ "appTitle": "Kalpam",
+ "tagline": "Your sankalpam — every day, every vratam",
+ "tabToday": "Today",
+ "tabSannidhanam": "Sannidhanam",
+ "tabGrantham": "Grantham",
+ "tabBhajans": "Bhajans",
+ "tabGroups": "Groups",
+ "subhodayam": "Subhodayam",
+ "subhaSayantram": "Subha Sayantram",
+ "myGod": "My God",
+ "dailyPooja": "Daily Pooja",
+ "chanting": "Chanting",
+ "joinSankalpam": "Join the Sankalpam",
+ "continueLabel": "Continue",
+ "dayOf": "Day {day} of {total}",
+ "@dayOf": {
+  "placeholders": {
+   "day": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "daysToPeak": "{days} days to {peak}",
+ "@daysToPeak": {
+  "placeholders": {
+   "days": {
+    "type": "int"
+   },
+   "peak": {
+    "type": "String"
+   }
+  }
+ },
+ "peakToday": "{peak} is today",
+ "@peakToday": {
+  "placeholders": {
+   "peak": {
+    "type": "String"
+   }
+  }
+ },
+ "startsIn": "Begins in {days} days",
+ "@startsIn": {
+  "placeholders": {
+   "days": {
+    "type": "int"
+   }
+  }
+ },
+ "seasonClosing": "Season complete — Udyapanam",
+ "nextFlagship": "Next: {name}",
+ "@nextFlagship": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "todayKatha": "Today's Katha",
+ "todayBhajan": "Today's Bhajan",
+ "seasonPooja": "Season Pooja",
+ "samagriChecklist": "Samagri checklist",
+ "panchangam": "Panchangam",
+ "tithi": "Tithi",
+ "nakshatram": "Nakshatram",
+ "yogam": "Yogam",
+ "karanam": "Karanam",
+ "masam": "Masam",
+ "samvatsaram": "Samvatsaram",
+ "sunrise": "Sunrise",
+ "sunset": "Sunset",
+ "rahuKalam": "Rahu Kalam",
+ "yamagandam": "Yamagandam",
+ "gulikaKalam": "Gulika Kalam",
+ "until": "until {time}",
+ "@until": {
+  "placeholders": {
+   "time": {
+    "type": "String"
+   }
+  }
+ },
+ "todayVratam": "Today's Vratam",
+ "weekdayGod": "Today's God",
+ "join": "Join",
+ "joined": "Joined",
+ "city": "City",
+ "chooseCity": "Choose your city",
+ "search": "Search",
+ "settings": "Settings",
+ "language": "Language",
+ "elderMode": "Elder Mode",
+ "elderModeDesc": "Bigger text, spoken guidance and Watch Mode by default",
+ "yourName": "Your name",
+ "gotra": "Gotra",
+ "save": "Save",
+ "chooseGod": "Choose your God",
+ "welcome": "Welcome to Kalpam",
+ "begin": "Begin",
+ "skip": "Skip",
+ "optional": "optional",
+ "next": "Next",
+ "aboutYou": "For your Sankalpam",
+ "aboutYouDesc": "Your name, gotra and city are spoken in every Sankalpam. They stay on this phone.",
+ "modeHandsOn": "Hands-on Pooja",
+ "modeHandsOnDesc": "Perform every upachara yourself",
+ "modeWatch": "Watch Mode",
+ "modeWatchDesc": "The pooja is performed for you, like a temple deeparadhana",
+ "chooseLength": "Pooja length",
+ "minutes": "{n} min",
+ "@minutes": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "beginPooja": "Begin Pooja",
+ "stepOf": "Step {n} of {total}",
+ "@stepOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "doItForMe": "Do this for me",
+ "pause": "Pause",
+ "resume": "Resume",
+ "endPooja": "End pooja",
+ "poojaComplete": "Pooja complete",
+ "poojaCompleteMsg": "May {god} bless you and your family.",
+ "@poojaCompleteMsg": {
+  "placeholders": {
+   "god": {
+    "type": "String"
+   }
+  }
+ },
+ "yourSankalpam": "Your Sankalpam",
+ "listen": "Listen",
+ "stop": "Stop",
+ "placeholderSanctum": "Preview sanctum — 3D idol coming soon",
+ "recordingSoon": "Recording coming soon",
+ "parayanamToday": "Parayanam today",
+ "allStotras": "All stotras",
+ "poojaVidhanams": "Pooja Vidhanams",
+ "sung": "Sung",
+ "learnMode": "Learn",
+ "repeatLine": "Repeat",
+ "japaCounter": "Japa",
+ "meaning": "Meaning",
+ "reset": "Reset",
+ "malaDone": "Mala complete · {count}",
+ "@malaDone": {
+  "placeholders": {
+   "count": {
+    "type": "int"
+   }
+  }
+ },
+ "sampleText": "Sample text — full verified text coming soon",
+ "seasonPlaylist": "Season playlist",
+ "lyrics": "Lyrics",
+ "allBhajans": "All bhajans",
+ "familyCircles": "Family Circles",
+ "familyCirclesDesc": "Keep a vratam or mala together and see each other's day count.",
+ "guruswamyGroups": "Guruswamy Groups",
+ "guruswamyDesc": "Deeksha day counts, announcements, yatra poll, Virtual Queue list and expense split.",
+ "groupsOpening": "Groups open with Makaravilakku, 14 Jan. Pooja, chanting and trackers never need an account.",
+ "notifyMe": "Tell me when Groups open",
+ "katha": "Katha",
+ "samagri": "Samagri",
+ "sankalpam": "Sankalpam",
+ "vidhanam": "Vidhanam",
+ "tracker": "Tracker",
+ "udyapanam": "Udyapanam",
+ "fasting": "Fasting",
+ "rules": "Deeksha rules",
+ "morning": "Morning",
+ "evening": "Evening",
+ "irumudi": "Irumudi",
+ "irumudiFront": "Front pouch (Mun Kettu)",
+ "irumudiBack": "Back pouch (Pin Kettu)",
+ "maladharana": "Maladharana Mantram",
+ "startDeeksha": "Start my deeksha",
+ "startDate": "Start date",
+ "deekshaDays": "Days",
+ "deekshaDay": "Day {n}",
+ "@deekshaDay": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "streak": "{n} days kept in a row",
+ "@streak": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "daysLeft": "{n} days left",
+ "@daysLeft": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "sabarimalaLive": "Sabarimala Live",
+ "nadaOpen": "Nada open",
+ "nadaClosed": "Nada closed",
+ "nowPooja": "Now: {name}",
+ "@nowPooja": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "nextPooja": "Next: {name} at {time}",
+ "@nextPooja": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   },
+   "time": {
+    "type": "String"
+   }
+  }
+ },
+ "scheduleNote": "Typical season schedule. Always check official TDB notices.",
+ "virtualQueue": "Book Virtual Queue on the official site",
+ "noVip": "Kalpam never sells darshan. Booking is free on the official site.",
+ "annadanam": "Annadanam near you",
+ "templesNear": "Ayyappa temples and Padi Poojas",
+ "feedPending": "Live listings appear here once verified organisers publish them for your city.",
+ "beginUdyapanam": "Begin Udyapanam",
+ "certificate": "Completion certificate",
+ "share": "Share",
+ "chapter": "Chapter {n}",
+ "@chapter": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "certificateText": "{name} completed the {vratam} of {days} days.",
+ "@certificateText": {
+  "placeholders": {
+   "days": {
+    "type": "int"
+   },
+   "name": {
+    "type": "String"
+   },
+   "vratam": {
+    "type": "String"
+   }
+  }
+ },
+ "notStarted": "Not started",
+ "openVratam": "Open vratam",
+ "voiceGuide": "Voice guide",
+ "devotee": "Devotee",
+ "allGods": "All Gods"
+}
