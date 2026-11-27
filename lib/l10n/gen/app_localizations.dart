@@ -1375,6 +1375,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Local sunset'**
   String get anchorSunset;
+
+  /// No description provided for @byGod.
+  ///
+  /// In en, this message translates to:
+  /// **'By god'**
+  String get byGod;
+
+  /// No description provided for @byCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'By category'**
+  String get byCategory;
+
+  /// No description provided for @catSahasranamam.
+  ///
+  /// In en, this message translates to:
+  /// **'Sahasranamam'**
+  String get catSahasranamam;
+
+  /// No description provided for @catAshtottaram.
+  ///
+  /// In en, this message translates to:
+  /// **'Ashtottaram'**
+  String get catAshtottaram;
+
+  /// No description provided for @catChalisa.
+  ///
+  /// In en, this message translates to:
+  /// **'Chalisa'**
+  String get catChalisa;
+
+  /// No description provided for @catStotram.
+  ///
+  /// In en, this message translates to:
+  /// **'Stotram'**
+  String get catStotram;
+
+  /// No description provided for @catSuprabhatam.
+  ///
+  /// In en, this message translates to:
+  /// **'Suprabhatam'**
+  String get catSuprabhatam;
+
+  /// No description provided for @catSaranam.
+  ///
+  /// In en, this message translates to:
+  /// **'Saranam'**
+  String get catSaranam;
+
+  /// No description provided for @catKeertana.
+  ///
+  /// In en, this message translates to:
+  /// **'Keertana'**
+  String get catKeertana;
+
+  /// No description provided for @catMantram.
+  ///
+  /// In en, this message translates to:
+  /// **'Mantram'**
+  String get catMantram;
+
+  /// No description provided for @catNamavali.
+  ///
+  /// In en, this message translates to:
+  /// **'Namavali'**
+  String get catNamavali;
+
+  /// No description provided for @catNamajapam.
+  ///
+  /// In en, this message translates to:
+  /// **'Namajapam'**
+  String get catNamajapam;
+
+  /// No description provided for @linesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} lines'**
+  String linesCount(int n);
+
+  /// No description provided for @sampleShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Sample'**
+  String get sampleShort;
+
+  /// No description provided for @lineOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Line {n} of {total}'**
+  String lineOf(int n, int total);
+
+  /// No description provided for @repeatOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat {n} of {total}'**
+  String repeatOf(int n, int total);
+
+  /// No description provided for @tapToCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to count'**
+  String get tapToCount;
+
+  /// No description provided for @malasCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{n} malas'**
+  String malasCount(int n);
+
+  /// No description provided for @countRepeats.
+  ///
+  /// In en, this message translates to:
+  /// **'Count each repeat on the mala'**
+  String get countRepeats;
+
+  /// No description provided for @voiceReads.
+  ///
+  /// In en, this message translates to:
+  /// **'Recording coming soon. The voice guide reads each line meanwhile.'**
+  String get voiceReads;
+
+  /// No description provided for @japaTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get japaTarget;
+
+  /// No description provided for @sourceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Source'**
+  String get sourceLabel;
+
+  /// No description provided for @chantComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Parayanam complete'**
+  String get chantComplete;
 }
 
 class _AppLocalizationsDelegate

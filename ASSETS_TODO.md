@@ -48,3 +48,20 @@ Every item below has a working placeholder in the app (`placeholder://…` Media
 | feed.sabarimala_live | Nada open/closed, current pooja, notices | Needs a source: official TDB notices are manually curated by Kalpam ops into Firestore. No scraping. |
 | feed.annadanam | Annadanam locations + live serving status | Crowd/organiser submitted, moderated |
 | data.temples | Ayyappa temples + Padi Pooja schedule | Curated |
+
+## Grantham core (added 27 Nov 2026) — verified text + licensed audio slots
+Every item below shows a "Sample" flag in the library and a "Sample text" chip in the player until verified content lands. Nothing unverified is presented as verified.
+
+| Slot | Bundled now | Needed |
+|---|---|---|
+| text.ayyappa_saranam_108 | 12 saranams | full 108, pandit-verified (Telugu + translit + meaning) |
+| text.harivarasanam | 5 lines | full 8 stanzas, verified |
+| text.maladharana_mantram | 6 lines | verified |
+| text.vishnu_sahasranamam | opening 6 lines | full text (dhyanam + 107 shlokas + phalashruti), verified |
+| text.lalitha_sahasranamam | opening 4 lines | full text, verified |
+| text.hanuman_chalisa | doha + 3 chaupais | full 40 chaupais + dohas, verified Telugu-script Awadhi |
+| text.{god}_ashtottaram | first 16 names each | full 108 per god, verified |
+| text.{god}_suprabhatam | Venkatesa opening only | others pending verification + licence check |
+| audio.stotra.*.sung / learn | none (placeholder) | commissioned recordings with per-line cue points (tSung / tLearn); the player already reads cue points |
+| player.background_playback | — | wire audio_service / lock-screen controls when the first licensed recording lands |
+| player.offline_downloads | text packs are bundled (offline today) | audio pack download manager with the recordings |

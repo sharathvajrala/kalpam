@@ -49,3 +49,12 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Today: Daily rituals card under My God (sunrise / sunset times, done-state, Full/Short archana remembered per day, streak). Guided ritual screen for any god with one flower per name; "Perform in Sannidhanam" for Ayyappa.
 - Settings: evening reminder anchored to my time or local sunset (`ritualReminderAt`). Actual notification scheduling lands with the notifications work.
 - 58 tests pass, analyzer clean. Screenshot: docs/screenshots/rituals-group-dayGod-thursday.png (Thursday, Day God mode = Sai Baba).
+
+## 2026-11-27 — Grantham core ready for review
+- Daily Rituals approved (fde097d). Phase A order: Grantham core → Bhajans core → Elder Mode polish.
+- `lib/core/chant/chant_engine.dart`: pure-Dart chant-along engine. Line timing from the recording's cue points when present (TextLine.tSung / tLearn), else estimated from the text; Learn Mode slower with a pause to repeat; repeat-line ×1/11/21/108; JapaCounter (108 beads per mala, target 108 or 1,008); optional "count each repeat on the mala".
+- Grantham tab: Parayanam today (weekday map), library by god (your god first; Phase A core set leads) or by category; every unverified text carries a "Sample" flag.
+- Chant-along player: karaoke fill on the current line, auto-scroll, tap a line to jump, meaning toggle, Sung/Learn, repeat chips, japa card with 108-bead ring and meru, persisted per stotra (included in Export). With no licensed recording yet, the voice guide reads each line and the player says so.
+- Ayyappa 108 Saranams parayanam day moved to Wednesday (founder map).
+- ASSETS_TODO: Grantham text + audio slots listed; background/lock-screen playback and audio downloads wait for the first licensed recording.
+- 63 tests pass, analyzer clean. Screenshot: docs/screenshots/grantham-core.png.

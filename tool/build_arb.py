@@ -139,6 +139,18 @@ S = {
  "ritualComplete": ("Ritual complete", "ఆరాధన సంపూర్ణం"),
  "eveningAnchor": ("Evening reminder at", "సాయంత్ర గుర్తుచేత"),
  "anchorTime": ("My time", "నా సమయం"), "anchorSunset": ("Local sunset", "స్థానిక సూర్యాస్తమయం"),
+ "byGod": ("By god", "దేవుని వారీగా"), "byCategory": ("By category", "వర్గాల వారీగా"),
+ "catSahasranamam": ("Sahasranamam", "సహస్రనామం"), "catAshtottaram": ("Ashtottaram", "అష్టోత్తరం"),
+ "catChalisa": ("Chalisa", "చాలీసా"), "catStotram": ("Stotram", "స్తోత్రం"), "catSuprabhatam": ("Suprabhatam", "సుప్రభాతం"),
+ "catSaranam": ("Saranam", "శరణం"), "catKeertana": ("Keertana", "కీర్తన"), "catMantram": ("Mantram", "మంత్రం"),
+ "catNamavali": ("Namavali", "నామావళి"), "catNamajapam": ("Namajapam", "నామజపం"),
+ "linesCount": ("{n} lines", "{n} పంక్తులు"), "sampleShort": ("Sample", "నమూనా"),
+ "lineOf": ("Line {n} of {total}", "{total}లో {n}వ పంక్తి"), "repeatOf": ("Repeat {n} of {total}", "{total}లో {n}వ సారి"),
+ "tapToCount": ("Tap to count", "లెక్కించడానికి తాకండి"), "malasCount": ("{n} malas", "{n} మాలలు"),
+ "countRepeats": ("Count each repeat on the mala", "ప్రతి పునరావృతాన్ని మాలలో లెక్కించు"),
+ "voiceReads": ("Recording coming soon. The voice guide reads each line meanwhile.", "రికార్డింగ్ త్వరలో. అప్పటి వరకు వాయిస్ గైడ్ ప్రతి పంక్తి చదువుతుంది."),
+ "japaTarget": ("Target", "లక్ష్యం"), "sourceLabel": ("Source", "మూలం"),
+ "chantComplete": ("Parayanam complete", "పారాయణం సంపూర్ణం"),
 }
 PL = {"day","total","days","peak","name","time","n","god","count","vratam"}
 out = pathlib.Path(__file__).resolve().parent.parent / "lib" / "l10n"; out.mkdir(parents=True, exist_ok=True)

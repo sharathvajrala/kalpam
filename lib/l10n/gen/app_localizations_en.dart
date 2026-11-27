@@ -719,4 +719,82 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get anchorSunset => 'Local sunset';
+
+  @override
+  String get byGod => 'By god';
+
+  @override
+  String get byCategory => 'By category';
+
+  @override
+  String get catSahasranamam => 'Sahasranamam';
+
+  @override
+  String get catAshtottaram => 'Ashtottaram';
+
+  @override
+  String get catChalisa => 'Chalisa';
+
+  @override
+  String get catStotram => 'Stotram';
+
+  @override
+  String get catSuprabhatam => 'Suprabhatam';
+
+  @override
+  String get catSaranam => 'Saranam';
+
+  @override
+  String get catKeertana => 'Keertana';
+
+  @override
+  String get catMantram => 'Mantram';
+
+  @override
+  String get catNamavali => 'Namavali';
+
+  @override
+  String get catNamajapam => 'Namajapam';
+
+  @override
+  String linesCount(int n) {
+    return '$n lines';
+  }
+
+  @override
+  String get sampleShort => 'Sample';
+
+  @override
+  String lineOf(int n, int total) {
+    return 'Line $n of $total';
+  }
+
+  @override
+  String repeatOf(int n, int total) {
+    return 'Repeat $n of $total';
+  }
+
+  @override
+  String get tapToCount => 'Tap to count';
+
+  @override
+  String malasCount(int n) {
+    return '$n malas';
+  }
+
+  @override
+  String get countRepeats => 'Count each repeat on the mala';
+
+  @override
+  String get voiceReads =>
+      'Recording coming soon. The voice guide reads each line meanwhile.';
+
+  @override
+  String get japaTarget => 'Target';
+
+  @override
+  String get sourceLabel => 'Source';
+
+  @override
+  String get chantComplete => 'Parayanam complete';
 }

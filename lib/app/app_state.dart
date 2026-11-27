@@ -244,6 +244,9 @@ class AppState extends ChangeNotifier {
       'city': cityId == null ? null : city.name.en,
       'god': deityId,
       'eveningAnchor': eveningAnchor.name,
+      'japa': {
+        for (final k in _prefs.getKeys().where((k) => k.startsWith('japa:'))) k.substring(5): _prefs.getInt(k),
+      },
       'rituals': {
         for (final k in _prefs.getKeys().where((k) => k.startsWith('ritual:'))) k.substring(7): _prefs.getStringList(k),
       },
@@ -394,6 +397,15 @@ class AppState extends ChangeNotifier {
     final t = slot == RitualSlot.morning ? morningReminder : eveningReminder;
     if (t == null) return null;
     return DateTime.utc(d.year, d.month, d.day, t.hour, t.minute).subtract(Duration(minutes: city.utcOffsetMin));
+  }
+
+  // ------------------------------------------------------------ japa
+  int japaCount(String stotraId) => _prefs.getInt('japa:$stotraId') ?? 0;
+  int japaTarget(String stotraId) => _prefs.getInt('japaTarget:$stotraId') ?? 108;
+
+  Future<void> saveJapa(String stotraId, int count, int target) async {
+    await _prefs.setInt('japa:$stotraId', count);
+    await _prefs.setInt('japaTarget:$stotraId', target);
   }
 }
 

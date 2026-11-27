@@ -207,7 +207,7 @@ SAR = [
  ("పదునెట్టాంపడియే శరణం అయ్యప్ప", "Pathinettampadiye saranam Ayyappa", L("The holy eighteen steps, my refuge", "పవిత్ర పదునెట్టాంపడీ, శరణు")),
  ("మకరజ్యోతియే శరణం అయ్యప్ప", "Makarajyothiye saranam Ayyappa", L("The Makara Jyothi, my refuge", "మకరజ్యోతీ, శరణు")),
 ]
-stotra("ayyappa_saranam_108", L("Ayyappa 108 Saranams", "అయ్యప్ప 108 శరణాలు", ta="ஐயப்பன் 108 சரணம்", ml="അയ്യപ്പ 108 ശരണം"), ["ayyappa"], "saranam", [6],
+stotra("ayyappa_saranam_108", L("Ayyappa 108 Saranams", "అయ్యప్ప 108 శరణాలు", ta="ஐயப்பன் 108 சரணம்", ml="അയ്യപ്പ 108 ശരണം"), ["ayyappa"], "saranam", [3],
        "Traditional Sabarimala saranaghosham (public domain). Sample of 12; full 108 pending verification.", SAR)
 stotra("harivarasanam", L("Harivarasanam", "హరివరాసనం"), ["ayyappa"], "keertana", [],
        "Kumbakudi Kulathur Iyer (1920s, public domain lyric). Recording must be commissioned.", [

@@ -425,5 +425,62 @@
  "ritualComplete": "Ritual complete",
  "eveningAnchor": "Evening reminder at",
  "anchorTime": "My time",
- "anchorSunset": "Local sunset"
+ "anchorSunset": "Local sunset",
+ "byGod": "By god",
+ "byCategory": "By category",
+ "catSahasranamam": "Sahasranamam",
+ "catAshtottaram": "Ashtottaram",
+ "catChalisa": "Chalisa",
+ "catStotram": "Stotram",
+ "catSuprabhatam": "Suprabhatam",
+ "catSaranam": "Saranam",
+ "catKeertana": "Keertana",
+ "catMantram": "Mantram",
+ "catNamavali": "Namavali",
+ "catNamajapam": "Namajapam",
+ "linesCount": "{n} lines",
+ "@linesCount": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "sampleShort": "Sample",
+ "lineOf": "Line {n} of {total}",
+ "@lineOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "repeatOf": "Repeat {n} of {total}",
+ "@repeatOf": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   },
+   "total": {
+    "type": "int"
+   }
+  }
+ },
+ "tapToCount": "Tap to count",
+ "malasCount": "{n} malas",
+ "@malasCount": {
+  "placeholders": {
+   "n": {
+    "type": "int"
+   }
+  }
+ },
+ "countRepeats": "Count each repeat on the mala",
+ "voiceReads": "Recording coming soon. The voice guide reads each line meanwhile.",
+ "japaTarget": "Target",
+ "sourceLabel": "Source",
+ "chantComplete": "Parayanam complete"
 }

@@ -716,4 +716,82 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get anchorSunset => 'స్థానిక సూర్యాస్తమయం';
+
+  @override
+  String get byGod => 'దేవుని వారీగా';
+
+  @override
+  String get byCategory => 'వర్గాల వారీగా';
+
+  @override
+  String get catSahasranamam => 'సహస్రనామం';
+
+  @override
+  String get catAshtottaram => 'అష్టోత్తరం';
+
+  @override
+  String get catChalisa => 'చాలీసా';
+
+  @override
+  String get catStotram => 'స్తోత్రం';
+
+  @override
+  String get catSuprabhatam => 'సుప్రభాతం';
+
+  @override
+  String get catSaranam => 'శరణం';
+
+  @override
+  String get catKeertana => 'కీర్తన';
+
+  @override
+  String get catMantram => 'మంత్రం';
+
+  @override
+  String get catNamavali => 'నామావళి';
+
+  @override
+  String get catNamajapam => 'నామజపం';
+
+  @override
+  String linesCount(int n) {
+    return '$n పంక్తులు';
+  }
+
+  @override
+  String get sampleShort => 'నమూనా';
+
+  @override
+  String lineOf(int n, int total) {
+    return '$totalలో $nవ పంక్తి';
+  }
+
+  @override
+  String repeatOf(int n, int total) {
+    return '$totalలో $nవ సారి';
+  }
+
+  @override
+  String get tapToCount => 'లెక్కించడానికి తాకండి';
+
+  @override
+  String malasCount(int n) {
+    return '$n మాలలు';
+  }
+
+  @override
+  String get countRepeats => 'ప్రతి పునరావృతాన్ని మాలలో లెక్కించు';
+
+  @override
+  String get voiceReads =>
+      'రికార్డింగ్ త్వరలో. అప్పటి వరకు వాయిస్ గైడ్ ప్రతి పంక్తి చదువుతుంది.';
+
+  @override
+  String get japaTarget => 'లక్ష్యం';
+
+  @override
+  String get sourceLabel => 'మూలం';
+
+  @override
+  String get chantComplete => 'పారాయణం సంపూర్ణం';
 }
