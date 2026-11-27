@@ -92,7 +92,19 @@ ThemeData kalpamTheme({required bool elder}) {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
       ),
     ),
+    // Elder Mode: every tap target at least 56 dp, chips roomier.
+    iconButtonTheme: IconButtonThemeData(
+      style: IconButton.styleFrom(minimumSize: Size.square(elder ? 56 : 48), iconSize: elder ? 30 : 24),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(minimumSize: Size(0, elder ? 56 : 40)),
+    ),
+    listTileTheme: ListTileThemeData(minVerticalPadding: elder ? 10 : 4),
+    switchTheme: SwitchThemeData(
+      materialTapTargetSize: elder ? MaterialTapTargetSize.padded : null,
+    ),
     chipTheme: base.chipTheme.copyWith(
+      padding: elder ? const EdgeInsets.symmetric(horizontal: 10, vertical: 10) : null,
       backgroundColor: K.card,
       selectedColor: K.goldSoft,
       side: const BorderSide(color: K.goldSoft),

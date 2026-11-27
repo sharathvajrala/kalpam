@@ -71,7 +71,7 @@ class _GranthamScreenState extends State<GranthamScreen> {
 
     return SafeArea(
       child: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        padding: EdgeInsets.fromLTRB(16, 8, 16, context.app.elderMode ? 120 : 24), // room for the Elder Mode mic
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 8, 4, 12),

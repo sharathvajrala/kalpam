@@ -34,3 +34,7 @@ Each item is a decision Sharath may want to overrule.
 30. **Notifications are in the primary language only** (no second line in the other script), to keep them short on the lock screen.
 31. **Battery optimisation:** no plugin opens the exemption screen; Settings explains once how to set battery use to Unrestricted. Exact alarms use SCHEDULE_EXACT_ALARM with a button; without it reminders are inexact. Android/iOS scheduling is configured but not yet run on a device in this environment.
 32. **Live synchronized moments (Makara Jyothi aarti) need FCM**, which is not wired yet; the local peak-day invitation names the live aarti time.
+33. **Elder Mode keeps the same app, bigger.** Nothing is hidden; Elder Mode adds a "Today's pooja" card on top, a "Listen to today" readout and a microphone button on every tab except the Sannidhanam (where it would cover the sanctum controls).
+34. **One-tap pooja picks the ritual by the clock:** morning until 3 PM, evening after. Gods with an open sanctum (Ayyappa) run it in Watch Mode in the sanctum; others open the guided ritual, which reads each step aloud in Elder Mode.
+35. **Voice commands use the device's speech recognizer** (speech_to_text; Telugu te-IN, English en-IN). The microphone opens only when the mic button is tapped, listens for up to 6 seconds, and is never used in the background or during a pooja. Where recognition is unavailable, the app says so and every button still works.
+36. **Elder Mode is offered on the first onboarding screen** (language page), before anything has to be typed.

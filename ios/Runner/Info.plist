@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Elder Mode voice navigation listens for a spoken command when you tap the microphone.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Elder Mode voice navigation turns your spoken command (for example "Pooja" or "Bhajans") into an action.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Kalpam uses your location once to calculate sunrise, tithi and Rahu Kalam for your city.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>

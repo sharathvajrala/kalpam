@@ -705,5 +705,91 @@
  },
  "startsOn": "Starts",
  "checkInTime": "Daily check-in time",
- "beginSankalpam": "Begin the Sankalpam"
+ "beginSankalpam": "Begin the Sankalpam",
+ "elderTodayPooja": "Today's pooja",
+ "elderBeginPooja": "Begin today's pooja",
+ "elderWatchFor": "Watch Mode · {god}",
+ "@elderWatchFor": {
+  "placeholders": {
+   "god": {
+    "type": "String"
+   }
+  }
+ },
+ "elderGuidedFor": "Guided with voice · {god}",
+ "@elderGuidedFor": {
+  "placeholders": {
+   "god": {
+    "type": "String"
+   }
+  }
+ },
+ "listenToday": "Listen to today",
+ "speakCommand": "Speak a command",
+ "listening": "Listening…",
+ "heard": "Heard: {name}",
+ "@heard": {
+  "placeholders": {
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "voiceHelp": "Say: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Today, or Stop.",
+ "voiceNotUnderstood": "Sorry, I did not catch that.",
+ "micUnavailable": "Voice commands are not available on this device. Every button also reads aloud.",
+ "digestGreeting": "{greeting}, {name}.",
+ "@digestGreeting": {
+  "placeholders": {
+   "greeting": {
+    "type": "String"
+   },
+   "name": {
+    "type": "String"
+   }
+  }
+ },
+ "digestDay": "Today is {weekday}: {tithi}, {nakshatram} nakshatram.",
+ "@digestDay": {
+  "placeholders": {
+   "nakshatram": {
+    "type": "String"
+   },
+   "tithi": {
+    "type": "String"
+   },
+   "weekday": {
+    "type": "String"
+   }
+  }
+ },
+ "digestSun": "Sunrise {rise}, sunset {dusk}.",
+ "@digestSun": {
+  "placeholders": {
+   "dusk": {
+    "type": "String"
+   },
+   "rise": {
+    "type": "String"
+   }
+  }
+ },
+ "digestGod": "Today's god: {god}.",
+ "@digestGod": {
+  "placeholders": {
+   "god": {
+    "type": "String"
+   }
+  }
+ },
+ "digestPending": "Your {ritual} is ready whenever you are.",
+ "@digestPending": {
+  "placeholders": {
+   "ritual": {
+    "type": "String"
+   }
+  }
+ },
+ "digestAllDone": "Today's rituals are complete. Blessings.",
+ "elderModeOnboard": "Larger text and voice guidance?"
 }

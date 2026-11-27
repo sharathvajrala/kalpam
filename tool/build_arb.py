@@ -204,6 +204,25 @@ S = {
  "startsOn": ("Starts", "ప్రారంభం"),
  "checkInTime": ("Daily check-in time", "రోజువారీ గుర్తింపు సమయం"),
  "beginSankalpam": ("Begin the Sankalpam", "సంకల్పం ప్రారంభించండి"),
+ # ---- Elder Mode polish
+ "elderTodayPooja": ("Today's pooja", "నేటి పూజ"),
+ "elderBeginPooja": ("Begin today's pooja", "నేటి పూజ ప్రారంభించండి"),
+ "elderWatchFor": ("Watch Mode · {god}", "దర్శన మోడ్ · {god}"),
+ "elderGuidedFor": ("Guided with voice · {god}", "వాయిస్ మార్గదర్శనంతో · {god}"),
+ "listenToday": ("Listen to today", "నేటి వివరాలు వినండి"),
+ "speakCommand": ("Speak a command", "ఆదేశం చెప్పండి"),
+ "listening": ("Listening…", "వింటున్నాను…"),
+ "heard": ("Heard: {name}", "విన్నది: {name}"),
+ "voiceHelp": ("Say: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Today, or Stop.", "చెప్పండి: పూజ, ఉదయం, సాయంత్రం, పంచాంగం, జపం, భజనలు, నేడు, లేదా ఆపు."),
+ "voiceNotUnderstood": ("Sorry, I did not catch that.", "క్షమించండి, అర్థం కాలేదు."),
+ "micUnavailable": ("Voice commands are not available on this device. Every button also reads aloud.", "ఈ పరికరంలో వాయిస్ ఆదేశాలు అందుబాటులో లేవు. ప్రతి బటన్ కూడా చదివి వినిపిస్తుంది."),
+ "digestGreeting": ("{greeting}, {name}.", "{greeting}, {name}."),
+ "digestDay": ("Today is {weekday}: {tithi}, {nakshatram} nakshatram.", "నేడు {weekday}: {tithi}, {nakshatram} నక్షత్రం."),
+ "digestSun": ("Sunrise {rise}, sunset {dusk}.", "సూర్యోదయం {rise}, సూర్యాస్తమయం {dusk}."),
+ "digestGod": ("Today's god: {god}.", "నేటి దైవం: {god}."),
+ "digestPending": ("Your {ritual} is ready whenever you are.", "మీ {ritual} మీకు వీలైనప్పుడు సిద్ధంగా ఉంది."),
+ "digestAllDone": ("Today's rituals are complete. Blessings.", "నేటి పూజలు పూర్తయ్యాయి. శుభాశీస్సులు."),
+ "elderModeOnboard": ("Larger text and voice guidance?", "పెద్ద అక్షరాలు, వాయిస్ మార్గదర్శనం కావాలా?"),
 }
 PL = {"day","total","days","peak","name","time","n","god","count","vratam"}
 out = pathlib.Path(__file__).resolve().parent.parent / "lib" / "l10n"; out.mkdir(parents=True, exist_ok=True)

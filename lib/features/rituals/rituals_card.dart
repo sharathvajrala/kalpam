@@ -80,12 +80,15 @@ class _RitualRow extends StatelessWidget {
               Text(done ? context.l.doneToday : when, style: tt.bodySmall?.copyWith(color: done ? K.success : K.inkSoft)),
             ]),
           ),
-          if (!done)
+          // Elder Mode: the whole row is the button (large text leaves no
+          // room for a second one beside it).
+          if (!done && !app.elderMode)
             FilledButton.tonal(
               onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => RitualScreen(slot: slot))),
               style: FilledButton.styleFrom(backgroundColor: K.goldSoft, foregroundColor: K.maroonDeep),
               child: Bi((l) => l.begin, style: tt.labelLarge, align: CrossAxisAlignment.center),
             ),
+          if (!done && app.elderMode) const Icon(Icons.chevron_right, size: 32, color: K.maroon),
         ]),
       ),
     );

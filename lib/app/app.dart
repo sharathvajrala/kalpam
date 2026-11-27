@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 
 import '../features/bhajans/bhajans_screen.dart';
+import '../features/elder/elder_mode.dart';
 import '../features/grantham/grantham_screen.dart';
 import '../features/groups/groups_screen.dart';
 import '../features/onboarding/onboarding_screen.dart';
@@ -76,6 +77,8 @@ class _KalpamShellState extends State<KalpamShell> {
             TickerMode(enabled: i == index, child: tab),
         ]),
         bottomNavigationBar: _BiTabBar(index: index),
+        // Elder Mode voice navigation (not over the sanctum's controls).
+        floatingActionButton: context.app.elderMode && index != 1 ? const VoiceMicButton() : null,
       ),
     );
   }

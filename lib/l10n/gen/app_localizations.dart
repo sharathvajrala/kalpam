@@ -1843,6 +1843,114 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Begin the Sankalpam'**
   String get beginSankalpam;
+
+  /// No description provided for @elderTodayPooja.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s pooja'**
+  String get elderTodayPooja;
+
+  /// No description provided for @elderBeginPooja.
+  ///
+  /// In en, this message translates to:
+  /// **'Begin today\'s pooja'**
+  String get elderBeginPooja;
+
+  /// No description provided for @elderWatchFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch Mode · {god}'**
+  String elderWatchFor(String god);
+
+  /// No description provided for @elderGuidedFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Guided with voice · {god}'**
+  String elderGuidedFor(String god);
+
+  /// No description provided for @listenToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to today'**
+  String get listenToday;
+
+  /// No description provided for @speakCommand.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak a command'**
+  String get speakCommand;
+
+  /// No description provided for @listening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening…'**
+  String get listening;
+
+  /// No description provided for @heard.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard: {name}'**
+  String heard(String name);
+
+  /// No description provided for @voiceHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Say: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Today, or Stop.'**
+  String get voiceHelp;
+
+  /// No description provided for @voiceNotUnderstood.
+  ///
+  /// In en, this message translates to:
+  /// **'Sorry, I did not catch that.'**
+  String get voiceNotUnderstood;
+
+  /// No description provided for @micUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Voice commands are not available on this device. Every button also reads aloud.'**
+  String get micUnavailable;
+
+  /// No description provided for @digestGreeting.
+  ///
+  /// In en, this message translates to:
+  /// **'{greeting}, {name}.'**
+  String digestGreeting(String greeting, String name);
+
+  /// No description provided for @digestDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Today is {weekday}: {tithi}, {nakshatram} nakshatram.'**
+  String digestDay(String nakshatram, String tithi, String weekday);
+
+  /// No description provided for @digestSun.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise {rise}, sunset {dusk}.'**
+  String digestSun(String dusk, String rise);
+
+  /// No description provided for @digestGod.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s god: {god}.'**
+  String digestGod(String god);
+
+  /// No description provided for @digestPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your {ritual} is ready whenever you are.'**
+  String digestPending(String ritual);
+
+  /// No description provided for @digestAllDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s rituals are complete. Blessings.'**
+  String get digestAllDone;
+
+  /// No description provided for @elderModeOnboard.
+  ///
+  /// In en, this message translates to:
+  /// **'Larger text and voice guidance?'**
+  String get elderModeOnboard;
 }
 
 class _AppLocalizationsDelegate

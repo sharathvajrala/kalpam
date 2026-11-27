@@ -11,6 +11,7 @@ import '../bhajans/bhajan_player_screen.dart';
 import '../../app/app_state.dart';
 import '../../core/rituals/daily_rituals.dart';
 import '../common/deity_avatar.dart';
+import '../elder/elder_mode.dart';
 import '../rituals/ritual_screen.dart';
 import '../rituals/rituals_card.dart';
 import '../grantham/chant_player_screen.dart';
@@ -30,10 +31,12 @@ class TodayScreen extends StatelessWidget {
     final hero = app.hero;
     return SafeArea(
       child: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        // Elder Mode: room under the last card for the microphone button.
+        padding: EdgeInsets.fromLTRB(16, 8, 16, app.elderMode ? 120 : 24),
         children: [
           const _GreetingHeader(),
           const SizedBox(height: 14),
+          if (app.elderMode) ...[const ElderTodayCard(), const SizedBox(height: 14)],
           if (hero != null) FlagshipHero(state: hero),
           const SizedBox(height: 14),
           const MyGodCard(),
@@ -506,8 +509,7 @@ class _TodayStrip extends StatelessWidget {
         onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const PanchangamScreen())),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(children: [
-            Bi((l) => l.panchangam, style: tt.titleLarge),
-            const Spacer(),
+            Expanded(child: Bi((l) => l.panchangam, style: tt.titleLarge)),
             const Icon(Icons.chevron_right, color: K.gold),
           ]),
           const GoldRule(),

@@ -27,17 +27,23 @@ class BhajansScreen extends StatelessWidget {
             key: key,
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(children: [
-                Expanded(child: title),
-                if (playAll)
-                  FilledButton.icon(
-                    key: const ValueKey('season-play-all'),
-                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => BhajanPlayerScreen(bhajanId: ids.first, playlistIds: ids))),
-                    icon: const Icon(Icons.play_arrow),
-                    label: Text(context.l.playAll),
-                  ),
-              ]),
+              // Title and Play all side by side; stacked when text is large.
+              Wrap(
+                spacing: 12,
+                runSpacing: 8,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  if (playAll) title else SizedBox(width: double.infinity, child: title),
+                  if (playAll)
+                    FilledButton.icon(
+                      key: const ValueKey('season-play-all'),
+                      onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => BhajanPlayerScreen(bhajanId: ids.first, playlistIds: ids))),
+                      icon: const Icon(Icons.play_arrow),
+                      label: Text(context.l.playAll),
+                    ),
+                ],
+              ),
               for (final (i, id) in ids.indexed) ...[
                 if (i > 0) const Divider(height: 1),
                 _BhajanTile(bhajan: repo.bhajans[id]!, queue: ids),
@@ -48,7 +54,7 @@ class BhajansScreen extends StatelessWidget {
 
     return SafeArea(
       child: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+        padding: EdgeInsets.fromLTRB(16, 8, 16, context.app.elderMode ? 120 : 24), // room for the Elder Mode mic
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(4, 8, 4, 12),

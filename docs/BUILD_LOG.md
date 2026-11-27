@@ -75,3 +75,13 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 - Settings → Notifications: per-type switches, Subhodayam time, quiet hours, one-time Android exact-timing/battery note, "Coming up" preview, Allow notifications.
 - Android manifest/gradle (desugaring, receivers, permissions) and iOS delegate configured.
 - 81 tests pass, analyzer clean. Screenshots: docs/screenshots/notifications-*.png.
+
+## 2026-11-27 — Elder Mode polish ready for review
+- Bhajans (ba24f01) and Notifications (03bdf8e) approved; both notification assumptions confirmed. Next after review: Android AAB for Play internal testing (com.kalpamapp.kalpam).
+- Automated Elder Mode audit (test/app/elder_audit_test.dart): every tab and Phase A screen on a 360 x 740 dp phone with Elder Mode, Telugu and English, plus tap-target and contrast guidelines; and a walk through every step of both guided rituals. Fixed: Today rituals row, Panchangam header, Bhajans season header, ritual step buttons (stacked full width in Elder Mode).
+- Theme: 56 dp minimum for icon and text buttons, roomier chips and list tiles in Elder Mode.
+- Elder Today card: one tap runs the day's pooja (Watch Mode in the sanctum, or the voice-guided ritual), and "Listen to today" speaks the greeting, Panchangam, sunrise/sunset, the day's god and what is still pending.
+- Voice navigation: mic button on every tab (Elder Mode). Commands in English or Telugu: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Sannidhanam, Groups, Today, Settings, Help, Stop.
+- Guided rituals read each step aloud in Elder Mode. Elder Mode choice added to the first onboarding screen.
+- Android RECORD_AUDIO + RecognitionService query, iOS microphone/speech usage strings.
+- 92 tests pass, analyzer clean. Screenshots: docs/screenshots/elder-*.png.

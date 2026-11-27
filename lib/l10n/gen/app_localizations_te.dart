@@ -1005,4 +1005,76 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get beginSankalpam => 'సంకల్పం ప్రారంభించండి';
+
+  @override
+  String get elderTodayPooja => 'నేటి పూజ';
+
+  @override
+  String get elderBeginPooja => 'నేటి పూజ ప్రారంభించండి';
+
+  @override
+  String elderWatchFor(String god) {
+    return 'దర్శన మోడ్ · $god';
+  }
+
+  @override
+  String elderGuidedFor(String god) {
+    return 'వాయిస్ మార్గదర్శనంతో · $god';
+  }
+
+  @override
+  String get listenToday => 'నేటి వివరాలు వినండి';
+
+  @override
+  String get speakCommand => 'ఆదేశం చెప్పండి';
+
+  @override
+  String get listening => 'వింటున్నాను…';
+
+  @override
+  String heard(String name) {
+    return 'విన్నది: $name';
+  }
+
+  @override
+  String get voiceHelp =>
+      'చెప్పండి: పూజ, ఉదయం, సాయంత్రం, పంచాంగం, జపం, భజనలు, నేడు, లేదా ఆపు.';
+
+  @override
+  String get voiceNotUnderstood => 'క్షమించండి, అర్థం కాలేదు.';
+
+  @override
+  String get micUnavailable =>
+      'ఈ పరికరంలో వాయిస్ ఆదేశాలు అందుబాటులో లేవు. ప్రతి బటన్ కూడా చదివి వినిపిస్తుంది.';
+
+  @override
+  String digestGreeting(String greeting, String name) {
+    return '$greeting, $name.';
+  }
+
+  @override
+  String digestDay(String nakshatram, String tithi, String weekday) {
+    return 'నేడు $weekday: $tithi, $nakshatram నక్షత్రం.';
+  }
+
+  @override
+  String digestSun(String dusk, String rise) {
+    return 'సూర్యోదయం $rise, సూర్యాస్తమయం $dusk.';
+  }
+
+  @override
+  String digestGod(String god) {
+    return 'నేటి దైవం: $god.';
+  }
+
+  @override
+  String digestPending(String ritual) {
+    return 'మీ $ritual మీకు వీలైనప్పుడు సిద్ధంగా ఉంది.';
+  }
+
+  @override
+  String get digestAllDone => 'నేటి పూజలు పూర్తయ్యాయి. శుభాశీస్సులు.';
+
+  @override
+  String get elderModeOnboard => 'పెద్ద అక్షరాలు, వాయిస్ మార్గదర్శనం కావాలా?';
 }

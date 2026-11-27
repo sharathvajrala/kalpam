@@ -1010,4 +1010,76 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get beginSankalpam => 'Begin the Sankalpam';
+
+  @override
+  String get elderTodayPooja => 'Today\'s pooja';
+
+  @override
+  String get elderBeginPooja => 'Begin today\'s pooja';
+
+  @override
+  String elderWatchFor(String god) {
+    return 'Watch Mode · $god';
+  }
+
+  @override
+  String elderGuidedFor(String god) {
+    return 'Guided with voice · $god';
+  }
+
+  @override
+  String get listenToday => 'Listen to today';
+
+  @override
+  String get speakCommand => 'Speak a command';
+
+  @override
+  String get listening => 'Listening…';
+
+  @override
+  String heard(String name) {
+    return 'Heard: $name';
+  }
+
+  @override
+  String get voiceHelp =>
+      'Say: Pooja, Morning, Evening, Panchangam, Chanting, Bhajans, Today, or Stop.';
+
+  @override
+  String get voiceNotUnderstood => 'Sorry, I did not catch that.';
+
+  @override
+  String get micUnavailable =>
+      'Voice commands are not available on this device. Every button also reads aloud.';
+
+  @override
+  String digestGreeting(String greeting, String name) {
+    return '$greeting, $name.';
+  }
+
+  @override
+  String digestDay(String nakshatram, String tithi, String weekday) {
+    return 'Today is $weekday: $tithi, $nakshatram nakshatram.';
+  }
+
+  @override
+  String digestSun(String dusk, String rise) {
+    return 'Sunrise $rise, sunset $dusk.';
+  }
+
+  @override
+  String digestGod(String god) {
+    return 'Today\'s god: $god.';
+  }
+
+  @override
+  String digestPending(String ritual) {
+    return 'Your $ritual is ready whenever you are.';
+  }
+
+  @override
+  String get digestAllDone => 'Today\'s rituals are complete. Blessings.';
+
+  @override
+  String get elderModeOnboard => 'Larger text and voice guidance?';
 }

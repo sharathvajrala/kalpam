@@ -25,10 +25,45 @@ class _RitualScreenState extends State<RitualScreen> {
   int _offered = 0;
   bool _complete = false;
 
+  bool _spokeFirst = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_spokeFirst) {
+      _spokeFirst = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) => _guide());
+    }
+  }
+
   @override
   void dispose() {
     VoiceGuide.instance.stop();
     super.dispose();
+  }
+
+  /// Elder Mode: the voice guide reads each step as it becomes active.
+  void _guide() {
+    if (!mounted) return;
+    final app = AppScope.read(context);
+    if (!app.elderMode) return;
+    final l = lookupAppLocalizations(Locale(app.lang));
+    final plan = app.ritualPlan(widget.slot);
+    if (_complete) {
+      _speak('${l.ritualComplete}. ${l.poojaCompleteMsg(plan.deity.name.of(app.lang))}');
+      return;
+    }
+    final st = plan.steps[_step];
+    final text = switch (st.kind) {
+      RitualStepKind.sankalpam => app.sankalpam(deity: plan.deity, vratam: null).full,
+      RitualStepKind.suprabhatam || RitualStepKind.chant => '${_title(l, st)}. ${st.stotra!.lines.map((x) => x.script).join(' ')}',
+      RitualStepKind.archana => '${l.archana}. ${l.offerFlower}.',
+      RitualStepKind.offering => '${l.arghyam}. ${l.arghyamDesc}',
+      RitualStepKind.deepam => '${l.deepam}. ${l.deepamDesc}',
+      RitualStepKind.aarti => '${l.aarti}. ${l.aartiDesc}',
+      RitualStepKind.closing => '${l.closingPrayer}. ${l.closingDesc}',
+    };
+    _speak(text);
   }
 
   void _speak(String text) => VoiceGuide.instance.speak(text, lang: AppScope.read(context).lang);
@@ -43,6 +78,7 @@ class _RitualScreenState extends State<RitualScreen> {
       setState(() => _complete = true);
       AppScope.read(context).setRitualDone(widget.slot, true);
     }
+    _guide();
   }
 
   String _title(AppLocalizations l, RitualStep s) => switch (s.kind) {
@@ -222,24 +258,35 @@ class _RitualScreenState extends State<RitualScreen> {
     );
   }
 
-  Widget _actions(BuildContext context, RitualPlan plan, {String? listen}) => Padding(
+  Widget _actions(BuildContext context, RitualPlan plan, {String? listen}) {
+    final listenButton = listen == null
+        ? null
+        : OutlinedButton.icon(
+            onPressed: () => _speak(listen),
+            icon: const Icon(Icons.volume_up_outlined),
+            label: Text(context.l.listen),
+          );
+    final done = FilledButton(
+      key: const Key('ritual-next'),
+      style: FilledButton.styleFrom(minimumSize: const Size(120, 48)),
+      onPressed: () => _next(plan),
+      child: Text(context.l.markDone),
+    );
+    // Elder Mode: full-width buttons, one above the other.
+    if (context.app.elderMode) {
+      return Padding(
         padding: const EdgeInsets.only(top: 12),
-        child: Row(children: [
-          if (listen != null)
-            OutlinedButton.icon(
-              onPressed: () => _speak(listen),
-              icon: const Icon(Icons.volume_up_outlined),
-              label: Text(context.l.listen),
-            ),
-          const Spacer(),
-          FilledButton(
-            key: const Key('ritual-next'),
-            style: FilledButton.styleFrom(minimumSize: const Size(120, 48)),
-            onPressed: () => _next(plan),
-            child: Text(context.l.markDone),
-          ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          if (listenButton != null) ...[listenButton, const SizedBox(height: 10)],
+          done,
         ]),
       );
+    }
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Row(children: [?listenButton, const Spacer(), done]),
+    );
+  }
 }
 
 /// Full / short archana for today (remembered as the next day's default).

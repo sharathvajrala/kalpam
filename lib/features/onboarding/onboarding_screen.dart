@@ -174,6 +174,19 @@ class _LanguagePage extends StatelessWidget {
       const SizedBox(height: 12),
       option('te', 'తెలుగు', 'Telugu'),
       option('en', 'English', 'ఇంగ్లీష్'),
+      const SizedBox(height: 8),
+      // Elder Mode is offered up front, before anything has to be typed.
+      GoldCard(
+        child: SwitchListTile(
+          key: const ValueKey('onboard-elder'),
+          contentPadding: EdgeInsets.zero,
+          value: app.elderMode,
+          onChanged: app.setElderMode,
+          secondary: const Icon(Icons.elderly, color: K.maroon, size: 32),
+          title: Bi((l) => l.elderModeOnboard, style: Theme.of(context).textTheme.titleMedium),
+          subtitle: Text(context.l.elderModeDesc),
+        ),
+      ),
     ]);
   }
 }
