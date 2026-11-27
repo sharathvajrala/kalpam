@@ -9,8 +9,8 @@ import '../../core/panchangam/panchangam.dart';
 import '../../data/cities.dart';
 
 /// City selection by GPS or search. Used in onboarding and from the Today
-/// header. GPS keeps the exact coordinates (named after the nearest listed
-/// city) so sunrise and Rahu Kalam are computed for where the user really is.
+/// header. GPS is a one-time detection of the nearest listed city; only that
+/// city is stored, never coordinates or location history.
 class CityChooser extends StatefulWidget {
   const CityChooser({super.key, this.onChosen, this.autofocus = false});
   final VoidCallback? onChosen;
@@ -49,13 +49,10 @@ class _CityChooserState extends State<CityChooser> {
       if (perm == LocationPermission.denied || perm == LocationPermission.deniedForever) throw 'denied';
       final pos = await Geolocator.getCurrentPosition(
           locationSettings: const LocationSettings(accuracy: LocationAccuracy.low, timeLimit: Duration(seconds: 15)));
+      // One-time detection: only the nearest city's name is kept, never the
+      // coordinates (approved data model).
       final near = nearestCity(pos.latitude, pos.longitude);
-      await app.setGpsCity(
-        lat: pos.latitude,
-        lon: pos.longitude,
-        utcOffsetMin: DateTime.now().timeZoneOffset.inMinutes,
-        nearCityId: near.id,
-      );
+      await app.setProfile(city: near.id);
       widget.onChosen?.call();
     } catch (_) {
       if (mounted) setState(() => _gpsError = context.l.gpsFailed);
@@ -82,12 +79,6 @@ class _CityChooserState extends State<CityChooser> {
       ),
       if (_gpsError != null)
         Padding(padding: const EdgeInsets.only(top: 6), child: Text(_gpsError!, style: const TextStyle(color: K.saffron))),
-      if (app.cityId == 'gps')
-        ListTile(
-          leading: const Icon(Icons.check_circle, color: K.maroon),
-          title: Text(context.t(app.city.name)),
-          subtitle: Text(context.l.fromGps),
-        ),
       const SizedBox(height: 12),
       TextField(
         key: const ValueKey('city-search'),

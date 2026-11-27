@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -6,6 +8,7 @@ import '../core/content/models.dart';
 import '../core/content/pack_repository.dart';
 import '../core/flagship/flagship_engine.dart';
 import '../core/panchangam/panchangam.dart';
+import '../core/profile/family_profile.dart';
 import '../core/sankalpam/sankalpam.dart';
 import '../core/tracker/deeksha_tracker.dart';
 import '../data/cities.dart';
@@ -30,8 +33,13 @@ class AppState extends ChangeNotifier {
   bool onboarded = false;
   String lang = 'te';
   bool elderMode = false;
-  String devoteeName = '';
-  String gotra = '';
+  /// Family profiles; the active one's name/gotram are spoken in Sankalpam.
+  final List<FamilyProfile> profiles = [];
+  String? activeProfileId;
+
+  /// Required at onboarding (approved data model).
+  ReminderTime? morningReminder;
+  ReminderTime? eveningReminder;
   /// null until the user picks a city; Hyderabad is only the fallback.
   String? cityId;
   String deityId = 'ayyappa';
@@ -45,9 +53,21 @@ class AppState extends ChangeNotifier {
     onboarded = _prefs.getBool('onboarded') ?? false;
     lang = _prefs.getString('lang') ?? 'te';
     elderMode = _prefs.getBool('elder') ?? false;
-    devoteeName = _prefs.getString('name') ?? '';
-    gotra = _prefs.getString('gotra') ?? '';
+    final rawProfiles = _prefs.getString('profiles');
+    if (rawProfiles != null) {
+      try {
+        profiles.addAll(FamilyProfile.decodeAll(rawProfiles));
+      } catch (_) {/* corrupted: start empty */}
+    }
+    activeProfileId = _prefs.getString('activeProfile');
+    if (profiles.isNotEmpty && !profiles.any((p) => p.id == activeProfileId)) activeProfileId = profiles.first.id;
+    morningReminder = ReminderTime.parse(_prefs.getString('remindMorning'));
+    eveningReminder = ReminderTime.parse(_prefs.getString('remindEvening'));
     cityId = _prefs.getString('city');
+    for (final k in const ['gpsLat', 'gpsLon', 'gpsOffset', 'gpsNear', 'name', 'gotra']) {
+      _prefs.remove(k); // pre-approval keys: coordinates are never kept
+    }
+    if (cityId != null && !cities.any((c) => c.id == cityId)) cityId = null;
     deityId = _prefs.getString('deity') ?? 'ayyappa';
     if (!repo.deities.containsKey(deityId)) deityId = repo.deities.keys.first;
     groupsNotify = _prefs.getBool('groupsNotify') ?? false;
@@ -66,19 +86,17 @@ class AppState extends ChangeNotifier {
   // ------------------------------------------------------------ getters
   DateTime get now => _clock();
   bool get hasCity => cityId != null;
-  City get city {
-    if (cityId == 'gps') {
-      final near = cityById(_prefs.getString('gpsNear'));
-      return City(
-        id: 'gps',
-        name: near.name,
-        lat: _prefs.getDouble('gpsLat') ?? near.lat,
-        lon: _prefs.getDouble('gpsLon') ?? near.lon,
-        utcOffsetMin: _prefs.getInt('gpsOffset') ?? near.utcOffsetMin,
-      );
+  City get city => cityById(cityId);
+
+  FamilyProfile? get activeProfile {
+    for (final p in profiles) {
+      if (p.id == activeProfileId) return p;
     }
-    return cityById(cityId);
+    return profiles.isEmpty ? null : profiles.first;
   }
+
+  String get devoteeName => activeProfile?.name ?? '';
+  String get gotra => activeProfile?.gotra ?? '';
   DeityPack get deity => repo.deities[deityId]!;
 
   /// Today's civil date in the user's city.
@@ -139,32 +157,113 @@ class AppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> setProfile({String? name, String? gotraV, String? city, String? deity}) async {
-    if (name != null) devoteeName = name;
-    if (gotraV != null) gotra = gotraV;
+  Future<void> setProfile({String? city, String? deity}) async {
     if (city != null) {
       cityId = city;
       _panchangCache.clear();
     }
     if (deity != null) deityId = deity;
     await Future.wait([
-      _prefs.setString('name', devoteeName),
-      _prefs.setString('gotra', gotra),
       if (cityId != null) _prefs.setString('city', cityId!),
       _prefs.setString('deity', deityId),
     ]);
     notifyListeners();
   }
 
-  /// Exact GPS position, labelled with the nearest listed city.
-  Future<void> setGpsCity({required double lat, required double lon, required int utcOffsetMin, required String nearCityId}) async {
-    await Future.wait([
-      _prefs.setDouble('gpsLat', lat),
-      _prefs.setDouble('gpsLon', lon),
-      _prefs.setInt('gpsOffset', utcOffsetMin),
-      _prefs.setString('gpsNear', nearCityId),
-    ]);
-    await setProfile(city: 'gps');
+  // ------------------------------------------------------------ family profiles
+  Future<void> _saveProfiles() async {
+    await _prefs.setString('profiles', FamilyProfile.encodeAll(profiles));
+    if (activeProfileId != null) await _prefs.setString('activeProfile', activeProfileId!);
+    notifyListeners();
+  }
+
+  /// Adds (or, with an existing id, updates) a profile. Returns its id.
+  Future<String> saveFamilyProfile({String? id, required String name, required String gotra, int? janmaNakshatra}) async {
+    final i = id == null ? -1 : profiles.indexWhere((p) => p.id == id);
+    var pid = id ?? '';
+    if (i < 0) {
+      var n = profiles.length + 1;
+      while (profiles.any((p) => p.id == 'p$n')) {
+        n++;
+      }
+      pid = 'p$n';
+    }
+    final p = FamilyProfile(id: pid, name: name.trim(), gotra: gotra.trim(), janmaNakshatra: janmaNakshatra);
+    if (i >= 0) {
+      profiles[i] = p;
+    } else {
+      profiles.add(p);
+    }
+    activeProfileId ??= pid;
+    await _saveProfiles();
+    return pid;
+  }
+
+  Future<void> switchProfile(String id) async {
+    if (!profiles.any((p) => p.id == id)) return;
+    activeProfileId = id;
+    await _saveProfiles();
+  }
+
+  Future<void> removeFamilyProfile(String id) async {
+    if (profiles.length <= 1) return; // the device always keeps one profile
+    profiles.removeWhere((p) => p.id == id);
+    if (activeProfileId == id) activeProfileId = profiles.first.id;
+    await _saveProfiles();
+  }
+
+  // ------------------------------------------------------------ reminders
+  Future<void> setReminders({ReminderTime? morning, ReminderTime? evening}) async {
+    if (morning != null) {
+      morningReminder = morning;
+      await _prefs.setString('remindMorning', morning.hhmm);
+    }
+    if (evening != null) {
+      eveningReminder = evening;
+      await _prefs.setString('remindEvening', evening.hhmm);
+    }
+    notifyListeners();
+  }
+
+  // ------------------------------------------------------------ export / delete
+  /// Everything Kalpam stores on this device, as JSON (one-tap export).
+  String exportAll() {
+    final data = <String, Object?>{
+      'app': 'Kalpam',
+      'exportedAt': now.toUtc().toIso8601String(),
+      'language': lang,
+      'city': cityId == null ? null : city.name.en,
+      'god': deityId,
+      'elderMode': elderMode,
+      'reminders': {'morning': morningReminder?.hhmm, 'evening': eveningReminder?.hhmm},
+      'profiles': [for (final p in profiles) p.toJson()],
+      'activeProfile': activeProfileId,
+      'deekshas': [for (final d in deekshas.values) d.toJson()],
+      'joinedRecurring': {for (final e in joinedRecurring.entries) e.key: e.value.toList()},
+      'checklists': {
+        for (final k in _prefs.getKeys().where((k) => k.startsWith('cl:'))) k.substring(3): _prefs.getStringList(k),
+      },
+    };
+    return const JsonEncoder.withIndent('  ').convert(data);
+  }
+
+  /// Deletes every piece of data on this device and returns to onboarding.
+  Future<void> deleteAll() async {
+    await _prefs.clear();
+    onboarded = false;
+    lang = 'te';
+    elderMode = false;
+    profiles.clear();
+    activeProfileId = null;
+    morningReminder = null;
+    eveningReminder = null;
+    cityId = null;
+    deityId = repo.deities.containsKey('ayyappa') ? 'ayyappa' : repo.deities.keys.first;
+    groupsNotify = false;
+    deekshas.clear();
+    joinedRecurring.clear();
+    _panchangCache.clear();
+    notifyListeners();
   }
 
   Future<void> setGroupsNotify(bool v) async {

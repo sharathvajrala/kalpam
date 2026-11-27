@@ -422,12 +422,6 @@ abstract class AppLocalizations {
   /// **'Begin'**
   String get begin;
 
-  /// No description provided for @skip.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip'**
-  String get skip;
-
   /// No description provided for @optional.
   ///
   /// In en, this message translates to:
@@ -938,12 +932,6 @@ abstract class AppLocalizations {
   /// **'Use my location'**
   String get useMyLocation;
 
-  /// No description provided for @fromGps.
-  ///
-  /// In en, this message translates to:
-  /// **'From your location'**
-  String get fromGps;
-
   /// No description provided for @gpsFailed.
   ///
   /// In en, this message translates to:
@@ -961,6 +949,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Set your city'**
   String get cityNotSet;
+
+  /// No description provided for @gotraHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Spoken in your Sankalpam'**
+  String get gotraHelp;
+
+  /// No description provided for @janmaNakshatram.
+  ///
+  /// In en, this message translates to:
+  /// **'Janma nakshatram'**
+  String get janmaNakshatram;
+
+  /// No description provided for @notSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get notSet;
+
+  /// No description provided for @reminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminders'**
+  String get reminders;
+
+  /// No description provided for @remindersDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'A gentle reminder for your morning and evening pooja. Never during a pooja.'**
+  String get remindersDesc;
+
+  /// No description provided for @morningReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning pooja'**
+  String get morningReminder;
+
+  /// No description provided for @eveningReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening deepam'**
+  String get eveningReminder;
+
+  /// No description provided for @familyProfiles.
+  ///
+  /// In en, this message translates to:
+  /// **'Family profiles'**
+  String get familyProfiles;
+
+  /// No description provided for @familyProfilesDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose whose name and gotram are spoken in the Sankalpam.'**
+  String get familyProfilesDesc;
+
+  /// No description provided for @addProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Add family member'**
+  String get addProfile;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get editProfile;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @sankalpamFor.
+  ///
+  /// In en, this message translates to:
+  /// **'Sankalpam for {name}'**
+  String sankalpamFor(String name);
+
+  /// No description provided for @yourData.
+  ///
+  /// In en, this message translates to:
+  /// **'Your data'**
+  String get yourData;
+
+  /// No description provided for @yourDataDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything stays on this phone. Nothing is synced unless you create an account.'**
+  String get yourDataDesc;
+
+  /// No description provided for @exportData.
+  ///
+  /// In en, this message translates to:
+  /// **'Export my data'**
+  String get exportData;
+
+  /// No description provided for @deleteAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete all my data'**
+  String get deleteAll;
+
+  /// No description provided for @deleteAllConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes your profiles, trackers and settings from this phone.'**
+  String get deleteAllConfirm;
 }
 
 class _AppLocalizationsDelegate

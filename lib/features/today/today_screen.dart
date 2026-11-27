@@ -98,6 +98,21 @@ class _GreetingHeader extends StatelessWidget {
               ]),
             ),
           ),
+          if (app.profiles.length > 1) ...[
+            const SizedBox(height: 8),
+            // One-tap switch of whose Sankalpam is spoken.
+            Wrap(spacing: 6, runSpacing: 6, children: [
+              for (final p in app.profiles)
+                ChoiceChip(
+                  key: ValueKey('sankalpam-for-${p.id}'),
+                  avatar: p.id == app.activeProfile?.id ? null : const Icon(Icons.person_outline, size: 16, color: K.maroon),
+                  label: Text(p.name, style: const TextStyle(fontSize: 12)),
+                  selected: p.id == app.activeProfile?.id,
+                  onSelected: (_) => app.switchProfile(p.id),
+                  tooltip: context.l.sankalpamFor(p.name),
+                ),
+            ]),
+          ],
         ]),
       ),
       IconButton(

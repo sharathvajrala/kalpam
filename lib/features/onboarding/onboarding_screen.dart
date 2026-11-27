@@ -2,9 +2,14 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/theme.dart';
-import '../today/city_chooser.dart';
+import '../../core/profile/family_profile.dart';
 import '../common/deity_avatar.dart';
+import '../common/profile_form.dart';
+import '../today/city_chooser.dart';
 
+/// Onboarding collects exactly the approved required set — language, god,
+/// city, name, gotram, reminder times — plus optional janma nakshatram.
+/// Required steps cannot be skipped.
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
   @override
@@ -14,9 +19,12 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final _page = PageController();
   int _index = 0;
-  static const _pages = 4;
+  static const _pages = 5;
   final _name = TextEditingController();
   final _gotra = TextEditingController();
+  int? _nakshatra;
+  ReminderTime _morning = const ReminderTime(5, 30);
+  ReminderTime _evening = const ReminderTime(18, 30);
 
   @override
   void dispose() {
@@ -26,7 +34,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.dispose();
   }
 
+  bool _canProceed(BuildContext context) => switch (_index) {
+        2 => context.app.hasCity,
+        3 => _name.text.trim().isNotEmpty && _gotra.text.trim().isNotEmpty,
+        _ => true,
+      };
+
   void _next() {
+    FocusScope.of(context).unfocus();
     if (_index < _pages - 1) {
       _page.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     } else {
@@ -34,31 +49,38 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     }
   }
 
+  void _back() => _page.previousPage(duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
+
   Future<void> _finish() async {
     final app = AppScope.read(context);
-    await app.setProfile(name: _name.text.trim(), gotraV: _gotra.text.trim());
+    await app.saveFamilyProfile(name: _name.text, gotra: _gotra.text, janmaNakshatra: _nakshatra);
+    await app.setReminders(morning: _morning, evening: _evening);
     await app.completeOnboarding();
   }
 
   @override
   Widget build(BuildContext context) {
     final app = context.app;
+    final ok = _canProceed(context);
     return Scaffold(
       body: SafeArea(
         child: Column(children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 16, 12, 0),
+            padding: const EdgeInsets.fromLTRB(8, 12, 12, 0),
             child: Row(children: [
+              if (_index > 0)
+                IconButton(onPressed: _back, icon: const Icon(Icons.arrow_back, color: K.maroon))
+              else
+                const SizedBox(width: 12),
               Text('కల్పం', style: Theme.of(context).textTheme.headlineSmall),
               const SizedBox(width: 8),
               Text('Kalpam', style: Theme.of(context).textTheme.titleLarge?.copyWith(color: K.gold)),
-              const Spacer(),
-              if (_index > 0) TextButton(onPressed: _finish, child: Text(context.l.skip)),
             ]),
           ),
           Expanded(
             child: PageView(
               controller: _page,
+              physics: const NeverScrollableScrollPhysics(), // required steps can't be swiped past
               onPageChanged: (i) => setState(() => _index = i),
               children: [
                 _LanguagePage(onPick: (code) async {
@@ -70,7 +92,33 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   _next();
                 }),
                 _CityPage(onChosen: _next),
-                _AboutPage(name: _name, gotra: _gotra),
+                ListView(padding: const EdgeInsets.all(20), children: [
+                  const SizedBox(height: 12),
+                  Bi((l) => l.aboutYou, style: Theme.of(context).textTheme.headlineMedium),
+                  const SizedBox(height: 8),
+                  Text(context.l.aboutYouDesc, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: K.inkSoft)),
+                  const SizedBox(height: 20),
+                  ProfileFields(
+                    name: _name,
+                    gotra: _gotra,
+                    nakshatra: _nakshatra,
+                    onNakshatra: (v) => setState(() => _nakshatra = v),
+                    onChanged: () => setState(() {}),
+                  ),
+                ]),
+                ListView(padding: const EdgeInsets.all(20), children: [
+                  const SizedBox(height: 12),
+                  Bi((l) => l.reminders, style: Theme.of(context).textTheme.headlineMedium),
+                  const SizedBox(height: 8),
+                  Text(context.l.remindersDesc, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: K.inkSoft)),
+                  const SizedBox(height: 20),
+                  ReminderFields(
+                    morning: _morning,
+                    evening: _evening,
+                    onMorning: (v) => setState(() => _morning = v),
+                    onEvening: (v) => setState(() => _evening = v),
+                  ),
+                ]),
               ],
             ),
           ),
@@ -85,7 +133,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   decoration: BoxDecoration(color: i == _index ? K.maroon : K.goldSoft, borderRadius: BorderRadius.circular(4)),
                 ),
               const Spacer(),
-              FilledButton(onPressed: _next, child: Text(_index == _pages - 1 ? context.l.begin : context.l.next)),
+              FilledButton(
+                key: const ValueKey('onboarding-next'),
+                onPressed: ok ? _next : null,
+                child: Text(_index == _pages - 1 ? context.l.begin : context.l.next),
+              ),
             ]),
           ),
         ]),
@@ -158,26 +210,6 @@ class _GodPage extends StatelessWidget {
             ),
         ],
       ),
-    ]);
-  }
-}
-
-class _AboutPage extends StatelessWidget {
-  const _AboutPage({required this.name, required this.gotra});
-  final TextEditingController name, gotra;
-  @override
-  Widget build(BuildContext context) {
-    return ListView(padding: const EdgeInsets.all(20), children: [
-      const SizedBox(height: 12),
-      Bi((l) => l.aboutYou, style: Theme.of(context).textTheme.headlineMedium),
-      const SizedBox(height: 8),
-      Text(context.l.aboutYouDesc, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: K.inkSoft)),
-      const SizedBox(height: 20),
-      TextField(controller: name, decoration: InputDecoration(labelText: context.l.yourName, border: const OutlineInputBorder())),
-      const SizedBox(height: 14),
-      TextField(
-          controller: gotra,
-          decoration: InputDecoration(labelText: '${context.l.gotra} (${context.l.optional})', border: const OutlineInputBorder())),
     ]);
   }
 }

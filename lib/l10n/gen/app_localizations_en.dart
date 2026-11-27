@@ -185,9 +185,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get begin => 'Begin';
 
   @override
-  String get skip => 'Skip';
-
-  @override
   String get optional => 'optional';
 
   @override
@@ -473,9 +470,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get useMyLocation => 'Use my location';
 
   @override
-  String get fromGps => 'From your location';
-
-  @override
   String get gpsFailed =>
       'Couldn\'t get your location. Please search for your city.';
 
@@ -485,4 +479,67 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get cityNotSet => 'Set your city';
+
+  @override
+  String get gotraHelp => 'Spoken in your Sankalpam';
+
+  @override
+  String get janmaNakshatram => 'Janma nakshatram';
+
+  @override
+  String get notSet => 'Not set';
+
+  @override
+  String get reminders => 'Daily reminders';
+
+  @override
+  String get remindersDesc =>
+      'A gentle reminder for your morning and evening pooja. Never during a pooja.';
+
+  @override
+  String get morningReminder => 'Morning pooja';
+
+  @override
+  String get eveningReminder => 'Evening deepam';
+
+  @override
+  String get familyProfiles => 'Family profiles';
+
+  @override
+  String get familyProfilesDesc =>
+      'Choose whose name and gotram are spoken in the Sankalpam.';
+
+  @override
+  String get addProfile => 'Add family member';
+
+  @override
+  String get editProfile => 'Edit profile';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String sankalpamFor(String name) {
+    return 'Sankalpam for $name';
+  }
+
+  @override
+  String get yourData => 'Your data';
+
+  @override
+  String get yourDataDesc =>
+      'Everything stays on this phone. Nothing is synced unless you create an account.';
+
+  @override
+  String get exportData => 'Export my data';
+
+  @override
+  String get deleteAll => 'Delete all my data';
+
+  @override
+  String get deleteAllConfirm =>
+      'This permanently deletes your profiles, trackers and settings from this phone.';
 }

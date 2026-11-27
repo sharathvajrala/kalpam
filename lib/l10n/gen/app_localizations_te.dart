@@ -184,9 +184,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get begin => 'ప్రారంభించండి';
 
   @override
-  String get skip => 'దాటవేయి';
-
-  @override
   String get optional => 'ఐచ్ఛికం';
 
   @override
@@ -470,9 +467,6 @@ class AppLocalizationsTe extends AppLocalizations {
   String get useMyLocation => 'నా ప్రస్తుత స్థానం వాడండి';
 
   @override
-  String get fromGps => 'మీ స్థానం ఆధారంగా';
-
-  @override
   String get gpsFailed => 'స్థానం తెలియలేదు. దయచేసి మీ నగరం వెతకండి.';
 
   @override
@@ -481,4 +475,67 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get cityNotSet => 'మీ నగరం ఎంచుకోండి';
+
+  @override
+  String get gotraHelp => 'మీ సంకల్పంలో చెప్పబడుతుంది';
+
+  @override
+  String get janmaNakshatram => 'జన్మ నక్షత్రం';
+
+  @override
+  String get notSet => 'ఎంచుకోలేదు';
+
+  @override
+  String get reminders => 'రోజువారీ గుర్తుచేతలు';
+
+  @override
+  String get remindersDesc =>
+      'ఉదయ, సాయంత్ర పూజకు సున్నితమైన గుర్తుచేత. పూజ జరుగుతున్నప్పుడు ఎప్పుడూ రాదు.';
+
+  @override
+  String get morningReminder => 'ఉదయ పూజ';
+
+  @override
+  String get eveningReminder => 'సాయంత్ర దీపం';
+
+  @override
+  String get familyProfiles => 'కుటుంబ సభ్యులు';
+
+  @override
+  String get familyProfilesDesc =>
+      'సంకల్పంలో ఎవరి పేరు, గోత్రం చెప్పాలో ఎంచుకోండి.';
+
+  @override
+  String get addProfile => 'కుటుంబ సభ్యుని చేర్చండి';
+
+  @override
+  String get editProfile => 'వివరాలు మార్చండి';
+
+  @override
+  String get remove => 'తొలగించు';
+
+  @override
+  String get cancel => 'రద్దు';
+
+  @override
+  String sankalpamFor(String name) {
+    return '$name గారి సంకల్పం';
+  }
+
+  @override
+  String get yourData => 'మీ సమాచారం';
+
+  @override
+  String get yourDataDesc =>
+      'అన్నీ ఈ ఫోన్‌లోనే ఉంటాయి. ఖాతా తెరిస్తేనే సింక్ అవుతుంది.';
+
+  @override
+  String get exportData => 'నా సమాచారం ఎగుమతి';
+
+  @override
+  String get deleteAll => 'నా సమాచారం మొత్తం తొలగించు';
+
+  @override
+  String get deleteAllConfirm =>
+      'ఇది మీ ప్రొఫైళ్ళు, ట్రాకర్లు, అమరికలను ఈ ఫోన్ నుండి శాశ్వతంగా తొలగిస్తుంది.';
 }

@@ -14,3 +14,10 @@ Sannidhanam tab + pooja setup (group 2), Vratam detail (group 3), Grantham tab +
 ### Waiting on
 - Private GitHub repo `kalpam` (Sharath to create; this session cannot create repos).
 - Full spec file and the 4 UI sample images (attachments did not arrive).
+
+## 2026-11-27 (later)
+- Pushed to GitHub `sharathvajrala/kalpam` (private).
+- Group 1 fixes: bilingual bottom tab bar (primary + secondary script on every tab); city chip moved to a full-width row so long Telugu names never clip.
+- Approved user data model implemented (docs/DATA_MODEL.md): onboarding is language → god → city → name/gotram (+ optional janma nakshatram) → reminder times, with no skipping of required steps; family profiles with one-tap Sankalpam switching; GPS stores city name only; Settings has Export + Delete all.
+- Reminder times are stored; scheduling the actual notifications (with the no-notification-during-pooja gate) lands with the notifications work in Phase A week 3.
+- 27 tests pass, analyzer clean.
