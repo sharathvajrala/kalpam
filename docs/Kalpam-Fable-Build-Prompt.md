@@ -36,7 +36,7 @@ Warm ivory background (#FAF5EC family), deep temple maroon (#5E1224 family), tem
 ## ONBOARDING (frozen order — 5 steps, no account, under 2 minutes)
 
 1. **Language** — Telugu / English at launch (more added as packs land).
-2. **Choose your god** — the 8 launch deities; this becomes "My God", pinned on Today forever.
+2. **Choose your god** — the 8 launch deities; this becomes "My God", pinned on Today forever. Also offer **"Choose for me by day"**: the user may skip choosing, and the app runs in Day God mode (see DAILY RITUALS) — the weekday god fills the My God slot until the user picks their own god in Settings.
 3. **City** — one-time GPS detection of the nearest listed city, or search and pick. Only the city id is stored, never coordinates. Hyderabad is ONLY a fallback when the city is unset, and Today shows a "Set your city" prompt until it is set. Panchangam and the Sankalpam use this city.
 4. **Name + Gotram** — creates the first family profile; janma nakshatram (birth star) is optional here, never blocking.
 5. **Reminder times** — morning + evening, prefilled 5:30 AM / 6:30 PM, editable.
@@ -105,9 +105,19 @@ Every season follows the same lifecycle, driven by FlagshipSeason config:
 
 **Always-on layers under the flagship:**
 - Monthly recurring: Ekadashi (×2/month), Sankashti Chaturthi, Pradosham, Masa Shivratri, Pournami Satyanarayana — auto-surfaced on the day, one tap to join.
-- Weekly god days: Mon Shiva, Tue Hanuman/Subrahmanya, Wed Vishnu/Krishna, Thu Guru/Sai/Datta, Fri Devi/Lakshmi, Sat Venkateswara/Hanuman — that god gets the morning chanting + pooja push.
+- Weekly god days (founder-frozen): Mon Shiva, Tue Hanuman, Wed Ayyappa, Thu Sai Baba (Guru/Datta alongside), Fri Lakshmi/Durga, Sat Venkateswara, Sun Surya — that god gets the morning chanting + pooja push, and drives Day God mode (see DAILY RITUALS).
 
 **"Mala" is a reusable format:** 9-day (Devi), 11-day (Ganesh, Hanuman), 21-day (Shiva), 41-day (Ayyappa) — same tracker, checklist, group system, different pack data.
+
+## DAILY RITUALS — NITYA ARCHANA (morning & evening, every day)
+
+The daily habit loop, anchored to the user's city sunrise/sunset from the Panchangam engine:
+
+- **Morning ritual (sunrise-anchored):** the god's Suprabhatam, deepam, and **Nitya Archana** — a daily archana for the god: the Sankalpam of the day, then the god's Ashtottaram (108 names) as a flower-offering archana (in the Sannidhanam each name offers one flower; in the chant player each name highlights karaoke-style), closing aarti. A short form (Suprabhatam + 16-name Shodasha archana) on busy days — the user picks full/short per day, the app remembers.
+- **Evening ritual (sunset-anchored, sandhya time):** sunset deepam, the god's evening aarti + evening chant (Ayyappa: Harivarasanam; others per pack), and the day's closing. Reminder fires at the user's evening time OR at local sunset — user chooses the anchor in Settings.
+- **Which god:** the user's chosen god. **If no god is chosen (Day God mode)**, the weekday god drives everything that day — My God slot, Suprabhatam, archana, chanting, and the Sankalpam's deity + purpose: **Mon Shiva, Tue Hanuman, Wed Ayyappa, Thu Sai Baba, Fri Lakshmi/Durga, Sat Venkateswara, Sun Surya** (Sunday: Aditya Hridayam + Surya arghyam/namaskaram as the morning ritual). Sai Baba and Surya get lightweight packs for this (aarti, signature chant, archana names) even though they are not among the 8 full deity packs at launch.
+- **Sankalpam follows the god:** the generated Sankalpam names the day's god and that god's purpose line (per-pack data), whether the god came from the user's choice or the weekday.
+- Today home surfaces both rituals as morning/evening cards with done-state for the day; streaks live here and in trackers — never inside the sanctum (per non-negotiables).
 
 ## DEITY PACKS (8 at launch)
 
