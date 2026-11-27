@@ -119,6 +119,29 @@ The daily habit loop, anchored to the user's city sunrise/sunset from the Pancha
 - **Sankalpam follows the god:** the generated Sankalpam names the day's god and that god's purpose line (per-pack data), whether the god came from the user's choice or the weekday.
 - Today home surfaces both rituals as morning/evening cards with done-state for the day; streaks live here and in trackers — never inside the sanctum (per non-negotiables).
 
+## NOTIFICATIONS (founder spec, 27 Nov 2026)
+
+All daily notifications are LOCAL, scheduled on-device from the Panchangam engine + flagship calendar data — no server needed, works offline. Remote push (FCM) is reserved for synchronized live moments (e.g. the Makara Jyothi aarti) and rare announcements. Every type is individually toggleable in Settings, with quiet hours. The NotificationGate suppresses everything during an active pooja. Tone is always gentle and devotional — never guilt, never streak-shaming.
+
+**Daily set:**
+1. **Subhodayam push (at sunrise, or user's offset):** the day's Panchangam digest — tithi, nakshatram, sunrise/sunset, today's vratam/festival if any, and the day's god. Tap opens Today.
+2. **Morning ritual reminder:** if the morning Nitya Archana is not done by the user's chosen time, one gentle reminder. Cancelled automatically when the ritual is done — never nag a completed ritual.
+3. **Evening ritual push (at sunset, or user's set-time anchor):** "Sandhya time" — evening deepam + aarti, with the sunset time. Same done-state suppression.
+
+**Festivals & special days (from the flagship calendar + recurring vratam data):**
+- **T-1 evening:** tomorrow's festival/vratam, with the samagri checklist link ("Tomorrow: Vaikuntha Ekadashi").
+- **Festival morning:** the day's special pooja/archana invitation.
+- **Flagship lifecycle:** T-30 join invitation, peak-day special pooja + live aarti moment, closing Udyapanam reminder.
+
+**Mala / Vratam tracking (the commitment loop):**
+- On joining any mala/vratam, the app asks the **number of days** (the vratam's standard count prefilled — 41 for Ayyappa, editable 1–90) and the preferred reminder time.
+- **Daily morning check-in push:** "Day 12 of 41" + today's checklist summary.
+- **Evening nudge** only if the day's checklist is incomplete.
+- **Milestones:** halfway day, final day (→ Udyapanam flow; Ayyappa completion day → 18-steps sanctum moment).
+- **Missed day:** gentle resume message the next morning — the tracker records it honestly, the notification never shames.
+
+**Technical:** schedule with flutter_local_notifications; recompute the schedule on app open, city change, and timezone change; handle Android exact-alarm permission and battery-optimization exemption prompt gracefully (explain why, once, in Settings — never block the app on it). Cap: the daily set + at most one festival/vratam extra per day by default.
+
 ## DEITY PACKS (8 at launch)
 
 Ayyappa, Ganapathy, Shiva, Venkateswara/Vishnu (incl. Krishna + Satyanarayana forms), Lakshmi, Durga/Devi, Hanuman, Subrahmanya. Each pack: 3D idol + sanctum theme, Suprabhatam, Ashtottaram, Sahasranamam where applicable, signature background chantings, bhajan set with lyrics, deity-specific offerings + aarti, festival alankaram variants. **Ayyappa pack is the deepest** (it carries the launch flagship); other packs ship complete for daily pooja + chanting at Phase B.
