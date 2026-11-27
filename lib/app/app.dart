@@ -1,4 +1,3 @@
-import 'package:flutter_localizations/flutter_localizations.dart' show GlobalWidgetsLocalizations, GlobalCupertinoLocalizations;
 import 'package:material_ui/material_ui.dart';
 
 import '../features/bhajans/bhajans_screen.dart';
@@ -30,9 +29,7 @@ class KalpamApp extends StatelessWidget {
           supportedLocales: AppLocalizations.supportedLocales,
           localizationsDelegates: const [
             AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
+            ...GlobalMaterialLocalizations.delegates,
           ],
           builder: (context, child) {
             // Elder Mode: large text everywhere.

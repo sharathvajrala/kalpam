@@ -4,7 +4,7 @@ import '../../app/theme.dart';
 import '../../core/content/models.dart';
 
 /// Deity medallion. Uses pack art when bundled; until art lands
-/// (ASSETS_TODO.md art.<deity>.icon) shows a gold medallion with the
+/// (ASSETS_TODO.md `art.<deity>.icon`) shows a gold medallion with the
 /// deity's Telugu initial.
 class DeityAvatar extends StatelessWidget {
   const DeityAvatar({super.key, required this.deity, this.size = 56});

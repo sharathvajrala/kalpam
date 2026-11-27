@@ -465,4 +465,20 @@ class AppLocalizationsTe extends AppLocalizations {
 
   @override
   String get allGods => 'అందరు దేవతలు';
+
+  @override
+  String get useMyLocation => 'నా ప్రస్తుత స్థానం వాడండి';
+
+  @override
+  String get fromGps => 'మీ స్థానం ఆధారంగా';
+
+  @override
+  String get gpsFailed => 'స్థానం తెలియలేదు. దయచేసి మీ నగరం వెతకండి.';
+
+  @override
+  String get cityWhy =>
+      'సూర్యోదయం, తిథి, రాహు కాలం, మీ సంకల్పం ఈ నగరానికి లెక్కించబడతాయి.';
+
+  @override
+  String get cityNotSet => 'మీ నగరం ఎంచుకోండి';
 }

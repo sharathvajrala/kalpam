@@ -117,21 +117,24 @@ class GoldCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final body = Container(
-      padding: padding,
+    final radius = BorderRadius.circular(K.radius);
+    final shape = RoundedRectangleBorder(borderRadius: radius, side: BorderSide(color: K.gold.withValues(alpha: 0.65)));
+    Widget inner = Padding(padding: padding, child: child);
+    if (gradient != null) {
+      inner = DecoratedBox(decoration: BoxDecoration(gradient: gradient, borderRadius: radius), child: inner);
+    }
+    // A Material (not a coloured box) so ListTiles and ink splashes inside render correctly.
+    return DecoratedBox(
       decoration: BoxDecoration(
-        color: gradient == null ? (color ?? K.card) : null,
-        gradient: gradient,
-        borderRadius: BorderRadius.circular(K.radius),
-        border: Border.all(color: K.gold.withValues(alpha: 0.65), width: 1),
+        borderRadius: radius,
         boxShadow: [BoxShadow(color: K.maroon.withValues(alpha: 0.06), blurRadius: 14, offset: const Offset(0, 4))],
       ),
-      child: child,
-    );
-    if (onTap == null) return body;
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(borderRadius: BorderRadius.circular(K.radius), onTap: onTap, child: body),
+      child: Material(
+        color: gradient == null ? (color ?? K.card) : Colors.transparent,
+        shape: shape,
+        clipBehavior: Clip.antiAlias,
+        child: onTap == null ? inner : InkWell(onTap: onTap, child: inner),
+      ),
     );
   }
 }

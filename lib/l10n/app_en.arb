@@ -275,5 +275,10 @@
  "openVratam": "Open vratam",
  "voiceGuide": "Voice guide",
  "devotee": "Devotee",
- "allGods": "All Gods"
+ "allGods": "All Gods",
+ "useMyLocation": "Use my location",
+ "fromGps": "From your location",
+ "gpsFailed": "Couldn't get your location. Please search for your city.",
+ "cityWhy": "Sunrise, tithi, Rahu Kalam and your Sankalpam are calculated for this city.",
+ "cityNotSet": "Set your city"
 }

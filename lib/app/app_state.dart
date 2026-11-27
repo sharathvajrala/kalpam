@@ -14,7 +14,7 @@ import '../data/cities.dart';
 /// locally — no account needed.
 class AppState extends ChangeNotifier {
   AppState({required this.repo, required SharedPreferences prefs, DateTime Function()? clock})
-      : _prefs = prefs,
+      : _prefs = prefs, // ignore: prefer_initializing_formals
         _clock = clock ?? DateTime.now {
     flagship = FlagshipEngine(repo.seasons);
     _load();
@@ -32,7 +32,8 @@ class AppState extends ChangeNotifier {
   bool elderMode = false;
   String devoteeName = '';
   String gotra = '';
-  String cityId = 'hyderabad';
+  /// null until the user picks a city; Hyderabad is only the fallback.
+  String? cityId;
   String deityId = 'ayyappa';
   bool groupsNotify = false;
   final Map<String, DeekshaRecord> deekshas = {};
@@ -46,7 +47,7 @@ class AppState extends ChangeNotifier {
     elderMode = _prefs.getBool('elder') ?? false;
     devoteeName = _prefs.getString('name') ?? '';
     gotra = _prefs.getString('gotra') ?? '';
-    cityId = _prefs.getString('city') ?? 'hyderabad';
+    cityId = _prefs.getString('city');
     deityId = _prefs.getString('deity') ?? 'ayyappa';
     if (!repo.deities.containsKey(deityId)) deityId = repo.deities.keys.first;
     groupsNotify = _prefs.getBool('groupsNotify') ?? false;
@@ -64,7 +65,20 @@ class AppState extends ChangeNotifier {
 
   // ------------------------------------------------------------ getters
   DateTime get now => _clock();
-  City get city => cityById(cityId);
+  bool get hasCity => cityId != null;
+  City get city {
+    if (cityId == 'gps') {
+      final near = cityById(_prefs.getString('gpsNear'));
+      return City(
+        id: 'gps',
+        name: near.name,
+        lat: _prefs.getDouble('gpsLat') ?? near.lat,
+        lon: _prefs.getDouble('gpsLon') ?? near.lon,
+        utcOffsetMin: _prefs.getInt('gpsOffset') ?? near.utcOffsetMin,
+      );
+    }
+    return cityById(cityId);
+  }
   DeityPack get deity => repo.deities[deityId]!;
 
   /// Today's civil date in the user's city.
@@ -136,10 +150,21 @@ class AppState extends ChangeNotifier {
     await Future.wait([
       _prefs.setString('name', devoteeName),
       _prefs.setString('gotra', gotra),
-      _prefs.setString('city', cityId),
+      if (cityId != null) _prefs.setString('city', cityId!),
       _prefs.setString('deity', deityId),
     ]);
     notifyListeners();
+  }
+
+  /// Exact GPS position, labelled with the nearest listed city.
+  Future<void> setGpsCity({required double lat, required double lon, required int utcOffsetMin, required String nearCityId}) async {
+    await Future.wait([
+      _prefs.setDouble('gpsLat', lat),
+      _prefs.setDouble('gpsLon', lon),
+      _prefs.setInt('gpsOffset', utcOffsetMin),
+      _prefs.setString('gpsNear', nearCityId),
+    ]);
+    await setProfile(city: 'gps');
   }
 
   Future<void> setGroupsNotify(bool v) async {

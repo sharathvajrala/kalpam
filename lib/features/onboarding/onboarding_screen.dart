@@ -2,7 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/theme.dart';
-import '../../data/cities.dart';
+import '../today/city_chooser.dart';
 import '../common/deity_avatar.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -14,6 +14,7 @@ class OnboardingScreen extends StatefulWidget {
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final _page = PageController();
   int _index = 0;
+  static const _pages = 4;
   final _name = TextEditingController();
   final _gotra = TextEditingController();
 
@@ -26,7 +27,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   void _next() {
-    if (_index < 2) {
+    if (_index < _pages - 1) {
       _page.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeOut);
     } else {
       _finish();
@@ -68,6 +69,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   await app.setProfile(deity: id);
                   _next();
                 }),
+                _CityPage(onChosen: _next),
                 _AboutPage(name: _name, gotra: _gotra),
               ],
             ),
@@ -75,7 +77,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 20),
             child: Row(children: [
-              for (var i = 0; i < 3; i++)
+              for (var i = 0; i < _pages; i++)
                 Container(
                   margin: const EdgeInsets.only(right: 6),
                   width: i == _index ? 22 : 8,
@@ -83,7 +85,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   decoration: BoxDecoration(color: i == _index ? K.maroon : K.goldSoft, borderRadius: BorderRadius.circular(4)),
                 ),
               const Spacer(),
-              FilledButton(onPressed: _next, child: Text(_index == 2 ? context.l.begin : context.l.next)),
+              FilledButton(onPressed: _next, child: Text(_index == _pages - 1 ? context.l.begin : context.l.next)),
             ]),
           ),
         ]),
@@ -165,7 +167,6 @@ class _AboutPage extends StatelessWidget {
   final TextEditingController name, gotra;
   @override
   Widget build(BuildContext context) {
-    final app = context.app;
     return ListView(padding: const EdgeInsets.all(20), children: [
       const SizedBox(height: 12),
       Bi((l) => l.aboutYou, style: Theme.of(context).textTheme.headlineMedium),
@@ -177,13 +178,22 @@ class _AboutPage extends StatelessWidget {
       TextField(
           controller: gotra,
           decoration: InputDecoration(labelText: '${context.l.gotra} (${context.l.optional})', border: const OutlineInputBorder())),
-      const SizedBox(height: 14),
-      DropdownButtonFormField<String>(
-        initialValue: app.cityId,
-        decoration: InputDecoration(labelText: context.l.city, border: const OutlineInputBorder()),
-        items: [for (final c in cities) DropdownMenuItem(value: c.id, child: Text(context.t(c.name)))],
-        onChanged: (v) => v == null ? null : app.setProfile(city: v),
-      ),
+    ]);
+  }
+}
+
+class _CityPage extends StatelessWidget {
+  const _CityPage({required this.onChosen});
+  final VoidCallback onChosen;
+  @override
+  Widget build(BuildContext context) {
+    return ListView(padding: const EdgeInsets.all(20), children: [
+      const SizedBox(height: 12),
+      Bi((l) => l.chooseCity, style: Theme.of(context).textTheme.headlineMedium),
+      const SizedBox(height: 8),
+      Text(context.l.cityWhy, style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: K.inkSoft)),
+      const SizedBox(height: 16),
+      CityChooser(onChosen: onChosen),
     ]);
   }
 }

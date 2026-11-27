@@ -1,8 +1,8 @@
 /// Generates the spoken / displayed Sankalpam for a pooja.
 ///
 /// Follows the traditional Telugu Smarta template
-/// (… Shalivahana Shake, <Samvatsara> Nama Samvatsare, <Ayana>, <Ritu>,
-/// <Masa> Mase, <Paksha>, <Tithi>, <Vasara>, <Nakshatra> …). Pending pandit
+/// (`… Shalivahana Shake, [Samvatsara] Nama Samvatsare, [Ayana], [Ritu],
+/// [Masa] Mase, [Paksha], [Tithi], [Vasara], [Nakshatra] …`). Pending pandit
 /// review (ASSETS_TODO.md text.sankalpam.template).
 library;
 

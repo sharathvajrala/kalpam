@@ -81,8 +81,11 @@ class _GreetingHeader extends StatelessWidget {
           onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SettingsScreen())),
         ),
         ActionChip(
-          avatar: const Icon(Icons.place_outlined, size: 16, color: K.maroon),
-          label: Text(context.t(app.city.name), style: const TextStyle(fontSize: 12)),
+          key: const ValueKey('city-chip'),
+          avatar: Icon(app.hasCity ? Icons.place_outlined : Icons.add_location_alt_outlined, size: 16,
+              color: app.hasCity ? K.maroon : K.saffron),
+          label: Text(app.hasCity ? context.t(app.city.name) : context.l.cityNotSet,
+              style: TextStyle(fontSize: 12, color: app.hasCity ? null : K.saffron)),
           onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CityPickerScreen())),
         ),
       ]),

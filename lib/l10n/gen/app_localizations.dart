@@ -931,6 +931,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'All Gods'**
   String get allGods;
+
+  /// No description provided for @useMyLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Use my location'**
+  String get useMyLocation;
+
+  /// No description provided for @fromGps.
+  ///
+  /// In en, this message translates to:
+  /// **'From your location'**
+  String get fromGps;
+
+  /// No description provided for @gpsFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t get your location. Please search for your city.'**
+  String get gpsFailed;
+
+  /// No description provided for @cityWhy.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunrise, tithi, Rahu Kalam and your Sankalpam are calculated for this city.'**
+  String get cityWhy;
+
+  /// No description provided for @cityNotSet.
+  ///
+  /// In en, this message translates to:
+  /// **'Set your city'**
+  String get cityNotSet;
 }
 
 class _AppLocalizationsDelegate

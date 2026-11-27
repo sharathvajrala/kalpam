@@ -468,4 +468,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get allGods => 'All Gods';
+
+  @override
+  String get useMyLocation => 'Use my location';
+
+  @override
+  String get fromGps => 'From your location';
+
+  @override
+  String get gpsFailed =>
+      'Couldn\'t get your location. Please search for your city.';
+
+  @override
+  String get cityWhy =>
+      'Sunrise, tithi, Rahu Kalam and your Sankalpam are calculated for this city.';
+
+  @override
+  String get cityNotSet => 'Set your city';
 }

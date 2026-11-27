@@ -77,6 +77,11 @@ S = {
  "voiceGuide": ("Voice guide", "వాయిస్ మార్గదర్శనం"),
  "devotee": ("Devotee", "భక్తుడు"),
  "allGods": ("All Gods", "అందరు దేవతలు"),
+ "useMyLocation": ("Use my location", "నా ప్రస్తుత స్థానం వాడండి"),
+ "fromGps": ("From your location", "మీ స్థానం ఆధారంగా"),
+ "gpsFailed": ("Couldn't get your location. Please search for your city.", "స్థానం తెలియలేదు. దయచేసి మీ నగరం వెతకండి."),
+ "cityWhy": ("Sunrise, tithi, Rahu Kalam and your Sankalpam are calculated for this city.", "సూర్యోదయం, తిథి, రాహు కాలం, మీ సంకల్పం ఈ నగరానికి లెక్కించబడతాయి."),
+ "cityNotSet": ("Set your city", "మీ నగరం ఎంచుకోండి"),
 }
 PL = {"day","total","days","peak","name","time","n","god","count","vratam"}
 out = pathlib.Path(__file__).resolve().parent.parent / "lib" / "l10n"; out.mkdir(parents=True, exist_ok=True)
