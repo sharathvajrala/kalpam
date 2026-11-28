@@ -1,0 +1,149 @@
+name: iOS build (TestFlight)
+
+# Manual only. Builds a release IPA, signs it with automatic (cloud-managed)
+# signing driven by an App Store Connect API key, and uploads it to TestFlight
+# for internal testing. No certificates or provisioning profiles live in the
+# repo: Xcode creates/fetches them with -allowProvisioningUpdates.
+#
+# Secrets: APPSTORE_API_KEY_ID, APPSTORE_API_ISSUER_ID, APPSTORE_API_PRIVATE_KEY
+# (full contents of AuthKey_<id>.p8). The key needs the App Manager or Admin
+# role so it can create the distribution certificate and profile.
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  TEAM_ID: DYPN57T535
+  BUNDLE_ID: com.kalpamapp.kalpam
+  APPLE_APP_ID: '6840183022'
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.50.1'
+          channel: stable
+          cache: true
+
+      - name: Xcode version
+        run: xcodebuild -version
+
+      - name: Packages and content packs
+        run: |
+          flutter pub get
+          python3 tool/build_packs.py
+          python3 tool/build_arb.py
+          flutter gen-l10n
+
+      - name: App Store Connect API key (from secrets, deleted at the end)
+        env:
+          APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+          APPSTORE_API_ISSUER_ID: ${{ secrets.APPSTORE_API_ISSUER_ID }}
+          APPSTORE_API_PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+        run: |
+          for v in APPSTORE_API_KEY_ID APPSTORE_API_ISSUER_ID APPSTORE_API_PRIVATE_KEY; do
+            if [ -z "${!v}" ]; then echo "::error::Secret $v is not set."; exit 1; fi
+          done
+          # altool looks for the key here by name; xcodebuild gets the path.
+          KEY_DIR="$HOME/.appstoreconnect/private_keys"
+          mkdir -p "$KEY_DIR"
+          KEY_PATH="$KEY_DIR/AuthKey_${APPSTORE_API_KEY_ID}.p8"
+          printf '%s\n' "$APPSTORE_API_PRIVATE_KEY" > "$KEY_PATH"
+          chmod 600 "$KEY_PATH"
+          grep -q "BEGIN PRIVATE KEY" "$KEY_PATH" || { echo "::error::APPSTORE_API_PRIVATE_KEY is not a .p8 private key."; exit 1; }
+          echo "ASC_KEY_PATH=$KEY_PATH" >> "$GITHUB_ENV"
+          echo "ASC_KEY_ID=$APPSTORE_API_KEY_ID" >> "$GITHUB_ENV"
+          echo "ASC_ISSUER_ID=$APPSTORE_API_ISSUER_ID" >> "$GITHUB_ENV"
+          echo "API key written for key id $APPSTORE_API_KEY_ID."
+
+      # flutter build ipa runs xcodebuild itself and has no way to pass the
+      # API key, so on a runner with no Apple account signed in its automatic
+      # signing cannot reach Apple. Flutter prepares the release build
+      # (config-only), then xcodebuild archives and exports with the key.
+      - name: Flutter release config
+        run: flutter build ios --release --config-only --build-number=${{ github.run_number }}
+
+      - name: Archive (automatic signing)
+        run: |
+          set -o pipefail
+          xcodebuild archive \
+            -workspace ios/Runner.xcworkspace \
+            -scheme Runner \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$RUNNER_TEMP/Runner.xcarchive" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            DEVELOPMENT_TEAM="$TEAM_ID" \
+            CODE_SIGN_STYLE=Automatic \
+            | tee "$RUNNER_TEMP/archive.log" | grep -E "error:|warning: .*[Ss]ign|Signing Identity|Provisioning Profile|ARCHIVE (SUCCEEDED|FAILED)" || true
+          test -d "$RUNNER_TEMP/Runner.xcarchive" || { echo "::error::Archive failed. Last lines:"; tail -60 "$RUNNER_TEMP/archive.log"; exit 1; }
+
+      - name: Export IPA
+        run: |
+          set -o pipefail
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/Runner.xcarchive" \
+            -exportOptionsPlist ios/ExportOptions.plist \
+            -exportPath build/ios/ipa \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            | tee "$RUNNER_TEMP/export.log" | tail -20
+          IPA=$(ls build/ios/ipa/*.ipa | head -1)
+          test -f "$IPA" || { echo "::error::No IPA exported."; exit 1; }
+          echo "IPA=$IPA" >> "$GITHUB_ENV"
+
+      - name: Signing identity and IPA details
+        run: |
+          APP=$(ls -d "$RUNNER_TEMP"/Runner.xcarchive/Products/Applications/*.app | head -1)
+          echo "== Archive signature"
+          codesign -dvv "$APP" 2>&1 | grep -E "^(Identifier|Authority|TeamIdentifier)=" || true
+          echo "== Exported IPA signature"
+          rm -rf "$RUNNER_TEMP/ipa-check" && mkdir "$RUNNER_TEMP/ipa-check"
+          unzip -q "$IPA" -d "$RUNNER_TEMP/ipa-check"
+          codesign -dvv "$RUNNER_TEMP"/ipa-check/Payload/*.app 2>&1 | grep -E "^(Identifier|Authority|TeamIdentifier)=" || true
+          security cms -D -i "$RUNNER_TEMP"/ipa-check/Payload/*.app/embedded.mobileprovision 2>/dev/null \
+            | plutil -extract Name raw -o - - 2>/dev/null | sed 's/^/Provisioning profile: /' || true
+          echo "== IPA"
+          echo "Path: $IPA"
+          echo "Size: $(du -h "$IPA" | cut -f1) ($(stat -f%z "$IPA") bytes)"
+          echo "Version: $(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' "$RUNNER_TEMP"/ipa-check/Payload/*.app/Info.plist) build $(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' "$RUNNER_TEMP"/ipa-check/Payload/*.app/Info.plist)"
+
+      # altool ships with Xcode, so the private key never goes to a
+      # third-party action. Apple's full response is printed.
+      - name: Upload to TestFlight
+        run: |
+          set -o pipefail
+          xcrun altool --upload-app --type ios \
+            --file "$IPA" \
+            --apiKey "$ASC_KEY_ID" \
+            --apiIssuer "$ASC_ISSUER_ID" \
+            --output-format normal 2>&1 | tee "$RUNNER_TEMP/upload.log"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kalpam-ios-${{ github.run_number }}
+          path: |
+            build/ios/ipa/*.ipa
+            ${{ runner.temp }}/archive.log
+            ${{ runner.temp }}/export.log
+            ${{ runner.temp }}/upload.log
+          retention-days: 30
+          if-no-files-found: ignore
+
+      - name: Remove the API key from the runner
+        if: always()
+        run: rm -rf "$HOME/.appstoreconnect/private_keys" "$RUNNER_TEMP/ipa-check"
