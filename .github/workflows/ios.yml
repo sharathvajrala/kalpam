@@ -22,7 +22,7 @@ env:
 
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-26
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
@@ -33,8 +33,13 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Xcode version
-        run: xcodebuild -version
+      # App Store Connect only accepts builds made with the iOS 26 SDK or later
+      # (Xcode 26+), and from April 2027 the iOS 27 SDK (Xcode 27+).
+      - name: Xcode version (must be 26 or later)
+        run: |
+          xcodebuild -version
+          major=$(xcodebuild -version | head -1 | awk '{print $2}' | cut -d. -f1)
+          if [ "$major" -lt 26 ]; then echo "::error::Xcode $major is too old for App Store Connect (needs 26+)."; exit 1; fi
 
       - name: Packages and content packs
         run: |
